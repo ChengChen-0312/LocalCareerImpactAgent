@@ -1,0 +1,27 @@
+[project]
+name = "localcareerimpact-qwen"
+version = "0.0.0"
+requires-python = "==3.12.12"
+dependencies = [
+  "localcareerimpact",
+  "mlx==0.30.0",
+  "mlx-lm==0.28.3",
+  "mlx-vlm==0.3.7",
+  "transformers==4.57.6",
+  "torch==2.8.0",
+  "torchvision==0.23.0",
+  "huggingface-hub==0.36.2",
+  "pillow==11.3.0",
+  "numpy==2.2.6",
+]
+
+[dependency-groups]
+worker-runtime = [
+  "jsonschema==4.26.0",
+]
+
+[tool.uv]
+default-groups = ["worker-runtime"]
+
+[tool.uv.sources]
+localcareerimpact = { path = "../..", editable = true }

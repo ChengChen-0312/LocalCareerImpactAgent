@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling==1.32.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "localcareerimpact"
+version = "0.0.0"
+requires-python = "==3.12.*"
+dependencies = [
+  "cryptography==50.0.1",
+  "pydantic==2.13.5",
+  "fastapi==0.141.1",
+  "uvicorn[standard]==0.52.4",
+  "python-multipart==0.0.22",
+  "pymupdf==1.28.2",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/localcareerimpact"]
+
+[tool.hatch.build.hooks.custom]
+path = "hatch_build.py"
+
+[tool.pytest.ini_options]
+markers = [
+  "phase0_real: requires pinned local model weights and target-host hardware",
+]

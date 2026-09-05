@@ -1,0 +1,6 @@
+{
+  "qwen30b": "/absolute/path/to/Qwen3-VL-30B-A3B-Instruct-4bit",
+  "qwen4b": "/absolute/path/to/Qwen3-VL-4B-Instruct-4bit",
+  "embedding": "/absolute/path/to/all-MiniLM-L6-v2",
+  "whisper": "/absolute/path/to/whisper-large-v3-turbo"
+}

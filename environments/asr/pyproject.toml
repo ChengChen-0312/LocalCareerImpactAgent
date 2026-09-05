@@ -1,0 +1,13 @@
+[project]
+name = "localcareerimpact-asr"
+version = "0.0.0"
+requires-python = "==3.12.12"
+dependencies = [
+  "localcareerimpact",
+  "mlx==0.30.0",
+  "mlx-whisper==0.4.3",
+  "huggingface-hub==0.36.2",
+]
+
+[tool.uv.sources]
+localcareerimpact = { path = "../..", editable = true }
