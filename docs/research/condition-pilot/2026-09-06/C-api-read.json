@@ -1,0 +1,302 @@
+{
+  "run": {
+    "run_id": "49368dca-e469-4ae4-82b3-c0f8f00955a2",
+    "status": "complete",
+    "current_stage": "validation",
+    "completed_stages": 9,
+    "total_stages": 9,
+    "report_id": "d0151e1e-92bf-4bcf-9154-d39ff3343fc8",
+    "error_code": null,
+    "message": "Analysis complete.",
+    "last_event_id": 17
+  },
+  "report_detail": {
+    "report_id": "d0151e1e-92bf-4bcf-9154-d39ff3343fc8",
+    "created_at": "2026-09-06T12:50:26.154031Z",
+    "report": {
+      "schema_version": "mvp-report.v1",
+      "run_id": "49368dca-e469-4ae4-82b3-c0f8f00955a2",
+      "snapshot_id": "sha256:fd3565036619143a0d245bd38560f97f80ad4598d51ba387b9b40060ec91ca27",
+      "language": "zh",
+      "title": "软件测试工程师职业影响分析",
+      "overall_impact_band": "medium",
+      "claims": [
+        {
+          "claim_id": "claim-001",
+          "text": "根据产品需求编写功能测试用例是软件测试工程师的核心职责之一，依据OSCA 2024 v1.0中对ICT Test Analyst的描述，该职责明确包含在主要任务中。",
+          "basis": "rag",
+          "horizon": null,
+          "impact_band": null,
+          "evidence_refs": [
+            "evidence-2a0d09c48d4d9daa122a26201331b3734e85196d6b980e0d61c3db2747dfaebf"
+          ],
+          "uncertainty": "该职责在OSCA职业分类中被明确列为ICT Test Analyst的主要任务之一，但未涵盖所有可能的测试用例编写场景。"
+        },
+        {
+          "claim_id": "claim-002",
+          "text": "在1-3年内，AI可能通过自动化测试用例生成和缺陷预测来增强软件测试工程师的工作，但现有证据未表明AI将直接替代或增强该职业的特定任务。",
+          "basis": "reasoned_scenario",
+          "horizon": "1-3-years",
+          "impact_band": "medium",
+          "evidence_refs": [],
+          "uncertainty": "AI工具的采纳速度和具体应用范围存在不确定性，且公司对AI工具的使用限制可能影响其实际应用。"
+        },
+        {
+          "claim_id": "claim-003",
+          "text": "在3-5年内，AI可能进一步自动化回归测试和缺陷报告整理，减少对人工测试的依赖，但现有证据未表明AI将直接替代或增强该职业的特定任务。",
+          "basis": "reasoned_scenario",
+          "horizon": "3-5-years",
+          "impact_band": "medium-high",
+          "evidence_refs": [],
+          "uncertainty": "AI在复杂场景下的测试准确性仍需验证，且自动化工具的开发和维护成本可能影响其普及速度。"
+        },
+        {
+          "claim_id": "claim-004",
+          "text": "建议定期学习AI辅助测试工具的使用方法，并参与公司内部的AI工具培训，但需明确其与现有任务的关联性，避免将AI能力等同于职业替代。",
+          "basis": "recommendation",
+          "horizon": null,
+          "impact_band": null,
+          "evidence_refs": [],
+          "uncertainty": "具体培训内容和时间安排需等待公司进一步通知，且个人学习进度可能影响实际掌握程度。"
+        }
+      ],
+      "sections": {
+        "occupation_summary": {
+          "summary": {
+            "text": "软件测试工程师的核心职责包括根据产品需求编写功能测试用例，该职责在OSCA职业分类中被明确列出。",
+            "origin": "rag",
+            "evidence_refs": [
+              "evidence-2a0d09c48d4d9daa122a26201331b3734e85196d6b980e0d61c3db2747dfaebf"
+            ]
+          },
+          "claim_ids": [
+            "claim-001"
+          ]
+        },
+        "horizon_scenarios": [
+          {
+            "horizon": "1-3-years",
+            "impact_band": "medium",
+            "summary": {
+              "text": "AI可能通过自动化测试用例生成和缺陷预测来增强软件测试工程师的工作。",
+              "origin": "reasoned_scenario",
+              "evidence_refs": []
+            },
+            "claim_ids": [
+              "claim-002"
+            ],
+            "uncertainty": {
+              "text": "AI工具的采纳速度和具体应用范围存在不确定性，且公司对AI工具的使用限制可能影响其实际应用。",
+              "origin": "reasoned_scenario",
+              "evidence_refs": []
+            }
+          },
+          {
+            "horizon": "3-5-years",
+            "impact_band": "medium-high",
+            "summary": {
+              "text": "AI可能进一步自动化回归测试和缺陷报告整理，减少对人工测试的依赖。",
+              "origin": "reasoned_scenario",
+              "evidence_refs": []
+            },
+            "claim_ids": [
+              "claim-003"
+            ],
+            "uncertainty": {
+              "text": "AI在复杂场景下的测试准确性仍需验证，且自动化工具的开发和维护成本可能影响其普及速度。",
+              "origin": "reasoned_scenario",
+              "evidence_refs": []
+            }
+          }
+        ],
+        "task_impact_matrix": [
+          {
+            "row_id": "task-001",
+            "task": {
+              "text": "自动化测试用例生成",
+              "origin": "reasoned_scenario",
+              "evidence_refs": []
+            },
+            "horizon": "1-3-years",
+            "automation": "medium",
+            "augmentation": "medium",
+            "human_led": "high",
+            "rationale": {
+              "text": "AI可生成测试用例，但需人工验证和调整，增强而非替代。",
+              "origin": "reasoned_scenario",
+              "evidence_refs": []
+            },
+            "claim_ids": [
+              "claim-002"
+            ]
+          },
+          {
+            "row_id": "task-002",
+            "task": {
+              "text": "缺陷报告整理",
+              "origin": "reasoned_scenario",
+              "evidence_refs": []
+            },
+            "horizon": "3-5-years",
+            "automation": "medium-high",
+            "augmentation": "medium",
+            "human_led": "medium",
+            "rationale": {
+              "text": "AI可自动整理缺陷报告，但复杂缺陷分析仍需人工介入。",
+              "origin": "reasoned_scenario",
+              "evidence_refs": []
+            },
+            "claim_ids": [
+              "claim-003"
+            ]
+          }
+        ],
+        "opportunities": {
+          "summary": {
+            "text": "建议学习AI辅助测试工具，参与公司培训，但需明确其与现有任务的关联性。",
+            "origin": "recommendation",
+            "evidence_refs": []
+          },
+          "claim_ids": [
+            "claim-004"
+          ]
+        },
+        "risks_and_uncertainty": {
+          "summary": {
+            "text": "AI工具的采纳速度和具体应用范围存在不确定性，且公司对AI工具的使用限制可能影响其实际应用。",
+            "origin": "reasoned_scenario",
+            "evidence_refs": []
+          },
+          "claim_ids": [
+            "claim-002",
+            "claim-003"
+          ]
+        },
+        "practical_next_actions": [
+          {
+            "action_id": "action-001",
+            "action": {
+              "text": "定期学习AI辅助测试工具的使用方法。",
+              "origin": "recommendation",
+              "evidence_refs": []
+            },
+            "rationale": {
+              "text": "掌握AI工具可提升测试效率，但需明确其与现有任务的关联性。",
+              "origin": "recommendation",
+              "evidence_refs": []
+            },
+            "claim_ids": [
+              "claim-004"
+            ]
+          },
+          {
+            "action_id": "action-002",
+            "action": {
+              "text": "参与公司内部的AI工具培训。",
+              "origin": "recommendation",
+              "evidence_refs": []
+            },
+            "rationale": {
+              "text": "培训有助于了解AI工具的实际应用，避免误判其能力。",
+              "origin": "recommendation",
+              "evidence_refs": []
+            },
+            "claim_ids": [
+              "claim-004"
+            ]
+          },
+          {
+            "action_id": "action-003",
+            "action": {
+              "text": "明确AI能力与职业替代的界限。",
+              "origin": "recommendation",
+              "evidence_refs": []
+            },
+            "rationale": {
+              "text": "避免将AI能力等同于职业替代，保持职业发展的独立性。",
+              "origin": "recommendation",
+              "evidence_refs": []
+            },
+            "claim_ids": [
+              "claim-004"
+            ]
+          }
+        ]
+      },
+      "citations": [
+        {
+          "evidence_ref": "evidence-2a0d09c48d4d9daa122a26201331b3734e85196d6b980e0d61c3db2747dfaebf",
+          "claim_ids": [
+            "claim-001"
+          ],
+          "relevance": {
+            "text": "所关联声明引用的冻结本地证据。",
+            "origin": "rag",
+            "evidence_refs": [
+              "evidence-2a0d09c48d4d9daa122a26201331b3734e85196d6b980e0d61c3db2747dfaebf"
+            ]
+          }
+        }
+      ],
+      "suggestion_resolutions": [
+        {
+          "suggestion_id": "evidence-1",
+          "decision": "accepted",
+          "reason": "ICT Test Analyst的职责明确包含测试用例开发，而软件测试工程师属于该职业的细分领域，因此该职责适用于软件测试工程师。"
+        },
+        {
+          "suggestion_id": "evidence-2",
+          "decision": "rejected",
+          "reason": "JSA评估针对的是软件和应用程序员，不直接支持软件测试工程师的职责。"
+        },
+        {
+          "suggestion_id": "evidence-3",
+          "decision": "rejected",
+          "reason": "短缺评级不等同于稳定需求，且未提供AI工具培训的直接证据支持。"
+        },
+        {
+          "suggestion_id": "boundary-1",
+          "decision": "accepted",
+          "reason": "AI在测试中的作用需基于OSCA职业分类中的任务范围，避免过度推断。"
+        },
+        {
+          "suggestion_id": "boundary-2",
+          "decision": "rejected",
+          "reason": "推荐学习AI工具缺乏证据支持，无法直接关联到现有任务。"
+        },
+        {
+          "suggestion_id": "boundary-3",
+          "decision": "rejected",
+          "reason": "现有证据未表明AI将替代或增强该职业的特定任务。"
+        },
+        {
+          "suggestion_id": "safety-1",
+          "decision": "accepted",
+          "reason": "根据OSCA  信息，该职责明确包含在ICT Test Analyst的主要任务中。"
+        },
+        {
+          "suggestion_id": "safety-2",
+          "decision": "accepted",
+          "reason": "AI对测试的自动化影响需基于现有证据明确其在职业分类中的任务范围。"
+        },
+        {
+          "suggestion_id": "safety-3",
+          "decision": "accepted",
+          "reason": "建议学习AI工具需明确其与现有任务的关联性，避免将AI能力等同于职业替代。"
+        }
+      ]
+    },
+    "citation_details": [
+      {
+        "evidence_ref": "evidence-2a0d09c48d4d9daa122a26201331b3734e85196d6b980e0d61c3db2747dfaebf",
+        "citation_scope": "passage",
+        "source_title": "ABS OSCA 2024 occupations group 2",
+        "publisher": "Local operator-provided source",
+        "release_date": null,
+        "licence": "unavailable",
+        "locator": "row:655",
+        "text": "ICT Test Analyst — OSCA 2024 v1.0 272233 feedback and recommendations based on analysis of test results, and ensures it aligns with business requirements and specifications; May automate software and/or system test cases using testing tools and frameworks; May undertake system performance, load and stress testing; Specialisations: Automation Test Engineer; Software Tester; Systems Test Engineer (ICT) Source: ABS; Table 1 row 455; 2024 Version 1.0, July 2025 corrections. https://www.abs.gov.au/statistics/classifications/osca-occupation-standard-classification-australia/2024-version-1-0/data-downloads"
+      }
+    ]
+  }
+}

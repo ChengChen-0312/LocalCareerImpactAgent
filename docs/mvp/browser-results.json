@@ -1,0 +1,764 @@
+{
+  "audio_fixture_header_metadata": [
+    {
+      "channels": 1,
+      "duration_seconds": 0.837375,
+      "frames": 13398,
+      "sample_rate": 16000,
+      "sample_width_bytes": 2
+    },
+    {
+      "channels": 1,
+      "duration_seconds": 13.591437,
+      "frames": 217463,
+      "sample_rate": 16000,
+      "sample_width_bytes": 2
+    }
+  ],
+  "captured_at_utc": "2026-09-05T16:44:14.162587+00:00",
+  "cleanup": {
+    "browser_api_and_owned_model_processes_exited": "OPERATOR_OBSERVED",
+    "browser_owned_processes_remaining": 0,
+    "browser_session_closed": true,
+    "cleanup_receipt_file_sha256": "8fd21973e88ca116676276085e897df1012b5761e7b83a0ab3aa5644de7e6b81",
+    "cleanup_receipt_payload_sha256": "8d17078da811e206e9008c566c88d37155125b90b576d386dd7f5d279cf97d3e",
+    "filesystem_root_and_inputs_absence_rechecked": true,
+    "final_cleanup_complete": true,
+    "managed_candidate_upload_file_count_before_removal": 0,
+    "recorded_at_utc": "2026-09-05T16:49:22.358067+00:00",
+    "scope": "Browser temporary root and its owned processes only; another API batch runs separately. No global Qwen-process-zero claim.",
+    "temporary_accounts_deleted": true,
+    "temporary_database_present": false,
+    "temporary_inputs_deleted": true,
+    "temporary_root_deletion": "COMPLETE",
+    "temporary_root_present": false,
+    "temporary_sources_deleted": true
+  },
+  "database_assistant_message_explicit_cot_marker_flags": {
+    "</analysis>": false,
+    "</think>": false,
+    "<analysis>": false,
+    "<think>": false,
+    "<|analysis|>": false
+  },
+  "database_message_kind_counts": {
+    "assistant/profile": 6,
+    "assistant/progress": 5,
+    "assistant/report": 5,
+    "user/text": 6
+  },
+  "database_snapshot_counts": {
+    "candidate_profiles": 6,
+    "chats": 6,
+    "confirmed_profiles": 5,
+    "knowledge_chunks": 2,
+    "knowledge_documents": 2,
+    "knowledge_source_files": 2,
+    "messages": 22,
+    "reports": 5,
+    "runs": 5,
+    "unconfirmed_profiles": 1
+  },
+  "detailed_receipt_payload_sha256": "46237648f22e22159659ec214a69d07ef4a42946bd9e2646028c6b72928206be",
+  "deterministic_receipt_finalized_at_utc": "2026-09-05T16:46:14.511903+00:00",
+  "evidence_scope": "Two final-source localhost browser runs, English and Chinese; limited observed acceptance, not long-term reliability or prediction-quality proof. Earlier three reports remain separate retained evidence.",
+  "final_accepted_run_ordinals": [
+    4,
+    5
+  ],
+  "final_runs": [
+    {
+      "all_attempt_metrics_complete": true,
+      "assistant_message_explicit_cot_marker_flags": {
+        "</analysis>": false,
+        "</think>": false,
+        "<analysis>": false,
+        "<think>": false,
+        "<|analysis|>": false
+      },
+      "assistant_message_id_unique": true,
+      "browser_run_ordinal": 4,
+      "citations": {
+        "all_closed_checks_pass": true,
+        "checks": [
+          {
+            "chunk_hash_matches": true,
+            "chunk_text_sha256_recomputed_matches": true,
+            "frozen_passage_found_in_snapshot": true,
+            "frozen_source_metadata_matches": true,
+            "owner_projection_locator_matches": true,
+            "owner_projection_scope_matches": true,
+            "owner_projection_text_matches": true,
+            "passage_text_matches_persisted_chunk": true,
+            "scope": "passage",
+            "source_content_hash_matches": true,
+            "source_found_in_frozen_fact_pack": true
+          },
+          {
+            "chunk_hash_matches": true,
+            "chunk_text_sha256_recomputed_matches": true,
+            "frozen_passage_found_in_snapshot": true,
+            "frozen_source_metadata_matches": true,
+            "owner_projection_locator_matches": true,
+            "owner_projection_scope_matches": true,
+            "owner_projection_text_matches": true,
+            "passage_text_matches_persisted_chunk": true,
+            "scope": "passage",
+            "source_content_hash_matches": true,
+            "source_found_in_frozen_fact_pack": true
+          }
+        ],
+        "count": 2,
+        "passage_count": 2,
+        "source_content_hash_check_scope": "Frozen source and passage hashes compared with persisted chunk content_hash; original document bytes not rehashed in this snapshot.",
+        "source_metadata_only_count": 0
+      },
+      "elapsed_seconds": 240.644,
+      "elapsed_seconds_scope": "Run updated_at minus created_at; includes queue waiting if present.",
+      "exact_nine_completed_stages_in_order": true,
+      "f3_metrics": {
+        "generation_limit": 4096,
+        "generation_tokens": 920,
+        "prompt_tokens": 3269,
+        "reached_generation_limit": false,
+        "total_tokens": 4189
+      },
+      "fact_pack_canonical_sha256": "52f20fa3c62cf4c2f9b7bfacaab1155361a3a26bf00c932f174160cbf99fbc89",
+      "language": "en",
+      "message_kind_counts": {
+        "assistant/profile": 1,
+        "assistant/progress": 1,
+        "assistant/report": 1,
+        "user/text": 1
+      },
+      "owner_report_read_projection_matches_saved_report": true,
+      "persisted_event_count": 18,
+      "persisted_event_status_counts": {
+        "complete": 9,
+        "running": 9
+      },
+      "profile_attempt_attribution": "same chat and diagnostic timestamp no later than run creation; no direct run foreign key",
+      "profile_confirmed": true,
+      "profile_item_counts": {
+        "goals": 3,
+        "occupation_candidates": 1,
+        "responsibilities": 7,
+        "skills": 7
+      },
+      "profile_stage_attempts": [
+        {
+          "attempt": 1,
+          "boundary": "contract",
+          "category": null,
+          "context_codepoints": 2979,
+          "metrics": {
+            "generation_limit": 1600,
+            "generation_tokens": 202,
+            "prompt_tokens": 879,
+            "reached_generation_limit": false,
+            "total_tokens": 1081
+          },
+          "parse_error_offset": null,
+          "stage": "profile",
+          "status": "complete",
+          "validator_categories": {}
+        }
+      ],
+      "prose_closed_checks": {
+        "action_count": 3,
+        "field_count": 21,
+        "generation_cap": 280,
+        "opportunity_risk_exact_distinct": true,
+        "prose_at_cap_count": 0,
+        "prose_missing_sentence_terminal_count": 0,
+        "prose_over_cap_count": 0,
+        "scope": "Character and punctuation checks and exact equality are not semantic completeness or usefulness proofs.",
+        "sentence_count_gt1": 0,
+        "sentence_field_count": 17,
+        "single_sentence_pattern_failure_count": 0,
+        "summary_opportunity_exact_distinct": true,
+        "summary_risk_exact_distinct": true,
+        "task_row_count": 4,
+        "title_within_80_characters": true
+      },
+      "public_event_count": 18,
+      "public_event_messages_are_fixed_safe_strings": true,
+      "public_event_schema_only": true,
+      "public_terminal_completed_count": 9,
+      "public_terminal_report_present": true,
+      "raw_reviewer_advice_fields_present_in_public_events_or_assistant_message_payloads": false,
+      "report_canonical_sha256": "78372865c4b31d82c5aeabccecd769fd100fd6aca5b223e7642b5d172250b957",
+      "report_count": 1,
+      "report_explicit_cot_marker_flags": {
+        "</analysis>": false,
+        "</think>": false,
+        "<analysis>": false,
+        "<think>": false,
+        "<|analysis|>": false
+      },
+      "report_message_count": 1,
+      "review_decisions": {
+        "accepted": 9,
+        "count": 9,
+        "rejected": 0
+      },
+      "run_stage_attempts": [
+        {
+          "attempt": 1,
+          "boundary": "validation",
+          "category": null,
+          "context_codepoints": 12084,
+          "metrics": {
+            "generation_limit": 4096,
+            "generation_tokens": 2161,
+            "prompt_tokens": 4154,
+            "reached_generation_limit": false,
+            "total_tokens": 6315
+          },
+          "parse_error_offset": null,
+          "stage": "draft",
+          "status": "complete",
+          "validator_categories": {}
+        },
+        {
+          "attempt": 1,
+          "boundary": "validation",
+          "category": null,
+          "context_codepoints": 14275,
+          "metrics": {
+            "generation_limit": 2048,
+            "generation_tokens": 573,
+            "prompt_tokens": 4476,
+            "reached_generation_limit": false,
+            "total_tokens": 5049
+          },
+          "parse_error_offset": null,
+          "stage": "evidence_review",
+          "status": "complete",
+          "validator_categories": {}
+        },
+        {
+          "attempt": 1,
+          "boundary": "validation",
+          "category": null,
+          "context_codepoints": 14302,
+          "metrics": {
+            "generation_limit": 2048,
+            "generation_tokens": 550,
+            "prompt_tokens": 4481,
+            "reached_generation_limit": false,
+            "total_tokens": 5031
+          },
+          "parse_error_offset": null,
+          "stage": "boundary_review",
+          "status": "complete",
+          "validator_categories": {}
+        },
+        {
+          "attempt": 1,
+          "boundary": "validation",
+          "category": null,
+          "context_codepoints": 14416,
+          "metrics": {
+            "generation_limit": 2048,
+            "generation_tokens": 582,
+            "prompt_tokens": 4501,
+            "reached_generation_limit": false,
+            "total_tokens": 5083
+          },
+          "parse_error_offset": null,
+          "stage": "safety_review",
+          "status": "complete",
+          "validator_categories": {}
+        },
+        {
+          "attempt": 1,
+          "boundary": "validation",
+          "category": null,
+          "context_codepoints": 13083,
+          "metrics": {
+            "generation_limit": 1536,
+            "generation_tokens": 420,
+            "prompt_tokens": 3641,
+            "reached_generation_limit": false,
+            "total_tokens": 4061
+          },
+          "parse_error_offset": null,
+          "stage": "resolution_decision",
+          "status": "complete",
+          "validator_categories": {}
+        },
+        {
+          "attempt": 1,
+          "boundary": "validation",
+          "category": null,
+          "context_codepoints": 21380,
+          "metrics": {
+            "generation_limit": 3072,
+            "generation_tokens": 1067,
+            "prompt_tokens": 6472,
+            "reached_generation_limit": false,
+            "total_tokens": 7539
+          },
+          "parse_error_offset": null,
+          "stage": "revised_claims",
+          "status": "complete",
+          "validator_categories": {}
+        },
+        {
+          "attempt": 1,
+          "boundary": "validation",
+          "category": null,
+          "context_codepoints": 11959,
+          "metrics": {
+            "generation_limit": 4096,
+            "generation_tokens": 920,
+            "prompt_tokens": 3269,
+            "reached_generation_limit": false,
+            "total_tokens": 4189
+          },
+          "parse_error_offset": null,
+          "stage": "report_narratives",
+          "status": "complete",
+          "validator_categories": {}
+        }
+      ],
+      "run_stage_retries": {
+        "boundary_review": 0,
+        "draft": 0,
+        "evidence_review": 0,
+        "report_narratives": 0,
+        "resolution_decision": 0,
+        "revised_claims": 0,
+        "safety_review": 0
+      },
+      "run_to_snapshot_binding_matches": true,
+      "source_manifest_sha256": "dcd1f6cb59e8f263a88e206a5baaeedebbbfadc10927222b638ad6cccf349390",
+      "stage_completed_count": 9,
+      "stage_completed_sequence": [
+        "retrieval",
+        "draft",
+        "evidence_review",
+        "boundary_review",
+        "safety_review",
+        "resolution_decision",
+        "revised_claims",
+        "report_narratives",
+        "validation"
+      ],
+      "status": "COMPLETE",
+      "stored_report_schema_version": "mvp-report.v1",
+      "suggestions_count": 9,
+      "validator": {
+        "category_counts": {},
+        "error_count": 0,
+        "evaluated": true,
+        "valid": true,
+        "validator_and_contract_files_match_run_source": true
+      }
+    },
+    {
+      "all_attempt_metrics_complete": true,
+      "assistant_message_explicit_cot_marker_flags": {
+        "</analysis>": false,
+        "</think>": false,
+        "<analysis>": false,
+        "<think>": false,
+        "<|analysis|>": false
+      },
+      "assistant_message_id_unique": true,
+      "browser_run_ordinal": 5,
+      "citations": {
+        "all_closed_checks_pass": true,
+        "checks": [
+          {
+            "chunk_hash_matches": true,
+            "chunk_text_sha256_recomputed_matches": true,
+            "frozen_passage_found_in_snapshot": true,
+            "frozen_source_metadata_matches": true,
+            "owner_projection_locator_matches": true,
+            "owner_projection_scope_matches": true,
+            "owner_projection_text_matches": true,
+            "passage_text_matches_persisted_chunk": true,
+            "scope": "passage",
+            "source_content_hash_matches": true,
+            "source_found_in_frozen_fact_pack": true
+          },
+          {
+            "chunk_hash_matches": true,
+            "chunk_text_sha256_recomputed_matches": true,
+            "frozen_passage_found_in_snapshot": true,
+            "frozen_source_metadata_matches": true,
+            "owner_projection_locator_matches": true,
+            "owner_projection_scope_matches": true,
+            "owner_projection_text_matches": true,
+            "passage_text_matches_persisted_chunk": true,
+            "scope": "passage",
+            "source_content_hash_matches": true,
+            "source_found_in_frozen_fact_pack": true
+          }
+        ],
+        "count": 2,
+        "passage_count": 2,
+        "source_content_hash_check_scope": "Frozen source and passage hashes compared with persisted chunk content_hash; original document bytes not rehashed in this snapshot.",
+        "source_metadata_only_count": 0
+      },
+      "elapsed_seconds": 264.817,
+      "elapsed_seconds_scope": "Run updated_at minus created_at; includes queue waiting if present.",
+      "exact_nine_completed_stages_in_order": true,
+      "f3_metrics": {
+        "generation_limit": 4096,
+        "generation_tokens": 828,
+        "prompt_tokens": 3924,
+        "reached_generation_limit": false,
+        "total_tokens": 4752
+      },
+      "fact_pack_canonical_sha256": "b98d26e00b314c2dead66440c485059c9c43c3b9eb16c66088b142f23f6dc19b",
+      "language": "zh",
+      "message_kind_counts": {
+        "assistant/profile": 1,
+        "assistant/progress": 1,
+        "assistant/report": 1,
+        "user/text": 1
+      },
+      "owner_report_read_projection_matches_saved_report": true,
+      "persisted_event_count": 18,
+      "persisted_event_status_counts": {
+        "complete": 9,
+        "running": 9
+      },
+      "profile_attempt_attribution": "same chat and diagnostic timestamp no later than run creation; no direct run foreign key",
+      "profile_confirmed": true,
+      "profile_item_counts": {
+        "goals": 3,
+        "occupation_candidates": 1,
+        "responsibilities": 5,
+        "skills": 6
+      },
+      "profile_stage_attempts": [
+        {
+          "attempt": 1,
+          "boundary": "contract",
+          "category": null,
+          "context_codepoints": 2357,
+          "metrics": {
+            "generation_limit": 1600,
+            "generation_tokens": 155,
+            "prompt_tokens": 746,
+            "reached_generation_limit": false,
+            "total_tokens": 901
+          },
+          "parse_error_offset": null,
+          "stage": "profile",
+          "status": "complete",
+          "validator_categories": {}
+        }
+      ],
+      "prose_closed_checks": {
+        "action_count": 3,
+        "field_count": 21,
+        "generation_cap": 96,
+        "opportunity_risk_exact_distinct": true,
+        "prose_at_cap_count": 0,
+        "prose_missing_sentence_terminal_count": 0,
+        "prose_over_cap_count": 0,
+        "scope": "Character and punctuation checks and exact equality are not semantic completeness or usefulness proofs.",
+        "sentence_count_gt1": 0,
+        "sentence_field_count": 17,
+        "single_sentence_pattern_failure_count": 0,
+        "summary_opportunity_exact_distinct": true,
+        "summary_risk_exact_distinct": true,
+        "task_row_count": 4,
+        "title_within_80_characters": true
+      },
+      "public_event_count": 18,
+      "public_event_messages_are_fixed_safe_strings": true,
+      "public_event_schema_only": true,
+      "public_terminal_completed_count": 9,
+      "public_terminal_report_present": true,
+      "raw_reviewer_advice_fields_present_in_public_events_or_assistant_message_payloads": false,
+      "report_canonical_sha256": "eb656478793accbca7265c490318b4c30b15c0006b396327e99964910d36d2f9",
+      "report_count": 1,
+      "report_explicit_cot_marker_flags": {
+        "</analysis>": false,
+        "</think>": false,
+        "<analysis>": false,
+        "<think>": false,
+        "<|analysis|>": false
+      },
+      "report_message_count": 1,
+      "review_decisions": {
+        "accepted": 9,
+        "count": 9,
+        "rejected": 0
+      },
+      "run_stage_attempts": [
+        {
+          "attempt": 1,
+          "boundary": "validation",
+          "category": null,
+          "context_codepoints": 11090,
+          "metrics": {
+            "generation_limit": 4096,
+            "generation_tokens": 2007,
+            "prompt_tokens": 4039,
+            "reached_generation_limit": false,
+            "total_tokens": 6046
+          },
+          "parse_error_offset": null,
+          "stage": "draft",
+          "status": "complete",
+          "validator_categories": {}
+        },
+        {
+          "attempt": 1,
+          "boundary": "validation",
+          "category": null,
+          "context_codepoints": 11248,
+          "metrics": {
+            "generation_limit": 2048,
+            "generation_tokens": 853,
+            "prompt_tokens": 4187,
+            "reached_generation_limit": false,
+            "total_tokens": 5040
+          },
+          "parse_error_offset": null,
+          "stage": "evidence_review",
+          "status": "complete",
+          "validator_categories": {}
+        },
+        {
+          "attempt": 1,
+          "boundary": "validation",
+          "category": null,
+          "context_codepoints": 11275,
+          "metrics": {
+            "generation_limit": 2048,
+            "generation_tokens": 698,
+            "prompt_tokens": 4192,
+            "reached_generation_limit": false,
+            "total_tokens": 4890
+          },
+          "parse_error_offset": null,
+          "stage": "boundary_review",
+          "status": "complete",
+          "validator_categories": {}
+        },
+        {
+          "attempt": 1,
+          "boundary": "validation",
+          "category": null,
+          "context_codepoints": 11389,
+          "metrics": {
+            "generation_limit": 2048,
+            "generation_tokens": 740,
+            "prompt_tokens": 4212,
+            "reached_generation_limit": false,
+            "total_tokens": 4952
+          },
+          "parse_error_offset": null,
+          "stage": "safety_review",
+          "status": "complete",
+          "validator_categories": {}
+        },
+        {
+          "attempt": 1,
+          "boundary": "validation",
+          "category": null,
+          "context_codepoints": 10862,
+          "metrics": {
+            "generation_limit": 1536,
+            "generation_tokens": 485,
+            "prompt_tokens": 3927,
+            "reached_generation_limit": false,
+            "total_tokens": 4412
+          },
+          "parse_error_offset": null,
+          "stage": "resolution_decision",
+          "status": "complete",
+          "validator_categories": {}
+        },
+        {
+          "attempt": 1,
+          "boundary": "validation",
+          "category": null,
+          "context_codepoints": 17790,
+          "metrics": {
+            "generation_limit": 3072,
+            "generation_tokens": 1741,
+            "prompt_tokens": 6771,
+            "reached_generation_limit": false,
+            "total_tokens": 8512
+          },
+          "parse_error_offset": null,
+          "stage": "revised_claims",
+          "status": "complete",
+          "validator_categories": {}
+        },
+        {
+          "attempt": 1,
+          "boundary": "validation",
+          "category": null,
+          "context_codepoints": 11051,
+          "metrics": {
+            "generation_limit": 4096,
+            "generation_tokens": 828,
+            "prompt_tokens": 3924,
+            "reached_generation_limit": false,
+            "total_tokens": 4752
+          },
+          "parse_error_offset": null,
+          "stage": "report_narratives",
+          "status": "complete",
+          "validator_categories": {}
+        }
+      ],
+      "run_stage_retries": {
+        "boundary_review": 0,
+        "draft": 0,
+        "evidence_review": 0,
+        "report_narratives": 0,
+        "resolution_decision": 0,
+        "revised_claims": 0,
+        "safety_review": 0
+      },
+      "run_to_snapshot_binding_matches": true,
+      "source_manifest_sha256": "dcd1f6cb59e8f263a88e206a5baaeedebbbfadc10927222b638ad6cccf349390",
+      "stage_completed_count": 9,
+      "stage_completed_sequence": [
+        "retrieval",
+        "draft",
+        "evidence_review",
+        "boundary_review",
+        "safety_review",
+        "resolution_decision",
+        "revised_claims",
+        "report_narratives",
+        "validation"
+      ],
+      "status": "COMPLETE",
+      "stored_report_schema_version": "mvp-report.v1",
+      "suggestions_count": 9,
+      "validator": {
+        "category_counts": {},
+        "error_count": 0,
+        "evaluated": true,
+        "valid": true,
+        "validator_and_contract_files_match_run_source": true
+      }
+    }
+  ],
+  "integrity": {
+    "payload_sha256": "028100f2885a1d29ce1ceba685eae01087d08b38aca0424ca0704bc5658811a4",
+    "scope": "canonical JSON excluding integrity"
+  },
+  "invalid_pdf_recovery": {
+    "all_profiles_unconfirmed": true,
+    "error_persistence_not_inferred": true,
+    "invalid_pdf_error_observed_at_request_layer": true,
+    "message_kind_counts": {
+      "assistant/profile": 1,
+      "user/text": 1
+    },
+    "no_run_profile_count": 1,
+    "persisted_error_message_count": 0,
+    "run_count": 0,
+    "valid_text_recovery_to_ready_for_review_ui_observed": true
+  },
+  "local_browser_checks": "PASS",
+  "not_evaluated": {
+    "long_term_reliability": "NOT_ESTABLISHED",
+    "physical_microphone_capture": "NOT_TESTED",
+    "remote_tunnel_login_and_refresh": "NOT_TESTED"
+  },
+  "operator_observations": {
+    "both_models_ready": true,
+    "both_models_ready_observed_at_utc": "2026-09-05T15:52:54.803844+00:00",
+    "browser_api_and_owned_model_processes_exited_normally": true,
+    "evidence_provider": "Root agent conducting actual CUA browser acceptance; UI observations are separate from deterministic database checks.",
+    "final_runs": {
+      "all_sections_read_without_observed_fragments": true,
+      "both_horizons_and_three_task_impact_columns_visible": true,
+      "both_reports_full_reading_opened": true,
+      "both_reports_nine_accepted_zero_rejected_reasons_expanded": true,
+      "both_reports_two_frozen_passages_expanded_and_matched": true,
+      "chat_switch_and_refresh_restored_each_correct_report": true,
+      "cross_chat_contamination_observed": false,
+      "english_full_reading_screenshot_layout_normal": true,
+      "explicit_reasoning_markup_in_visible_dom_or_html": false,
+      "modal_background_dom_duplicates_are_expected_not_duplicate_reports": true,
+      "opportunities_and_risks_distinct_and_meaningful": true,
+      "progress_refresh_restored": true,
+      "two_runs_concurrent_during_execution": true
+    },
+    "input_text_chinese_pdf_and_txt_visible": true,
+    "knowledge_folder_and_admin_upload_rebuild": {
+      "chunk_count": 2,
+      "source_count": 2
+    },
+    "normal_uploaded_audio_transcription_observed_complete_and_accurate": true,
+    "pre_confirmation_managed_upload_file_count": 0,
+    "pre_confirmation_observation_scope": "Direct SQL before first browser run confirmation.",
+    "pre_confirmation_run_count": 0,
+    "profile_region_edit_confirmed": true,
+    "progress_collapse_observed_run_01": true,
+    "ready_observation_scope": "Initial browser API session before run 1; subsequent sessions were separately started by the operator.",
+    "short_audio_fixture": "Insufficient synthetic speech; no transcription quality pass inferred."
+  },
+  "pre_cleanup_receipt_payload_sha256": "dd42716bebec2c787d5550fdc34c87a0df99eb704dc74c581cdce3bbf3ba426c",
+  "pre_cleanup_snapshot_residuals": {
+    "browser_api_and_owned_model_processes_exited": "OPERATOR_OBSERVED",
+    "final_cleanup_complete": false,
+    "managed_candidate_upload_file_count": 0,
+    "scope": "Browser session only; a separate API acceptance batch is outside this cleanup scope.",
+    "temporary_database_present": true,
+    "temporary_root_deletion": "PENDING",
+    "temporary_root_present": true
+  },
+  "prior_browser_evidence": {
+    "browser_run_01": {
+      "limitation": "At-cap prose ended without terminal punctuation; excluded from final quality acceptance.",
+      "receipt_payload_sha256": "8f4838ed3f4ec3dd088279da9fb95e3cfaf510d407dc38e9b961de4bf0221803",
+      "report_canonical_sha256": "0dca44317bfa6743cb0de1ceadaf57f74285a1e0a282de130e96840f825938ed",
+      "retained_outcome": "QUALITY_FAILURE_RETAINED",
+      "saved_report_hash_rechecked_unchanged": true,
+      "source_manifest_sha256": "6d9cdaa013ecf5cd78a69e9a5a5f93c399a0be52037314ea77d4410cc603d6b2"
+    },
+    "browser_run_02": {
+      "limitation": "Terminal punctuation alone did not prevent multiple sentences and a trailing fragment.",
+      "receipt_payload_sha256": "2438c8ca25820351cee4e7e2157896a009c36a12704ee80023af84e005372241",
+      "report_canonical_sha256": "eb21f96693bc350f8b20a6887b6e5974ed10aa1daad43e7f0c0751a3b10b6e56",
+      "retained_outcome": "QUALITY_FAILURE_RETAINED",
+      "saved_report_hash_rechecked_unchanged": true,
+      "source_manifest_sha256": "fd02e5d5b7a6d331f75f0082b697477452fbdc1f6abba71564e1265d52e6a981"
+    },
+    "browser_run_03": {
+      "limitation": "Summary, opportunities and risks were identical; citation expansion and full reading not evaluated for this old run.",
+      "receipt_payload_sha256": "2438c8ca25820351cee4e7e2157896a009c36a12704ee80023af84e005372241",
+      "report_canonical_sha256": "63a8233e92318c7a012c6eaa2627c431244768236893501e04f2e5986ff3aa2e",
+      "retained_outcome": "REPETITION_LIMITATION_RETAINED",
+      "saved_report_hash_rechecked_unchanged": true,
+      "source_manifest_sha256": "fd02e5d5b7a6d331f75f0082b697477452fbdc1f6abba71564e1265d52e6a981"
+    }
+  },
+  "privacy": {
+    "accounts_credentials_private_paths_or_raw_review_advice_included": false,
+    "explicit_cot_check_scope": "Only listed explicit markup markers were checked; legitimate final review-decision reasons are not treated as hidden reasoning.",
+    "raw_user_profile_transcript_or_report_text_included": false
+  },
+  "schema_version": "mvp-local-browser-results.v1",
+  "source": {
+    "all_current_source_file_hashes_match_frozen_manifest": false,
+    "current_source_rehash_changed_count": 2,
+    "current_source_rehash_match_count": 63,
+    "frozen_source_manifest_integrity_verified": true,
+    "historical_attribution": "Frozen source snapshot captured before final browser run confirmation; later workspace changes do not change run attribution.",
+    "product_source_manifest_sha256": "dcd1f6cb59e8f263a88e206a5baaeedebbbfadc10927222b638ad6cccf349390",
+    "source_file_count": 65,
+    "source_snapshot_payload_sha256": "3a3b0223f863e8065d5500d09d370214dca6b23092e1f1862ef2df4e09b4d25f",
+    "subsequent_change_timeline": "After browser API and model exit and later API boundary runs, the root agent changed orchestration and prompts for reviewer binding diagnostics. Browser runs 4 and 5 remain attributed to the earlier frozen manifest.",
+    "subsequent_workspace_change_confirmed_by_operator": true,
+    "validator_contract_and_owner_read_files_match_frozen_source": true
+  },
+  "status": "PASS"
+}

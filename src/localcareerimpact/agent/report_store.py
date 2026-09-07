@@ -10,6 +10,7 @@ from uuid import uuid4
 from localcareerimpact.app.database import (
     ANALYSIS_TOTAL_STAGES,
     Database,
+    append_run_message,
     update_run_progress_message,
     utc_now_iso,
 )
@@ -112,6 +113,10 @@ class ReportStore:
                 status="complete",
                 current_stage="Analysis complete",
                 completed_stages=ANALYSIS_TOTAL_STAGES,
+            )
+            append_run_message(
+                connection, report.run_id, kind="report", text=report.title,
+                payload={"run_id": report.run_id, "report_id": report_id},
             )
         return SavedReport(
             report_id=report_id,

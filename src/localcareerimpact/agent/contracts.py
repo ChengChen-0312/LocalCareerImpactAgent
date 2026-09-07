@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from copy import deepcopy
 from typing import Annotated, Literal, TypeAlias
 
 from pydantic import AfterValidator, ConfigDict, Field, field_validator, model_validator
@@ -150,6 +151,15 @@ class ResolutionDecisionPack(StrictContract):
 
     resolutions: tuple[SuggestionResolution, ...]
 
+    @classmethod
+    def generation_schema(cls) -> dict[str, object]:
+        schema = cls.model_json_schema()
+        # F1 reasons are qualitative prose; IDs remain in suggestion_id. Prevent
+        # digit copying at generation time without changing the saved contract
+        # or the existing numeric validator (which also checks worded numbers).
+        schema["$defs"]["SuggestionResolution"]["properties"]["reason"]["pattern"] = r"^[^\d]+$"
+        return schema
+
     @model_validator(mode="after")
     def unique_resolution_ids(self) -> ResolutionDecisionPack:
         _unique(
@@ -167,13 +177,15 @@ class RevisedClaim(DraftClaim):
     """
 
     model_config = ConfigDict(json_schema_extra={
-        "if": {
-            "properties": {"basis": {"enum": [
-                "profile", "reasoned_scenario", "recommendation",
-            ]}},
-            "required": ["basis"],
-        },
-        "then": {"properties": {"evidence_refs": {"maxItems": 0}}},
+        # Equivalent to the previous if/then for the closed, required basis enum;
+        # this form is also supported by the generation-time grammar compiler.
+        "anyOf": [
+            {"properties": {"basis": {"const": "rag"}}},
+            {"properties": {
+                "basis": {"enum": ["profile", "reasoned_scenario", "recommendation"]},
+                "evidence_refs": {"maxItems": 0},
+            }},
+        ],
     })
     evidence_refs: tuple[Identifier, ...] = Field(
         description="Use [] unless basis is rag; only rag may cite frozen evidence IDs.",
@@ -185,6 +197,14 @@ class RevisedClaimPack(StrictContract):
 
     overall_impact_band: ImpactBand
     claims: tuple[RevisedClaim, ...] = Field(min_length=1)
+
+    @classmethod
+    def generation_schema(
+        cls, *, evidence_ids: tuple[str, ...] | None = None,
+    ) -> dict[str, object]:
+        return _claim_generation_schema(
+            cls.model_json_schema(), "RevisedClaim", evidence_ids=evidence_ids,
+        )
 
     @model_validator(mode="after")
     def unique_claim_ids(self) -> RevisedClaimPack:
@@ -274,6 +294,37 @@ class ReportNarrativePack(StrictContract):
     title: ShortText
     sections: SemanticReportSections
 
+    @classmethod
+    def generation_schema(
+        cls,
+        language: ReportLanguage,
+        *,
+        revised_claims: tuple[DraftClaim, ...] | None = None,
+    ) -> dict[str, object]:
+        """Bound F3 prose to its token budget without narrowing stored reports."""
+
+        schema = cls.model_json_schema()
+        schema["properties"]["title"]["maxLength"] = 80
+        prose_fields = {
+            "text", "summary_text", "uncertainty_text", "task_text",
+            "rationale_text", "action_text",
+        }
+        for definition in schema["$defs"].values():
+            for name, field in definition.get("properties", {}).items():
+                if name in prose_fields:
+                    field["maxLength"] = 280 if language == "en" else 96
+                    if name != "task_text":
+                        field["pattern"] = r"^(?:[^.!?。！？]|[0-9]+\.[0-9]+)*[.!?。！？]$"
+                elif name == "supporting_claim_ids":
+                    field["maxItems"] = 2
+                elif name == "task_impact_matrix":
+                    field["maxItems"] = 4
+                elif name == "practical_next_actions":
+                    field["maxItems"] = 3
+        if revised_claims is not None:
+            _bind_narrative_claim_schema(schema, revised_claims)
+        return schema
+
 
 class NarrativeSection(StrictContract):
     """`claim_ids[0]` is primary; remaining IDs are supporting claims."""
@@ -335,6 +386,14 @@ class CareerImpactDraft(StrictContract):
     task_impacts: tuple[TaskImpactRow, ...] = Field(min_length=1)
     uncertainties: tuple[ShortText, ...] = Field(min_length=1)
 
+    @classmethod
+    def generation_schema(
+        cls, *, evidence_ids: tuple[str, ...] | None = None,
+    ) -> dict[str, object]:
+        return _claim_generation_schema(
+            cls.model_json_schema(), "DraftClaim", evidence_ids=evidence_ids,
+        )
+
     @model_validator(mode="after")
     def unique_local_ids(self) -> CareerImpactDraft:
         claim_ids = tuple(item.claim_id for item in self.claims)
@@ -345,6 +404,107 @@ class CareerImpactDraft(StrictContract):
         ):
             raise ValueError("draft task row refers to an unknown claim")
         return self
+
+
+def _claim_generation_schema(
+    schema: dict[str, object], definition: str,
+    *, evidence_ids: tuple[str, ...] | None,
+) -> dict[str, object]:
+    """Expose the executable attribution policy without changing saved reports."""
+
+    schema["$defs"][definition]["anyOf"] = [
+        {"properties": {
+            "basis": {"const": "rag"},
+            "horizon": {"type": "null"},
+            "impact_band": {"type": "null"},
+            "evidence_refs": {"minItems": 1, "maxItems": 1},
+        }},
+        {"properties": {
+            "basis": {"const": "reasoned_scenario"},
+            "horizon": {"enum": ["1-3-years", "3-5-years"]},
+            "evidence_refs": {"maxItems": 0},
+        }},
+        {"properties": {
+            "basis": {"const": "recommendation"},
+            "evidence_refs": {"maxItems": 0},
+        }},
+    ]
+    if evidence_ids is not None:
+        if not evidence_ids:
+            raise ValueError("RAG generation requires frozen passage or fact IDs")
+        schema["$defs"][definition]["properties"]["evidence_refs"]["items"]["enum"] = list(dict.fromkeys(evidence_ids))
+    # This local demo uses only the four required roles. The model still chooses
+    # their content and references; the saved report contract is unchanged.
+    schema["properties"]["claims"].update({
+        "minItems": 4,
+        "maxItems": 4,
+        "prefixItems": [
+            {"$ref": f"#/$defs/{definition}", "properties": properties}
+            for properties in (
+                {"basis": {"const": "rag"}},
+                {"basis": {"const": "reasoned_scenario"}, "horizon": {"const": "1-3-years"}},
+                {"basis": {"const": "reasoned_scenario"}, "horizon": {"const": "3-5-years"}},
+                {"basis": {"const": "recommendation"}},
+            )
+        ],
+    })
+    return schema
+
+
+def _bind_narrative_claim_schema(
+    schema: dict[str, object], claims: tuple[DraftClaim, ...],
+) -> None:
+    """Let the main model choose references only within each section's purpose."""
+
+    definitions = schema["$defs"]
+    backgrounds = [item.claim_id for item in claims if item.basis == "rag"]
+    scenarios = [item.claim_id for item in claims if item.basis == "reasoned_scenario"]
+    recommendations = [item.claim_id for item in claims if item.basis == "recommendation"]
+    if not backgrounds or not scenarios or not recommendations:
+        raise ValueError("F3 requires background, scenario and recommendation claims")
+
+    definitions["NarrativeDecision"]["properties"]["primary_claim_id"]["enum"] = [
+        item.claim_id for item in claims
+    ]
+    for definition in definitions.values():
+        support = definition.get("properties", {}).get("supporting_claim_ids")
+        if support is not None:
+            support["items"]["enum"] = [item.claim_id for item in claims]
+
+    for name in ("SemanticHorizonScenario", "SemanticTaskImpactRow"):
+        definition = definitions[name]
+        definition["properties"]["primary_claim_id"]["enum"] = scenarios
+        definition["anyOf"] = []
+        for horizon in ("1-3-years", "3-5-years"):
+            matching = [
+                item.claim_id for item in claims
+                if item.basis == "reasoned_scenario" and item.horizon == horizon
+            ]
+            if not matching:
+                raise ValueError("F3 requires a scenario claim for each report horizon")
+            definition["anyOf"].append({"properties": {
+                "horizon": {"const": horizon},
+                "primary_claim_id": {"enum": matching},
+            }})
+    definitions["SemanticActionItem"]["properties"]["primary_claim_id"]["enum"] = recommendations
+
+    sections = definitions["SemanticReportSections"]["properties"]
+    for field, allowed in (
+        ("occupation_summary", backgrounds),
+        ("opportunities", [*scenarios, *recommendations]),
+        ("risks_and_uncertainty", scenarios),
+    ):
+        definition_name = f"{field}_narrative"
+        section_name = f"{field}_section"
+        narrative = deepcopy(definitions["NarrativeDecision"])
+        narrative["properties"]["primary_claim_id"]["enum"] = allowed
+        if field == "occupation_summary":
+            narrative["properties"]["supporting_claim_ids"]["maxItems"] = 0
+        definitions[definition_name] = narrative
+        section = deepcopy(definitions["SemanticNarrativeSection"])
+        section["properties"]["summary"] = {"$ref": f"#/$defs/{definition_name}"}
+        definitions[section_name] = section
+        sections[field] = {"$ref": f"#/$defs/{section_name}"}
 
 
 class MvpReportV1(StrictContract):

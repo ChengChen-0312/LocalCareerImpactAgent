@@ -11,6 +11,8 @@ import type {
   ProfileCard,
   ProfileConfirmationResult,
   Session,
+  RunDetail,
+  ReportDetail,
 } from "./types";
 
 export class ApiError extends Error {
@@ -114,6 +116,17 @@ export const api = {
       signal,
     },
   ),
+
+  getRun: (runId: string, signal?: AbortSignal) =>
+    request<RunDetail>(`/api/runs/${encodeURIComponent(runId)}`, { signal }),
+
+  runEvents: (runId: string, after: number) => new EventSource(
+    `/api/runs/${encodeURIComponent(runId)}/events?after=${after}`,
+    { withCredentials: true },
+  ),
+
+  getReport: (reportId: string, signal?: AbortSignal) =>
+    request<ReportDetail>(`/api/reports/${encodeURIComponent(reportId)}`, { signal }),
 
   listKnowledgeDocuments: (signal?: AbortSignal) =>
     request<KnowledgeDocumentList>("/api/admin/knowledge/documents", { signal }),

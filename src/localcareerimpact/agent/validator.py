@@ -50,10 +50,15 @@ StageValidationCategoryCode: TypeAlias = Literal[
     "HORIZON_STRUCTURE",
     "PERSONAL_PROBABILITY",
     "VISIBLE_LANGUAGE",
+    "UNSTRUCTURED_NUMERIC",
+    "RAG_NUMERIC_GROUNDING",
 ]
 
 _NUMERIC = re.compile(
     r"(?<![\w])(?:\d+(?:\.\d+)?|\.\d+)\s*(?:%|percent|percentage)?", re.I
+)
+_CLASSIFICATION_MARKER = re.compile(
+    r"(?<![A-Za-z])(?:ANZSCO|OSCA)(?![A-Za-z])", re.I
 )
 _ZERO_TO_TEN_WORD = r"(?:zero|one|two|three|four|five|six|seven|eight|nine|ten)"
 _ZERO_TO_TWENTY_WORD = (
@@ -184,6 +189,11 @@ class StageValidationResult:
 
     errors: tuple[StageValidationCategoryCode, ...]
     error_path: tuple[int | str, ...] = ()
+    numeric_digit_pattern: bool | None = None
+    numeric_english_pattern: bool | None = None
+    numeric_chinese_expression_pattern: bool | None = None
+    structural_horizon_adjacent_chinese: bool | None = None
+    numeric_after_adjacent_horizon_removal: bool | None = None
 
     @property
     def valid(self) -> bool:
@@ -217,6 +227,17 @@ def validate_resolution_decision_pack(
         errors.append("PERSONAL_PROBABILITY")
     if texts and not matches_report_language(texts, language):
         errors.append("VISIBLE_LANGUAGE")
+    numeric_index = next((
+        index for index, text in enumerate(texts) if _has_factual_numeric(text)
+    ), None)
+    if numeric_index is not None:
+        errors.append("UNSTRUCTURED_NUMERIC")
+    if errors and errors[0] == "UNSTRUCTURED_NUMERIC" and numeric_index is not None:
+        return StageValidationResult(
+            errors=tuple(errors),
+            error_path=("resolutions", numeric_index, "reason"),
+            **_numeric_pattern_diagnostics(texts[numeric_index]),
+        )
     return _stage_result(errors)
 
 
@@ -226,18 +247,97 @@ def validate_draft_binding(
     run_id: str,
     snapshot_id: str,
     language: ReportLanguage,
+    fact_pack: FactPack | None = None,
 ) -> StageValidationResult:
-    """Keep the existing draft identity gate inside the recorded attempt."""
+    """Check draft identity and claim roles inside the existing bounded attempt."""
 
     field = next((
         name for name, expected in (
             ("run_id", run_id), ("snapshot_id", snapshot_id), ("language", language),
         ) if getattr(draft, name) != expected
     ), None)
+    if field:
+        return StageValidationResult(errors=("DRAFT_BINDING",), error_path=(field,))
+    issues = _claim_attribution_issues(draft.claims, fact_pack=fact_pack)
     return StageValidationResult(
-        errors=("DRAFT_BINDING",) if field else (),
-        error_path=(field,) if field else (),
+        errors=tuple(category for category, _ in issues),
+        error_path=issues[0][1] if issues else (),
     )
+
+
+def _claim_attribution_issues(
+    claims: tuple[DraftClaim, ...],
+    *,
+    fact_pack: FactPack | None,
+) -> list[tuple[StageValidationCategoryCode, tuple[int | str, ...]]]:
+    """Reject role/evidence mismatches; never rewrite the model's decision."""
+
+    issues: list[tuple[StageValidationCategoryCode, tuple[int | str, ...]]] = []
+    content_ids = (
+        {item.fact_id for item in fact_pack.facts}
+        | {item.evidence_id for item in fact_pack.passages}
+    ) if fact_pack is not None else None
+    valid_ids = fact_pack_record_ids(fact_pack) if fact_pack is not None else None
+    cited_classifications = (
+        {
+            item.evidence_id: {
+                match.group().upper() for match in _CLASSIFICATION_MARKER.finditer(item.text)
+            }
+            for item in fact_pack.passages
+        } | {
+            item.fact_id: {item.answered_scope.classification}
+            for item in fact_pack.facts
+        }
+    ) if fact_pack is not None else {}
+    for index, claim in enumerate(claims):
+        if claim.basis == "profile":
+            issues.append(("CLAIM_BINDING", ("claims", index, "basis")))
+        if claim.basis in {"rag", "profile"}:
+            for field in ("horizon", "impact_band"):
+                if getattr(claim, field) is not None:
+                    issues.append(("CLAIM_BINDING", ("claims", index, field)))
+        if claim.basis == "reasoned_scenario" and claim.horizon not in {
+            "1-3-years", "3-5-years",
+        }:
+            issues.append(("HORIZON_STRUCTURE", ("claims", index, "horizon")))
+        if claim.basis != "rag" and claim.evidence_refs:
+            issues.append(("EVIDENCE_SCOPE", ("claims", index, "evidence_refs")))
+        elif claim.basis == "rag" and (
+            len(claim.evidence_refs) != 1
+            or content_ids is not None and not content_ids.intersection(claim.evidence_refs)
+        ):
+            issues.append(("EVIDENCE_REFERENCE", ("claims", index, "evidence_refs")))
+        if valid_ids is not None:
+            for ref_index, evidence_ref in enumerate(claim.evidence_refs):
+                if evidence_ref not in valid_ids or (
+                    claim.basis == "rag" and content_ids is not None
+                    and evidence_ref not in content_ids
+                ):
+                    issues.append((
+                        "EVIDENCE_REFERENCE", ("claims", index, "evidence_refs", ref_index),
+                    ))
+        if claim.basis == "rag" and len(claim.evidence_refs) == 1:
+            allowed = cited_classifications.get(claim.evidence_refs[0])
+            if allowed is not None:
+                for field in ("text", "uncertainty"):
+                    stated = {
+                        match.group().upper()
+                        for match in _CLASSIFICATION_MARKER.finditer(getattr(claim, field))
+                    }
+                    if not stated.issubset(allowed):
+                        issues.append(("EVIDENCE_REFERENCE", ("claims", index, field)))
+
+    if not any(claim.basis == "rag" for claim in claims):
+        issues.append(("CLAIM_BINDING", ("claims",)))
+    if not any(claim.basis == "recommendation" for claim in claims):
+        issues.append(("CLAIM_BINDING", ("claims",)))
+    for horizon in ("1-3-years", "3-5-years"):
+        if not any(
+            claim.basis == "reasoned_scenario" and claim.horizon == horizon
+            for claim in claims
+        ):
+            issues.append(("HORIZON_STRUCTURE", ("claims",)))
+    return issues
 
 
 def validate_revised_claim_pack(
@@ -254,19 +354,9 @@ def validate_revised_claim_pack(
     actual = Counter(item.claim_id for item in revised.claims)
     if expected != actual:
         errors.append("CLAIM_BINDING")
-    valid_evidence = fact_pack_record_ids(fact_pack)
-    invalid_scope_index = next((
-        index for index, item in enumerate(revised.claims)
-        if item.basis != "rag" and item.evidence_refs
-    ), None)
-    if invalid_scope_index is not None:
-        errors.append("EVIDENCE_SCOPE")
-    if any(
-        evidence_ref not in valid_evidence
-        for item in revised.claims
-        for evidence_ref in item.evidence_refs
-    ):
-        errors.append("EVIDENCE_REFERENCE")
+    attribution = _claim_attribution_issues(revised.claims, fact_pack=fact_pack)
+    first_path = ("claims",) if errors else attribution[0][1] if attribution else ()
+    errors.extend(category for category, _ in attribution)
     texts = tuple(
         value
         for item in revised.claims
@@ -276,10 +366,16 @@ def validate_revised_claim_pack(
         errors.append("PERSONAL_PROBABILITY")
     if not matches_report_language(texts, language):
         errors.append("VISIBLE_LANGUAGE")
+    if any(
+        item.basis == "rag"
+        and (_has_factual_numeric(item.text) or _has_factual_numeric(item.uncertainty))
+        and not item.evidence_refs
+        for item in revised.claims
+    ):
+        errors.append("RAG_NUMERIC_GROUNDING")
     return StageValidationResult(
         errors=tuple(errors),
-        error_path=("claims", invalid_scope_index, "evidence_refs")
-        if errors and errors[0] == "EVIDENCE_SCOPE" else (),
+        error_path=first_path,
     )
 
 
@@ -292,14 +388,10 @@ def validate_report_narrative_pack(
     """Validate F3 claim references, exact horizons, and visible prose."""
 
     errors: list[StageValidationCategoryCode] = []
-    valid_claim_ids = {item.claim_id for item in revised_claims}
+    claim_by_id = {item.claim_id: item for item in revised_claims}
     decisions = tuple(_narrative_decisions(narratives))
-    if any(
-        claim_id not in valid_claim_ids
-        for decision in decisions
-        for claim_id in decision.claim_ids
-    ):
-        errors.append("NARRATIVE_REFERENCE")
+    attribution = _narrative_attribution_issues(narratives, claim_by_id)
+    errors.extend(category for category, _ in attribution)
     horizons = Counter(
         item.horizon for item in narratives.sections.horizon_scenarios
     )
@@ -310,7 +402,76 @@ def validate_report_narrative_pack(
         errors.append("PERSONAL_PROBABILITY")
     if not matches_report_language(texts, language):
         errors.append("VISIBLE_LANGUAGE")
-    return _stage_result(errors)
+    if _has_factual_numeric(narratives.title):
+        errors.append("UNSTRUCTURED_NUMERIC")
+    for decision in decisions:
+        primary_claim = claim_by_id.get(decision.primary_claim_id)
+        if (
+            primary_claim is not None
+            and primary_claim.basis == "rag"
+            and _has_factual_numeric(decision.text)
+            and not any(
+                claim_by_id[claim_id].evidence_refs
+                for claim_id in decision.claim_ids
+                if claim_id in claim_by_id
+            )
+        ):
+            errors.append("RAG_NUMERIC_GROUNDING")
+            break
+    return StageValidationResult(
+        errors=tuple(errors), error_path=attribution[0][1] if attribution else (),
+    )
+
+
+def _narrative_attribution_issues(
+    narratives: ReportNarrativePack | MvpReportV1,
+    claim_by_id: dict[str, DraftClaim],
+) -> list[tuple[StageValidationCategoryCode, tuple[int | str, ...]]]:
+    issues: list[tuple[StageValidationCategoryCode, tuple[int | str, ...]]] = []
+    sections = narratives.sections
+    semantic = isinstance(narratives, ReportNarrativePack)
+    selections = [
+        (
+            section.summary if semantic else section,
+            ("sections", name, "summary") if semantic else ("sections", name),
+            allowed_bases, None,
+        )
+        for name, section, allowed_bases in (
+            ("occupation_summary", sections.occupation_summary, {"rag"}),
+            ("opportunities", sections.opportunities, {"reasoned_scenario", "recommendation"}),
+            ("risks_and_uncertainty", sections.risks_and_uncertainty, {"reasoned_scenario"}),
+        )
+    ]
+    for field in ("horizon_scenarios", "task_impact_matrix", "practical_next_actions"):
+        for index, item in enumerate(getattr(sections, field)):
+            scenario = field != "practical_next_actions"
+            selections.append((
+                item, ("sections", field, index),
+                {"reasoned_scenario"} if scenario else {"recommendation"},
+                item.horizon if scenario else None,
+            ))
+    for selection, path, allowed_bases, horizon in selections:
+        primary_id = selection.primary_claim_id if semantic else selection.claim_ids[0]
+        primary_path = (*path, "primary_claim_id") if semantic else (*path, "claim_ids", 0)
+        supporting_ids = selection.supporting_claim_ids if semantic else selection.claim_ids[1:]
+        if path[1] == "occupation_summary" and supporting_ids:
+            support_path = (*path, "supporting_claim_ids") if semantic else (*path, "claim_ids", 1)
+            issues.append(("NARRATIVE_REFERENCE", support_path))
+        primary = claim_by_id.get(primary_id)
+        if primary is None or allowed_bases is not None and primary.basis not in allowed_bases:
+            issues.append(("NARRATIVE_REFERENCE", primary_path))
+        elif horizon is not None and primary.horizon != horizon:
+            issues.append(("HORIZON_STRUCTURE", primary_path))
+        for index, claim_id in enumerate(supporting_ids):
+            if claim_id not in claim_by_id:
+                ref_path = (*path, "supporting_claim_ids", index) if semantic else (*path, "claim_ids", index + 1)
+                issues.append(("NARRATIVE_REFERENCE", ref_path))
+    if (
+        sections.risks_and_uncertainty.summary.text.strip()
+        == sections.occupation_summary.summary.text.strip()
+    ):
+        issues.append(("NARRATIVE_REFERENCE", ("sections", "risks_and_uncertainty", "summary", "text")))
+    return issues
 
 
 def _narrative_decisions(
@@ -337,6 +498,12 @@ def _narrative_decisions(
 
 
 def _validation_category(error: str) -> ValidationCategoryCode:
+    if error.startswith(("claim attribution ", "narrative attribution ")):
+        if " HORIZON_STRUCTURE " in error:
+            return "HORIZON_STRUCTURE"
+        if " EVIDENCE_" in error:
+            return "EVIDENCE_REFERENCE"
+        return "ORIGIN_LINKAGE" if error.startswith("claim ") else "NARRATIVE_LINKAGE"
     if error.startswith(
         ("schema_version ", "run_id ", "snapshot_id ", "report language ")
     ):
@@ -418,6 +585,10 @@ def validate_report(
         errors.append(f"citation {evidence_ref} is absent from the frozen FactPack")
 
     claim_by_id = {claim.claim_id: claim for claim in report.claims}
+    for category, path in _claim_attribution_issues(report.claims, fact_pack=fact_pack):
+        errors.append(f"claim attribution {category} at {'.'.join(map(str, path))}")
+    for category, path in _narrative_attribution_issues(report, claim_by_id):
+        errors.append(f"narrative attribution {category} at {'.'.join(map(str, path))}")
     for claim in report.claims:
         if claim.basis != "rag" and claim.evidence_refs:
             errors.append(
@@ -813,12 +984,54 @@ def _has_factual_numeric(text: str) -> bool:
     )
 
 
+_DIAGNOSTIC_HORIZON_CANDIDATE = re.compile(
+    r"(?i)(?<!\d)(?:(?:1\s*[-–—]\s*3|3\s*[-–—]\s*5)\s*(?:years?|年)|"
+    r"(?:1\s*(?:至|到)\s*3|3\s*(?:至|到)\s*5)\s*年)"
+)
+_DIAGNOSTIC_HAN_CHARACTER = re.compile(r"[\u3400-\u9fff]")
+
+
+def _numeric_pattern_diagnostics(text: str) -> dict[str, bool]:
+    """Describe the existing numeric rejection without retaining matched content.
+
+    The independent horizon flag records adjacency only. It neither changes the
+    validator's horizon subtraction nor proves why any real output was rejected.
+    """
+
+    without_horizon = _STRUCTURAL_HORIZON.sub("", text)
+    def adjacent_to_han(match: re.Match[str]) -> bool:
+        return (
+            (match.start() > 0 and _DIAGNOSTIC_HAN_CHARACTER.fullmatch(text[match.start() - 1]) is not None)
+            or (match.end() < len(text) and _DIAGNOSTIC_HAN_CHARACTER.fullmatch(text[match.end()]) is not None)
+        )
+
+    adjacent_han = any(
+        adjacent_to_han(match) for match in _DIAGNOSTIC_HORIZON_CANDIDATE.finditer(text)
+    )
+    diagnostic_without_adjacent_horizon = _DIAGNOSTIC_HORIZON_CANDIDATE.sub(
+        lambda match: "" if adjacent_to_han(match) else match.group(0), text,
+    )
+    return {
+        "numeric_digit_pattern": _NUMERIC.search(without_horizon) is not None,
+        "numeric_english_pattern": any(
+            pattern.search(without_horizon) is not None
+            for pattern in (
+                _ENGLISH_SMALL_NUMBER, _ENGLISH_WORD_PERCENT,
+                _ENGLISH_WORD_RATIO, _ENGLISH_WORD_FRACTION,
+            )
+        ),
+        "numeric_chinese_expression_pattern": _CHINESE_NUMBER_EXPRESSION.search(without_horizon) is not None,
+        "structural_horizon_adjacent_chinese": adjacent_han,
+        "numeric_after_adjacent_horizon_removal": _has_factual_numeric(diagnostic_without_adjacent_horizon),
+    }
+
+
 def citation_relevance_text(language: ReportLanguage) -> str:
     """Return fixed prose without copying source metadata into the report."""
 
     if language == "zh":
-        return "冻结的本地证据支持所关联的 RAG 声明。"
-    return "Frozen local evidence supports the linked RAG claims."
+        return "所关联声明引用的冻结本地证据。"
+    return "Frozen local evidence cited by the linked claims."
 
 
 __all__ = [

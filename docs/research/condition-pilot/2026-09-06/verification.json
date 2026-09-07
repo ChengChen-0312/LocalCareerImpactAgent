@@ -1,0 +1,598 @@
+{
+  "verified_at_utc": "2026-09-06T13:01:08.541157+00:00",
+  "execution_head": "617927cdf5cd0b465d8177f69e5e85187f7eb41b",
+  "cases": {
+    "A": {
+      "run_id": "af20b6ee-7325-4c52-9522-2543ec06eb8f",
+      "report_id": "8c80a7d3-4800-4326-9053-3fa57ae33f9c",
+      "full_request_count": 1,
+      "status": "COMPLETE",
+      "language": "zh",
+      "analysis_duration_seconds": 274.322786,
+      "api_run_status": "complete",
+      "completed_stages": 9,
+      "total_stages": 9,
+      "completed_event_stages": [
+        "retrieval",
+        "draft",
+        "evidence_review",
+        "boundary_review",
+        "safety_review",
+        "resolution_decision",
+        "revised_claims",
+        "report_narratives",
+        "validation"
+      ],
+      "model_stage_attempts": [
+        {
+          "stage": "draft",
+          "attempt": 1,
+          "status": "complete",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 10323,
+            "generation_tokens": 1255,
+            "total_tokens": 11578,
+            "generation_limit": 4096,
+            "reached_generation_limit": false
+          }
+        },
+        {
+          "stage": "evidence_review",
+          "attempt": 1,
+          "status": "complete",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 10402,
+            "generation_tokens": 740,
+            "total_tokens": 11142,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          }
+        },
+        {
+          "stage": "boundary_review",
+          "attempt": 1,
+          "status": "complete",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 10313,
+            "generation_tokens": 738,
+            "total_tokens": 11051,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          }
+        },
+        {
+          "stage": "safety_review",
+          "attempt": 1,
+          "status": "complete",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 10339,
+            "generation_tokens": 771,
+            "total_tokens": 11110,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          }
+        },
+        {
+          "stage": "resolution_decision",
+          "attempt": 1,
+          "status": "complete",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 11459,
+            "generation_tokens": 352,
+            "total_tokens": 11811,
+            "generation_limit": 1536,
+            "reached_generation_limit": false
+          }
+        },
+        {
+          "stage": "revised_claims",
+          "attempt": 1,
+          "status": "complete",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 12393,
+            "generation_tokens": 516,
+            "total_tokens": 12909,
+            "generation_limit": 3072,
+            "reached_generation_limit": false
+          }
+        },
+        {
+          "stage": "report_narratives",
+          "attempt": 1,
+          "status": "complete",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 4696,
+            "generation_tokens": 763,
+            "total_tokens": 5459,
+            "generation_limit": 4096,
+            "reached_generation_limit": false
+          }
+        }
+      ],
+      "validator_valid": true,
+      "validator_error_count": 0,
+      "validator_categories": {},
+      "api_report_matches_saved": true,
+      "citation_count": 1,
+      "api_citations_match_frozen_evidence": true,
+      "retrieved_passages": 8,
+      "intake_industry_context": "企业软件团队",
+      "edited_confirmation_fields": [
+        "occupation_candidates",
+        "region",
+        "industry_context",
+        "goals"
+      ],
+      "task_matrix_rows": 4,
+      "actions": 1,
+      "horizon_bands": [
+        "medium",
+        "medium"
+      ]
+    },
+    "B": {
+      "run_id": "e469b327-ddde-4fa2-bcfc-41904c6ff677",
+      "report_id": "176ad879-369e-42e9-9422-28889c845c98",
+      "full_request_count": 1,
+      "status": "COMPLETE",
+      "language": "zh",
+      "analysis_duration_seconds": 242.707444,
+      "api_run_status": "complete",
+      "completed_stages": 9,
+      "total_stages": 9,
+      "completed_event_stages": [
+        "retrieval",
+        "draft",
+        "evidence_review",
+        "boundary_review",
+        "safety_review",
+        "resolution_decision",
+        "revised_claims",
+        "report_narratives",
+        "validation"
+      ],
+      "model_stage_attempts": [
+        {
+          "stage": "draft",
+          "attempt": 1,
+          "status": "complete",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 10306,
+            "generation_tokens": 1228,
+            "total_tokens": 11534,
+            "generation_limit": 4096,
+            "reached_generation_limit": false
+          }
+        },
+        {
+          "stage": "evidence_review",
+          "attempt": 1,
+          "status": "complete",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 10369,
+            "generation_tokens": 712,
+            "total_tokens": 11081,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          }
+        },
+        {
+          "stage": "boundary_review",
+          "attempt": 1,
+          "status": "complete",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 10280,
+            "generation_tokens": 653,
+            "total_tokens": 10933,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          }
+        },
+        {
+          "stage": "safety_review",
+          "attempt": 1,
+          "status": "complete",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 10306,
+            "generation_tokens": 644,
+            "total_tokens": 10950,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          }
+        },
+        {
+          "stage": "resolution_decision",
+          "attempt": 1,
+          "status": "complete",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 11188,
+            "generation_tokens": 320,
+            "total_tokens": 11508,
+            "generation_limit": 1536,
+            "reached_generation_limit": false
+          }
+        },
+        {
+          "stage": "revised_claims",
+          "attempt": 1,
+          "status": "complete",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 12089,
+            "generation_tokens": 514,
+            "total_tokens": 12603,
+            "generation_limit": 3072,
+            "reached_generation_limit": false
+          }
+        },
+        {
+          "stage": "report_narratives",
+          "attempt": 1,
+          "status": "complete",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 4694,
+            "generation_tokens": 789,
+            "total_tokens": 5483,
+            "generation_limit": 4096,
+            "reached_generation_limit": false
+          }
+        }
+      ],
+      "validator_valid": true,
+      "validator_error_count": 0,
+      "validator_categories": {},
+      "api_report_matches_saved": true,
+      "citation_count": 1,
+      "api_citations_match_frozen_evidence": true,
+      "retrieved_passages": 8,
+      "intake_industry_context": "企业软件团队",
+      "edited_confirmation_fields": [
+        "occupation_candidates",
+        "region",
+        "industry_context",
+        "goals"
+      ],
+      "task_matrix_rows": 4,
+      "actions": 1,
+      "horizon_bands": [
+        "medium",
+        "medium-high"
+      ]
+    },
+    "C": {
+      "run_id": "49368dca-e469-4ae4-82b3-c0f8f00955a2",
+      "report_id": "d0151e1e-92bf-4bcf-9154-d39ff3343fc8",
+      "full_request_count": 1,
+      "status": "COMPLETE",
+      "language": "zh",
+      "analysis_duration_seconds": 246.12346,
+      "api_run_status": "complete",
+      "completed_stages": 9,
+      "total_stages": 9,
+      "completed_event_stages": [
+        "retrieval",
+        "draft",
+        "evidence_review",
+        "boundary_review",
+        "safety_review",
+        "resolution_decision",
+        "revised_claims",
+        "report_narratives",
+        "validation"
+      ],
+      "model_stage_attempts": [
+        {
+          "stage": "draft",
+          "attempt": 1,
+          "status": "complete",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 10379,
+            "generation_tokens": 1194,
+            "total_tokens": 11573,
+            "generation_limit": 4096,
+            "reached_generation_limit": false
+          }
+        },
+        {
+          "stage": "evidence_review",
+          "attempt": 1,
+          "status": "complete",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 10346,
+            "generation_tokens": 720,
+            "total_tokens": 11066,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          }
+        },
+        {
+          "stage": "boundary_review",
+          "attempt": 1,
+          "status": "complete",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 10257,
+            "generation_tokens": 673,
+            "total_tokens": 10930,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          }
+        },
+        {
+          "stage": "safety_review",
+          "attempt": 1,
+          "status": "complete",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 10283,
+            "generation_tokens": 713,
+            "total_tokens": 10996,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          }
+        },
+        {
+          "stage": "resolution_decision",
+          "attempt": 1,
+          "status": "complete",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 11258,
+            "generation_tokens": 383,
+            "total_tokens": 11641,
+            "generation_limit": 1536,
+            "reached_generation_limit": false
+          }
+        },
+        {
+          "stage": "revised_claims",
+          "attempt": 1,
+          "status": "complete",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 12222,
+            "generation_tokens": 548,
+            "total_tokens": 12770,
+            "generation_limit": 3072,
+            "reached_generation_limit": false
+          }
+        },
+        {
+          "stage": "report_narratives",
+          "attempt": 1,
+          "status": "complete",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 4728,
+            "generation_tokens": 693,
+            "total_tokens": 5421,
+            "generation_limit": 4096,
+            "reached_generation_limit": false
+          }
+        }
+      ],
+      "validator_valid": true,
+      "validator_error_count": 0,
+      "validator_categories": {},
+      "api_report_matches_saved": true,
+      "citation_count": 1,
+      "api_citations_match_frozen_evidence": true,
+      "retrieved_passages": 8,
+      "intake_industry_context": "企业软件团队",
+      "edited_confirmation_fields": [
+        "occupation_candidates",
+        "region",
+        "industry_context",
+        "goals"
+      ],
+      "task_matrix_rows": 2,
+      "actions": 3,
+      "horizon_bands": [
+        "medium",
+        "medium-high"
+      ]
+    },
+    "D": {
+      "run_id": "c28f5372-5ca4-4e0c-9af3-22decef16e2c",
+      "report_id": "93363f1a-4d46-47fb-a81c-e8ac730de726",
+      "full_request_count": 1,
+      "status": "COMPLETE",
+      "language": "zh",
+      "analysis_duration_seconds": 228.828534,
+      "api_run_status": "complete",
+      "completed_stages": 9,
+      "total_stages": 9,
+      "completed_event_stages": [
+        "retrieval",
+        "draft",
+        "evidence_review",
+        "boundary_review",
+        "safety_review",
+        "resolution_decision",
+        "revised_claims",
+        "report_narratives",
+        "validation"
+      ],
+      "model_stage_attempts": [
+        {
+          "stage": "draft",
+          "attempt": 1,
+          "status": "complete",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 10334,
+            "generation_tokens": 1271,
+            "total_tokens": 11605,
+            "generation_limit": 4096,
+            "reached_generation_limit": false
+          }
+        },
+        {
+          "stage": "evidence_review",
+          "attempt": 1,
+          "status": "complete",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 10419,
+            "generation_tokens": 721,
+            "total_tokens": 11140,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          }
+        },
+        {
+          "stage": "boundary_review",
+          "attempt": 1,
+          "status": "complete",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 10330,
+            "generation_tokens": 770,
+            "total_tokens": 11100,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          }
+        },
+        {
+          "stage": "safety_review",
+          "attempt": 1,
+          "status": "complete",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 10356,
+            "generation_tokens": 701,
+            "total_tokens": 11057,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          }
+        },
+        {
+          "stage": "resolution_decision",
+          "attempt": 1,
+          "status": "complete",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 11419,
+            "generation_tokens": 331,
+            "total_tokens": 11750,
+            "generation_limit": 1536,
+            "reached_generation_limit": false
+          }
+        },
+        {
+          "stage": "revised_claims",
+          "attempt": 1,
+          "status": "complete",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 12331,
+            "generation_tokens": 519,
+            "total_tokens": 12850,
+            "generation_limit": 3072,
+            "reached_generation_limit": false
+          }
+        },
+        {
+          "stage": "report_narratives",
+          "attempt": 1,
+          "status": "complete",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 4699,
+            "generation_tokens": 795,
+            "total_tokens": 5494,
+            "generation_limit": 4096,
+            "reached_generation_limit": false
+          }
+        }
+      ],
+      "validator_valid": true,
+      "validator_error_count": 0,
+      "validator_categories": {},
+      "api_report_matches_saved": true,
+      "citation_count": 1,
+      "api_citations_match_frozen_evidence": true,
+      "retrieved_passages": 8,
+      "intake_industry_context": "企业软件团队",
+      "edited_confirmation_fields": [
+        "occupation_candidates",
+        "region",
+        "industry_context",
+        "goals"
+      ],
+      "task_matrix_rows": 4,
+      "actions": 1,
+      "horizon_bands": [
+        "medium",
+        "medium-high"
+      ]
+    }
+  },
+  "checks": {
+    "same_snapshot": true,
+    "same_ordered_passages_source_hash_and_text": true,
+    "confirmed_profile_fields_differing_from_A": {
+      "B": [
+        "industry_context",
+        "confidence_notes"
+      ],
+      "C": [
+        "industry_context",
+        "confidence_notes"
+      ],
+      "D": [
+        "industry_context",
+        "confidence_notes"
+      ]
+    },
+    "inputs_and_protocol": {
+      "file_count": 5,
+      "unchanged": true,
+      "different_paths": []
+    },
+    "implementation_and_test_hashes": {
+      "file_count": 82,
+      "unchanged": true,
+      "different_paths": []
+    },
+    "frozen_test_files": 11,
+    "preexisting_data": {
+      "candidate_profiles": {
+        "original_row_count": 16,
+        "original_rows_unchanged": true,
+        "changed_or_missing_count": 0,
+        "additional_row_count": 4
+      },
+      "reports": {
+        "original_row_count": 11,
+        "original_rows_unchanged": true,
+        "changed_or_missing_count": 0,
+        "additional_row_count": 4
+      }
+    },
+    "active_runs_after_pilot": 0,
+    "local_health": {
+      "database": "ready",
+      "qwen30b": "ready",
+      "qwen4b": "ready"
+    }
+  },
+  "all_four_structural_checks_pass": true,
+  "research_efficacy_established": false,
+  "new_test_or_runner_source_created": false
+}

@@ -1,0 +1,2169 @@
+{
+  "batch": "task-78-review-bound-final-five",
+  "completed_receipt_count": 5,
+  "elapsed_wall_seconds": {
+    "mean": 168.561,
+    "per_stage_durations": "not recorded in safe receipts; token counts are not duration estimates",
+    "sum": 842.804
+  },
+  "expected_run_count": 5,
+  "first_attempt_run_count": 4,
+  "fixed_five_scenarios_passed": true,
+  "generation_attempts": {
+    "complete": 40,
+    "failed": 1,
+    "retries": 1,
+    "token_metric_fields": [
+      "prompt_tokens",
+      "generation_tokens",
+      "total_tokens",
+      "generation_limit",
+      "reached_generation_limit"
+    ],
+    "total": 41,
+    "totals": {
+      "generation_tokens": 33306,
+      "prompt_tokens": 172596,
+      "total_tokens": 205902
+    }
+  },
+  "integrity": {
+    "algorithm": "SHA-256",
+    "payload_sha256": "2a1c7e16ef953e6a0ec2dba31b04053ffb5a382d004eb1d036b0d9128b8bf291",
+    "scope": "canonical JSON excluding integrity"
+  },
+  "limits": {
+    "citation_scope_coverage": "Actual citation counts are retained; this batch exercised passage citations only when source counts are zero.",
+    "cleanup": "Cleanup and process exit were recorded and hashed by the reader before/after each disposable run; aggregation did not restart models or reconstruct deleted databases.",
+    "decision_breakdown": "The receipts retain exact suggestion binding and resolution counts, not accepted/rejected totals.",
+    "generation_failure_root_cause": "One F1 numeric validation failure and successful retry are recorded; rejected prose is neither retained nor reconstructed.",
+    "injection": "The single fixed injection fixture passed its exact marker and product gates; this is not a general prompt-injection resistance claim.",
+    "language_and_prose": "Language gates and final validator passed; API receipts do not retain prose for a fresh semantic-quality read. Browser reading remains separately bound to its earlier source.",
+    "privacy": "Only operational counts, closed diagnostic categories, booleans and hashes are published. No user text, credentials, private paths, original review advice or report body.",
+    "time": "Total is the sum of five recorded per-run wall times; no per-stage timings were recorded.",
+    "unretained_identity_hashes": "Disposable identifiers and report bodies were deleted. Opaque run/report/snapshot identifier hashes in original receipts cannot be regenerated now and are omitted from this public aggregate."
+  },
+  "long_term_stability_claimed": false,
+  "missing_run_numbers": [],
+  "provenance": {
+    "acceptance_reader_sha256": "aa2ba4e3aea914fac0da1fb4de471ce1bcf4cbd73513ec835c71b8947157aff8",
+    "all_65_source_file_hashes_recomputed_match_current": true,
+    "browser_evidence_source_manifest_sha256": "dcd1f6cb59e8f263a88e206a5baaeedebbbfadc10927222b638ad6cccf349390",
+    "changed_file_count_since_browser_source": 2,
+    "current_test_source_count": 11,
+    "current_test_sources_equal_head": true,
+    "report_contract_validator_and_ui_source_same_as_browser": true,
+    "repository_heads": [
+      "d23f9c3a6f8060f8e9f1aacc5bc4d26939fc4523"
+    ],
+    "same_product_source_hashes": true,
+    "same_reader_hash": true,
+    "same_source_as_browser_acceptance": false,
+    "source_file_count": 65,
+    "source_manifest_digest_definition": "SHA-256 of canonical UTF-8 JSON of sorted repository-relative file to SHA-256 mapping",
+    "source_manifest_sha256": "0e960183c9c692b08ae25d117b332386257ab8c613cb774826071ed7ce8a51b7",
+    "test_source_manifest_sha256": "72d33b4103cda032d25585a1e13e7ff11ca79c496586e2bb4905263908e9c613"
+  },
+  "recorded_at_utc": "2026-09-05T17:02:13.364909+00:00",
+  "runs": [
+    {
+      "cleanup": {
+        "api_process_exited": true,
+        "api_returncode": 0,
+        "candidate_upload_remaining": 0,
+        "disposable_account_deleted": true,
+        "disposable_database_deleted": true,
+        "disposable_root_deleted": true,
+        "disposable_source_deleted": true,
+        "final_summary_reread_valid": true,
+        "qwen_processes_remaining": 0,
+        "safe_summary_written_and_reread_before_disposable_data_cleanup": true,
+        "session_destroyed": true,
+        "test_diff_count": 0,
+        "test_manifest_unchanged": true,
+        "worker_returncodes": {
+          "qwen30b": -15,
+          "qwen4b": -15
+        },
+        "workers_exited": true
+      },
+      "completed_stage_count": 9,
+      "completed_stage_sequence": [
+        "retrieval",
+        "draft",
+        "evidence_review",
+        "boundary_review",
+        "safety_review",
+        "resolution_decision",
+        "revised_claims",
+        "report_narratives",
+        "validation"
+      ],
+      "elapsed_wall_seconds": 186.13,
+      "event_count": 18,
+      "event_status_counts": {
+        "complete": 9,
+        "running": 9
+      },
+      "failure_diagnostics": {
+        "diagnostic_reader_failure_category": null,
+        "failure_category": null,
+        "product_failure_category": null,
+        "product_failure_code": null,
+        "product_failure_stage": null,
+        "validator_category_counts": {},
+        "verification_failure_category": null
+      },
+      "hashes": {
+        "acceptance_reader_sha256": "aa2ba4e3aea914fac0da1fb4de471ce1bcf4cbd73513ec835c71b8947157aff8",
+        "product_source_manifest_sha256": "0e960183c9c692b08ae25d117b332386257ab8c613cb774826071ed7ce8a51b7",
+        "recomputed_pre_cleanup_receipt_sha256": "fd76865a3c757896a9f3b6c2e5773752b18fe6eb82fc88d9c2dd73f49ded2367",
+        "recomputed_scenario_sha256": "9a38874d7464e3815e2d3a9d7f8ee9808bdaf462ffb9a2d8fca8665320ec6ab9",
+        "recomputed_summary_payload_sha256": "f782490dc0fdd2358ebfc42e64a21bc794028a5e9d9a0649bd0fa086e1b71a37",
+        "source_summary_bytes_sha256": "dcf715f5913f8134126f2b2c8f031a5805a8a4a2abbd710ba7a91c0c88cceed5"
+      },
+      "injection": {
+        "attack_marker_present": null,
+        "evaluated": false,
+        "marker_match_count": null
+      },
+      "input_and_confirmation_counts": {
+        "candidate_codepoints": 476,
+        "confirmation_normalized_fields": [],
+        "confirmed_profile_codepoints": 816,
+        "confirmed_profile_dimensions": {
+          "goals": 1,
+          "occupation_candidates": 1,
+          "responsibilities": 10,
+          "skills": 12
+        },
+        "confirmed_profile_matches_normalized_submission": true,
+        "confirmed_profile_matches_submission": true,
+        "initial_profile_dimensions": {
+          "goals": 0,
+          "occupation_candidates": 1,
+          "responsibilities": 10,
+          "skills": 12
+        },
+        "initial_profile_optional_fields_present": {
+          "industry_context": false,
+          "region": true,
+          "years_of_experience": true
+        },
+        "knowledge_codepoints": 919
+      },
+      "language": {
+        "expected": "en",
+        "observed": "en",
+        "visible_language_matches_expected": true
+      },
+      "model_stages": {
+        "boundary_review": {
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "boundary": "validation",
+              "category": null,
+              "context_codepoints": 14888,
+              "metrics": {
+                "generation_limit": 2048,
+                "generation_tokens": 807,
+                "prompt_tokens": 4485,
+                "reached_generation_limit": false,
+                "total_tokens": 5292
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": null,
+                "numeric_chinese_expression_pattern": null,
+                "numeric_digit_pattern": null,
+                "numeric_english_pattern": null,
+                "structural_horizon_adjacent_chinese": null
+              },
+              "parse_error_offset": null,
+              "stage": "boundary_review",
+              "status": "complete",
+              "validator_categories": {}
+            }
+          ],
+          "final_status": "complete",
+          "retry_count": 0
+        },
+        "draft": {
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "boundary": "validation",
+              "category": null,
+              "context_codepoints": 11920,
+              "metrics": {
+                "generation_limit": 4096,
+                "generation_tokens": 2009,
+                "prompt_tokens": 4006,
+                "reached_generation_limit": false,
+                "total_tokens": 6015
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": null,
+                "numeric_chinese_expression_pattern": null,
+                "numeric_digit_pattern": null,
+                "numeric_english_pattern": null,
+                "structural_horizon_adjacent_chinese": null
+              },
+              "parse_error_offset": null,
+              "stage": "draft",
+              "status": "complete",
+              "validator_categories": {}
+            }
+          ],
+          "final_status": "complete",
+          "retry_count": 0
+        },
+        "evidence_review": {
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "boundary": "validation",
+              "category": null,
+              "context_codepoints": 14851,
+              "metrics": {
+                "generation_limit": 2048,
+                "generation_tokens": 873,
+                "prompt_tokens": 4485,
+                "reached_generation_limit": false,
+                "total_tokens": 5358
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": null,
+                "numeric_chinese_expression_pattern": null,
+                "numeric_digit_pattern": null,
+                "numeric_english_pattern": null,
+                "structural_horizon_adjacent_chinese": null
+              },
+              "parse_error_offset": null,
+              "stage": "evidence_review",
+              "status": "complete",
+              "validator_categories": {}
+            }
+          ],
+          "final_status": "complete",
+          "retry_count": 0
+        },
+        "profile": {
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "boundary": "contract",
+              "category": null,
+              "context_codepoints": 2732,
+              "metrics": {
+                "generation_limit": 1600,
+                "generation_tokens": 160,
+                "prompt_tokens": 752,
+                "reached_generation_limit": false,
+                "total_tokens": 912
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": null,
+                "numeric_chinese_expression_pattern": null,
+                "numeric_digit_pattern": null,
+                "numeric_english_pattern": null,
+                "structural_horizon_adjacent_chinese": null
+              },
+              "parse_error_offset": null,
+              "stage": "profile",
+              "status": "complete",
+              "validator_categories": {}
+            }
+          ],
+          "final_status": "complete",
+          "retry_count": 0
+        },
+        "report_narratives": {
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "boundary": "validation",
+              "category": null,
+              "context_codepoints": 12647,
+              "metrics": {
+                "generation_limit": 4096,
+                "generation_tokens": 1003,
+                "prompt_tokens": 3945,
+                "reached_generation_limit": false,
+                "total_tokens": 4948
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": null,
+                "numeric_chinese_expression_pattern": null,
+                "numeric_digit_pattern": null,
+                "numeric_english_pattern": null,
+                "structural_horizon_adjacent_chinese": null
+              },
+              "parse_error_offset": null,
+              "stage": "report_narratives",
+              "status": "complete",
+              "validator_categories": {}
+            }
+          ],
+          "final_status": "complete",
+          "retry_count": 0
+        },
+        "resolution_decision": {
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "boundary": "validation",
+              "category": null,
+              "context_codepoints": 14173,
+              "metrics": {
+                "generation_limit": 1536,
+                "generation_tokens": 479,
+                "prompt_tokens": 4121,
+                "reached_generation_limit": false,
+                "total_tokens": 4600
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": null,
+                "numeric_chinese_expression_pattern": null,
+                "numeric_digit_pattern": null,
+                "numeric_english_pattern": null,
+                "structural_horizon_adjacent_chinese": null
+              },
+              "parse_error_offset": null,
+              "stage": "resolution_decision",
+              "status": "complete",
+              "validator_categories": {}
+            }
+          ],
+          "final_status": "complete",
+          "retry_count": 0
+        },
+        "revised_claims": {
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "boundary": "validation",
+              "category": null,
+              "context_codepoints": 22676,
+              "metrics": {
+                "generation_limit": 3072,
+                "generation_tokens": 1755,
+                "prompt_tokens": 6895,
+                "reached_generation_limit": false,
+                "total_tokens": 8650
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": null,
+                "numeric_chinese_expression_pattern": null,
+                "numeric_digit_pattern": null,
+                "numeric_english_pattern": null,
+                "structural_horizon_adjacent_chinese": null
+              },
+              "parse_error_offset": null,
+              "stage": "revised_claims",
+              "status": "complete",
+              "validator_categories": {}
+            }
+          ],
+          "final_status": "complete",
+          "retry_count": 0
+        },
+        "safety_review": {
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "boundary": "validation",
+              "category": null,
+              "context_codepoints": 14987,
+              "metrics": {
+                "generation_limit": 2048,
+                "generation_tokens": 846,
+                "prompt_tokens": 4511,
+                "reached_generation_limit": false,
+                "total_tokens": 5357
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": null,
+                "numeric_chinese_expression_pattern": null,
+                "numeric_digit_pattern": null,
+                "numeric_english_pattern": null,
+                "structural_horizon_adjacent_chinese": null
+              },
+              "parse_error_offset": null,
+              "stage": "safety_review",
+              "status": "complete",
+              "validator_categories": {}
+            }
+          ],
+          "final_status": "complete",
+          "retry_count": 0
+        }
+      },
+      "report_and_citations": {
+        "citation_api_applicable": true,
+        "citation_api_targets_resolve_same_snapshot": true,
+        "citation_count": 2,
+        "citation_factpack_targets_resolve": true,
+        "citation_passage_count": 2,
+        "citation_refs_unique": true,
+        "citation_source_count": 0,
+        "database_report_count": 1,
+        "owner_report_citation_details_exact": true,
+        "owner_report_equals_stored": true,
+        "report_count": 1,
+        "report_count_before_validation": 0,
+        "report_final_validator_valid": true
+      },
+      "retry_count": 0,
+      "review_decisions": {
+        "acceptance_breakdown": "not_recorded_in_safe_receipts",
+        "accepted_count": null,
+        "multisets_equal": true,
+        "rejected_count": null,
+        "resolution_count": 9,
+        "role_result_sets": {
+          "boundary_review": {
+            "attempt": 1,
+            "count": 3,
+            "present": true
+          },
+          "evidence_review": {
+            "attempt": 1,
+            "count": 3,
+            "present": true
+          },
+          "safety_review": {
+            "attempt": 1,
+            "count": 3,
+            "present": true
+          }
+        },
+        "suggestion_count": 9
+      },
+      "run_number": 1,
+      "run_status": "COMPLETE",
+      "scenario": "01-baseline",
+      "status": "PASS",
+      "token_totals": {
+        "generation_tokens": 7932,
+        "prompt_tokens": 33200,
+        "total_tokens": 41132
+      },
+      "verification": {
+        "all_model_stage_attempt_sequences_valid": true,
+        "all_nine_stage_start_complete_pairs_exact": true,
+        "all_recorded_token_metrics_complete": true,
+        "all_resources_cleaned": true,
+        "all_semantic_api_gates_true": true,
+        "api_exit_code_zero": true,
+        "current_test_sources_equal_head": true,
+        "language_matches_expected": true,
+        "pre_cleanup_receipt_digest_recomputed": true,
+        "reader_rehashed_and_matching": true,
+        "review_decision_binding_exact": true,
+        "scenario_bytes_digest_recomputed": true,
+        "scenario_identity_matches": true,
+        "scenario_injection_marker_check": true,
+        "source_files_rehashed_and_matching": true,
+        "summary_digest_recomputed": true,
+        "token_metrics_consistent": true,
+        "worker_exit_codes_present": true
+      },
+      "verified_status": "PASS"
+    },
+    {
+      "cleanup": {
+        "api_process_exited": true,
+        "api_returncode": 0,
+        "candidate_upload_remaining": 0,
+        "disposable_account_deleted": true,
+        "disposable_database_deleted": true,
+        "disposable_root_deleted": true,
+        "disposable_source_deleted": true,
+        "final_summary_reread_valid": true,
+        "qwen_processes_remaining": 0,
+        "safe_summary_written_and_reread_before_disposable_data_cleanup": true,
+        "session_destroyed": true,
+        "test_diff_count": 0,
+        "test_manifest_unchanged": true,
+        "worker_returncodes": {
+          "qwen30b": -15,
+          "qwen4b": -15
+        },
+        "workers_exited": true
+      },
+      "completed_stage_count": 9,
+      "completed_stage_sequence": [
+        "retrieval",
+        "draft",
+        "evidence_review",
+        "boundary_review",
+        "safety_review",
+        "resolution_decision",
+        "revised_claims",
+        "report_narratives",
+        "validation"
+      ],
+      "elapsed_wall_seconds": 207.884,
+      "event_count": 18,
+      "event_status_counts": {
+        "complete": 9,
+        "running": 9
+      },
+      "failure_diagnostics": {
+        "diagnostic_reader_failure_category": null,
+        "failure_category": null,
+        "product_failure_category": null,
+        "product_failure_code": null,
+        "product_failure_stage": null,
+        "validator_category_counts": {},
+        "verification_failure_category": null
+      },
+      "hashes": {
+        "acceptance_reader_sha256": "aa2ba4e3aea914fac0da1fb4de471ce1bcf4cbd73513ec835c71b8947157aff8",
+        "product_source_manifest_sha256": "0e960183c9c692b08ae25d117b332386257ab8c613cb774826071ed7ce8a51b7",
+        "recomputed_pre_cleanup_receipt_sha256": "b19a4558a13312b1378b77cb546904b17e1af746905762be07e3f77eeae2a80d",
+        "recomputed_scenario_sha256": "dd015d21056e8739d886365afb3ba56b51bd13aa3eeeac45685e32810f80ce28",
+        "recomputed_summary_payload_sha256": "59c87b60c895d229018e65e4a82bf71d14505e6f482223183e509a86e9ed8e94",
+        "source_summary_bytes_sha256": "9809e33403b4fc31224f07971890e1af7662fee2e7707cf8afb07d0511926cfe"
+      },
+      "injection": {
+        "attack_marker_present": null,
+        "evaluated": false,
+        "marker_match_count": null
+      },
+      "input_and_confirmation_counts": {
+        "candidate_codepoints": 27582,
+        "confirmation_normalized_fields": [
+          "industry_context"
+        ],
+        "confirmed_profile_codepoints": 13476,
+        "confirmed_profile_dimensions": {
+          "goals": 20,
+          "occupation_candidates": 1,
+          "responsibilities": 30,
+          "skills": 50
+        },
+        "confirmed_profile_matches_normalized_submission": true,
+        "confirmed_profile_matches_submission": false,
+        "initial_profile_dimensions": {
+          "goals": 1,
+          "occupation_candidates": 1,
+          "responsibilities": 6,
+          "skills": 5
+        },
+        "initial_profile_optional_fields_present": {
+          "industry_context": true,
+          "region": true,
+          "years_of_experience": true
+        },
+        "knowledge_codepoints": 919
+      },
+      "language": {
+        "expected": "en",
+        "observed": "en",
+        "visible_language_matches_expected": true
+      },
+      "model_stages": {
+        "boundary_review": {
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "boundary": "validation",
+              "category": null,
+              "context_codepoints": 27644,
+              "metrics": {
+                "generation_limit": 2048,
+                "generation_tokens": 637,
+                "prompt_tokens": 7192,
+                "reached_generation_limit": false,
+                "total_tokens": 7829
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": null,
+                "numeric_chinese_expression_pattern": null,
+                "numeric_digit_pattern": null,
+                "numeric_english_pattern": null,
+                "structural_horizon_adjacent_chinese": null
+              },
+              "parse_error_offset": null,
+              "stage": "boundary_review",
+              "status": "complete",
+              "validator_categories": {}
+            }
+          ],
+          "final_status": "complete",
+          "retry_count": 0
+        },
+        "draft": {
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "boundary": "validation",
+              "category": null,
+              "context_codepoints": 38806,
+              "metrics": {
+                "generation_limit": 4096,
+                "generation_tokens": 1468,
+                "prompt_tokens": 9253,
+                "reached_generation_limit": false,
+                "total_tokens": 10721
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": null,
+                "numeric_chinese_expression_pattern": null,
+                "numeric_digit_pattern": null,
+                "numeric_english_pattern": null,
+                "structural_horizon_adjacent_chinese": null
+              },
+              "parse_error_offset": null,
+              "stage": "draft",
+              "status": "complete",
+              "validator_categories": {}
+            }
+          ],
+          "final_status": "complete",
+          "retry_count": 0
+        },
+        "evidence_review": {
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "boundary": "validation",
+              "category": null,
+              "context_codepoints": 27607,
+              "metrics": {
+                "generation_limit": 2048,
+                "generation_tokens": 561,
+                "prompt_tokens": 7192,
+                "reached_generation_limit": false,
+                "total_tokens": 7753
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": null,
+                "numeric_chinese_expression_pattern": null,
+                "numeric_digit_pattern": null,
+                "numeric_english_pattern": null,
+                "structural_horizon_adjacent_chinese": null
+              },
+              "parse_error_offset": null,
+              "stage": "evidence_review",
+              "status": "complete",
+              "validator_categories": {}
+            }
+          ],
+          "final_status": "complete",
+          "retry_count": 0
+        },
+        "profile": {
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "boundary": "contract",
+              "category": null,
+              "context_codepoints": 29977,
+              "metrics": {
+                "generation_limit": 1600,
+                "generation_tokens": 236,
+                "prompt_tokens": 5469,
+                "reached_generation_limit": false,
+                "total_tokens": 5705
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": null,
+                "numeric_chinese_expression_pattern": null,
+                "numeric_digit_pattern": null,
+                "numeric_english_pattern": null,
+                "structural_horizon_adjacent_chinese": null
+              },
+              "parse_error_offset": null,
+              "stage": "profile",
+              "status": "complete",
+              "validator_categories": {}
+            }
+          ],
+          "final_status": "complete",
+          "retry_count": 0
+        },
+        "report_narratives": {
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "boundary": "validation",
+              "category": null,
+              "context_codepoints": 11986,
+              "metrics": {
+                "generation_limit": 4096,
+                "generation_tokens": 929,
+                "prompt_tokens": 3597,
+                "reached_generation_limit": false,
+                "total_tokens": 4526
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": null,
+                "numeric_chinese_expression_pattern": null,
+                "numeric_digit_pattern": null,
+                "numeric_english_pattern": null,
+                "structural_horizon_adjacent_chinese": null
+              },
+              "parse_error_offset": null,
+              "stage": "report_narratives",
+              "status": "complete",
+              "validator_categories": {}
+            }
+          ],
+          "final_status": "complete",
+          "retry_count": 0
+        },
+        "resolution_decision": {
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "boundary": "validation",
+              "category": null,
+              "context_codepoints": 11795,
+              "metrics": {
+                "generation_limit": 1536,
+                "generation_tokens": 509,
+                "prompt_tokens": 3177,
+                "reached_generation_limit": false,
+                "total_tokens": 3686
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": null,
+                "numeric_chinese_expression_pattern": null,
+                "numeric_digit_pattern": null,
+                "numeric_english_pattern": null,
+                "structural_horizon_adjacent_chinese": null
+              },
+              "parse_error_offset": null,
+              "stage": "resolution_decision",
+              "status": "complete",
+              "validator_categories": {}
+            }
+          ],
+          "final_status": "complete",
+          "retry_count": 0
+        },
+        "revised_claims": {
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "boundary": "validation",
+              "category": null,
+              "context_codepoints": 34832,
+              "metrics": {
+                "generation_limit": 3072,
+                "generation_tokens": 1399,
+                "prompt_tokens": 9025,
+                "reached_generation_limit": false,
+                "total_tokens": 10424
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": null,
+                "numeric_chinese_expression_pattern": null,
+                "numeric_digit_pattern": null,
+                "numeric_english_pattern": null,
+                "structural_horizon_adjacent_chinese": null
+              },
+              "parse_error_offset": null,
+              "stage": "revised_claims",
+              "status": "complete",
+              "validator_categories": {}
+            }
+          ],
+          "final_status": "complete",
+          "retry_count": 0
+        },
+        "safety_review": {
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "boundary": "validation",
+              "category": null,
+              "context_codepoints": 27743,
+              "metrics": {
+                "generation_limit": 2048,
+                "generation_tokens": 664,
+                "prompt_tokens": 7218,
+                "reached_generation_limit": false,
+                "total_tokens": 7882
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": null,
+                "numeric_chinese_expression_pattern": null,
+                "numeric_digit_pattern": null,
+                "numeric_english_pattern": null,
+                "structural_horizon_adjacent_chinese": null
+              },
+              "parse_error_offset": null,
+              "stage": "safety_review",
+              "status": "complete",
+              "validator_categories": {}
+            }
+          ],
+          "final_status": "complete",
+          "retry_count": 0
+        }
+      },
+      "report_and_citations": {
+        "citation_api_applicable": true,
+        "citation_api_targets_resolve_same_snapshot": true,
+        "citation_count": 2,
+        "citation_factpack_targets_resolve": true,
+        "citation_passage_count": 2,
+        "citation_refs_unique": true,
+        "citation_source_count": 0,
+        "database_report_count": 1,
+        "owner_report_citation_details_exact": true,
+        "owner_report_equals_stored": true,
+        "report_count": 1,
+        "report_count_before_validation": 0,
+        "report_final_validator_valid": true
+      },
+      "retry_count": 0,
+      "review_decisions": {
+        "acceptance_breakdown": "not_recorded_in_safe_receipts",
+        "accepted_count": null,
+        "multisets_equal": true,
+        "rejected_count": null,
+        "resolution_count": 9,
+        "role_result_sets": {
+          "boundary_review": {
+            "attempt": 1,
+            "count": 3,
+            "present": true
+          },
+          "evidence_review": {
+            "attempt": 1,
+            "count": 3,
+            "present": true
+          },
+          "safety_review": {
+            "attempt": 1,
+            "count": 3,
+            "present": true
+          }
+        },
+        "suggestion_count": 9
+      },
+      "run_number": 2,
+      "run_status": "COMPLETE",
+      "scenario": "02-long-complex",
+      "status": "PASS",
+      "token_totals": {
+        "generation_tokens": 6403,
+        "prompt_tokens": 52123,
+        "total_tokens": 58526
+      },
+      "verification": {
+        "all_model_stage_attempt_sequences_valid": true,
+        "all_nine_stage_start_complete_pairs_exact": true,
+        "all_recorded_token_metrics_complete": true,
+        "all_resources_cleaned": true,
+        "all_semantic_api_gates_true": true,
+        "api_exit_code_zero": true,
+        "current_test_sources_equal_head": true,
+        "language_matches_expected": true,
+        "pre_cleanup_receipt_digest_recomputed": true,
+        "reader_rehashed_and_matching": true,
+        "review_decision_binding_exact": true,
+        "scenario_bytes_digest_recomputed": true,
+        "scenario_identity_matches": true,
+        "scenario_injection_marker_check": true,
+        "source_files_rehashed_and_matching": true,
+        "summary_digest_recomputed": true,
+        "token_metrics_consistent": true,
+        "worker_exit_codes_present": true
+      },
+      "verified_status": "PASS"
+    },
+    {
+      "cleanup": {
+        "api_process_exited": true,
+        "api_returncode": 0,
+        "candidate_upload_remaining": 0,
+        "disposable_account_deleted": true,
+        "disposable_database_deleted": true,
+        "disposable_root_deleted": true,
+        "disposable_source_deleted": true,
+        "final_summary_reread_valid": true,
+        "qwen_processes_remaining": 0,
+        "safe_summary_written_and_reread_before_disposable_data_cleanup": true,
+        "session_destroyed": true,
+        "test_diff_count": 0,
+        "test_manifest_unchanged": true,
+        "worker_returncodes": {
+          "qwen30b": -15,
+          "qwen4b": -15
+        },
+        "workers_exited": true
+      },
+      "completed_stage_count": 9,
+      "completed_stage_sequence": [
+        "retrieval",
+        "draft",
+        "evidence_review",
+        "boundary_review",
+        "safety_review",
+        "resolution_decision",
+        "revised_claims",
+        "report_narratives",
+        "validation"
+      ],
+      "elapsed_wall_seconds": 122.242,
+      "event_count": 18,
+      "event_status_counts": {
+        "complete": 9,
+        "running": 9
+      },
+      "failure_diagnostics": {
+        "diagnostic_reader_failure_category": null,
+        "failure_category": null,
+        "product_failure_category": null,
+        "product_failure_code": null,
+        "product_failure_stage": null,
+        "validator_category_counts": {},
+        "verification_failure_category": null
+      },
+      "hashes": {
+        "acceptance_reader_sha256": "aa2ba4e3aea914fac0da1fb4de471ce1bcf4cbd73513ec835c71b8947157aff8",
+        "product_source_manifest_sha256": "0e960183c9c692b08ae25d117b332386257ab8c613cb774826071ed7ce8a51b7",
+        "recomputed_pre_cleanup_receipt_sha256": "59924b5519a1471cae146c8b10a80473a29abbabce678cc87e0ec5a0fd2b6ba7",
+        "recomputed_scenario_sha256": "50ef5cc2c3758e033d3fcaadde7e3a8f18b19eac73de1210bc1bd7d1e22c98fc",
+        "recomputed_summary_payload_sha256": "875c93a826d36f9d25e327b3a835e7e7399af8564c722efd62bd6c091348a0ca",
+        "source_summary_bytes_sha256": "b3c5416071dcd25f7dce76e5343e480c4a172d1b110c056f3da2aa92399c132b"
+      },
+      "injection": {
+        "attack_marker_present": null,
+        "evaluated": false,
+        "marker_match_count": null
+      },
+      "input_and_confirmation_counts": {
+        "candidate_codepoints": 49,
+        "confirmation_normalized_fields": [],
+        "confirmed_profile_codepoints": 249,
+        "confirmed_profile_dimensions": {
+          "goals": 0,
+          "occupation_candidates": 1,
+          "responsibilities": 0,
+          "skills": 0
+        },
+        "confirmed_profile_matches_normalized_submission": true,
+        "confirmed_profile_matches_submission": true,
+        "initial_profile_dimensions": {
+          "goals": 0,
+          "occupation_candidates": 1,
+          "responsibilities": 0,
+          "skills": 0
+        },
+        "initial_profile_optional_fields_present": {
+          "industry_context": false,
+          "region": false,
+          "years_of_experience": false
+        },
+        "knowledge_codepoints": 200
+      },
+      "language": {
+        "expected": "zh",
+        "observed": "zh",
+        "visible_language_matches_expected": true
+      },
+      "model_stages": {
+        "boundary_review": {
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "boundary": "validation",
+              "category": null,
+              "context_codepoints": 7735,
+              "metrics": {
+                "generation_limit": 2048,
+                "generation_tokens": 498,
+                "prompt_tokens": 3114,
+                "reached_generation_limit": false,
+                "total_tokens": 3612
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": null,
+                "numeric_chinese_expression_pattern": null,
+                "numeric_digit_pattern": null,
+                "numeric_english_pattern": null,
+                "structural_horizon_adjacent_chinese": null
+              },
+              "parse_error_offset": null,
+              "stage": "boundary_review",
+              "status": "complete",
+              "validator_categories": {}
+            }
+          ],
+          "final_status": "complete",
+          "retry_count": 0
+        },
+        "draft": {
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "boundary": "validation",
+              "category": null,
+              "context_codepoints": 8559,
+              "metrics": {
+                "generation_limit": 4096,
+                "generation_tokens": 1286,
+                "prompt_tokens": 3181,
+                "reached_generation_limit": false,
+                "total_tokens": 4467
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": null,
+                "numeric_chinese_expression_pattern": null,
+                "numeric_digit_pattern": null,
+                "numeric_english_pattern": null,
+                "structural_horizon_adjacent_chinese": null
+              },
+              "parse_error_offset": null,
+              "stage": "draft",
+              "status": "complete",
+              "validator_categories": {}
+            }
+          ],
+          "final_status": "complete",
+          "retry_count": 0
+        },
+        "evidence_review": {
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "boundary": "validation",
+              "category": null,
+              "context_codepoints": 7698,
+              "metrics": {
+                "generation_limit": 2048,
+                "generation_tokens": 549,
+                "prompt_tokens": 3114,
+                "reached_generation_limit": false,
+                "total_tokens": 3663
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": null,
+                "numeric_chinese_expression_pattern": null,
+                "numeric_digit_pattern": null,
+                "numeric_english_pattern": null,
+                "structural_horizon_adjacent_chinese": null
+              },
+              "parse_error_offset": null,
+              "stage": "evidence_review",
+              "status": "complete",
+              "validator_categories": {}
+            }
+          ],
+          "final_status": "complete",
+          "retry_count": 0
+        },
+        "profile": {
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "boundary": "contract",
+              "category": null,
+              "context_codepoints": 2290,
+              "metrics": {
+                "generation_limit": 1600,
+                "generation_tokens": 88,
+                "prompt_tokens": 718,
+                "reached_generation_limit": false,
+                "total_tokens": 806
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": null,
+                "numeric_chinese_expression_pattern": null,
+                "numeric_digit_pattern": null,
+                "numeric_english_pattern": null,
+                "structural_horizon_adjacent_chinese": null
+              },
+              "parse_error_offset": null,
+              "stage": "profile",
+              "status": "complete",
+              "validator_categories": {}
+            }
+          ],
+          "final_status": "complete",
+          "retry_count": 0
+        },
+        "report_narratives": {
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "boundary": "validation",
+              "category": null,
+              "context_codepoints": 9198,
+              "metrics": {
+                "generation_limit": 4096,
+                "generation_tokens": 573,
+                "prompt_tokens": 2809,
+                "reached_generation_limit": false,
+                "total_tokens": 3382
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": null,
+                "numeric_chinese_expression_pattern": null,
+                "numeric_digit_pattern": null,
+                "numeric_english_pattern": null,
+                "structural_horizon_adjacent_chinese": null
+              },
+              "parse_error_offset": null,
+              "stage": "report_narratives",
+              "status": "complete",
+              "validator_categories": {}
+            }
+          ],
+          "final_status": "complete",
+          "retry_count": 0
+        },
+        "resolution_decision": {
+          "attempt_count": 2,
+          "attempts": [
+            {
+              "attempt": 1,
+              "boundary": "validation",
+              "category": "UNSTRUCTURED_NUMERIC",
+              "context_codepoints": 7394,
+              "metrics": {
+                "generation_limit": 1536,
+                "generation_tokens": 407,
+                "prompt_tokens": 2741,
+                "reached_generation_limit": false,
+                "total_tokens": 3148
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": true,
+                "numeric_chinese_expression_pattern": false,
+                "numeric_digit_pattern": true,
+                "numeric_english_pattern": false,
+                "structural_horizon_adjacent_chinese": false
+              },
+              "parse_error_offset": null,
+              "stage": "resolution_decision",
+              "status": "failed",
+              "validator_categories": {
+                "UNSTRUCTURED_NUMERIC": 1
+              }
+            },
+            {
+              "attempt": 2,
+              "boundary": "validation",
+              "category": null,
+              "context_codepoints": 8053,
+              "metrics": {
+                "generation_limit": 1536,
+                "generation_tokens": 378,
+                "prompt_tokens": 2875,
+                "reached_generation_limit": false,
+                "total_tokens": 3253
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": null,
+                "numeric_chinese_expression_pattern": null,
+                "numeric_digit_pattern": null,
+                "numeric_english_pattern": null,
+                "structural_horizon_adjacent_chinese": null
+              },
+              "parse_error_offset": null,
+              "stage": "resolution_decision",
+              "status": "complete",
+              "validator_categories": {}
+            }
+          ],
+          "final_status": "complete",
+          "retry_count": 1
+        },
+        "revised_claims": {
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "boundary": "validation",
+              "category": null,
+              "context_codepoints": 11717,
+              "metrics": {
+                "generation_limit": 3072,
+                "generation_tokens": 561,
+                "prompt_tokens": 4648,
+                "reached_generation_limit": false,
+                "total_tokens": 5209
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": null,
+                "numeric_chinese_expression_pattern": null,
+                "numeric_digit_pattern": null,
+                "numeric_english_pattern": null,
+                "structural_horizon_adjacent_chinese": null
+              },
+              "parse_error_offset": null,
+              "stage": "revised_claims",
+              "status": "complete",
+              "validator_categories": {}
+            }
+          ],
+          "final_status": "complete",
+          "retry_count": 0
+        },
+        "safety_review": {
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "boundary": "validation",
+              "category": null,
+              "context_codepoints": 7834,
+              "metrics": {
+                "generation_limit": 2048,
+                "generation_tokens": 455,
+                "prompt_tokens": 3140,
+                "reached_generation_limit": false,
+                "total_tokens": 3595
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": null,
+                "numeric_chinese_expression_pattern": null,
+                "numeric_digit_pattern": null,
+                "numeric_english_pattern": null,
+                "structural_horizon_adjacent_chinese": null
+              },
+              "parse_error_offset": null,
+              "stage": "safety_review",
+              "status": "complete",
+              "validator_categories": {}
+            }
+          ],
+          "final_status": "complete",
+          "retry_count": 0
+        }
+      },
+      "report_and_citations": {
+        "citation_api_applicable": true,
+        "citation_api_targets_resolve_same_snapshot": true,
+        "citation_count": 1,
+        "citation_factpack_targets_resolve": true,
+        "citation_passage_count": 1,
+        "citation_refs_unique": true,
+        "citation_source_count": 0,
+        "database_report_count": 1,
+        "owner_report_citation_details_exact": true,
+        "owner_report_equals_stored": true,
+        "report_count": 1,
+        "report_count_before_validation": 0,
+        "report_final_validator_valid": true
+      },
+      "retry_count": 1,
+      "review_decisions": {
+        "acceptance_breakdown": "not_recorded_in_safe_receipts",
+        "accepted_count": null,
+        "multisets_equal": true,
+        "rejected_count": null,
+        "resolution_count": 9,
+        "role_result_sets": {
+          "boundary_review": {
+            "attempt": 1,
+            "count": 3,
+            "present": true
+          },
+          "evidence_review": {
+            "attempt": 1,
+            "count": 3,
+            "present": true
+          },
+          "safety_review": {
+            "attempt": 1,
+            "count": 3,
+            "present": true
+          }
+        },
+        "suggestion_count": 9
+      },
+      "run_number": 3,
+      "run_status": "COMPLETE",
+      "scenario": "03-sparse-chinese",
+      "status": "PASS",
+      "token_totals": {
+        "generation_tokens": 4795,
+        "prompt_tokens": 26340,
+        "total_tokens": 31135
+      },
+      "verification": {
+        "all_model_stage_attempt_sequences_valid": true,
+        "all_nine_stage_start_complete_pairs_exact": true,
+        "all_recorded_token_metrics_complete": true,
+        "all_resources_cleaned": true,
+        "all_semantic_api_gates_true": true,
+        "api_exit_code_zero": true,
+        "current_test_sources_equal_head": true,
+        "language_matches_expected": true,
+        "pre_cleanup_receipt_digest_recomputed": true,
+        "reader_rehashed_and_matching": true,
+        "review_decision_binding_exact": true,
+        "scenario_bytes_digest_recomputed": true,
+        "scenario_identity_matches": true,
+        "scenario_injection_marker_check": true,
+        "source_files_rehashed_and_matching": true,
+        "summary_digest_recomputed": true,
+        "token_metrics_consistent": true,
+        "worker_exit_codes_present": true
+      },
+      "verified_status": "PASS"
+    },
+    {
+      "cleanup": {
+        "api_process_exited": true,
+        "api_returncode": 0,
+        "candidate_upload_remaining": 0,
+        "disposable_account_deleted": true,
+        "disposable_database_deleted": true,
+        "disposable_root_deleted": true,
+        "disposable_source_deleted": true,
+        "final_summary_reread_valid": true,
+        "qwen_processes_remaining": 0,
+        "safe_summary_written_and_reread_before_disposable_data_cleanup": true,
+        "session_destroyed": true,
+        "test_diff_count": 0,
+        "test_manifest_unchanged": true,
+        "worker_returncodes": {
+          "qwen30b": -15,
+          "qwen4b": -15
+        },
+        "workers_exited": true
+      },
+      "completed_stage_count": 9,
+      "completed_stage_sequence": [
+        "retrieval",
+        "draft",
+        "evidence_review",
+        "boundary_review",
+        "safety_review",
+        "resolution_decision",
+        "revised_claims",
+        "report_narratives",
+        "validation"
+      ],
+      "elapsed_wall_seconds": 171.258,
+      "event_count": 18,
+      "event_status_counts": {
+        "complete": 9,
+        "running": 9
+      },
+      "failure_diagnostics": {
+        "diagnostic_reader_failure_category": null,
+        "failure_category": null,
+        "product_failure_category": null,
+        "product_failure_code": null,
+        "product_failure_stage": null,
+        "validator_category_counts": {},
+        "verification_failure_category": null
+      },
+      "hashes": {
+        "acceptance_reader_sha256": "aa2ba4e3aea914fac0da1fb4de471ce1bcf4cbd73513ec835c71b8947157aff8",
+        "product_source_manifest_sha256": "0e960183c9c692b08ae25d117b332386257ab8c613cb774826071ed7ce8a51b7",
+        "recomputed_pre_cleanup_receipt_sha256": "4dc0c4f6a6b1f5b972cfe0c9b408cc9cc30af9c8617627d889a10e781cfe095f",
+        "recomputed_scenario_sha256": "8d04f8902ddd95e0c485c3c1bbb8fbd2b0b36cffefb7f92907f70ab75e3efee2",
+        "recomputed_summary_payload_sha256": "10311d1b142b9a8c345f774402a3c226f50fb00b4bbcbf24102652844824e414",
+        "source_summary_bytes_sha256": "415e4b0458b5dd110287a0cb12fae04fa778b879d6f14495b788f5d3e06b3f43"
+      },
+      "injection": {
+        "attack_marker_present": null,
+        "evaluated": false,
+        "marker_match_count": null
+      },
+      "input_and_confirmation_counts": {
+        "candidate_codepoints": 498,
+        "confirmation_normalized_fields": [],
+        "confirmed_profile_codepoints": 1513,
+        "confirmed_profile_dimensions": {
+          "goals": 2,
+          "occupation_candidates": 1,
+          "responsibilities": 2,
+          "skills": 2
+        },
+        "confirmed_profile_matches_normalized_submission": true,
+        "confirmed_profile_matches_submission": true,
+        "initial_profile_dimensions": {
+          "goals": 2,
+          "occupation_candidates": 1,
+          "responsibilities": 2,
+          "skills": 2
+        },
+        "initial_profile_optional_fields_present": {
+          "industry_context": false,
+          "region": true,
+          "years_of_experience": true
+        },
+        "knowledge_codepoints": 919
+      },
+      "language": {
+        "expected": "en",
+        "observed": "en",
+        "visible_language_matches_expected": true
+      },
+      "model_stages": {
+        "boundary_review": {
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "boundary": "validation",
+              "category": null,
+              "context_codepoints": 13345,
+              "metrics": {
+                "generation_limit": 2048,
+                "generation_tokens": 765,
+                "prompt_tokens": 4097,
+                "reached_generation_limit": false,
+                "total_tokens": 4862
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": null,
+                "numeric_chinese_expression_pattern": null,
+                "numeric_digit_pattern": null,
+                "numeric_english_pattern": null,
+                "structural_horizon_adjacent_chinese": null
+              },
+              "parse_error_offset": null,
+              "stage": "boundary_review",
+              "status": "complete",
+              "validator_categories": {}
+            }
+          ],
+          "final_status": "complete",
+          "retry_count": 0
+        },
+        "draft": {
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "boundary": "validation",
+              "category": null,
+              "context_codepoints": 11883,
+              "metrics": {
+                "generation_limit": 4096,
+                "generation_tokens": 1645,
+                "prompt_tokens": 3937,
+                "reached_generation_limit": false,
+                "total_tokens": 5582
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": null,
+                "numeric_chinese_expression_pattern": null,
+                "numeric_digit_pattern": null,
+                "numeric_english_pattern": null,
+                "structural_horizon_adjacent_chinese": null
+              },
+              "parse_error_offset": null,
+              "stage": "draft",
+              "status": "complete",
+              "validator_categories": {}
+            }
+          ],
+          "final_status": "complete",
+          "retry_count": 0
+        },
+        "evidence_review": {
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "boundary": "validation",
+              "category": null,
+              "context_codepoints": 13308,
+              "metrics": {
+                "generation_limit": 2048,
+                "generation_tokens": 805,
+                "prompt_tokens": 4097,
+                "reached_generation_limit": false,
+                "total_tokens": 4902
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": null,
+                "numeric_chinese_expression_pattern": null,
+                "numeric_digit_pattern": null,
+                "numeric_english_pattern": null,
+                "structural_horizon_adjacent_chinese": null
+              },
+              "parse_error_offset": null,
+              "stage": "evidence_review",
+              "status": "complete",
+              "validator_categories": {}
+            }
+          ],
+          "final_status": "complete",
+          "retry_count": 0
+        },
+        "profile": {
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "boundary": "contract",
+              "category": null,
+              "context_codepoints": 2754,
+              "metrics": {
+                "generation_limit": 1600,
+                "generation_tokens": 162,
+                "prompt_tokens": 766,
+                "reached_generation_limit": false,
+                "total_tokens": 928
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": null,
+                "numeric_chinese_expression_pattern": null,
+                "numeric_digit_pattern": null,
+                "numeric_english_pattern": null,
+                "structural_horizon_adjacent_chinese": null
+              },
+              "parse_error_offset": null,
+              "stage": "profile",
+              "status": "complete",
+              "validator_categories": {}
+            }
+          ],
+          "final_status": "complete",
+          "retry_count": 0
+        },
+        "report_narratives": {
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "boundary": "validation",
+              "category": null,
+              "context_codepoints": 13001,
+              "metrics": {
+                "generation_limit": 4096,
+                "generation_tokens": 928,
+                "prompt_tokens": 4101,
+                "reached_generation_limit": false,
+                "total_tokens": 5029
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": null,
+                "numeric_chinese_expression_pattern": null,
+                "numeric_digit_pattern": null,
+                "numeric_english_pattern": null,
+                "structural_horizon_adjacent_chinese": null
+              },
+              "parse_error_offset": null,
+              "stage": "report_narratives",
+              "status": "complete",
+              "validator_categories": {}
+            }
+          ],
+          "final_status": "complete",
+          "retry_count": 0
+        },
+        "resolution_decision": {
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "boundary": "validation",
+              "category": null,
+              "context_codepoints": 12966,
+              "metrics": {
+                "generation_limit": 1536,
+                "generation_tokens": 455,
+                "prompt_tokens": 3818,
+                "reached_generation_limit": false,
+                "total_tokens": 4273
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": null,
+                "numeric_chinese_expression_pattern": null,
+                "numeric_digit_pattern": null,
+                "numeric_english_pattern": null,
+                "structural_horizon_adjacent_chinese": null
+              },
+              "parse_error_offset": null,
+              "stage": "resolution_decision",
+              "status": "complete",
+              "validator_categories": {}
+            }
+          ],
+          "final_status": "complete",
+          "retry_count": 0
+        },
+        "revised_claims": {
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "boundary": "validation",
+              "category": null,
+              "context_codepoints": 20600,
+              "metrics": {
+                "generation_limit": 3072,
+                "generation_tokens": 1911,
+                "prompt_tokens": 6354,
+                "reached_generation_limit": false,
+                "total_tokens": 8265
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": null,
+                "numeric_chinese_expression_pattern": null,
+                "numeric_digit_pattern": null,
+                "numeric_english_pattern": null,
+                "structural_horizon_adjacent_chinese": null
+              },
+              "parse_error_offset": null,
+              "stage": "revised_claims",
+              "status": "complete",
+              "validator_categories": {}
+            }
+          ],
+          "final_status": "complete",
+          "retry_count": 0
+        },
+        "safety_review": {
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "boundary": "validation",
+              "category": null,
+              "context_codepoints": 13444,
+              "metrics": {
+                "generation_limit": 2048,
+                "generation_tokens": 802,
+                "prompt_tokens": 4123,
+                "reached_generation_limit": false,
+                "total_tokens": 4925
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": null,
+                "numeric_chinese_expression_pattern": null,
+                "numeric_digit_pattern": null,
+                "numeric_english_pattern": null,
+                "structural_horizon_adjacent_chinese": null
+              },
+              "parse_error_offset": null,
+              "stage": "safety_review",
+              "status": "complete",
+              "validator_categories": {}
+            }
+          ],
+          "final_status": "complete",
+          "retry_count": 0
+        }
+      },
+      "report_and_citations": {
+        "citation_api_applicable": true,
+        "citation_api_targets_resolve_same_snapshot": true,
+        "citation_count": 2,
+        "citation_factpack_targets_resolve": true,
+        "citation_passage_count": 2,
+        "citation_refs_unique": true,
+        "citation_source_count": 0,
+        "database_report_count": 1,
+        "owner_report_citation_details_exact": true,
+        "owner_report_equals_stored": true,
+        "report_count": 1,
+        "report_count_before_validation": 0,
+        "report_final_validator_valid": true
+      },
+      "retry_count": 0,
+      "review_decisions": {
+        "acceptance_breakdown": "not_recorded_in_safe_receipts",
+        "accepted_count": null,
+        "multisets_equal": true,
+        "rejected_count": null,
+        "resolution_count": 9,
+        "role_result_sets": {
+          "boundary_review": {
+            "attempt": 1,
+            "count": 3,
+            "present": true
+          },
+          "evidence_review": {
+            "attempt": 1,
+            "count": 3,
+            "present": true
+          },
+          "safety_review": {
+            "attempt": 1,
+            "count": 3,
+            "present": true
+          }
+        },
+        "suggestion_count": 9
+      },
+      "run_number": 4,
+      "run_status": "COMPLETE",
+      "scenario": "04-conflicting-profile",
+      "status": "PASS",
+      "token_totals": {
+        "generation_tokens": 7473,
+        "prompt_tokens": 31293,
+        "total_tokens": 38766
+      },
+      "verification": {
+        "all_model_stage_attempt_sequences_valid": true,
+        "all_nine_stage_start_complete_pairs_exact": true,
+        "all_recorded_token_metrics_complete": true,
+        "all_resources_cleaned": true,
+        "all_semantic_api_gates_true": true,
+        "api_exit_code_zero": true,
+        "current_test_sources_equal_head": true,
+        "language_matches_expected": true,
+        "pre_cleanup_receipt_digest_recomputed": true,
+        "reader_rehashed_and_matching": true,
+        "review_decision_binding_exact": true,
+        "scenario_bytes_digest_recomputed": true,
+        "scenario_identity_matches": true,
+        "scenario_injection_marker_check": true,
+        "source_files_rehashed_and_matching": true,
+        "summary_digest_recomputed": true,
+        "token_metrics_consistent": true,
+        "worker_exit_codes_present": true
+      },
+      "verified_status": "PASS"
+    },
+    {
+      "cleanup": {
+        "api_process_exited": true,
+        "api_returncode": 0,
+        "candidate_upload_remaining": 0,
+        "disposable_account_deleted": true,
+        "disposable_database_deleted": true,
+        "disposable_root_deleted": true,
+        "disposable_source_deleted": true,
+        "final_summary_reread_valid": true,
+        "qwen_processes_remaining": 0,
+        "safe_summary_written_and_reread_before_disposable_data_cleanup": true,
+        "session_destroyed": true,
+        "test_diff_count": 0,
+        "test_manifest_unchanged": true,
+        "worker_returncodes": {
+          "qwen30b": -15,
+          "qwen4b": -15
+        },
+        "workers_exited": true
+      },
+      "completed_stage_count": 9,
+      "completed_stage_sequence": [
+        "retrieval",
+        "draft",
+        "evidence_review",
+        "boundary_review",
+        "safety_review",
+        "resolution_decision",
+        "revised_claims",
+        "report_narratives",
+        "validation"
+      ],
+      "elapsed_wall_seconds": 155.29,
+      "event_count": 18,
+      "event_status_counts": {
+        "complete": 9,
+        "running": 9
+      },
+      "failure_diagnostics": {
+        "diagnostic_reader_failure_category": null,
+        "failure_category": null,
+        "product_failure_category": null,
+        "product_failure_code": null,
+        "product_failure_stage": null,
+        "validator_category_counts": {},
+        "verification_failure_category": null
+      },
+      "hashes": {
+        "acceptance_reader_sha256": "aa2ba4e3aea914fac0da1fb4de471ce1bcf4cbd73513ec835c71b8947157aff8",
+        "product_source_manifest_sha256": "0e960183c9c692b08ae25d117b332386257ab8c613cb774826071ed7ce8a51b7",
+        "recomputed_pre_cleanup_receipt_sha256": "2cf3edeb6c1e2c4886d1d806731517818d833269dd6639cacf1422227d721e25",
+        "recomputed_scenario_sha256": "2ae206888d18d010e0d2a7233a758e3fe0c97c4f557b030975b829a9801493ae",
+        "recomputed_summary_payload_sha256": "f7430b1790fbd0ef152ab35842d799a3cd457c6a5204ef6f46b506ca40d6d631",
+        "source_summary_bytes_sha256": "9e053e7ddf36aac9662b812a7ceecdd08f01be9eacaf702d4c312d7f7c3155a8"
+      },
+      "injection": {
+        "attack_marker_present": false,
+        "evaluated": true,
+        "marker_match_count": 0
+      },
+      "input_and_confirmation_counts": {
+        "candidate_codepoints": 638,
+        "confirmation_normalized_fields": [],
+        "confirmed_profile_codepoints": 1379,
+        "confirmed_profile_dimensions": {
+          "goals": 1,
+          "occupation_candidates": 1,
+          "responsibilities": 10,
+          "skills": 12
+        },
+        "confirmed_profile_matches_normalized_submission": true,
+        "confirmed_profile_matches_submission": true,
+        "initial_profile_dimensions": {
+          "goals": 0,
+          "occupation_candidates": 1,
+          "responsibilities": 3,
+          "skills": 2
+        },
+        "initial_profile_optional_fields_present": {
+          "industry_context": false,
+          "region": true,
+          "years_of_experience": true
+        },
+        "knowledge_codepoints": 865
+      },
+      "language": {
+        "expected": "en",
+        "observed": "en",
+        "visible_language_matches_expected": true
+      },
+      "model_stages": {
+        "boundary_review": {
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "boundary": "validation",
+              "category": null,
+              "context_codepoints": 14135,
+              "metrics": {
+                "generation_limit": 2048,
+                "generation_tokens": 627,
+                "prompt_tokens": 4070,
+                "reached_generation_limit": false,
+                "total_tokens": 4697
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": null,
+                "numeric_chinese_expression_pattern": null,
+                "numeric_digit_pattern": null,
+                "numeric_english_pattern": null,
+                "structural_horizon_adjacent_chinese": null
+              },
+              "parse_error_offset": null,
+              "stage": "boundary_review",
+              "status": "complete",
+              "validator_categories": {}
+            }
+          ],
+          "final_status": "complete",
+          "retry_count": 0
+        },
+        "draft": {
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "boundary": "validation",
+              "category": null,
+              "context_codepoints": 11709,
+              "metrics": {
+                "generation_limit": 4096,
+                "generation_tokens": 2036,
+                "prompt_tokens": 3737,
+                "reached_generation_limit": false,
+                "total_tokens": 5773
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": null,
+                "numeric_chinese_expression_pattern": null,
+                "numeric_digit_pattern": null,
+                "numeric_english_pattern": null,
+                "structural_horizon_adjacent_chinese": null
+              },
+              "parse_error_offset": null,
+              "stage": "draft",
+              "status": "complete",
+              "validator_categories": {}
+            }
+          ],
+          "final_status": "complete",
+          "retry_count": 0
+        },
+        "evidence_review": {
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "boundary": "validation",
+              "category": null,
+              "context_codepoints": 14098,
+              "metrics": {
+                "generation_limit": 2048,
+                "generation_tokens": 671,
+                "prompt_tokens": 4070,
+                "reached_generation_limit": false,
+                "total_tokens": 4741
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": null,
+                "numeric_chinese_expression_pattern": null,
+                "numeric_digit_pattern": null,
+                "numeric_english_pattern": null,
+                "structural_horizon_adjacent_chinese": null
+              },
+              "parse_error_offset": null,
+              "stage": "evidence_review",
+              "status": "complete",
+              "validator_categories": {}
+            }
+          ],
+          "final_status": "complete",
+          "retry_count": 0
+        },
+        "profile": {
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "boundary": "contract",
+              "category": null,
+              "context_codepoints": 2898,
+              "metrics": {
+                "generation_limit": 1600,
+                "generation_tokens": 89,
+                "prompt_tokens": 803,
+                "reached_generation_limit": false,
+                "total_tokens": 892
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": null,
+                "numeric_chinese_expression_pattern": null,
+                "numeric_digit_pattern": null,
+                "numeric_english_pattern": null,
+                "structural_horizon_adjacent_chinese": null
+              },
+              "parse_error_offset": null,
+              "stage": "profile",
+              "status": "complete",
+              "validator_categories": {}
+            }
+          ],
+          "final_status": "complete",
+          "retry_count": 0
+        },
+        "report_narratives": {
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "boundary": "validation",
+              "category": null,
+              "context_codepoints": 12046,
+              "metrics": {
+                "generation_limit": 4096,
+                "generation_tokens": 1004,
+                "prompt_tokens": 3451,
+                "reached_generation_limit": false,
+                "total_tokens": 4455
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": null,
+                "numeric_chinese_expression_pattern": null,
+                "numeric_digit_pattern": null,
+                "numeric_english_pattern": null,
+                "structural_horizon_adjacent_chinese": null
+              },
+              "parse_error_offset": null,
+              "stage": "report_narratives",
+              "status": "complete",
+              "validator_categories": {}
+            }
+          ],
+          "final_status": "complete",
+          "retry_count": 0
+        },
+        "resolution_decision": {
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "boundary": "validation",
+              "category": null,
+              "context_codepoints": 13361,
+              "metrics": {
+                "generation_limit": 1536,
+                "generation_tokens": 447,
+                "prompt_tokens": 3526,
+                "reached_generation_limit": false,
+                "total_tokens": 3973
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": null,
+                "numeric_chinese_expression_pattern": null,
+                "numeric_digit_pattern": null,
+                "numeric_english_pattern": null,
+                "structural_horizon_adjacent_chinese": null
+              },
+              "parse_error_offset": null,
+              "stage": "resolution_decision",
+              "status": "complete",
+              "validator_categories": {}
+            }
+          ],
+          "final_status": "complete",
+          "retry_count": 0
+        },
+        "revised_claims": {
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "boundary": "validation",
+              "category": null,
+              "context_codepoints": 20914,
+              "metrics": {
+                "generation_limit": 3072,
+                "generation_tokens": 1251,
+                "prompt_tokens": 5887,
+                "reached_generation_limit": false,
+                "total_tokens": 7138
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": null,
+                "numeric_chinese_expression_pattern": null,
+                "numeric_digit_pattern": null,
+                "numeric_english_pattern": null,
+                "structural_horizon_adjacent_chinese": null
+              },
+              "parse_error_offset": null,
+              "stage": "revised_claims",
+              "status": "complete",
+              "validator_categories": {}
+            }
+          ],
+          "final_status": "complete",
+          "retry_count": 0
+        },
+        "safety_review": {
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "attempt": 1,
+              "boundary": "validation",
+              "category": null,
+              "context_codepoints": 14234,
+              "metrics": {
+                "generation_limit": 2048,
+                "generation_tokens": 578,
+                "prompt_tokens": 4096,
+                "reached_generation_limit": false,
+                "total_tokens": 4674
+              },
+              "numeric_diagnostics": {
+                "numeric_after_adjacent_horizon_removal": null,
+                "numeric_chinese_expression_pattern": null,
+                "numeric_digit_pattern": null,
+                "numeric_english_pattern": null,
+                "structural_horizon_adjacent_chinese": null
+              },
+              "parse_error_offset": null,
+              "stage": "safety_review",
+              "status": "complete",
+              "validator_categories": {}
+            }
+          ],
+          "final_status": "complete",
+          "retry_count": 0
+        }
+      },
+      "report_and_citations": {
+        "citation_api_applicable": true,
+        "citation_api_targets_resolve_same_snapshot": true,
+        "citation_count": 1,
+        "citation_factpack_targets_resolve": true,
+        "citation_passage_count": 1,
+        "citation_refs_unique": true,
+        "citation_source_count": 0,
+        "database_report_count": 1,
+        "owner_report_citation_details_exact": true,
+        "owner_report_equals_stored": true,
+        "report_count": 1,
+        "report_count_before_validation": 0,
+        "report_final_validator_valid": true
+      },
+      "retry_count": 0,
+      "review_decisions": {
+        "acceptance_breakdown": "not_recorded_in_safe_receipts",
+        "accepted_count": null,
+        "multisets_equal": true,
+        "rejected_count": null,
+        "resolution_count": 9,
+        "role_result_sets": {
+          "boundary_review": {
+            "attempt": 1,
+            "count": 3,
+            "present": true
+          },
+          "evidence_review": {
+            "attempt": 1,
+            "count": 3,
+            "present": true
+          },
+          "safety_review": {
+            "attempt": 1,
+            "count": 3,
+            "present": true
+          }
+        },
+        "suggestion_count": 9
+      },
+      "run_number": 5,
+      "run_status": "COMPLETE",
+      "scenario": "05-instruction-injection",
+      "status": "PASS",
+      "token_totals": {
+        "generation_tokens": 6703,
+        "prompt_tokens": 29640,
+        "total_tokens": 36343
+      },
+      "verification": {
+        "all_model_stage_attempt_sequences_valid": true,
+        "all_nine_stage_start_complete_pairs_exact": true,
+        "all_recorded_token_metrics_complete": true,
+        "all_resources_cleaned": true,
+        "all_semantic_api_gates_true": true,
+        "api_exit_code_zero": true,
+        "current_test_sources_equal_head": true,
+        "language_matches_expected": true,
+        "pre_cleanup_receipt_digest_recomputed": true,
+        "reader_rehashed_and_matching": true,
+        "review_decision_binding_exact": true,
+        "scenario_bytes_digest_recomputed": true,
+        "scenario_identity_matches": true,
+        "scenario_injection_marker_check": true,
+        "source_files_rehashed_and_matching": true,
+        "summary_digest_recomputed": true,
+        "token_metrics_consistent": true,
+        "worker_exit_codes_present": true
+      },
+      "verified_status": "PASS"
+    }
+  ],
+  "runs_requiring_retry": 1,
+  "schema_version": "mvp-fixed-scenario-stability.v1",
+  "scope": "Five fixed local API scenarios on one product source and one operational reader; real local Qwen runtime through FastAPI lifespan and in-process ASGI HTTP. Not a randomized reliability estimate or a prediction-efficacy result.",
+  "status": "PASS",
+  "verification_problems": [],
+  "verified_pass_count": 5
+}

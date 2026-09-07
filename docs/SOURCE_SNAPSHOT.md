@@ -1,29 +1,28 @@
 # Source snapshot
 
-This independent repository starts from development revision
-`d23f9c3` (`fix: preserve intake and draft diagnostics and bound recovery`).
+Updated 2026-09-07 from development revision
+`03d1c54dfdebfe8ab1eb64a1482d313dc227f3e1`
+(`docs: record four-case condition preservation pilot`).
 
-Product source, existing tests, environment manifests and lockfiles, and frontend
-source were copied from that revision. Repository presentation consists of a new
-README, this note, a Chinese project-experience draft, generic model-path examples,
-and additional ignore rules. Existing test source is unchanged.
+Product source, existing tests, manifests and lockfiles, frontend, launch scripts,
+README, MVP documentation and the recorded condition pilot are copied from this
+revision. Personal model paths remain replaced with generic configuration values.
+The private development repository, internal work logs and planning history remain
+local. This GitHub repository keeps its own main-branch history.
 
-The original development repository and its history remain local. Local account
-files, models, databases, candidate uploads, knowledge corpora, internal work logs,
-and machine-specific planning documents are excluded from this snapshot.
+Compared with the initial d23f9c3 snapshot, the application includes background
+execution, progress streaming/polling, report rendering, launcher scripts,
+structured generation, scoped evidence retrieval and attachment-aware language
+selection. Consult docs/mvp/acceptance-record.md, grounded-demo.md and the
+condition-pilot RESULTS.md for the limits of observed results. No fresh model
+inference was run during this repository sync.
 
-## Acceptance context
+At the owner's explicit request, this update also includes a complete consistent
+SQLite backup in data/database/localcareerimpact.sqlite3.gz. It contains existing
+chat, extracted material, report and knowledge records, not just an empty schema.
+The repository remains private. Actual account CSV, model weights, temporary
+uploads and original knowledge source files are not included. Database restore
+instructions and checksums are in data/database/README.md.
 
-A recorded real-API scenario at development revision `41ac5c6` completed the
-nine-stage workflow, saved one validated report, matched nine reviewer suggestions
-to nine decisions, and resolved two citations within its frozen snapshot.
-
-Later adaptive stability work culminated in `d23f9c3`. It improved diagnosis and
-bounded retries, but complex-input runs still failed at draft generation and at
-assembly/final validation. Results collected across changing revisions are not a
-fixed-version success rate. The historical passing scenario does not establish
-reliability of every input or the factual accuracy of career forecasts.
-
-The original local run receipts are excluded because this is a source release.
-No fresh real-model run is claimed for the publication step. Background execution,
-SSE, and the final-report frontend remain unfinished.
+Existing tests were copied without edits. Code in the development checkout was
+clean at export. Its 03d1c54 revision is the exact source boundary for this update.

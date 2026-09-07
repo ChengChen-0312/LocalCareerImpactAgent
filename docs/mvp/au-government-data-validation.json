@@ -1,0 +1,2608 @@
+{
+  "operation": "official_government_data_import",
+  "initial_operation_failure": {
+    "phase": "before_database_bootstrap",
+    "category": "OperationalError",
+    "fixed_by": "Existing Database.initialize() upgrades pre-Task-5 placeholder tables; no product code change."
+  },
+  "rebuild": {
+    "active_snapshot": {
+      "snapshot_id": "sha256:777a0e9605ef648fa0a5e2154f6032dd5a5863cbd7491d2d432e684a3bcbfc0b",
+      "status": "active",
+      "stage": "complete",
+      "total_documents": 24,
+      "processed_documents": 24,
+      "total_chunks": 8886,
+      "processed_chunks": 8886,
+      "failure_source": null,
+      "error_message": null,
+      "created_at": "2026-09-05T18:07:33.888359Z",
+      "completed_at": "2026-09-05T18:08:04.450348Z"
+    },
+    "latest_rebuild": {
+      "snapshot_id": "sha256:777a0e9605ef648fa0a5e2154f6032dd5a5863cbd7491d2d432e684a3bcbfc0b",
+      "status": "active",
+      "stage": "complete",
+      "total_documents": 24,
+      "processed_documents": 24,
+      "total_chunks": 8886,
+      "processed_chunks": 8886,
+      "failure_source": null,
+      "error_message": null,
+      "created_at": "2026-09-05T18:07:33.888359Z",
+      "completed_at": "2026-09-05T18:08:04.450348Z"
+    }
+  },
+  "failure": null,
+  "elapsed_seconds": 31.617,
+  "user_tables_before": {
+    "chats": 8,
+    "messages": 16,
+    "candidate_profiles": 0,
+    "runs": 0,
+    "reports": 0
+  },
+  "user_tables_after": {
+    "chats": 8,
+    "messages": 16,
+    "candidate_profiles": 0,
+    "runs": 0,
+    "reports": 0
+  },
+  "user_tables_counts_preserved": true,
+  "embedding_dimensions": [
+    384
+  ],
+  "initial_retrieval_assessment": {
+    "english_occupation_cases": "relevant passages observed",
+    "chinese_occupation_cases": "FAILED relevance; operator alias note and unrelated occupations dominated",
+    "old_observations_file": "var/au-government/2026-09-06/initial-au-government-data-validation.json"
+  },
+  "multilingual_embedding": {
+    "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "revision": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42",
+    "changed_config_keys": [
+      "embedding"
+    ],
+    "qwen_paths_unchanged": true
+  },
+  "previous_rebuild": {
+    "active_snapshot": {
+      "snapshot_id": "sha256:5075b4569b25273c61b94d48fa66b6cb21ef534b1ef05c6d85923a68fc24a908",
+      "status": "active",
+      "stage": "complete",
+      "total_documents": 24,
+      "processed_documents": 24,
+      "total_chunks": 9032,
+      "processed_chunks": 9032,
+      "failure_source": null,
+      "error_message": null,
+      "created_at": "2026-09-05T17:36:42.700172Z",
+      "completed_at": "2026-09-05T17:37:03.837440Z"
+    },
+    "latest_rebuild": {
+      "snapshot_id": "sha256:5075b4569b25273c61b94d48fa66b6cb21ef534b1ef05c6d85923a68fc24a908",
+      "status": "active",
+      "stage": "complete",
+      "total_documents": 24,
+      "processed_documents": 24,
+      "total_chunks": 9032,
+      "processed_chunks": 9032,
+      "failure_source": null,
+      "error_message": null,
+      "created_at": "2026-09-05T17:36:42.700172Z",
+      "completed_at": "2026-09-05T17:37:03.837440Z"
+    }
+  },
+  "full_api_history": [
+    {
+      "status": "FAILED",
+      "scope": "One real FastAPI lifecycle and owner routes using the active government corpus and actual extracted/confirmed Chinese profile; reused existing ASGI client; not a repeated stability batch.",
+      "health_ready": {
+        "database": "ready",
+        "qwen30b": "ready",
+        "qwen4b": "ready"
+      },
+      "profile_item_counts": {
+        "occupation_candidates": 1,
+        "responsibilities": 5,
+        "skills": 4,
+        "goals": 2
+      },
+      "run_status": "failed",
+      "completed_stages": 5,
+      "total_stages": 9,
+      "elapsed_seconds": 257.755,
+      "stage_attempts": [
+        {
+          "stage": "draft",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 8282,
+            "generation_tokens": 1988,
+            "total_tokens": 10270,
+            "generation_limit": 4096,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 19764,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "evidence_review",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 9378,
+            "generation_tokens": 2023,
+            "total_tokens": 11401,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 21306,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "boundary_review",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 9378,
+            "generation_tokens": 1958,
+            "total_tokens": 11336,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 21343,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "safety_review",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 9404,
+            "generation_tokens": 2045,
+            "total_tokens": 11449,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 21442,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "resolution_decision",
+          "attempt": 1,
+          "status": "failed",
+          "boundary": "validation",
+          "category": "UNSTRUCTURED_NUMERIC",
+          "metrics": {
+            "prompt_tokens": 7489,
+            "generation_tokens": 544,
+            "total_tokens": 8033,
+            "generation_limit": 1536,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [
+            "resolutions",
+            0,
+            "reason"
+          ],
+          "parse_error_offset": null,
+          "context_codepoints": 15439,
+          "validator_categories": {
+            "UNSTRUCTURED_NUMERIC": 1
+          },
+          "numeric_digit_pattern": true,
+          "numeric_english_pattern": false,
+          "numeric_chinese_expression_pattern": false,
+          "structural_horizon_adjacent_chinese": false,
+          "numeric_after_adjacent_horizon_removal": true
+        },
+        {
+          "stage": "resolution_decision",
+          "attempt": 2,
+          "status": "failed",
+          "boundary": "validation",
+          "category": "UNSTRUCTURED_NUMERIC",
+          "metrics": {
+            "prompt_tokens": 7623,
+            "generation_tokens": 648,
+            "total_tokens": 8271,
+            "generation_limit": 1536,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [
+            "resolutions",
+            0,
+            "reason"
+          ],
+          "parse_error_offset": null,
+          "context_codepoints": 16098,
+          "validator_categories": {
+            "UNSTRUCTURED_NUMERIC": 1
+          },
+          "numeric_digit_pattern": true,
+          "numeric_english_pattern": false,
+          "numeric_chinese_expression_pattern": false,
+          "structural_horizon_adjacent_chinese": false,
+          "numeric_after_adjacent_horizon_removal": true
+        }
+      ],
+      "report_count": 0,
+      "snapshot_binding_matches": true,
+      "app_lifecycle_closed": true,
+      "candidate_upload_files_remaining": 0,
+      "finished_at_utc": "2026-09-05T17:50:50.878978+00:00"
+    },
+    {
+      "status": "PASS",
+      "scope": "Second full Chinese API scenario with the active official corpus and a generation-only F1 digit guard; actual extracted profile confirmed through owner routes.",
+      "changed_source_sha256": {
+        "src/localcareerimpact/agent/contracts.py": "c8b17198ed421201e662d787caadbc6590a19df5d57984e1520b396878dcb392",
+        "src/localcareerimpact/agent/orchestrator.py": "9e9b0261cc284cb8c7a34cdf7f175618fa36118d186d80215356fcbd5cc4cc86"
+      },
+      "health_ready": {
+        "database": "ready",
+        "qwen30b": "ready",
+        "qwen4b": "ready"
+      },
+      "profile_item_counts": {
+        "occupation_candidates": 1,
+        "responsibilities": 5,
+        "skills": 4,
+        "goals": 2
+      },
+      "run_status": "complete",
+      "completed_stages": 9,
+      "total_stages": 9,
+      "elapsed_seconds": 337.561,
+      "stage_attempts": [
+        {
+          "stage": "draft",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 8290,
+            "generation_tokens": 1723,
+            "total_tokens": 10013,
+            "generation_limit": 4096,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 19764,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "evidence_review",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 9156,
+            "generation_tokens": 1078,
+            "total_tokens": 10234,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 20766,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "boundary_review",
+          "attempt": 1,
+          "status": "failed",
+          "boundary": "generation",
+          "category": "truncated",
+          "metrics": {
+            "prompt_tokens": 9156,
+            "generation_tokens": 2048,
+            "total_tokens": 11204,
+            "generation_limit": 2048,
+            "reached_generation_limit": true
+          },
+          "schema_error_path": [],
+          "parse_error_offset": 2871,
+          "context_codepoints": 20803,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "boundary_review",
+          "attempt": 2,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 9208,
+            "generation_tokens": 6,
+            "total_tokens": 9214,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 21016,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "safety_review",
+          "attempt": 1,
+          "status": "failed",
+          "boundary": "generation",
+          "category": "truncated",
+          "metrics": {
+            "prompt_tokens": 9182,
+            "generation_tokens": 2048,
+            "total_tokens": 11230,
+            "generation_limit": 2048,
+            "reached_generation_limit": true
+          },
+          "schema_error_path": [],
+          "parse_error_offset": 3176,
+          "context_codepoints": 20902,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "safety_review",
+          "attempt": 2,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 9234,
+            "generation_tokens": 1877,
+            "total_tokens": 11111,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 21115,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "resolution_decision",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 4472,
+            "generation_tokens": 317,
+            "total_tokens": 4789,
+            "generation_limit": 1536,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 10728,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "revised_claims",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 11412,
+            "generation_tokens": 1782,
+            "total_tokens": 13194,
+            "generation_limit": 3072,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 25938,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "report_narratives",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 3987,
+            "generation_tokens": 760,
+            "total_tokens": 4747,
+            "generation_limit": 4096,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 10883,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        }
+      ],
+      "report_count": 1,
+      "snapshot_binding_matches": true,
+      "report_canonical_sha256": "5ddcb4f12d6e42b8e94998fa8b33d4596cfe4fdc7fb2ade4282f8620c28e9790",
+      "report_language": "zh",
+      "citation_count": 5,
+      "citation_scopes": [
+        "passage",
+        "passage",
+        "passage",
+        "passage",
+        "passage"
+      ],
+      "citation_sources": [
+        "Our Gen AI Transition - Final Release, cohorts and technical notes",
+        "ABS OSCA 2024 occupations group 2",
+        "ABS OSCA 2024 occupations group 2",
+        "ABS OSCA 2024 occupations group 1",
+        "ABS OSCA 2024 occupations group 2"
+      ],
+      "passage_citations_have_source_url": true,
+      "synthetic_demo_chat_retained": true,
+      "app_lifecycle_closed": true,
+      "candidate_upload_files_remaining": 0,
+      "finished_at_utc": "2026-09-05T18:00:44.404540+00:00",
+      "software_flow_status": "PASS",
+      "manual_content_status": "NEEDS_CORRECTION",
+      "manual_content_findings": [
+        "One citation points to a bibliography page, not research content.",
+        "Current occupation descriptions were used to label inferred AI forecasts as directly RAG-supported."
+      ]
+    }
+  ],
+  "retrieval_history": [
+    {
+      "snapshot_id": "sha256:354af02b851e53ce2dc37be7c155ba4b7385382b0c48eef13c26163abaf7ac07",
+      "queries": [
+        {
+          "case": "software_en",
+          "query": "Software engineer developing testing software code databases artificial intelligence",
+          "seconds": 3.067,
+          "count": 8,
+          "hits": [
+            {
+              "rank": 1,
+              "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+              "locator": "row:676",
+              "heading": "Software Engineer — OSCA 2024 v1.0 273333 Specialisations: Application Developer; Application Engineer; Artificial Intelligence Engineer; Blockchain Developer; ",
+              "chunk_id": "chunk-150a8697ca89c88c06f557bebf5286778d1bf64f5a84af5509112b8bb7f32652",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 2,
+              "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+              "locator": "row:655",
+              "heading": "ICT Test Analyst — OSCA 2024 v1.0 272233 feedback and recommendations based on analysis of test results, and ensures it aligns with business requirements and sp",
+              "chunk_id": "chunk-5e93a8637becc48bdb21c67033916bb78f72797cdf90354c1c71871671d872ae",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 3,
+              "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+              "locator": "row:675",
+              "heading": "Software Engineer — OSCA 2024 v1.0 273333 alignment with specified requirements; Writes, tests and debugs code to ensure functionality, efficiency and adherence",
+              "chunk_id": "chunk-606fd5457cdd4dbbde4c0915e606430ea65a5872d73e456587aca4541b8b5109",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 4,
+              "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+              "locator": "row:652",
+              "heading": "ICT Support Engineer — OSCA 2024 v1.0 272232 code to ensure systems perform to specification; Develops, conducts and provides technical guidance and training in",
+              "chunk_id": "chunk-fd2b68abadd3659e5dc3a5e5294b95899cc9ce45e647267858357048f160264c",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 5,
+              "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+              "locator": "row:633",
+              "heading": "Cyber Security Engineer — OSCA 2024 v1.0 271135 development processes; Participates in code reviews and provides security guidance; Assesses security of third-p",
+              "chunk_id": "chunk-b498c5e627c170b546e5b08c45b0f13b69d35257b39381d555b03f435bacb9c8",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 6,
+              "source": "au-government-2026-09-06/JSA ANZSCO v1.3 unit groups 2.json",
+              "locator": "row:840",
+              "heading": "Software and Applications Programmers — ANZSCO 2013 v1.3 2613 Software and Applications Programmers design, develop, test, maintain and document program code in",
+              "chunk_id": "chunk-9b4712235a564c593827515dc08e4519c1b06e0806e06570ec656c384b3bca08",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 7,
+              "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+              "locator": "row:673",
+              "heading": "DevOps Engineer — OSCA 2024 v1.0 273332 between networks, servers and automation elements within a given environment; Automates software and infrastructure depl",
+              "chunk_id": "chunk-9f278f756af8e27a8fb70e3545d65acfca712b69996824f461c66837f7f0ba8c",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 8,
+              "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+              "locator": "row:674",
+              "heading": "Software Engineer — OSCA 2024 v1.0 273333 Alternative Title: Analyst Programmer; Developer Programmer; Software Developer; Lead Statement: Designs, develops, mo",
+              "chunk_id": "chunk-c4cd04917c0495d261f988fdb122aa44df87bb824fc3400e1f4a47dd8a10401c",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            }
+          ]
+        },
+        {
+          "case": "accountant_en",
+          "query": "Accountant financial reporting auditing bookkeeping taxation compliance",
+          "seconds": 3.389,
+          "count": 8,
+          "hits": [
+            {
+              "rank": 1,
+              "source": "au-government-2026-09-06/JSA ANZSCO v1.3 unit groups 2.json",
+              "locator": "row:80",
+              "heading": "Accountants — ANZSCO 2013 v1.3 2211 Accountants provide services relating to financial reporting, taxation, auditing, insolvency, accounting information systems",
+              "chunk_id": "chunk-6cf9b17923e54d5cc4c1f32ec9d9cda79e746fedb605cb4e9803622074ceb3dd",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 2,
+              "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+              "locator": "row:9",
+              "heading": "Taxation Accountant — OSCA 2024 v1.0 211135 Alternative Title: Taxation Agent; Taxation Consultant; Lead Statement: Analyses, reports and provides advice on tax",
+              "chunk_id": "chunk-a28fe3418ed09f395316ffdc347a9e2507a1f29c98b2fbe63a326fae67eea1be",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 3,
+              "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 5.json",
+              "locator": "row:102",
+              "heading": "Taxation Compliance Officer — OSCA 2024 v1.0 591232 Lead Statement: Inspects and assesses taxation returns to ensure compliance with government legislation, and",
+              "chunk_id": "chunk-1afcdac05cc13c7b9dde2a66198087719f3667093442281ba52cfe179970439c",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 4,
+              "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 5.json",
+              "locator": "row:103",
+              "heading": "Taxation Compliance Officer — OSCA 2024 v1.0 591232 compliance and obligations; Collaborates with government agencies and law enforcement authorities in cases o",
+              "chunk_id": "chunk-eb8216829a35a3112c521ffe060ff17a633685121290a61d1ffaeb5ff15594fd",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 5,
+              "source": "au-government-2026-09-06/JSA ANZSCO v1.3 unit groups 5.json",
+              "locator": "row:287",
+              "heading": "Inspectors and Regulatory Officers — ANZSCO 2013 v1.3 5995 Occupation task: Carrying out random checks of taxation documents to detect non-compliance with taxat",
+              "chunk_id": "chunk-ded2cc5e5de5ace11d1a4907fd9e905c9260bd0495ee0cef870cc211313f86a7",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 6,
+              "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+              "locator": "row:10",
+              "heading": "Taxation Accountant — OSCA 2024 v1.0 211135 tax implications on the purchase and sale of businesses, mergers and capital financing ",
+              "chunk_id": "chunk-1fb9f495142bd2771bf155dea0f87da2aa685dd3ae4f99c34936a3e803ad27e8",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 7,
+              "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+              "locator": "row:11",
+              "heading": "External Auditor — OSCA 2024 v1.0 211231 Lead Statement: Designs and operates information and reporting systems, procedures and controls to meet external financ",
+              "chunk_id": "chunk-b4b0f4b8b8462f812d53660b5f7bdbeb889c2dc67eeffa7c400ae1d905902093",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 8,
+              "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+              "locator": "row:13",
+              "heading": "Internal Auditor — OSCA 2024 v1.0 211232 Alternative Title: Audit Officer; Lead Statement: Examines, verifies, evaluates and reports on financial, operational a",
+              "chunk_id": "chunk-d5b4a3e4f8c1a205700c67c2ae9ee5f159b80103fb8b17babd76fa30a1bed774",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            }
+          ]
+        },
+        {
+          "case": "nurse_en",
+          "query": "Registered nurse patient care clinical nursing medication",
+          "seconds": 3.05,
+          "count": 8,
+          "hits": [
+            {
+              "rank": 1,
+              "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+              "locator": "row:591",
+              "heading": "Registered Nurse (Primary Health Care) — OSCA 2024 v1.0 265435 Nurse (Community Health); Registered Nurse (Disability); Registered Nurse (Health Education and P",
+              "chunk_id": "chunk-2032e3778e6c5adc0b02874f0ccc3dc46dd9cf20870b06af25a663f603e5dedb",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 2,
+              "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 4.json",
+              "locator": "row:91",
+              "heading": "Enrolled Nurse — OSCA 2024 v1.0 441131 medications under the supervision of a Registered Nurse; Provides patients with personal care activities such as bathing,",
+              "chunk_id": "chunk-b9f39e44751b79d0d23de750930427a3e8d7df9f20f8cc01495aeb01ad14bfcb",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 3,
+              "source": "au-government-2026-09-06/JSA ANZSCO v1.3 unit groups 2.json",
+              "locator": "row:817",
+              "heading": "Registered Nurses — ANZSCO 2013 v1.3 2544 Registered Nurses provide nursing care to patients in hospitals, aged care and other health care facilities, and in th",
+              "chunk_id": "chunk-f30ce2a301b418268414a64db7d05157e3bdac9baf883c760695d7ff271b2068",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 4,
+              "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+              "locator": "row:579",
+              "heading": "Nursing / Midwifery Unit Manager — OSCA 2024 v1.0 265331 and the provision of cost-effective nursing/midwifery care; Monitors and evaluates the quality and clin",
+              "chunk_id": "chunk-2c7737305406bbb1fa35c6bb9a50e9a1aafb7f590a76d16354dd4652b94713d3",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 5,
+              "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+              "locator": "row:482",
+              "heading": "Hospital Pharmacist — OSCA 2024 v1.0 263432 Lead Statement: Prepares, dispenses, reviews and monitors medication of individual patients, and provides medication",
+              "chunk_id": "chunk-80915d953da6b8ebf685515a84f1a2e810953b43c39d70c41c5ec78c28b786b8",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 6,
+              "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+              "locator": "row:590",
+              "heading": "Registered Nurse (Primary Health Care) — OSCA 2024 v1.0 265435 individuals, families and groups in the wider community; Develops and implements nursing care pla",
+              "chunk_id": "chunk-8c73f32e084f498b930260aa4d32143ced818bf72e8e4d580c82aa821c4bfdc5",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 7,
+              "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+              "locator": "row:582",
+              "heading": "Registered Nurse (Acute Care) — OSCA 2024 v1.0 265432 Lead Statement: Plans, coordinates and provides nursing care and services to people in a hospital setting ",
+              "chunk_id": "chunk-4f8016d762974e7d73ab45919899142f4fac2550633b5d3b0eef2c4007d92a0e",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 8,
+              "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+              "locator": "row:584",
+              "heading": "Registered Nurse (Acute Care) — OSCA 2024 v1.0 265432 (Rehabilitation) ",
+              "chunk_id": "chunk-d6d4e23a18fa06502578951119e25f3fb60ff27bb22a9464d87cabf954edad09",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            }
+          ]
+        },
+        {
+          "case": "electrician_en",
+          "query": "Electrician installation maintenance testing electrical wiring",
+          "seconds": 3.06,
+          "count": 8,
+          "hits": [
+            {
+              "rank": 1,
+              "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 3.json",
+              "locator": "row:316",
+              "heading": "Industrial Electrician — OSCA 2024 v1.0 381233 drawings, circuit wiring and mechanical diagrams, equipment and cable/connection schedules and manuals to underta",
+              "chunk_id": "chunk-5d3f76cb41183d9481f9ded8f9a896ab715f67f1e3663588971c4daac6cb5dc1",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 2,
+              "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 3.json",
+              "locator": "row:314",
+              "heading": "Electrical Fitter — OSCA 2024 v1.0 381232 and uses electrical specifications, wiring and circuit diagrams, plant schematics, schedules and specifications to und",
+              "chunk_id": "chunk-f602662c5793cf26f9f0ae75abc24bb0454fe861a0167e29a172484f1a60a75e",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 3,
+              "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 3.json",
+              "locator": "row:81",
+              "heading": "Electrical Engineering Technician — OSCA 2024 v1.0 313232 Alternative Title: Electrical Engineering Technical Officer; Lead Statement: Supports and assists Elec",
+              "chunk_id": "chunk-ed161a38224e4e81a9fb1cc9b19be27b2e8d42384fb5f9be306a9aa4f83a068a",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 4,
+              "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 3.json",
+              "locator": "row:308",
+              "heading": "Electrical Distribution Trades Worker — OSCA 2024 v1.0 381131 distribution and underground networks; Inspects and tests cables and cable joints to identify faul",
+              "chunk_id": "chunk-0915813fa7e9697d2591480297cd06f160320de332ff910cd4585786eb22f0fb",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 5,
+              "source": "au-government-2026-09-06/JSA ANZSCO v1.3 unit groups 2.json",
+              "locator": "row:389",
+              "heading": "Electrical Engineers — ANZSCO 2013 v1.3 2333 Electrical Engineers design, develop and supervise the manufacture, installation, operation and maintenance of equi",
+              "chunk_id": "chunk-a3efe8b6be6f5ed4b557ed5ae74d90b90c94c9b2140bc3bcf67368502e097fae",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 6,
+              "source": "au-government-2026-09-06/JSA ANZSCO v1.3 unit groups 3.json",
+              "locator": "row:118",
+              "heading": "Automotive Electricians — ANZSCO 2013 v1.3 3211 Automotive Electricians install, maintain and repair electrical wiring and electronic components in motor vehicl",
+              "chunk_id": "chunk-5de6f37483aff4f824313d19ffde0a0068ca3767b01d737f75a730a925814239",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 7,
+              "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 3.json",
+              "locator": "row:311",
+              "heading": "Electrician (General) — OSCA 2024 v1.0 381231 Industrial Electrician. Hot water solar system installers are included in Occupation 363131 Plumber (General). Ele",
+              "chunk_id": "chunk-58b02b8109d5727c74b8b853ac9d133b76c55042638460667f82cc37c3399b7f",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 8,
+              "source": "au-government-2026-09-06/JSA ANZSCO v1.3 unit groups 3.json",
+              "locator": "row:356",
+              "heading": "Electrical Distribution Trades Workers — ANZSCO 2013 v1.3 3422 Occupation task: Preparing lowand high-voltage cable joints and cable terminations while connecti",
+              "chunk_id": "chunk-cf0400843dbfa2c64cc80a80a00ebde0fe1660d166f7c3320b0ddc768565b53f",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            }
+          ]
+        },
+        {
+          "case": "software_zh",
+          "query": "软件工程师 软件开发 编程 代码测试 数据库 人工智能",
+          "seconds": 3.063,
+          "count": 8,
+          "hits": [
+            {
+              "rank": 1,
+              "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+              "locator": "row:676",
+              "heading": "Software Engineer — OSCA 2024 v1.0 273333 Specialisations: Application Developer; Application Engineer; Artificial Intelligence Engineer; Blockchain Developer; ",
+              "chunk_id": "chunk-150a8697ca89c88c06f557bebf5286778d1bf64f5a84af5509112b8bb7f32652",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 2,
+              "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+              "locator": "row:675",
+              "heading": "Software Engineer — OSCA 2024 v1.0 273333 alignment with specified requirements; Writes, tests and debugs code to ensure functionality, efficiency and adherence",
+              "chunk_id": "chunk-606fd5457cdd4dbbde4c0915e606430ea65a5872d73e456587aca4541b8b5109",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 3,
+              "source": "au-government-2026-09-06/JSA ANZSCO v1.3 unit groups 2.json",
+              "locator": "row:840",
+              "heading": "Software and Applications Programmers — ANZSCO 2013 v1.3 2613 Software and Applications Programmers design, develop, test, maintain and document program code in",
+              "chunk_id": "chunk-9b4712235a564c593827515dc08e4519c1b06e0806e06570ec656c384b3bca08",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 4,
+              "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+              "locator": "row:674",
+              "heading": "Software Engineer — OSCA 2024 v1.0 273333 Alternative Title: Analyst Programmer; Developer Programmer; Software Developer; Lead Statement: Designs, develops, mo",
+              "chunk_id": "chunk-c4cd04917c0495d261f988fdb122aa44df87bb824fc3400e1f4a47dd8a10401c",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 5,
+              "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+              "locator": "row:652",
+              "heading": "ICT Support Engineer — OSCA 2024 v1.0 272232 code to ensure systems perform to specification; Develops, conducts and provides technical guidance and training in",
+              "chunk_id": "chunk-fd2b68abadd3659e5dc3a5e5294b95899cc9ce45e647267858357048f160264c",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 6,
+              "source": "au-government-2026-09-06/JSA ANZSCO v1.3 unit groups 2.json",
+              "locator": "row:843",
+              "heading": "Software and Applications Programmers — ANZSCO 2013 v1.3 2613 Occupation task: Testing, debugging, diagnosing and correcting errors and faults in an application",
+              "chunk_id": "chunk-bf004a9e8a7beaaa23addc85be463550b145c4cc137a4fb976ea9c4531613b3d",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 7,
+              "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+              "locator": "row:655",
+              "heading": "ICT Test Analyst — OSCA 2024 v1.0 272233 feedback and recommendations based on analysis of test results, and ensures it aligns with business requirements and sp",
+              "chunk_id": "chunk-5e93a8637becc48bdb21c67033916bb78f72797cdf90354c1c71871671d872ae",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 8,
+              "source": "au-government-2026-09-06/JSA ANZSCO v1.3 unit groups 2.json",
+              "locator": "row:844",
+              "heading": "Software and Applications Programmers — ANZSCO 2013 v1.3 2613 Occupation task: Writing and maintaining program code to meet system requirements, system designs ",
+              "chunk_id": "chunk-5e6039f6eb8bcfd7b9bb5d971a9ab7c017d1f8ada80a786a5bf40cb7cc67dbd3",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            }
+          ]
+        },
+        {
+          "case": "accountant_zh",
+          "query": "会计 财务报表 审计 记账 税务 合规",
+          "seconds": 3.051,
+          "count": 8,
+          "hits": [
+            {
+              "rank": 1,
+              "source": "au-government-2026-09-06/JSA ANZSCO v1.3 unit groups 2.json",
+              "locator": "row:80",
+              "heading": "Accountants — ANZSCO 2013 v1.3 2211 Accountants provide services relating to financial reporting, taxation, auditing, insolvency, accounting information systems",
+              "chunk_id": "chunk-6cf9b17923e54d5cc4c1f32ec9d9cda79e746fedb605cb4e9803622074ceb3dd",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 2,
+              "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 5.json",
+              "locator": "row:47",
+              "heading": "Bookkeeper — OSCA 2024 v1.0 542131 analyses ledgers and accounting software packages using account books; Provides government authorities with tax file numbers,",
+              "chunk_id": "chunk-73170a826f0a1a84f7d989be66d75638ab3ac51bc05a13c6e78fb32d9ceacdc8",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 3,
+              "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+              "locator": "row:1",
+              "heading": "Accountant (General) — OSCA 2024 v1.0 211131 Lead Statement: Provides services relating to compliance-based financial, non-financial and sustainability-related ",
+              "chunk_id": "chunk-8a2d526a3291e23d1d7b5b9166841b43b33a047fb249ef1452377dd1b3969b94",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 4,
+              "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+              "locator": "row:2",
+              "heading": "Accountant (General) — OSCA 2024 v1.0 211131 and accounting policies; Specialisations: Financial Analyst; Insolvency Accountant; Production Accountant (Screen o",
+              "chunk_id": "chunk-07613e7edbe6dd796f66fc54781450efb027a0a21db310a7cedc8ab9115bc6c0",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 5,
+              "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 5.json",
+              "locator": "row:46",
+              "heading": "Bookkeeper — OSCA 2024 v1.0 542131 Lead Statement: Maintains and evaluates records of financial transactions in account books and computerised accounting system",
+              "chunk_id": "chunk-4b57536daed767ef75fb8cfcf1db5b7aadaeef72103e060ff16c00a4dd056c8f",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 6,
+              "source": "au-government-2026-09-06/JSA ANZSCO v1.3 unit groups 2.json",
+              "locator": "row:92",
+              "heading": "Auditors, Company Secretaries and Corporate Treasurers — ANZSCO 2013 v1.3 2212 Auditors, Company Secretaries and Corporate Treasurers conduct audits of accounti",
+              "chunk_id": "chunk-003ec82aa27ca813654ad51e7d39656e42fe0891e719ad888573cfc7b3fa6167",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 7,
+              "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+              "locator": "row:11",
+              "heading": "External Auditor — OSCA 2024 v1.0 211231 Lead Statement: Designs and operates information and reporting systems, procedures and controls to meet external financ",
+              "chunk_id": "chunk-b4b0f4b8b8462f812d53660b5f7bdbeb889c2dc67eeffa7c400ae1d905902093",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 8,
+              "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+              "locator": "row:7",
+              "heading": "Management Accountant — OSCA 2024 v1.0 211134 Alternative Title: Cost Accountant; Lead Statement: Provides services relating to performance-based financial repo",
+              "chunk_id": "chunk-d48af4c80c79a9cd410d84de01efcd27b5fec619bb23c672c7baa2c7c7ea26bd",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            }
+          ]
+        },
+        {
+          "case": "nurse_zh",
+          "query": "注册护士 患者护理 临床护理 药物管理",
+          "seconds": 3.332,
+          "count": 8,
+          "hits": [
+            {
+              "rank": 1,
+              "source": "au-government-2026-09-06/JSA ANZSCO v1.3 unit groups 2.json",
+              "locator": "row:817",
+              "heading": "Registered Nurses — ANZSCO 2013 v1.3 2544 Registered Nurses provide nursing care to patients in hospitals, aged care and other health care facilities, and in th",
+              "chunk_id": "chunk-f30ce2a301b418268414a64db7d05157e3bdac9baf883c760695d7ff271b2068",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 2,
+              "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+              "locator": "row:581",
+              "heading": "Nurse Practitioner — OSCA 2024 v1.0 265431 promotion, disease prevention and self-care; Refers patients to specialist Medical Practitioners and other Health Pro",
+              "chunk_id": "chunk-fb7069d97679b9ed4ca232a272b6b97aa94e540598963a829eb33d15a967debc",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 3,
+              "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+              "locator": "row:586",
+              "heading": "Registered Nurse (Aged Care) — OSCA 2024 v1.0 265433 patients; Collaborates with other Health Professionals to coordinate and manage patient care; Educates elde",
+              "chunk_id": "chunk-eeb1a703735c99f160b87afcc500e119d45df4e13377f20e92210e1708c92b18",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 4,
+              "source": "au-government-2026-09-06/JSA ANZSCO v1.3 unit groups 2.json",
+              "locator": "row:819",
+              "heading": "Registered Nurses — ANZSCO 2013 v1.3 2544 Occupation task: Working in consultation with other health professionals and members of health teams, and coordinating",
+              "chunk_id": "chunk-b5b2a747bb16395280132647288faeeea92172eadd6a4c0742631ab40bdb1d9b",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 5,
+              "source": "au-government-2026-09-06/JSA ANZSCO v1.3 unit groups 2.json",
+              "locator": "row:820",
+              "heading": "Registered Nurses — ANZSCO 2013 v1.3 2544 Occupation task: Providing interventions, treatments and therapies such as medications, and monitoring responses to tr",
+              "chunk_id": "chunk-e3bf30f24879b95246a234b16b4014257fbeb503452ec893e2222f42a07e07d6",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 6,
+              "source": "au-government-2026-09-06/JSA ANZSCO v1.3 unit groups 2.json",
+              "locator": "row:818",
+              "heading": "Registered Nurses — ANZSCO 2013 v1.3 2544 Occupation task: Assessing, planning, implementing and evaluating nursing care for patients according to accepted nurs",
+              "chunk_id": "chunk-93abecffdd7a338ee2ed9243311884ae59e907cea87c813ef4f9ca8fd2cf014a",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 7,
+              "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+              "locator": "row:591",
+              "heading": "Registered Nurse (Primary Health Care) — OSCA 2024 v1.0 265435 Nurse (Community Health); Registered Nurse (Disability); Registered Nurse (Health Education and P",
+              "chunk_id": "chunk-2032e3778e6c5adc0b02874f0ccc3dc46dd9cf20870b06af25a663f603e5dedb",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 8,
+              "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+              "locator": "row:587",
+              "heading": "Registered Nurse (Mental Health) — OSCA 2024 v1.0 265434 Lead Statement: Provides nursing care and services to people with mental health illness, disorder and d",
+              "chunk_id": "chunk-26c21a5de3cb84b9a94f3d6eda144ff0f65786fe58521fbc6cd7ca4ecd2a75ba",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            }
+          ]
+        },
+        {
+          "case": "ai_tasks",
+          "query": "generative AI exposure automation augmentation tasks skills transition",
+          "seconds": 3.04,
+          "count": 8,
+          "hits": [
+            {
+              "rank": 1,
+              "source": "au-government-2026-09-06/Our Gen AI Transition - Analysis Papers A to E.json",
+              "locator": "row:26",
+              "heading": "Our Gen AI Transition - Analysis Papers A to E Jobs and Skills Australia – Our Gen AI Transition: Analysis Papers 6 A. Exposure Augmentation versus automation E",
+              "chunk_id": "chunk-29d925d735e9cedeaf0f903b3c3fc685f88effb7e6265e367c57987d57db62ce",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 2,
+              "source": "au-government-2026-09-06/Our Gen AI Transition - Analysis Papers A to E.json",
+              "locator": "row:47",
+              "heading": "Our Gen AI Transition - Analysis Papers A to E occupations in the labour market, though to different degrees and in different ways. Our analysis suggests that i",
+              "chunk_id": "chunk-2245f5d86faa05399c616fbb2a49830a903f990383820763a092150c1b962765",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 3,
+              "source": "au-government-2026-09-06/Our Gen AI Transition - Final Release, cohorts and technical notes.json",
+              "locator": "row:140",
+              "heading": "Our Gen AI Transition - Final Release, cohorts and technical notes Jobs and Skills Australia – Our Gen AI Transition 30 Developing exposure measures of Gen AI: ",
+              "chunk_id": "chunk-9665e43eff162ccd6e2d26f299413c7ca3e345fe10014febc4c4e4519f8ce26a",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 4,
+              "source": "au-government-2026-09-06/Our Gen AI Transition - Analysis Papers A to E.json",
+              "locator": "row:426",
+              "heading": "Our Gen AI Transition - Analysis Papers A to E skill in the Information Technology category per the Lightcast skills taxonomy (as a measure of the technology in",
+              "chunk_id": "chunk-9c72bc258ef382c4a86322fe7ffe649d471f7eb0ea09bb93efe42a222977181e",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 5,
+              "source": "au-government-2026-09-06/Our Gen AI Transition - Final Release, cohorts and technical notes.json",
+              "locator": "row:188",
+              "heading": "Our Gen AI Transition - Final Release, cohorts and technical notes Jobs and Skills Australia – Our Gen AI Transition 40 Box 1 Task-level use of Gen AI: from exp",
+              "chunk_id": "chunk-2d1d9ee78e462525547c921dce901bdfea41702f990d154feeb5ef64b1874cf5",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 6,
+              "source": "au-government-2026-09-06/Our Gen AI Transition - Final Release, cohorts and technical notes.json",
+              "locator": "row:25",
+              "heading": "Our Gen AI Transition - Final Release, cohorts and technical notes Female and male workforce exposure to automation and augmentation in current occupations 0% 1",
+              "chunk_id": "chunk-3247f941f34cb72bba8f2d4fe8a3378a28eaff1292a2085b9bd2884bf0d3be68",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 7,
+              "source": "au-government-2026-09-06/Our Gen AI Transition - Analysis Papers A to E.json",
+              "locator": "row:142",
+              "heading": "Our Gen AI Transition - Analysis Papers A to E worker profiles data shows that workers with skills relating to Gen AI platforms and engineering are concentrated",
+              "chunk_id": "chunk-1a3110dba6d5d9943c9c9b07dc055b6652cdafee1f75158fd5370ad02dea5fdb",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 8,
+              "source": "au-government-2026-09-06/Our Gen AI Transition - Final Release, cohorts and technical notes.json",
+              "locator": "row:286",
+              "heading": "Our Gen AI Transition - Final Release, cohorts and technical notes Jobs and Skills Australia – Our Gen AI Transition 63 Automation and Augmentation Pathway Scor",
+              "chunk_id": "chunk-5cac4f63c9a43257cd140a469167738599fd664c8a7ea58bdf62ae6415557f9a",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            }
+          ]
+        },
+        {
+          "case": "accountant_projection",
+          "query": "Accountants employment projections May 2030 growth",
+          "seconds": 3.055,
+          "count": 8,
+          "hits": [
+            {
+              "rank": 1,
+              "source": "au-government-2026-09-06/JSA Employment Projections 2025 to 2035.json",
+              "locator": "row:47",
+              "heading": "Accountants — ANZSCO v1.3 2211 Employment, thousands of persons: May 2025 baseline 210.295; May 2030 projected 228.043; May 2035 projected 245.260. Projected fi",
+              "chunk_id": "chunk-629808e7016a0603477bff9b4993b81ebeb195c619ca20e4c07e73204004e55f",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 2,
+              "source": "au-government-2026-09-06/JSA Employment Projections 2025 to 2035.json",
+              "locator": "row:201",
+              "heading": "Jewellers — ANZSCO v1.3 3994 Employment, thousands of persons: May 2025 baseline 4.606; May 2030 projected 4.990; May 2035 projected 5.250. Projected five-year ",
+              "chunk_id": "chunk-280c06407224f65540de312611c9fecb449b54fd2bcb672d96fe4e0f07e31b35",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 3,
+              "source": "au-government-2026-09-06/JSA Employment Projections 2025 to 2035.json",
+              "locator": "row:348",
+              "heading": "Kitchenhands — ANZSCO v1.3 8513 Employment, thousands of persons: May 2025 baseline 151.627; May 2030 projected 156.635; May 2035 projected 164.967. Projected f",
+              "chunk_id": "chunk-43bb0bce5d3c57de42c56d6cbb9262ab302a5f1445c7ec2f8a76e869647e2e36",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 4,
+              "source": "au-government-2026-09-06/JSA Employment Projections 2025 to 2035.json",
+              "locator": "row:117",
+              "heading": "Surgeons — ANZSCO v1.3 2535 Employment, thousands of persons: May 2025 baseline 10.452; May 2030 projected 12.344; May 2035 projected 13.916. Projected five-yea",
+              "chunk_id": "chunk-035a2f2cd5d880ddb5610c0eecea4be0aeb93a1bd7434458ce60d9b41065958d",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 5,
+              "source": "au-government-2026-09-06/JSA Employment Projections 2025 to 2035.json",
+              "locator": "row:251",
+              "heading": "Accounting Clerks — ANZSCO v1.3 5511 Employment, thousands of persons: May 2025 baseline 138.663; May 2030 projected 140.488; May 2035 projected 146.884. Projec",
+              "chunk_id": "chunk-ea6216741f79eaebd2d153efff069bbb3dd25977d467ac96de99e2cfa9802ec2",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 6,
+              "source": "au-government-2026-09-06/JSA Employment Projections 2025 to 2035.json",
+              "locator": "row:189",
+              "heading": "Hairdressers — ANZSCO v1.3 3911 Employment, thousands of persons: May 2025 baseline 64.836; May 2030 projected 65.320; May 2035 projected 68.472. Projected five",
+              "chunk_id": "chunk-0e17d924121b7760c7fa889fa94185001956a183306c28523086a7d3f7401edc",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 7,
+              "source": "au-government-2026-09-06/JSA Employment Projections 2025 to 2035.json",
+              "locator": "row:48",
+              "heading": "Auditors, Company Secretaries and Corporate Treasurers — ANZSCO v1.3 2212 Employment, thousands of persons: May 2025 baseline 31.540; May 2030 projected 34.072;",
+              "chunk_id": "chunk-e2be077e8ce497f99ce19d7365983a38066691531e2a966f54e514df60e28cef",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 8,
+              "source": "au-government-2026-09-06/JSA Employment Projections 2025 to 2035.json",
+              "locator": "row:161",
+              "heading": "Panelbeaters — ANZSCO v1.3 3241 Employment, thousands of persons: May 2025 baseline 11.043; May 2030 projected 10.706; May 2035 projected 11.044. Projected five",
+              "chunk_id": "chunk-120866edeb33e541b9fcb064b97541ed4a3efc8bac483d8fe7e7d1229d9a054d",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            }
+          ]
+        },
+        {
+          "case": "nurse_shortage",
+          "query": "Registered Nurse Victoria shortage 2025",
+          "seconds": 3.113,
+          "count": 8,
+          "hits": [
+            {
+              "rank": 1,
+              "source": "au-government-2026-09-06/JSA 2025 Shortages ANZSCO 2022.json",
+              "locator": "row:365",
+              "heading": "Registered Nurse (Perioperative) — ANZSCO 2022 254423 2025 shortage ratings. Australia: Shortage; NSW: Shortage; VIC: Shortage; QLD: Shortage; SA: Shortage; WA:",
+              "chunk_id": "chunk-6fef8948b0bb348efecd00aead8077ae2cbc5813e2a194d070c1a15685b903d9",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 2,
+              "source": "au-government-2026-09-06/JSA 2025 Shortages OSCA 2024.json",
+              "locator": "row:408",
+              "heading": "Registered Nurse (Acute Care) — OSCA 2024 265432 2025 shortage ratings. Australia: Shortage; NSW: Shortage; VIC: Shortage; QLD: Shortage; SA: Shortage; WA: Shor",
+              "chunk_id": "chunk-8c0a76c08ec186c1d1afdc9eed03f34e28aae45a6853dea7030245910a98a965",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 3,
+              "source": "au-government-2026-09-06/JSA 2025 Shortages ANZSCO 2022.json",
+              "locator": "row:367",
+              "heading": "Registered Nurse (Paediatrics) — ANZSCO 2022 254425 2025 shortage ratings. Australia: Shortage; NSW: Shortage; VIC: Shortage; QLD: Shortage; SA: Shortage; WA: S",
+              "chunk_id": "chunk-a6f5ae302033ce3ea6d433bff3c904a1373851a7c6a241f1cd40f4ed7f4fd0db",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 4,
+              "source": "au-government-2026-09-06/JSA 2025 Shortages ANZSCO 2022.json",
+              "locator": "row:358",
+              "heading": "Registered Nurse (Community Health) — ANZSCO 2022 254414 2025 shortage ratings. Australia: Shortage; NSW: Shortage; VIC: Shortage; QLD: Shortage; SA: Shortage; ",
+              "chunk_id": "chunk-59f27c96c530de973f594966c61378117fc61108d4256536a509c7ebddc730b9",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 5,
+              "source": "au-government-2026-09-06/JSA 2025 Shortages OSCA 2024.json",
+              "locator": "row:411",
+              "heading": "Registered Nurse (Primary Health Care) — OSCA 2024 265435 2025 shortage ratings. Australia: Shortage; NSW: Shortage; VIC: Shortage; QLD: Shortage; SA: Shortage;",
+              "chunk_id": "chunk-145bd8bdaa8b66a15bc6df59a15e70de4e868bc183f8e5490eff064b29336db0",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 6,
+              "source": "au-government-2026-09-06/JSA 2025 Shortages ANZSCO 2022.json",
+              "locator": "row:356",
+              "heading": "Registered Nurse (Aged Care) — ANZSCO 2022 254412 2025 shortage ratings. Australia: Shortage; NSW: Shortage; VIC: Shortage; QLD: Shortage; SA: Shortage; WA: Sho",
+              "chunk_id": "chunk-31d38f690d5d8317b5dcc711d145742ec18bfe558f3eaa4434113365478ce8dd",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 7,
+              "source": "au-government-2026-09-06/JSA 2025 Shortages ANZSCO 2022.json",
+              "locator": "row:359",
+              "heading": "Registered Nurse (Critical Care and Emergency) — ANZSCO 2022 254415 2025 shortage ratings. Australia: Shortage; NSW: Shortage; VIC: Shortage; QLD: Shortage; SA:",
+              "chunk_id": "chunk-f406c6ad671532e43287ea63b4023da270055b7f9c8b06d30a0c2ca0ebf94a06",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            },
+            {
+              "rank": 8,
+              "source": "au-government-2026-09-06/JSA 2025 Shortages OSCA 2024.json",
+              "locator": "row:409",
+              "heading": "Registered Nurse (Aged Care) — OSCA 2024 265433 2025 shortage ratings. Australia: Shortage; NSW: Shortage; VIC: Shortage; QLD: Shortage; SA: Shortage; WA: Short",
+              "chunk_id": "chunk-b804f375f07dddbec18242878539a07ae1459780d6af2dc5964c315e589ebe14",
+              "snapshot_matches": true,
+              "citation_resolves": true
+            }
+          ]
+        }
+      ],
+      "all_return_eight": true,
+      "all_citations_resolve": true
+    }
+  ],
+  "rebuild_history": [
+    {
+      "rebuild": {
+        "active_snapshot": {
+          "snapshot_id": "sha256:354af02b851e53ce2dc37be7c155ba4b7385382b0c48eef13c26163abaf7ac07",
+          "status": "active",
+          "stage": "complete",
+          "total_documents": 24,
+          "processed_documents": 24,
+          "total_chunks": 9031,
+          "processed_chunks": 9031,
+          "failure_source": null,
+          "error_message": null,
+          "created_at": "2026-09-05T17:41:24.289928Z",
+          "completed_at": "2026-09-05T17:41:54.435996Z"
+        },
+        "latest_rebuild": {
+          "snapshot_id": "sha256:354af02b851e53ce2dc37be7c155ba4b7385382b0c48eef13c26163abaf7ac07",
+          "status": "active",
+          "stage": "complete",
+          "total_documents": 24,
+          "processed_documents": 24,
+          "total_chunks": 9031,
+          "processed_chunks": 9031,
+          "failure_source": null,
+          "error_message": null,
+          "created_at": "2026-09-05T17:41:24.289928Z",
+          "completed_at": "2026-09-05T17:41:54.435996Z"
+        }
+      },
+      "elapsed_seconds": 32.155,
+      "scope": "Before removal of non-body PDF pages."
+    }
+  ],
+  "qwen_models_started_for_rebuild": false,
+  "user_table_counts_scope": "Counts immediately before and after initial ingestion, before synthetic API scenarios.",
+  "retrieval_checks": {
+    "snapshot_id": "sha256:777a0e9605ef648fa0a5e2154f6032dd5a5863cbd7491d2d432e684a3bcbfc0b",
+    "queries": [
+      {
+        "case": "software_en",
+        "query": "Software engineer developing testing software code databases artificial intelligence",
+        "seconds": 3.023,
+        "count": 8,
+        "hits": [
+          {
+            "rank": 1,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+            "locator": "row:676",
+            "heading": "Software Engineer — OSCA 2024 v1.0 273333 Specialisations: Application Developer; Application Engineer; Artificial Intelligence Engineer; Blockchain Develo",
+            "chunk_id": "chunk-150a8697ca89c88c06f557bebf5286778d1bf64f5a84af5509112b8bb7f32652",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 2,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+            "locator": "row:655",
+            "heading": "ICT Test Analyst — OSCA 2024 v1.0 272233 feedback and recommendations based on analysis of test results, and ensures it aligns with business requirements a",
+            "chunk_id": "chunk-5e93a8637becc48bdb21c67033916bb78f72797cdf90354c1c71871671d872ae",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 3,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+            "locator": "row:675",
+            "heading": "Software Engineer — OSCA 2024 v1.0 273333 alignment with specified requirements; Writes, tests and debugs code to ensure functionality, efficiency and adhe",
+            "chunk_id": "chunk-606fd5457cdd4dbbde4c0915e606430ea65a5872d73e456587aca4541b8b5109",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 4,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+            "locator": "row:652",
+            "heading": "ICT Support Engineer — OSCA 2024 v1.0 272232 code to ensure systems perform to specification; Develops, conducts and provides technical guidance and traini",
+            "chunk_id": "chunk-fd2b68abadd3659e5dc3a5e5294b95899cc9ce45e647267858357048f160264c",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 5,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+            "locator": "row:633",
+            "heading": "Cyber Security Engineer — OSCA 2024 v1.0 271135 development processes; Participates in code reviews and provides security guidance; Assesses security of th",
+            "chunk_id": "chunk-b498c5e627c170b546e5b08c45b0f13b69d35257b39381d555b03f435bacb9c8",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 6,
+            "source": "au-government-2026-09-06/JSA ANZSCO v1.3 unit groups 2.json",
+            "locator": "row:840",
+            "heading": "Software and Applications Programmers — ANZSCO 2013 v1.3 2613 Software and Applications Programmers design, develop, test, maintain and document program co",
+            "chunk_id": "chunk-9b4712235a564c593827515dc08e4519c1b06e0806e06570ec656c384b3bca08",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 7,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+            "locator": "row:673",
+            "heading": "DevOps Engineer — OSCA 2024 v1.0 273332 between networks, servers and automation elements within a given environment; Automates software and infrastructure",
+            "chunk_id": "chunk-9f278f756af8e27a8fb70e3545d65acfca712b69996824f461c66837f7f0ba8c",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 8,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+            "locator": "row:674",
+            "heading": "Software Engineer — OSCA 2024 v1.0 273333 Alternative Title: Analyst Programmer; Developer Programmer; Software Developer; Lead Statement: Designs, develop",
+            "chunk_id": "chunk-c4cd04917c0495d261f988fdb122aa44df87bb824fc3400e1f4a47dd8a10401c",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          }
+        ]
+      },
+      {
+        "case": "accountant_en",
+        "query": "Accountant financial reporting auditing bookkeeping taxation compliance",
+        "seconds": 3.046,
+        "count": 8,
+        "hits": [
+          {
+            "rank": 1,
+            "source": "au-government-2026-09-06/JSA ANZSCO v1.3 unit groups 2.json",
+            "locator": "row:80",
+            "heading": "Accountants — ANZSCO 2013 v1.3 2211 Accountants provide services relating to financial reporting, taxation, auditing, insolvency, accounting information sy",
+            "chunk_id": "chunk-6cf9b17923e54d5cc4c1f32ec9d9cda79e746fedb605cb4e9803622074ceb3dd",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 2,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+            "locator": "row:9",
+            "heading": "Taxation Accountant — OSCA 2024 v1.0 211135 Alternative Title: Taxation Agent; Taxation Consultant; Lead Statement: Analyses, reports and provides advice o",
+            "chunk_id": "chunk-a28fe3418ed09f395316ffdc347a9e2507a1f29c98b2fbe63a326fae67eea1be",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 3,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 5.json",
+            "locator": "row:102",
+            "heading": "Taxation Compliance Officer — OSCA 2024 v1.0 591232 Lead Statement: Inspects and assesses taxation returns to ensure compliance with government legislation",
+            "chunk_id": "chunk-1afcdac05cc13c7b9dde2a66198087719f3667093442281ba52cfe179970439c",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 4,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 5.json",
+            "locator": "row:103",
+            "heading": "Taxation Compliance Officer — OSCA 2024 v1.0 591232 compliance and obligations; Collaborates with government agencies and law enforcement authorities in ca",
+            "chunk_id": "chunk-eb8216829a35a3112c521ffe060ff17a633685121290a61d1ffaeb5ff15594fd",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 5,
+            "source": "au-government-2026-09-06/JSA ANZSCO v1.3 unit groups 5.json",
+            "locator": "row:287",
+            "heading": "Inspectors and Regulatory Officers — ANZSCO 2013 v1.3 5995 Occupation task: Carrying out random checks of taxation documents to detect non-compliance with ",
+            "chunk_id": "chunk-ded2cc5e5de5ace11d1a4907fd9e905c9260bd0495ee0cef870cc211313f86a7",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 6,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+            "locator": "row:10",
+            "heading": "Taxation Accountant — OSCA 2024 v1.0 211135 tax implications on the purchase and sale of businesses, mergers and capital financing Source: ABS; Table 1 row",
+            "chunk_id": "chunk-1fb9f495142bd2771bf155dea0f87da2aa685dd3ae4f99c34936a3e803ad27e8",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 7,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+            "locator": "row:11",
+            "heading": "External Auditor — OSCA 2024 v1.0 211231 Lead Statement: Designs and operates information and reporting systems, procedures and controls to meet external f",
+            "chunk_id": "chunk-b4b0f4b8b8462f812d53660b5f7bdbeb889c2dc67eeffa7c400ae1d905902093",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 8,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+            "locator": "row:13",
+            "heading": "Internal Auditor — OSCA 2024 v1.0 211232 Alternative Title: Audit Officer; Lead Statement: Examines, verifies, evaluates and reports on financial, operatio",
+            "chunk_id": "chunk-d5b4a3e4f8c1a205700c67c2ae9ee5f159b80103fb8b17babd76fa30a1bed774",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          }
+        ]
+      },
+      {
+        "case": "nurse_en",
+        "query": "Registered nurse patient care clinical nursing medication",
+        "seconds": 3.057,
+        "count": 8,
+        "hits": [
+          {
+            "rank": 1,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+            "locator": "row:591",
+            "heading": "Registered Nurse (Primary Health Care) — OSCA 2024 v1.0 265435 Nurse (Community Health); Registered Nurse (Disability); Registered Nurse (Health Education ",
+            "chunk_id": "chunk-2032e3778e6c5adc0b02874f0ccc3dc46dd9cf20870b06af25a663f603e5dedb",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 2,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 4.json",
+            "locator": "row:91",
+            "heading": "Enrolled Nurse — OSCA 2024 v1.0 441131 medications under the supervision of a Registered Nurse; Provides patients with personal care activities such as bat",
+            "chunk_id": "chunk-b9f39e44751b79d0d23de750930427a3e8d7df9f20f8cc01495aeb01ad14bfcb",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 3,
+            "source": "au-government-2026-09-06/JSA ANZSCO v1.3 unit groups 2.json",
+            "locator": "row:817",
+            "heading": "Registered Nurses — ANZSCO 2013 v1.3 2544 Registered Nurses provide nursing care to patients in hospitals, aged care and other health care facilities, and ",
+            "chunk_id": "chunk-f30ce2a301b418268414a64db7d05157e3bdac9baf883c760695d7ff271b2068",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 4,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+            "locator": "row:579",
+            "heading": "Nursing / Midwifery Unit Manager — OSCA 2024 v1.0 265331 and the provision of cost-effective nursing/midwifery care; Monitors and evaluates the quality and",
+            "chunk_id": "chunk-2c7737305406bbb1fa35c6bb9a50e9a1aafb7f590a76d16354dd4652b94713d3",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 5,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+            "locator": "row:482",
+            "heading": "Hospital Pharmacist — OSCA 2024 v1.0 263432 Lead Statement: Prepares, dispenses, reviews and monitors medication of individual patients, and provides medic",
+            "chunk_id": "chunk-80915d953da6b8ebf685515a84f1a2e810953b43c39d70c41c5ec78c28b786b8",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 6,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+            "locator": "row:590",
+            "heading": "Registered Nurse (Primary Health Care) — OSCA 2024 v1.0 265435 individuals, families and groups in the wider community; Develops and implements nursing car",
+            "chunk_id": "chunk-8c73f32e084f498b930260aa4d32143ced818bf72e8e4d580c82aa821c4bfdc5",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 7,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+            "locator": "row:582",
+            "heading": "Registered Nurse (Acute Care) — OSCA 2024 v1.0 265432 Lead Statement: Plans, coordinates and provides nursing care and services to people in a hospital set",
+            "chunk_id": "chunk-4f8016d762974e7d73ab45919899142f4fac2550633b5d3b0eef2c4007d92a0e",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 8,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+            "locator": "row:584",
+            "heading": "Registered Nurse (Acute Care) — OSCA 2024 v1.0 265432 (Rehabilitation) Source: ABS; Table 1 row 421; 2024 Version 1.0, July 2025 corrections. https://www.a",
+            "chunk_id": "chunk-d6d4e23a18fa06502578951119e25f3fb60ff27bb22a9464d87cabf954edad09",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          }
+        ]
+      },
+      {
+        "case": "electrician_en",
+        "query": "Electrician installation maintenance testing electrical wiring",
+        "seconds": 3.008,
+        "count": 8,
+        "hits": [
+          {
+            "rank": 1,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 3.json",
+            "locator": "row:316",
+            "heading": "Industrial Electrician — OSCA 2024 v1.0 381233 drawings, circuit wiring and mechanical diagrams, equipment and cable/connection schedules and manuals to un",
+            "chunk_id": "chunk-5d3f76cb41183d9481f9ded8f9a896ab715f67f1e3663588971c4daac6cb5dc1",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 2,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 3.json",
+            "locator": "row:314",
+            "heading": "Electrical Fitter — OSCA 2024 v1.0 381232 and uses electrical specifications, wiring and circuit diagrams, plant schematics, schedules and specifications t",
+            "chunk_id": "chunk-f602662c5793cf26f9f0ae75abc24bb0454fe861a0167e29a172484f1a60a75e",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 3,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 3.json",
+            "locator": "row:81",
+            "heading": "Electrical Engineering Technician — OSCA 2024 v1.0 313232 Alternative Title: Electrical Engineering Technical Officer; Lead Statement: Supports and assists",
+            "chunk_id": "chunk-ed161a38224e4e81a9fb1cc9b19be27b2e8d42384fb5f9be306a9aa4f83a068a",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 4,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 3.json",
+            "locator": "row:308",
+            "heading": "Electrical Distribution Trades Worker — OSCA 2024 v1.0 381131 distribution and underground networks; Inspects and tests cables and cable joints to identify",
+            "chunk_id": "chunk-0915813fa7e9697d2591480297cd06f160320de332ff910cd4585786eb22f0fb",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 5,
+            "source": "au-government-2026-09-06/JSA ANZSCO v1.3 unit groups 2.json",
+            "locator": "row:389",
+            "heading": "Electrical Engineers — ANZSCO 2013 v1.3 2333 Electrical Engineers design, develop and supervise the manufacture, installation, operation and maintenance of",
+            "chunk_id": "chunk-a3efe8b6be6f5ed4b557ed5ae74d90b90c94c9b2140bc3bcf67368502e097fae",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 6,
+            "source": "au-government-2026-09-06/JSA ANZSCO v1.3 unit groups 3.json",
+            "locator": "row:118",
+            "heading": "Automotive Electricians — ANZSCO 2013 v1.3 3211 Automotive Electricians install, maintain and repair electrical wiring and electronic components in motor v",
+            "chunk_id": "chunk-5de6f37483aff4f824313d19ffde0a0068ca3767b01d737f75a730a925814239",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 7,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 3.json",
+            "locator": "row:311",
+            "heading": "Electrician (General) — OSCA 2024 v1.0 381231 Industrial Electrician. Hot water solar system installers are included in Occupation 363131 Plumber (General)",
+            "chunk_id": "chunk-58b02b8109d5727c74b8b853ac9d133b76c55042638460667f82cc37c3399b7f",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 8,
+            "source": "au-government-2026-09-06/JSA ANZSCO v1.3 unit groups 3.json",
+            "locator": "row:356",
+            "heading": "Electrical Distribution Trades Workers — ANZSCO 2013 v1.3 3422 Occupation task: Preparing lowand high-voltage cable joints and cable terminations while con",
+            "chunk_id": "chunk-cf0400843dbfa2c64cc80a80a00ebde0fe1660d166f7c3320b0ddc768565b53f",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          }
+        ]
+      },
+      {
+        "case": "software_zh",
+        "query": "软件工程师 软件开发 编程 代码测试 数据库 人工智能",
+        "seconds": 3.069,
+        "count": 8,
+        "hits": [
+          {
+            "rank": 1,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+            "locator": "row:676",
+            "heading": "Software Engineer — OSCA 2024 v1.0 273333 Specialisations: Application Developer; Application Engineer; Artificial Intelligence Engineer; Blockchain Develo",
+            "chunk_id": "chunk-150a8697ca89c88c06f557bebf5286778d1bf64f5a84af5509112b8bb7f32652",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 2,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+            "locator": "row:675",
+            "heading": "Software Engineer — OSCA 2024 v1.0 273333 alignment with specified requirements; Writes, tests and debugs code to ensure functionality, efficiency and adhe",
+            "chunk_id": "chunk-606fd5457cdd4dbbde4c0915e606430ea65a5872d73e456587aca4541b8b5109",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 3,
+            "source": "au-government-2026-09-06/JSA ANZSCO v1.3 unit groups 2.json",
+            "locator": "row:840",
+            "heading": "Software and Applications Programmers — ANZSCO 2013 v1.3 2613 Software and Applications Programmers design, develop, test, maintain and document program co",
+            "chunk_id": "chunk-9b4712235a564c593827515dc08e4519c1b06e0806e06570ec656c384b3bca08",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 4,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+            "locator": "row:674",
+            "heading": "Software Engineer — OSCA 2024 v1.0 273333 Alternative Title: Analyst Programmer; Developer Programmer; Software Developer; Lead Statement: Designs, develop",
+            "chunk_id": "chunk-c4cd04917c0495d261f988fdb122aa44df87bb824fc3400e1f4a47dd8a10401c",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 5,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+            "locator": "row:652",
+            "heading": "ICT Support Engineer — OSCA 2024 v1.0 272232 code to ensure systems perform to specification; Develops, conducts and provides technical guidance and traini",
+            "chunk_id": "chunk-fd2b68abadd3659e5dc3a5e5294b95899cc9ce45e647267858357048f160264c",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 6,
+            "source": "au-government-2026-09-06/JSA ANZSCO v1.3 unit groups 2.json",
+            "locator": "row:843",
+            "heading": "Software and Applications Programmers — ANZSCO 2013 v1.3 2613 Occupation task: Testing, debugging, diagnosing and correcting errors and faults in an applic",
+            "chunk_id": "chunk-bf004a9e8a7beaaa23addc85be463550b145c4cc137a4fb976ea9c4531613b3d",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 7,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+            "locator": "row:655",
+            "heading": "ICT Test Analyst — OSCA 2024 v1.0 272233 feedback and recommendations based on analysis of test results, and ensures it aligns with business requirements a",
+            "chunk_id": "chunk-5e93a8637becc48bdb21c67033916bb78f72797cdf90354c1c71871671d872ae",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 8,
+            "source": "au-government-2026-09-06/JSA ANZSCO v1.3 unit groups 2.json",
+            "locator": "row:844",
+            "heading": "Software and Applications Programmers — ANZSCO 2013 v1.3 2613 Occupation task: Writing and maintaining program code to meet system requirements, system des",
+            "chunk_id": "chunk-5e6039f6eb8bcfd7b9bb5d971a9ab7c017d1f8ada80a786a5bf40cb7cc67dbd3",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          }
+        ]
+      },
+      {
+        "case": "accountant_zh",
+        "query": "会计 财务报表 审计 记账 税务 合规",
+        "seconds": 3.045,
+        "count": 8,
+        "hits": [
+          {
+            "rank": 1,
+            "source": "au-government-2026-09-06/JSA ANZSCO v1.3 unit groups 2.json",
+            "locator": "row:80",
+            "heading": "Accountants — ANZSCO 2013 v1.3 2211 Accountants provide services relating to financial reporting, taxation, auditing, insolvency, accounting information sy",
+            "chunk_id": "chunk-6cf9b17923e54d5cc4c1f32ec9d9cda79e746fedb605cb4e9803622074ceb3dd",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 2,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 5.json",
+            "locator": "row:47",
+            "heading": "Bookkeeper — OSCA 2024 v1.0 542131 analyses ledgers and accounting software packages using account books; Provides government authorities with tax file num",
+            "chunk_id": "chunk-73170a826f0a1a84f7d989be66d75638ab3ac51bc05a13c6e78fb32d9ceacdc8",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 3,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+            "locator": "row:1",
+            "heading": "Accountant (General) — OSCA 2024 v1.0 211131 Lead Statement: Provides services relating to compliance-based financial, non-financial and sustainability-rel",
+            "chunk_id": "chunk-8a2d526a3291e23d1d7b5b9166841b43b33a047fb249ef1452377dd1b3969b94",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 4,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+            "locator": "row:2",
+            "heading": "Accountant (General) — OSCA 2024 v1.0 211131 and accounting policies; Specialisations: Financial Analyst; Insolvency Accountant; Production Accountant (Scr",
+            "chunk_id": "chunk-07613e7edbe6dd796f66fc54781450efb027a0a21db310a7cedc8ab9115bc6c0",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 5,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 5.json",
+            "locator": "row:46",
+            "heading": "Bookkeeper — OSCA 2024 v1.0 542131 Lead Statement: Maintains and evaluates records of financial transactions in account books and computerised accounting s",
+            "chunk_id": "chunk-4b57536daed767ef75fb8cfcf1db5b7aadaeef72103e060ff16c00a4dd056c8f",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 6,
+            "source": "au-government-2026-09-06/JSA ANZSCO v1.3 unit groups 2.json",
+            "locator": "row:92",
+            "heading": "Auditors, Company Secretaries and Corporate Treasurers — ANZSCO 2013 v1.3 2212 Auditors, Company Secretaries and Corporate Treasurers conduct audits of acc",
+            "chunk_id": "chunk-003ec82aa27ca813654ad51e7d39656e42fe0891e719ad888573cfc7b3fa6167",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 7,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+            "locator": "row:11",
+            "heading": "External Auditor — OSCA 2024 v1.0 211231 Lead Statement: Designs and operates information and reporting systems, procedures and controls to meet external f",
+            "chunk_id": "chunk-b4b0f4b8b8462f812d53660b5f7bdbeb889c2dc67eeffa7c400ae1d905902093",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 8,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+            "locator": "row:7",
+            "heading": "Management Accountant — OSCA 2024 v1.0 211134 Alternative Title: Cost Accountant; Lead Statement: Provides services relating to performance-based financial",
+            "chunk_id": "chunk-d48af4c80c79a9cd410d84de01efcd27b5fec619bb23c672c7baa2c7c7ea26bd",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          }
+        ]
+      },
+      {
+        "case": "nurse_zh",
+        "query": "注册护士 患者护理 临床护理 药物管理",
+        "seconds": 3.021,
+        "count": 8,
+        "hits": [
+          {
+            "rank": 1,
+            "source": "au-government-2026-09-06/JSA ANZSCO v1.3 unit groups 2.json",
+            "locator": "row:817",
+            "heading": "Registered Nurses — ANZSCO 2013 v1.3 2544 Registered Nurses provide nursing care to patients in hospitals, aged care and other health care facilities, and ",
+            "chunk_id": "chunk-f30ce2a301b418268414a64db7d05157e3bdac9baf883c760695d7ff271b2068",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 2,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+            "locator": "row:581",
+            "heading": "Nurse Practitioner — OSCA 2024 v1.0 265431 promotion, disease prevention and self-care; Refers patients to specialist Medical Practitioners and other Healt",
+            "chunk_id": "chunk-fb7069d97679b9ed4ca232a272b6b97aa94e540598963a829eb33d15a967debc",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 3,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+            "locator": "row:586",
+            "heading": "Registered Nurse (Aged Care) — OSCA 2024 v1.0 265433 patients; Collaborates with other Health Professionals to coordinate and manage patient care; Educates",
+            "chunk_id": "chunk-eeb1a703735c99f160b87afcc500e119d45df4e13377f20e92210e1708c92b18",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 4,
+            "source": "au-government-2026-09-06/JSA ANZSCO v1.3 unit groups 2.json",
+            "locator": "row:819",
+            "heading": "Registered Nurses — ANZSCO 2013 v1.3 2544 Occupation task: Working in consultation with other health professionals and members of health teams, and coordin",
+            "chunk_id": "chunk-b5b2a747bb16395280132647288faeeea92172eadd6a4c0742631ab40bdb1d9b",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 5,
+            "source": "au-government-2026-09-06/JSA ANZSCO v1.3 unit groups 2.json",
+            "locator": "row:820",
+            "heading": "Registered Nurses — ANZSCO 2013 v1.3 2544 Occupation task: Providing interventions, treatments and therapies such as medications, and monitoring responses ",
+            "chunk_id": "chunk-e3bf30f24879b95246a234b16b4014257fbeb503452ec893e2222f42a07e07d6",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 6,
+            "source": "au-government-2026-09-06/JSA ANZSCO v1.3 unit groups 2.json",
+            "locator": "row:818",
+            "heading": "Registered Nurses — ANZSCO 2013 v1.3 2544 Occupation task: Assessing, planning, implementing and evaluating nursing care for patients according to accepted",
+            "chunk_id": "chunk-93abecffdd7a338ee2ed9243311884ae59e907cea87c813ef4f9ca8fd2cf014a",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 7,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+            "locator": "row:591",
+            "heading": "Registered Nurse (Primary Health Care) — OSCA 2024 v1.0 265435 Nurse (Community Health); Registered Nurse (Disability); Registered Nurse (Health Education ",
+            "chunk_id": "chunk-2032e3778e6c5adc0b02874f0ccc3dc46dd9cf20870b06af25a663f603e5dedb",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 8,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+            "locator": "row:587",
+            "heading": "Registered Nurse (Mental Health) — OSCA 2024 v1.0 265434 Lead Statement: Provides nursing care and services to people with mental health illness, disorder ",
+            "chunk_id": "chunk-26c21a5de3cb84b9a94f3d6eda144ff0f65786fe58521fbc6cd7ca4ecd2a75ba",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          }
+        ]
+      },
+      {
+        "case": "ai_tasks",
+        "query": "generative AI exposure automation augmentation tasks skills transition",
+        "seconds": 3.025,
+        "count": 8,
+        "hits": [
+          {
+            "rank": 1,
+            "source": "au-government-2026-09-06/Our Gen AI Transition - Analysis Papers A to E.json",
+            "locator": "row:26",
+            "heading": "Our Gen AI Transition - Analysis Papers A to E occupations in the labour market, though to different degrees and in different ways. Our analysis suggests t",
+            "chunk_id": "chunk-478c859862505f398b4c7b7605684eb88bb268f220c79bbdc7735afc486cf545",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 2,
+            "source": "au-government-2026-09-06/Our Gen AI Transition - Final Release, cohorts and technical notes.json",
+            "locator": "row:110",
+            "heading": "Our Gen AI Transition - Final Release, cohorts and technical notes Jobs and Skills Australia – Our Gen AI Transition 30 Developing exposure measures of Gen",
+            "chunk_id": "chunk-d79e8b351089d13d3d03a509f8ecb2bb9ea3f1b7b22dc000aa2dd74c3ebd87e6",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 3,
+            "source": "au-government-2026-09-06/Our Gen AI Transition - Analysis Papers A to E.json",
+            "locator": "row:401",
+            "heading": "Our Gen AI Transition - Analysis Papers A to E skill in the Information Technology category per the Lightcast skills taxonomy (as a measure of the technolo",
+            "chunk_id": "chunk-f3c3f6a9aeeb531b715612a001e8d4949ccf09aca11cb17cd663969903e42f62",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 4,
+            "source": "au-government-2026-09-06/Our Gen AI Transition - Final Release, cohorts and technical notes.json",
+            "locator": "row:158",
+            "heading": "Our Gen AI Transition - Final Release, cohorts and technical notes Jobs and Skills Australia – Our Gen AI Transition 40 Box 1 Task-level use of Gen AI: fro",
+            "chunk_id": "chunk-bc5e83f732a1b33267d0a71d2ba94b95e67711180175a2ba8f4b01ce0c6f9c6d",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 5,
+            "source": "au-government-2026-09-06/Our Gen AI Transition - Final Release, cohorts and technical notes.json",
+            "locator": "row:12",
+            "heading": "Our Gen AI Transition - Final Release, cohorts and technical notes Female and male workforce exposure to automation and augmentation in current occupations",
+            "chunk_id": "chunk-ea173e5f91c4818e59a738754edc40d7f306847783954eda7bf3110e92148db8",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 6,
+            "source": "au-government-2026-09-06/Our Gen AI Transition - Final Release, cohorts and technical notes.json",
+            "locator": "row:256",
+            "heading": "Our Gen AI Transition - Final Release, cohorts and technical notes Jobs and Skills Australia – Our Gen AI Transition 63 Automation and Augmentation Pathway",
+            "chunk_id": "chunk-ae1d76541addaeae553f6b48f5dfea1d0ccea77fd07e15f3867e3bfb18ad7510",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 7,
+            "source": "au-government-2026-09-06/Our Gen AI Transition - Analysis Papers A to E.json",
+            "locator": "row:120",
+            "heading": "Our Gen AI Transition - Analysis Papers A to E worker profiles data shows that workers with skills relating to Gen AI platforms and engineering are concent",
+            "chunk_id": "chunk-ede81e3ba9b49f458240ba476bed40ddc6496df1257cecbb402f58ed80e316ff",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 8,
+            "source": "au-government-2026-09-06/Our Gen AI Transition - Final Release, cohorts and technical notes.json",
+            "locator": "row:116",
+            "heading": "Our Gen AI Transition - Final Release, cohorts and technical notes assessments for augmentation and enhancing it for the Australian and New Zealand Standar",
+            "chunk_id": "chunk-6b0dd56f4ab7cf05f8c60064a3c76fdb92104bd2990018910149a3d46a432a7f",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          }
+        ]
+      },
+      {
+        "case": "accountant_projection",
+        "query": "Accountants employment projections May 2030 growth",
+        "seconds": 3.04,
+        "count": 8,
+        "hits": [
+          {
+            "rank": 1,
+            "source": "au-government-2026-09-06/JSA Employment Projections 2025 to 2035.json",
+            "locator": "row:47",
+            "heading": "Accountants — ANZSCO v1.3 2211 Employment, thousands of persons: May 2025 baseline 210.295; May 2030 projected 228.043; May 2035 projected 245.260. Project",
+            "chunk_id": "chunk-629808e7016a0603477bff9b4993b81ebeb195c619ca20e4c07e73204004e55f",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 2,
+            "source": "au-government-2026-09-06/JSA Employment Projections 2025 to 2035.json",
+            "locator": "row:201",
+            "heading": "Jewellers — ANZSCO v1.3 3994 Employment, thousands of persons: May 2025 baseline 4.606; May 2030 projected 4.990; May 2035 projected 5.250. Projected five-",
+            "chunk_id": "chunk-280c06407224f65540de312611c9fecb449b54fd2bcb672d96fe4e0f07e31b35",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 3,
+            "source": "au-government-2026-09-06/JSA Employment Projections 2025 to 2035.json",
+            "locator": "row:348",
+            "heading": "Kitchenhands — ANZSCO v1.3 8513 Employment, thousands of persons: May 2025 baseline 151.627; May 2030 projected 156.635; May 2035 projected 164.967. Projec",
+            "chunk_id": "chunk-43bb0bce5d3c57de42c56d6cbb9262ab302a5f1445c7ec2f8a76e869647e2e36",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 4,
+            "source": "au-government-2026-09-06/JSA Employment Projections 2025 to 2035.json",
+            "locator": "row:117",
+            "heading": "Surgeons — ANZSCO v1.3 2535 Employment, thousands of persons: May 2025 baseline 10.452; May 2030 projected 12.344; May 2035 projected 13.916. Projected fiv",
+            "chunk_id": "chunk-035a2f2cd5d880ddb5610c0eecea4be0aeb93a1bd7434458ce60d9b41065958d",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 5,
+            "source": "au-government-2026-09-06/JSA Employment Projections 2025 to 2035.json",
+            "locator": "row:251",
+            "heading": "Accounting Clerks — ANZSCO v1.3 5511 Employment, thousands of persons: May 2025 baseline 138.663; May 2030 projected 140.488; May 2035 projected 146.884. P",
+            "chunk_id": "chunk-ea6216741f79eaebd2d153efff069bbb3dd25977d467ac96de99e2cfa9802ec2",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 6,
+            "source": "au-government-2026-09-06/JSA Employment Projections 2025 to 2035.json",
+            "locator": "row:189",
+            "heading": "Hairdressers — ANZSCO v1.3 3911 Employment, thousands of persons: May 2025 baseline 64.836; May 2030 projected 65.320; May 2035 projected 68.472. Projected",
+            "chunk_id": "chunk-0e17d924121b7760c7fa889fa94185001956a183306c28523086a7d3f7401edc",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 7,
+            "source": "au-government-2026-09-06/JSA Employment Projections 2025 to 2035.json",
+            "locator": "row:48",
+            "heading": "Auditors, Company Secretaries and Corporate Treasurers — ANZSCO v1.3 2212 Employment, thousands of persons: May 2025 baseline 31.540; May 2030 projected 34",
+            "chunk_id": "chunk-e2be077e8ce497f99ce19d7365983a38066691531e2a966f54e514df60e28cef",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 8,
+            "source": "au-government-2026-09-06/JSA Employment Projections 2025 to 2035.json",
+            "locator": "row:161",
+            "heading": "Panelbeaters — ANZSCO v1.3 3241 Employment, thousands of persons: May 2025 baseline 11.043; May 2030 projected 10.706; May 2035 projected 11.044. Projected",
+            "chunk_id": "chunk-120866edeb33e541b9fcb064b97541ed4a3efc8bac483d8fe7e7d1229d9a054d",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          }
+        ]
+      },
+      {
+        "case": "nurse_shortage",
+        "query": "Registered Nurse Victoria shortage 2025",
+        "seconds": 3.067,
+        "count": 8,
+        "hits": [
+          {
+            "rank": 1,
+            "source": "au-government-2026-09-06/JSA 2025 Shortages ANZSCO 2022.json",
+            "locator": "row:365",
+            "heading": "Registered Nurse (Perioperative) — ANZSCO 2022 254423 2025 shortage ratings. Australia: Shortage; NSW: Shortage; VIC: Shortage; QLD: Shortage; SA: Shortage",
+            "chunk_id": "chunk-6fef8948b0bb348efecd00aead8077ae2cbc5813e2a194d070c1a15685b903d9",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 2,
+            "source": "au-government-2026-09-06/JSA 2025 Shortages OSCA 2024.json",
+            "locator": "row:408",
+            "heading": "Registered Nurse (Acute Care) — OSCA 2024 265432 2025 shortage ratings. Australia: Shortage; NSW: Shortage; VIC: Shortage; QLD: Shortage; SA: Shortage; WA:",
+            "chunk_id": "chunk-8c0a76c08ec186c1d1afdc9eed03f34e28aae45a6853dea7030245910a98a965",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 3,
+            "source": "au-government-2026-09-06/JSA 2025 Shortages ANZSCO 2022.json",
+            "locator": "row:367",
+            "heading": "Registered Nurse (Paediatrics) — ANZSCO 2022 254425 2025 shortage ratings. Australia: Shortage; NSW: Shortage; VIC: Shortage; QLD: Shortage; SA: Shortage; ",
+            "chunk_id": "chunk-a6f5ae302033ce3ea6d433bff3c904a1373851a7c6a241f1cd40f4ed7f4fd0db",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 4,
+            "source": "au-government-2026-09-06/JSA 2025 Shortages ANZSCO 2022.json",
+            "locator": "row:358",
+            "heading": "Registered Nurse (Community Health) — ANZSCO 2022 254414 2025 shortage ratings. Australia: Shortage; NSW: Shortage; VIC: Shortage; QLD: Shortage; SA: Short",
+            "chunk_id": "chunk-59f27c96c530de973f594966c61378117fc61108d4256536a509c7ebddc730b9",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 5,
+            "source": "au-government-2026-09-06/JSA 2025 Shortages OSCA 2024.json",
+            "locator": "row:411",
+            "heading": "Registered Nurse (Primary Health Care) — OSCA 2024 265435 2025 shortage ratings. Australia: Shortage; NSW: Shortage; VIC: Shortage; QLD: Shortage; SA: Shor",
+            "chunk_id": "chunk-145bd8bdaa8b66a15bc6df59a15e70de4e868bc183f8e5490eff064b29336db0",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 6,
+            "source": "au-government-2026-09-06/JSA 2025 Shortages ANZSCO 2022.json",
+            "locator": "row:356",
+            "heading": "Registered Nurse (Aged Care) — ANZSCO 2022 254412 2025 shortage ratings. Australia: Shortage; NSW: Shortage; VIC: Shortage; QLD: Shortage; SA: Shortage; WA",
+            "chunk_id": "chunk-31d38f690d5d8317b5dcc711d145742ec18bfe558f3eaa4434113365478ce8dd",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 7,
+            "source": "au-government-2026-09-06/JSA 2025 Shortages ANZSCO 2022.json",
+            "locator": "row:359",
+            "heading": "Registered Nurse (Critical Care and Emergency) — ANZSCO 2022 254415 2025 shortage ratings. Australia: Shortage; NSW: Shortage; VIC: Shortage; QLD: Shortage",
+            "chunk_id": "chunk-f406c6ad671532e43287ea63b4023da270055b7f9c8b06d30a0c2ca0ebf94a06",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 8,
+            "source": "au-government-2026-09-06/JSA 2025 Shortages OSCA 2024.json",
+            "locator": "row:409",
+            "heading": "Registered Nurse (Aged Care) — OSCA 2024 265433 2025 shortage ratings. Australia: Shortage; NSW: Shortage; VIC: Shortage; QLD: Shortage; SA: Shortage; WA: ",
+            "chunk_id": "chunk-b804f375f07dddbec18242878539a07ae1459780d6af2dc5964c315e589ebe14",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          }
+        ]
+      },
+      {
+        "case": "actual_confirmed_accountant_zh",
+        "query": "会计 月末结账 财务报表 发票核对 预算分析 合规检查",
+        "seconds": 3.082,
+        "count": 8,
+        "hits": [
+          {
+            "rank": 1,
+            "source": "au-government-2026-09-06/JSA ANZSCO v1.3 unit groups 5.json",
+            "locator": "row:100",
+            "heading": "Accounting Clerks — ANZSCO 2013 v1.3 5511 Accounting Clerks monitor creditor and debtor accounts, undertake related routine documentation, and calculate an",
+            "chunk_id": "chunk-315186f7902f2fbb3feef217371bcff1da0a55b91a4ab1c2be4daf909224999c",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 2,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+            "locator": "row:1",
+            "heading": "Accountant (General) — OSCA 2024 v1.0 211131 Lead Statement: Provides services relating to compliance-based financial, non-financial and sustainability-rel",
+            "chunk_id": "chunk-8a2d526a3291e23d1d7b5b9166841b43b33a047fb249ef1452377dd1b3969b94",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 3,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 5.json",
+            "locator": "row:46",
+            "heading": "Bookkeeper — OSCA 2024 v1.0 542131 Lead Statement: Maintains and evaluates records of financial transactions in account books and computerised accounting s",
+            "chunk_id": "chunk-4b57536daed767ef75fb8cfcf1db5b7aadaeef72103e060ff16c00a4dd056c8f",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 4,
+            "source": "au-government-2026-09-06/JSA ANZSCO v1.3 unit groups 1.json",
+            "locator": "row:93",
+            "heading": "Finance Managers — ANZSCO 2013 v1.3 1322 Occupation task: Directing the preparation of financial reports summarising and forecasting the organisation's fin",
+            "chunk_id": "chunk-1f80e06c2288ba3e53106c6f246d497d353ff4d2c1941e2445770144bb55c1dd",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 5,
+            "source": "au-government-2026-09-06/JSA ANZSCO v1.3 unit groups 5.json",
+            "locator": "row:105",
+            "heading": "Accounting Clerks — ANZSCO 2013 v1.3 5511 Occupation task: Allocating expenditure to specified budget accounts Source: JSA; Table_3 row 2173; February 2026",
+            "chunk_id": "chunk-1afa98158fe01bf9aa4d4a55c72f8b98afdf357e31cbe5c2fa90a1b3d62afc38",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 6,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+            "locator": "row:16",
+            "heading": "Financial Adviser — OSCA 2024 v1.0 212131 financial objectives; Monitors investment performance, and reviews and revises financial plans and investment str",
+            "chunk_id": "chunk-1e4847c3fbbdcfadd0924f4fbf92b389f2e04094cac6094b707b3359da5b9801",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 7,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 5.json",
+            "locator": "row:47",
+            "heading": "Bookkeeper — OSCA 2024 v1.0 542131 analyses ledgers and accounting software packages using account books; Provides government authorities with tax file num",
+            "chunk_id": "chunk-73170a826f0a1a84f7d989be66d75638ab3ac51bc05a13c6e78fb32d9ceacdc8",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          },
+          {
+            "rank": 8,
+            "source": "au-government-2026-09-06/ABS OSCA 2024 occupations group 2.json",
+            "locator": "row:7",
+            "heading": "Management Accountant — OSCA 2024 v1.0 211134 Alternative Title: Cost Accountant; Lead Statement: Provides services relating to performance-based financial",
+            "chunk_id": "chunk-d48af4c80c79a9cd410d84de01efcd27b5fec619bb23c672c7baa2c7c7ea26bd",
+            "snapshot_matches": true,
+            "citation_resolves": true
+          }
+        ]
+      }
+    ],
+    "all_returned_chunks_resolve": true,
+    "returned_chunk_count": 88
+  },
+  "pdf_cleaning": {
+    "excluded_whole_nonbody_pages": 39,
+    "retained_physical_pages": 238,
+    "original_physical_pages": 277,
+    "excluded_chunks": 145,
+    "originals_unchanged": true,
+    "page_numbers_preserved": true,
+    "mixed_content_pages_retained": true
+  },
+  "full_api_observation": {
+    "status": "PASS",
+    "scope": "One final Chinese API scenario after non-body PDF cleaning, occupation-task retrieval and fact/scenario prompt separation; real models and actual profile extraction/confirmation; no fixture replacement.",
+    "changed_source_sha256": {
+      "src/localcareerimpact/agent/contracts.py": "c8b17198ed421201e662d787caadbc6590a19df5d57984e1520b396878dcb392",
+      "src/localcareerimpact/agent/orchestrator.py": "ec7dbc2806092fa32d8be1580cf0dda6f6baa8c53d8af8da50d84c4e95c3b446",
+      "src/localcareerimpact/agent/prompts.py": "d350e1b4cb57489130af9552c344300d5f9d298b86fa3e6a6f9528a0912405a7"
+    },
+    "health_ready": {
+      "database": "ready",
+      "qwen30b": "ready",
+      "qwen4b": "ready"
+    },
+    "profile_item_counts": {
+      "occupation_candidates": 1,
+      "responsibilities": 5,
+      "skills": 4,
+      "goals": 2
+    },
+    "run_status": "complete",
+    "completed_stages": 9,
+    "total_stages": 9,
+    "stage_attempts": [
+      {
+        "stage": "draft",
+        "attempt": 1,
+        "status": "complete",
+        "boundary": "validation",
+        "category": null,
+        "metrics": {
+          "prompt_tokens": 8188,
+          "generation_tokens": 1569,
+          "total_tokens": 9757,
+          "generation_limit": 4096,
+          "reached_generation_limit": false
+        },
+        "schema_error_path": [],
+        "parse_error_offset": null,
+        "context_codepoints": 20532,
+        "validator_categories": {},
+        "numeric_digit_pattern": null,
+        "numeric_english_pattern": null,
+        "numeric_chinese_expression_pattern": null,
+        "structural_horizon_adjacent_chinese": null,
+        "numeric_after_adjacent_horizon_removal": null
+      },
+      {
+        "stage": "evidence_review",
+        "attempt": 1,
+        "status": "complete",
+        "boundary": "validation",
+        "category": null,
+        "metrics": {
+          "prompt_tokens": 8772,
+          "generation_tokens": 819,
+          "total_tokens": 9591,
+          "generation_limit": 2048,
+          "reached_generation_limit": false
+        },
+        "schema_error_path": [],
+        "parse_error_offset": null,
+        "context_codepoints": 20468,
+        "validator_categories": {},
+        "numeric_digit_pattern": null,
+        "numeric_english_pattern": null,
+        "numeric_chinese_expression_pattern": null,
+        "structural_horizon_adjacent_chinese": null,
+        "numeric_after_adjacent_horizon_removal": null
+      },
+      {
+        "stage": "boundary_review",
+        "attempt": 1,
+        "status": "complete",
+        "boundary": "validation",
+        "category": null,
+        "metrics": {
+          "prompt_tokens": 8772,
+          "generation_tokens": 1878,
+          "total_tokens": 10650,
+          "generation_limit": 2048,
+          "reached_generation_limit": false
+        },
+        "schema_error_path": [],
+        "parse_error_offset": null,
+        "context_codepoints": 20505,
+        "validator_categories": {},
+        "numeric_digit_pattern": null,
+        "numeric_english_pattern": null,
+        "numeric_chinese_expression_pattern": null,
+        "structural_horizon_adjacent_chinese": null,
+        "numeric_after_adjacent_horizon_removal": null
+      },
+      {
+        "stage": "safety_review",
+        "attempt": 1,
+        "status": "failed",
+        "boundary": "generation",
+        "category": "truncated",
+        "metrics": {
+          "prompt_tokens": 8798,
+          "generation_tokens": 2048,
+          "total_tokens": 10846,
+          "generation_limit": 2048,
+          "reached_generation_limit": true
+        },
+        "schema_error_path": [],
+        "parse_error_offset": 3343,
+        "context_codepoints": 20604,
+        "validator_categories": {},
+        "numeric_digit_pattern": null,
+        "numeric_english_pattern": null,
+        "numeric_chinese_expression_pattern": null,
+        "structural_horizon_adjacent_chinese": null,
+        "numeric_after_adjacent_horizon_removal": null
+      },
+      {
+        "stage": "safety_review",
+        "attempt": 2,
+        "status": "complete",
+        "boundary": "validation",
+        "category": null,
+        "metrics": {
+          "prompt_tokens": 8850,
+          "generation_tokens": 874,
+          "total_tokens": 9724,
+          "generation_limit": 2048,
+          "reached_generation_limit": false
+        },
+        "schema_error_path": [],
+        "parse_error_offset": null,
+        "context_codepoints": 20817,
+        "validator_categories": {},
+        "numeric_digit_pattern": null,
+        "numeric_english_pattern": null,
+        "numeric_chinese_expression_pattern": null,
+        "structural_horizon_adjacent_chinese": null,
+        "numeric_after_adjacent_horizon_removal": null
+      },
+      {
+        "stage": "resolution_decision",
+        "attempt": 1,
+        "status": "complete",
+        "boundary": "validation",
+        "category": null,
+        "metrics": {
+          "prompt_tokens": 4912,
+          "generation_tokens": 387,
+          "total_tokens": 5299,
+          "generation_limit": 1536,
+          "reached_generation_limit": false
+        },
+        "schema_error_path": [],
+        "parse_error_offset": null,
+        "context_codepoints": 11425,
+        "validator_categories": {},
+        "numeric_digit_pattern": null,
+        "numeric_english_pattern": null,
+        "numeric_chinese_expression_pattern": null,
+        "structural_horizon_adjacent_chinese": null,
+        "numeric_after_adjacent_horizon_removal": null
+      },
+      {
+        "stage": "revised_claims",
+        "attempt": 1,
+        "status": "complete",
+        "boundary": "validation",
+        "category": null,
+        "metrics": {
+          "prompt_tokens": 11784,
+          "generation_tokens": 1287,
+          "total_tokens": 13071,
+          "generation_limit": 3072,
+          "reached_generation_limit": false
+        },
+        "schema_error_path": [],
+        "parse_error_offset": null,
+        "context_codepoints": 27526,
+        "validator_categories": {},
+        "numeric_digit_pattern": null,
+        "numeric_english_pattern": null,
+        "numeric_chinese_expression_pattern": null,
+        "structural_horizon_adjacent_chinese": null,
+        "numeric_after_adjacent_horizon_removal": null
+      },
+      {
+        "stage": "report_narratives",
+        "attempt": 1,
+        "status": "complete",
+        "boundary": "validation",
+        "category": null,
+        "metrics": {
+          "prompt_tokens": 3501,
+          "generation_tokens": 750,
+          "total_tokens": 4251,
+          "generation_limit": 4096,
+          "reached_generation_limit": false
+        },
+        "schema_error_path": [],
+        "parse_error_offset": null,
+        "context_codepoints": 10226,
+        "validator_categories": {},
+        "numeric_digit_pattern": null,
+        "numeric_english_pattern": null,
+        "numeric_chinese_expression_pattern": null,
+        "structural_horizon_adjacent_chinese": null,
+        "numeric_after_adjacent_horizon_removal": null
+      }
+    ],
+    "report_count": 1,
+    "snapshot_binding_matches": true,
+    "terminal_validation_events": [
+      {
+        "status": "running"
+      },
+      {
+        "status": "complete",
+        "report_id": "fd924fce-6ca8-4908-90ca-a22093ab7896"
+      }
+    ],
+    "report_canonical_sha256": "7902b2ae2916353c6e6fe9f2fbfaed19dd8585c3d988eee84eaa8d4e63346224",
+    "report_language": "zh",
+    "citation_count": 7,
+    "citation_scopes": [
+      "passage",
+      "passage",
+      "passage",
+      "passage",
+      "passage",
+      "passage",
+      "passage"
+    ],
+    "citation_sources": [
+      "JSA ANZSCO v1.3 unit groups 1",
+      "ABS OSCA 2024 occupations group 2",
+      "ABS OSCA 2024 occupations group 5",
+      "ABS OSCA 2024 occupations group 2",
+      "JSA ANZSCO v1.3 unit groups 5",
+      "ABS OSCA 2024 occupations group 2",
+      "JSA ANZSCO v1.3 unit groups 5"
+    ],
+    "passage_citations_have_source_url": true,
+    "elapsed_seconds": 299.163,
+    "app_lifecycle_closed": true,
+    "started_workers_exited": true,
+    "candidate_upload_files_remaining": 0,
+    "finished_at_utc": "2026-09-05T18:15:00.917330+00:00",
+    "reader_recovery": {
+      "initial_category": "ValidationError",
+      "boundary": "offline diagnostic reconstruction of persisted Suggestion JSON",
+      "schema_error_types": [
+        "tuple_type"
+      ],
+      "schema_error_paths": [
+        [
+          "affected_claim_ids"
+        ],
+        [
+          "evidence_refs"
+        ]
+      ],
+      "cause": "Python strict validation rejects JSON-decoded lists for tuple fields; JSON-mode validation performs the expected JSON array to tuple conversion.",
+      "fix": "Read persisted suggestions through Suggestion.model_validate_json, matching existing JSON storage. No model rerun or product-schema relaxation.",
+      "recovered": true
+    },
+    "final_validator": {
+      "evaluated": true,
+      "valid": true,
+      "category_counts": {}
+    },
+    "suggestion_resolution_multisets_equal": true,
+    "claim_basis_counts": {
+      "rag": 6
+    },
+    "synthetic_demo_chat_retained": true,
+    "software_flow_status": "PASS",
+    "manual_content_status": "NEEDS_IMPROVEMENT",
+    "manual_content_findings": [
+      "Bibliography citation pollution removed for this report.",
+      "The model still labels inferred future AI impacts and advice as basis=rag; current-duty references alone do not establish those forecasts. Prompt clarification did not resolve this in the observed run.",
+      "The risks summary repeats the occupation summary in this observed report."
+    ],
+    "semantic_grounding_verified": false,
+    "recovered_report_matches_original_api_hash": true
+  },
+  "completion_checks": {
+    "tests": {
+      "existing_passed": 134,
+      "elapsed_seconds": 1.94,
+      "new_or_modified_test_sources": false
+    },
+    "python_compile": "PASS",
+    "diff_whitespace": "PASS",
+    "stored_report_schema_sha256": "ef98d30dacbc735478fcdce0a89721ac6bc403cbbe96c2c511459a4bcccd8a2e",
+    "source_hashes_match_final_run": true,
+    "original_data_hashes_match": true,
+    "prepared_data_hashes_match": true,
+    "embedding_hashes_match": true,
+    "qwen_and_whisper_paths_unchanged": true,
+    "preexisting_user_rows": {
+      "chats": {
+        "original_count": 8,
+        "all_original_row_values_preserved": true
+      },
+      "messages": {
+        "original_count": 16,
+        "all_original_row_values_preserved": true
+      }
+    },
+    "live_user_table_counts": {
+      "chats": 11,
+      "messages": 28,
+      "runs": 3,
+      "reports": 2
+    },
+    "synthetic_runs_retained": 3,
+    "candidate_upload_files_remaining": 0,
+    "started_workers_exited": true,
+    "live_qwen_api_process_count": 0,
+    "implementation_commit": "aee0014162ae3a0acfd6e0a4da475834ba9f954f",
+    "test_source_diff_from_prior_head_empty": true
+  },
+  "assessment": {
+    "government_corpus_import": "PASS",
+    "final_current_api_software_flow": "PASS",
+    "manual_semantic_grounding": "NEEDS_IMPROVEMENT",
+    "current_version_repeated_stability": "NOT_RUN",
+    "demo_scope": "Local workflow demonstration with manual report reading; semantic evidence attribution and repeated summary content remain known limitations.",
+    "live_microphone": "NOT_TESTED",
+    "remote_access": "NOT_TESTED"
+  }
+}

@@ -233,23 +233,10 @@ def _generate(
     request: GenerateRequest,
     model: Any,
     processor: Any,
+    decoder: Any,
 ) -> tuple[str, GenerationMetrics]:
-    import mlx.core as mx
-    from mlx_vlm import generate
-
     prompt = _prompt_for(request, processor, model)
-    mx.random.seed(request.seed)
-    generation = generate(
-        model,
-        processor,
-        prompt,
-        verbose=False,
-        max_tokens=request.max_tokens,
-        temperature=float(request.temperature),
-        top_p=float(request.top_p),
-        repetition_penalty=float(request.repetition_penalty),
-    )
-    return generation.text, _generation_metrics(generation, request)
+    return decoder.generate(request, prompt)
 
 
 def main() -> int:
@@ -269,6 +256,9 @@ def main() -> int:
             local_files_only=model_paths.local_files_only,
             trust_remote_code=False,
         )
+        from localcareerimpact.workers.structured import StructuredTextDecoder
+
+        decoder = StructuredTextDecoder(model, processor)
     except ConfigurationError:
         LOGGER.exception("The configured %s model directory is unavailable.", model_key)
         _emit(
@@ -305,7 +295,7 @@ def main() -> int:
 
         metrics: GenerationMetrics | None = None
         try:
-            generated_text, metrics = _generate(request, model, processor)
+            generated_text, metrics = _generate(request, model, processor, decoder)
             content = _json_object_from_generation(
                 generated_text,
                 request.response_schema,

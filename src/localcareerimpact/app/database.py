@@ -10,7 +10,26 @@ from pathlib import Path
 from uuid import uuid4
 
 
-ANALYSIS_TOTAL_STAGES = 9
+ANALYSIS_STAGE_MESSAGES = {
+    "retrieval": "Retrieving local evidence",
+    "draft": "Drafting the career-impact analysis",
+    "evidence_review": "Checking the supporting evidence",
+    "boundary_review": "Checking reasoning boundaries",
+    "safety_review": "Checking safety and language consistency",
+    "resolution_decision": "Resolving reviewer suggestions",
+    "revised_claims": "Finalizing the reviewed claims",
+    "report_narratives": "Writing the report",
+    "validation": "Validating and saving the report",
+}
+ANALYSIS_TOTAL_STAGES = len(ANALYSIS_STAGE_MESSAGES)
+RUN_ERROR_MESSAGES = {
+    "RETRIEVAL_FAILED": "There is not enough usable local evidence. Add or rebuild knowledge and start a new analysis.",
+    "MAIN_AGENT_FAILED": "The main model could not complete a valid analysis. You can try again with a new profile confirmation.",
+    "REVIEW_INCOMPLETE": "The required review could not be completed. You can start a new analysis.",
+    "VALIDATION_FAILED": "The report did not pass the required checks. No partial report was saved.",
+    "ANALYSIS_INTERRUPTED": "The analysis was interrupted before completion. You can start a new analysis.",
+    "INTERNAL_FAILED": "The analysis stopped because of an internal runtime or persistence failure. You can start a new analysis.",
+}
 
 
 SCHEMA = """
@@ -233,6 +252,54 @@ def update_run_progress_message(
         return
 
 
+def completed_run_stages(connection: sqlite3.Connection, run_id: str) -> int:
+    completed: set[str] = set()
+    for stage, payload_json in connection.execute(
+        "SELECT event_type, payload_json FROM run_events WHERE run_id = ?", (run_id,)
+    ):
+        try:
+            payload = json.loads(payload_json) if payload_json else {}
+        except (TypeError, json.JSONDecodeError):
+            continue
+        if stage in ANALYSIS_STAGE_MESSAGES and isinstance(payload, dict) and payload.get("status") == "complete":
+            completed.add(stage)
+    return len(completed)
+
+
+def append_run_message(
+    connection: sqlite3.Connection,
+    run_id: str,
+    *,
+    kind: str,
+    text: str,
+    payload: dict[str, object],
+) -> None:
+    """Append a terminal chat reference once, inside the caller's transaction."""
+    row = connection.execute("SELECT chat_id FROM runs WHERE run_id = ?", (run_id,)).fetchone()
+    if row is None:
+        return
+    chat_id = row[0]
+    for (encoded,) in connection.execute(
+        "SELECT payload_json FROM messages WHERE chat_id = ? AND kind = ?", (chat_id, kind)
+    ):
+        try:
+            existing = json.loads(encoded) if encoded else {}
+        except (TypeError, json.JSONDecodeError):
+            continue
+        if isinstance(existing, dict) and existing.get("run_id") == run_id:
+            return
+    sequence = connection.execute(
+        "SELECT COALESCE(MAX(sequence), -1) + 1 FROM messages WHERE chat_id = ?", (chat_id,)
+    ).fetchone()[0]
+    now = utc_now_iso()
+    connection.execute(
+        "INSERT INTO messages (message_id, chat_id, role, kind, text, sequence, payload_json, created_at) "
+        "VALUES (?, ?, 'assistant', ?, ?, ?, ?, ?)",
+        (str(uuid4()), chat_id, kind, text, sequence, json.dumps(payload, ensure_ascii=False), now),
+    )
+    connection.execute("UPDATE chats SET updated_at = ? WHERE chat_id = ?", (now, chat_id))
+
+
 _SNAPSHOT_ID = re.compile(r"sha256:([0-9a-f]{64})")
 
 
@@ -369,7 +436,12 @@ class Database:
                 run_id,
                 status="cancelled",
                 current_stage="Analysis interrupted",
-                completed_stages=min(sequence, ANALYSIS_TOTAL_STAGES),
+                completed_stages=completed_run_stages(connection, run_id),
+            )
+            append_run_message(
+                connection, run_id, kind="error",
+                text=RUN_ERROR_MESSAGES["ANALYSIS_INTERRUPTED"],
+                payload={"run_id": run_id, "code": "ANALYSIS_INTERRUPTED"},
             )
 
     @staticmethod

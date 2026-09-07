@@ -1,0 +1,4515 @@
+{
+  "scope": "Topic retrieval and conservative fact/scenario/advice policy; separate from prior acceptance.",
+  "rebuild": {
+    "active_snapshot": {
+      "snapshot_id": "sha256:fd3565036619143a0d245bd38560f97f80ad4598d51ba387b9b40060ec91ca27",
+      "status": "active",
+      "stage": "complete",
+      "total_documents": 26,
+      "processed_documents": 26,
+      "total_chunks": 9262,
+      "processed_chunks": 9262,
+      "failure_source": null,
+      "error_message": null,
+      "created_at": "2026-09-06T05:18:10.355909Z",
+      "completed_at": "2026-09-06T05:18:40.614274Z"
+    },
+    "latest_rebuild": {
+      "snapshot_id": "sha256:fd3565036619143a0d245bd38560f97f80ad4598d51ba387b9b40060ec91ca27",
+      "status": "active",
+      "stage": "complete",
+      "total_documents": 26,
+      "processed_documents": 26,
+      "total_chunks": 9262,
+      "processed_chunks": 9262,
+      "failure_source": null,
+      "error_message": null,
+      "created_at": "2026-09-06T05:18:10.355909Z",
+      "completed_at": "2026-09-06T05:18:40.614274Z"
+    }
+  },
+  "rebuild_seconds": 31.471,
+  "rebuild_started_qwen": false,
+  "retrieval_history": [
+    [
+      {
+        "case": "accountant_zh",
+        "query": "会计 月末结账 财务报表 发票核对 预算分析 合规检查",
+        "coverage": {
+          "mode": "topic_directories",
+          "topic_counts": {
+            "occupations": 4,
+            "ai-impact": 2,
+            "labour-market": 2
+          },
+          "query_counts": {
+            "occupations": 4,
+            "ai-impact": 2,
+            "labour-market": 2
+          },
+          "unclassified_count": 0,
+          "missing_topics": [],
+          "meaning": "Directory coverage only; relevance and support must still be checked against each passage."
+        },
+        "hits": [
+          {
+            "rank": 1,
+            "source_label": "au-government-2026-09-06/occupations/JSA ANZSCO v1.3 unit groups 5.json",
+            "chunk_id": "chunk-315186f7902f2fbb3feef217371bcff1da0a55b91a4ab1c2be4daf909224999c",
+            "heading": "Accounting Clerks — ANZSCO 2013 v1.3 5511 Accounting Clerks monitor creditor and debtor accounts, undertake related routine documentation, and calculate and investigate the cost of wages, ma",
+            "resolves": true
+          },
+          {
+            "rank": 2,
+            "source_label": "au-government-2026-09-06/occupations/ABS OSCA 2024 occupations group 2.json",
+            "chunk_id": "chunk-8a2d526a3291e23d1d7b5b9166841b43b33a047fb249ef1452377dd1b3969b94",
+            "heading": "Accountant (General) — OSCA 2024 v1.0 211131 Lead Statement: Provides services relating to compliance-based financial, non-financial and sustainability-related reporting, auditing, insolvenc",
+            "resolves": true
+          },
+          {
+            "rank": 3,
+            "source_label": "au-government-2026-09-06/occupations/ABS OSCA 2024 occupations group 5.json",
+            "chunk_id": "chunk-4b57536daed767ef75fb8cfcf1db5b7aadaeef72103e060ff16c00a4dd056c8f",
+            "heading": "Bookkeeper — OSCA 2024 v1.0 542131 Lead Statement: Maintains and evaluates records of financial transactions in account books and computerised accounting systems. Ensures financial records c",
+            "resolves": true
+          },
+          {
+            "rank": 4,
+            "source_label": "au-government-2026-09-06/occupations/JSA ANZSCO v1.3 unit groups 1.json",
+            "chunk_id": "chunk-1f80e06c2288ba3e53106c6f246d497d353ff4d2c1941e2445770144bb55c1dd",
+            "heading": "Finance Managers — ANZSCO 2013 v1.3 1322 Occupation task: Directing the preparation of financial reports summarising and forecasting the organisation's financial position such as income stat",
+            "resolves": true
+          },
+          {
+            "rank": 5,
+            "source_label": "au-government-2026-09-06/ai-impact/JSA Gen AI 2025 occupation exposure scores.json",
+            "chunk_id": "chunk-6334859790880a41db5baab52a7eab82c51450a987ad69824480a072ea525187",
+            "heading": "Intelligence and Policy Analysts — ANZSCO v1.3 unit group 2244 Australia. Gen AI task potential scores (dimensionless 0–1): augmentation 0.79; automation 0.56. Within-occupation task-score s",
+            "resolves": true
+          },
+          {
+            "rank": 6,
+            "source_label": "au-government-2026-09-06/ai-impact/Our Gen AI Transition - Analysis Papers A to E.json",
+            "chunk_id": "chunk-e6913addfc6a22fbd3c9bc83c461b1ef7828eef22f5adb10dabc7d1c173023f6",
+            "heading": "Our Gen AI Transition - Analysis Papers A to E scenarios explore the share of tasks in the labour market that are augmented by AI, automated and manual (that is, neither augmented or automat",
+            "resolves": true
+          },
+          {
+            "rank": 7,
+            "source_label": "au-government-2026-09-06/labour-market/JSA Employment Projections 2025 to 2035.json",
+            "chunk_id": "chunk-035a2f2cd5d880ddb5610c0eecea4be0aeb93a1bd7434458ce60d9b41065958d",
+            "heading": "Surgeons — ANZSCO v1.3 2535 Employment, thousands of persons: May 2025 baseline 10.452; May 2030 projected 12.344; May 2035 projected 13.916. Projected five-year growth to May 2030: 18.10%; ",
+            "resolves": true
+          },
+          {
+            "rank": 8,
+            "source_label": "au-government-2026-09-06/labour-market/JSA 2025 Shortages OSCA 2024.json",
+            "chunk_id": "chunk-d9fa6f03e6f62cacbfc2edba69e24a095091a40af14734209c31558f67a2ec3a",
+            "heading": "Finance Manager — OSCA 2024 111231 2025 shortage ratings. Australia: No shortage; NSW: No shortage; VIC: No shortage; QLD: No shortage; SA: No shortage; WA: No shortage; TAS: No shortage; NT",
+            "resolves": true
+          }
+        ]
+      },
+      {
+        "case": "software_en",
+        "query": "Software engineer developing testing software applications code databases",
+        "coverage": {
+          "mode": "topic_directories",
+          "topic_counts": {
+            "occupations": 4,
+            "ai-impact": 2,
+            "labour-market": 2
+          },
+          "query_counts": {
+            "occupations": 4,
+            "ai-impact": 2,
+            "labour-market": 2
+          },
+          "unclassified_count": 0,
+          "missing_topics": [],
+          "meaning": "Directory coverage only; relevance and support must still be checked against each passage."
+        },
+        "hits": [
+          {
+            "rank": 1,
+            "source_label": "au-government-2026-09-06/occupations/JSA ANZSCO v1.3 unit groups 2.json",
+            "chunk_id": "chunk-9b4712235a564c593827515dc08e4519c1b06e0806e06570ec656c384b3bca08",
+            "heading": "Software and Applications Programmers — ANZSCO 2013 v1.3 2613 Software and Applications Programmers design, develop, test, maintain and document program code in accordance with user requirem",
+            "resolves": true
+          },
+          {
+            "rank": 2,
+            "source_label": "au-government-2026-09-06/occupations/ABS OSCA 2024 occupations group 2.json",
+            "chunk_id": "chunk-5e93a8637becc48bdb21c67033916bb78f72797cdf90354c1c71871671d872ae",
+            "heading": "ICT Test Analyst — OSCA 2024 v1.0 272233 feedback and recommendations based on analysis of test results, and ensures it aligns with business requirements and specifications; May automate sof",
+            "resolves": true
+          },
+          {
+            "rank": 3,
+            "source_label": "au-government-2026-09-06/occupations/JSA ANZSCO v1.3 unit groups 2.json",
+            "chunk_id": "chunk-bf004a9e8a7beaaa23addc85be463550b145c4cc137a4fb976ea9c4531613b3d",
+            "heading": "Software and Applications Programmers — ANZSCO 2013 v1.3 2613 Occupation task: Testing, debugging, diagnosing and correcting errors and faults in an applications programming language within ",
+            "resolves": true
+          },
+          {
+            "rank": 4,
+            "source_label": "au-government-2026-09-06/occupations/ABS OSCA 2024 occupations group 2.json",
+            "chunk_id": "chunk-606fd5457cdd4dbbde4c0915e606430ea65a5872d73e456587aca4541b8b5109",
+            "heading": "Software Engineer — OSCA 2024 v1.0 273333 alignment with specified requirements; Writes, tests and debugs code to ensure functionality, efficiency and adherence to quality accredited standar",
+            "resolves": true
+          },
+          {
+            "rank": 5,
+            "source_label": "au-government-2026-09-06/ai-impact/JSA Gen AI 2025 occupation exposure scores.json",
+            "chunk_id": "chunk-3729ffed232da5b5522f578b1473df119dfc88a00fb7074c1447e8cd88570b16",
+            "heading": "Software and Applications Programmers — ANZSCO v1.3 unit group 2613 Australia. Gen AI task potential scores (dimensionless 0–1): augmentation 0.77; automation 0.63. Within-occupation task-sc",
+            "resolves": true
+          },
+          {
+            "rank": 6,
+            "source_label": "au-government-2026-09-06/ai-impact/Our Gen AI Transition - Analysis Papers A to E.json",
+            "chunk_id": "chunk-8cf4ce559162332bde06eec5e7737540a78cfff629e19908c336fbbe3b105efb",
+            "heading": "Our Gen AI Transition - Analysis Papers A to E that use of Claude.ai is concentrated for tasks related to software development and technical writing, and more likely for augmentation than au",
+            "resolves": true
+          },
+          {
+            "rank": 7,
+            "source_label": "au-government-2026-09-06/labour-market/JSA 2025 Shortages ANZSCO 2022.json",
+            "chunk_id": "chunk-5ff02f2f6009868909e50d6345d8d83a0d28116310bf8c1b2c4e639848523e6b",
+            "heading": "Software and Applications Programmers nec — ANZSCO 2022 261399 2025 shortage ratings. Australia: No shortage; NSW: No shortage; VIC: No shortage; QLD: No shortage; SA: No shortage; WA: No sh",
+            "resolves": true
+          },
+          {
+            "rank": 8,
+            "source_label": "au-government-2026-09-06/labour-market/JSA 2025 Shortages OSCA 2024.json",
+            "chunk_id": "chunk-fcfaf126ea178e1720d8dc29ff9e8c5b71046030b86104552fe4cfff34333e90",
+            "heading": "Software Engineer — OSCA 2024 273333 2025 shortage ratings. Australia: No shortage; NSW: No shortage; VIC: No shortage; QLD: No shortage; SA: No shortage; WA: No shortage; TAS: No shortage; ",
+            "resolves": true
+          }
+        ]
+      },
+      {
+        "case": "nurse_zh",
+        "query": "注册护士 临床护理 病人评估 用药监测",
+        "coverage": {
+          "mode": "topic_directories",
+          "topic_counts": {
+            "occupations": 4,
+            "ai-impact": 2,
+            "labour-market": 2
+          },
+          "query_counts": {
+            "occupations": 4,
+            "ai-impact": 2,
+            "labour-market": 2
+          },
+          "unclassified_count": 0,
+          "missing_topics": [],
+          "meaning": "Directory coverage only; relevance and support must still be checked against each passage."
+        },
+        "hits": [
+          {
+            "rank": 1,
+            "source_label": "au-government-2026-09-06/occupations/ABS OSCA 2024 occupations group 3.json",
+            "chunk_id": "chunk-55f4c2f4b46e14b9737ff6ba0c5307599bf917f7da1f5a905685f5c4334eebff",
+            "heading": "Hospital Pharmacy Technician — OSCA 2024 v1.0 311332 Pharmacists with clinical prioritisation by identifying patients at high risk of medicine-related problems; Records patients' laboratory ",
+            "resolves": true
+          },
+          {
+            "rank": 2,
+            "source_label": "au-government-2026-09-06/occupations/ABS OSCA 2024 occupations group 2.json",
+            "chunk_id": "chunk-fb7069d97679b9ed4ca232a272b6b97aa94e540598963a829eb33d15a967debc",
+            "heading": "Nurse Practitioner — OSCA 2024 v1.0 265431 promotion, disease prevention and self-care; Refers patients to specialist Medical Practitioners and other Health Professionals for further assessm",
+            "resolves": true
+          },
+          {
+            "rank": 3,
+            "source_label": "au-government-2026-09-06/occupations/ABS OSCA 2024 occupations group 2.json",
+            "chunk_id": "chunk-80915d953da6b8ebf685515a84f1a2e810953b43c39d70c41c5ec78c28b786b8",
+            "heading": "Hospital Pharmacist — OSCA 2024 v1.0 263432 Lead Statement: Prepares, dispenses, reviews and monitors medication of individual patients, and provides medication-related advice to patients in",
+            "resolves": true
+          },
+          {
+            "rank": 4,
+            "source_label": "au-government-2026-09-06/occupations/JSA ANZSCO v1.3 unit groups 2.json",
+            "chunk_id": "chunk-e3bf30f24879b95246a234b16b4014257fbeb503452ec893e2222f42a07e07d6",
+            "heading": "Registered Nurses — ANZSCO 2013 v1.3 2544 Occupation task: Providing interventions, treatments and therapies such as medications, and monitoring responses to treatment and care plan Source: ",
+            "resolves": true
+          },
+          {
+            "rank": 5,
+            "source_label": "au-government-2026-09-06/ai-impact/JSA Gen AI 2025 occupation exposure scores.json",
+            "chunk_id": "chunk-6334859790880a41db5baab52a7eab82c51450a987ad69824480a072ea525187",
+            "heading": "Intelligence and Policy Analysts — ANZSCO v1.3 unit group 2244 Australia. Gen AI task potential scores (dimensionless 0–1): augmentation 0.79; automation 0.56. Within-occupation task-score s",
+            "resolves": true
+          },
+          {
+            "rank": 6,
+            "source_label": "au-government-2026-09-06/ai-impact/JSA Gen AI 2025 occupation exposure scores.json",
+            "chunk_id": "chunk-fa0c2da1172ab4b08781b4025e5cc57c2efe037e0e76265f212049ebd9c5801c",
+            "heading": "Medical Technicians — ANZSCO v1.3 unit group 3112 Australia. Gen AI task potential scores (dimensionless 0–1): augmentation 0.69; automation 0.29. Within-occupation task-score standard devia",
+            "resolves": true
+          },
+          {
+            "rank": 7,
+            "source_label": "au-government-2026-09-06/labour-market/JSA Employment Projections 2025 to 2035.json",
+            "chunk_id": "chunk-035a2f2cd5d880ddb5610c0eecea4be0aeb93a1bd7434458ce60d9b41065958d",
+            "heading": "Surgeons — ANZSCO v1.3 2535 Employment, thousands of persons: May 2025 baseline 10.452; May 2030 projected 12.344; May 2035 projected 13.916. Projected five-year growth to May 2030: 18.10%; ",
+            "resolves": true
+          },
+          {
+            "rank": 8,
+            "source_label": "au-government-2026-09-06/labour-market/JSA 2025 Shortages OSCA 2024.json",
+            "chunk_id": "chunk-7ace1cb07f03da2b7de550f5f983ac401d0e29a24769ffc8144c1bb12a2f1787",
+            "heading": "Nurse Practitioner — OSCA 2024 265431 2025 shortage ratings. Australia: Shortage; NSW: Shortage; VIC: Shortage; QLD: Shortage; SA: Shortage; WA: Shortage; TAS: Shortage; NT: Shortage; ACT: S",
+            "resolves": true
+          }
+        ]
+      }
+    ]
+  ],
+  "retrieval_observations": [
+    {
+      "case": "accountant_zh",
+      "query": "会计 月末结账 财务报表 发票核对 预算分析 合规检查",
+      "occupation_query": "会计",
+      "coverage": {
+        "mode": "topic_directories",
+        "topic_counts": {
+          "occupations": 4,
+          "ai-impact": 2,
+          "labour-market": 2
+        },
+        "query_counts": {
+          "occupations": 4,
+          "ai-impact": 2,
+          "labour-market": 2
+        },
+        "unclassified_count": 0,
+        "missing_topics": [],
+        "meaning": "Directory coverage only; relevance and support must still be checked against each passage."
+      },
+      "hits": [
+        {
+          "rank": 1,
+          "source_label": "au-government-2026-09-06/occupations/JSA ANZSCO v1.3 unit groups 2.json",
+          "chunk_id": "chunk-6cf9b17923e54d5cc4c1f32ec9d9cda79e746fedb605cb4e9803622074ceb3dd",
+          "heading": "Accountants — ANZSCO 2013 v1.3 2211 Accountants provide services relating to financial reporting, taxation, auditing, insolvency, accounting information systems, budgeting, cost management, ",
+          "resolves": true
+        },
+        {
+          "rank": 2,
+          "source_label": "au-government-2026-09-06/occupations/ABS OSCA 2024 occupations group 5.json",
+          "chunk_id": "chunk-73170a826f0a1a84f7d989be66d75638ab3ac51bc05a13c6e78fb32d9ceacdc8",
+          "heading": "Bookkeeper — OSCA 2024 v1.0 542131 analyses ledgers and accounting software packages using account books; Provides government authorities with tax file numbers, superannuation payments and b",
+          "resolves": true
+        },
+        {
+          "rank": 3,
+          "source_label": "au-government-2026-09-06/occupations/JSA ANZSCO v1.3 unit groups 5.json",
+          "chunk_id": "chunk-315186f7902f2fbb3feef217371bcff1da0a55b91a4ab1c2be4daf909224999c",
+          "heading": "Accounting Clerks — ANZSCO 2013 v1.3 5511 Accounting Clerks monitor creditor and debtor accounts, undertake related routine documentation, and calculate and investigate the cost of wages, ma",
+          "resolves": true
+        },
+        {
+          "rank": 4,
+          "source_label": "au-government-2026-09-06/occupations/ABS OSCA 2024 occupations group 2.json",
+          "chunk_id": "chunk-8a2d526a3291e23d1d7b5b9166841b43b33a047fb249ef1452377dd1b3969b94",
+          "heading": "Accountant (General) — OSCA 2024 v1.0 211131 Lead Statement: Provides services relating to compliance-based financial, non-financial and sustainability-related reporting, auditing, insolvenc",
+          "resolves": true
+        },
+        {
+          "rank": 5,
+          "source_label": "au-government-2026-09-06/ai-impact/Our Gen AI Transition - Analysis Papers A to E.json",
+          "chunk_id": "chunk-ac17a5131ef275909b238745dc2d3c25bce408d85303c2e510409aa674792188",
+          "heading": "Our Gen AI Transition - Analysis Papers A to E demand for more-skilled or lower-skilled labour. While the skill bias of technology can be in either direction, the diffusion of digital techno",
+          "resolves": true
+        },
+        {
+          "rank": 6,
+          "source_label": "au-government-2026-09-06/ai-impact/Our Gen AI Transition - Analysis Papers A to E.json",
+          "chunk_id": "chunk-d4cae36bcf0a98e5839ade5ef89824539599ada3fe22dd18af12442dca3b718a",
+          "heading": "Our Gen AI Transition - Analysis Papers A to E female- dominated occupations. This aligns with past Australian research that has shown that in the financial services sector, for example, fem",
+          "resolves": true
+        },
+        {
+          "rank": 7,
+          "source_label": "au-government-2026-09-06/labour-market/JSA 2025 Shortages ANZSCO 2022.json",
+          "chunk_id": "chunk-cf26e27ff6a371d9ada3f200b6f819fa64daffdb0c6c536364eb5a175cb04a88",
+          "heading": "Management Accountant — ANZSCO 2022 221112 2025 shortage ratings. Australia: No shortage; NSW: No shortage; VIC: No shortage; QLD: No shortage; SA: No shortage; WA: No shortage; TAS: No shor",
+          "resolves": true
+        },
+        {
+          "rank": 8,
+          "source_label": "au-government-2026-09-06/labour-market/JSA Employment Projections 2025 to 2035.json",
+          "chunk_id": "chunk-77030709e7dcb9ffda3f558017aca9f94deb465f868d5dbbefa4d11df7f78351",
+          "heading": "Finance Managers — ANZSCO v1.3 1322 Employment, thousands of persons: May 2025 baseline 76.302; May 2030 projected 85.761; May 2035 projected 92.974. Projected five-year growth to May 2030: ",
+          "resolves": true
+        }
+      ]
+    },
+    {
+      "case": "software_en",
+      "query": "Software engineer developing testing software applications code databases",
+      "occupation_query": "Software engineer",
+      "coverage": {
+        "mode": "topic_directories",
+        "topic_counts": {
+          "occupations": 4,
+          "ai-impact": 2,
+          "labour-market": 2
+        },
+        "query_counts": {
+          "occupations": 4,
+          "ai-impact": 2,
+          "labour-market": 2
+        },
+        "unclassified_count": 0,
+        "missing_topics": [],
+        "meaning": "Directory coverage only; relevance and support must still be checked against each passage."
+      },
+      "hits": [
+        {
+          "rank": 1,
+          "source_label": "au-government-2026-09-06/occupations/ABS OSCA 2024 occupations group 2.json",
+          "chunk_id": "chunk-150a8697ca89c88c06f557bebf5286778d1bf64f5a84af5509112b8bb7f32652",
+          "heading": "Software Engineer — OSCA 2024 v1.0 273333 Specialisations: Application Developer; Application Engineer; Artificial Intelligence Engineer; Blockchain Developer; Cloud Developer; Computer Prog",
+          "resolves": true
+        },
+        {
+          "rank": 2,
+          "source_label": "au-government-2026-09-06/occupations/ABS OSCA 2024 occupations group 2.json",
+          "chunk_id": "chunk-c4cd04917c0495d261f988fdb122aa44df87bb824fc3400e1f4a47dd8a10401c",
+          "heading": "Software Engineer — OSCA 2024 v1.0 273333 Alternative Title: Analyst Programmer; Developer Programmer; Software Developer; Lead Statement: Designs, develops, modifies, documents, tests and m",
+          "resolves": true
+        },
+        {
+          "rank": 3,
+          "source_label": "au-government-2026-09-06/occupations/JSA ANZSCO v1.3 unit groups 2.json",
+          "chunk_id": "chunk-9b4712235a564c593827515dc08e4519c1b06e0806e06570ec656c384b3bca08",
+          "heading": "Software and Applications Programmers — ANZSCO 2013 v1.3 2613 Software and Applications Programmers design, develop, test, maintain and document program code in accordance with user requirem",
+          "resolves": true
+        },
+        {
+          "rank": 4,
+          "source_label": "au-government-2026-09-06/occupations/ABS OSCA 2024 occupations group 2.json",
+          "chunk_id": "chunk-5e93a8637becc48bdb21c67033916bb78f72797cdf90354c1c71871671d872ae",
+          "heading": "ICT Test Analyst — OSCA 2024 v1.0 272233 feedback and recommendations based on analysis of test results, and ensures it aligns with business requirements and specifications; May automate sof",
+          "resolves": true
+        },
+        {
+          "rank": 5,
+          "source_label": "au-government-2026-09-06/ai-impact/Our Gen AI Transition - Analysis Papers A to E.json",
+          "chunk_id": "chunk-8cf4ce559162332bde06eec5e7737540a78cfff629e19908c336fbbe3b105efb",
+          "heading": "Our Gen AI Transition - Analysis Papers A to E that use of Claude.ai is concentrated for tasks related to software development and technical writing, and more likely for augmentation than au",
+          "resolves": true
+        },
+        {
+          "rank": 6,
+          "source_label": "au-government-2026-09-06/ai-impact/Our Gen AI Transition - Analysis Papers A to E.json",
+          "chunk_id": "chunk-b0698d1846663f4034ad82881484703abfe2fea4b7479a0bff8bbb52e9f9bf55",
+          "heading": "Our Gen AI Transition - Analysis Papers A to E into production processes in these industries are likely to have been a significant contributor to these trends. 4 Per the ABS Australian Syste",
+          "resolves": true
+        },
+        {
+          "rank": 7,
+          "source_label": "au-government-2026-09-06/labour-market/JSA 2025 Shortages ANZSCO 2022.json",
+          "chunk_id": "chunk-a9afc369999a9e01096b5ef01fae38176686ad9a83f591f1e7cbe33ea8ee3705",
+          "heading": "Software Engineer — ANZSCO 2022 261313 2025 shortage ratings. Australia: No shortage; NSW: No shortage; VIC: No shortage; QLD: No shortage; SA: No shortage; WA: No shortage; TAS: No shortage",
+          "resolves": true
+        },
+        {
+          "rank": 8,
+          "source_label": "au-government-2026-09-06/labour-market/JSA 2025 Shortages OSCA 2024.json",
+          "chunk_id": "chunk-fcfaf126ea178e1720d8dc29ff9e8c5b71046030b86104552fe4cfff34333e90",
+          "heading": "Software Engineer — OSCA 2024 273333 2025 shortage ratings. Australia: No shortage; NSW: No shortage; VIC: No shortage; QLD: No shortage; SA: No shortage; WA: No shortage; TAS: No shortage; ",
+          "resolves": true
+        }
+      ]
+    },
+    {
+      "case": "nurse_zh",
+      "query": "注册护士 临床护理 病人评估 用药监测",
+      "occupation_query": "注册护士",
+      "coverage": {
+        "mode": "topic_directories",
+        "topic_counts": {
+          "occupations": 4,
+          "ai-impact": 2,
+          "labour-market": 2
+        },
+        "query_counts": {
+          "occupations": 4,
+          "ai-impact": 2,
+          "labour-market": 2
+        },
+        "unclassified_count": 0,
+        "missing_topics": [],
+        "meaning": "Directory coverage only; relevance and support must still be checked against each passage."
+      },
+      "hits": [
+        {
+          "rank": 1,
+          "source_label": "au-government-2026-09-06/occupations/JSA ANZSCO v1.3 unit groups 2.json",
+          "chunk_id": "chunk-f30ce2a301b418268414a64db7d05157e3bdac9baf883c760695d7ff271b2068",
+          "heading": "Registered Nurses — ANZSCO 2013 v1.3 2544 Registered Nurses provide nursing care to patients in hospitals, aged care and other health care facilities, and in the community. Source: JSA; Tabl",
+          "resolves": true
+        },
+        {
+          "rank": 2,
+          "source_label": "au-government-2026-09-06/occupations/ABS OSCA 2024 occupations group 2.json",
+          "chunk_id": "chunk-2032e3778e6c5adc0b02874f0ccc3dc46dd9cf20870b06af25a663f603e5dedb",
+          "heading": "Registered Nurse (Primary Health Care) — OSCA 2024 v1.0 265435 Nurse (Community Health); Registered Nurse (Disability); Registered Nurse (Health Education and Promotion); Registered Nurse (P",
+          "resolves": true
+        },
+        {
+          "rank": 3,
+          "source_label": "au-government-2026-09-06/occupations/ABS OSCA 2024 occupations group 3.json",
+          "chunk_id": "chunk-55f4c2f4b46e14b9737ff6ba0c5307599bf917f7da1f5a905685f5c4334eebff",
+          "heading": "Hospital Pharmacy Technician — OSCA 2024 v1.0 311332 Pharmacists with clinical prioritisation by identifying patients at high risk of medicine-related problems; Records patients' laboratory ",
+          "resolves": true
+        },
+        {
+          "rank": 4,
+          "source_label": "au-government-2026-09-06/occupations/ABS OSCA 2024 occupations group 2.json",
+          "chunk_id": "chunk-fb7069d97679b9ed4ca232a272b6b97aa94e540598963a829eb33d15a967debc",
+          "heading": "Nurse Practitioner — OSCA 2024 v1.0 265431 promotion, disease prevention and self-care; Refers patients to specialist Medical Practitioners and other Health Professionals for further assessm",
+          "resolves": true
+        },
+        {
+          "rank": 5,
+          "source_label": "au-government-2026-09-06/ai-impact/JSA Gen AI 2025 occupation exposure scores.json",
+          "chunk_id": "chunk-c20de9e0101c78467379fcd53841a65587a707a5b0e679c9c7a565db61b1bbb3",
+          "heading": "Registered Nurses — ANZSCO v1.3 unit group 2544 Australia. Gen AI task potential scores (dimensionless 0–1): augmentation 0.67; automation 0.3. Within-occupation task-score standard deviatio",
+          "resolves": true
+        },
+        {
+          "rank": 6,
+          "source_label": "au-government-2026-09-06/ai-impact/JSA Gen AI 2025 occupation exposure scores.json",
+          "chunk_id": "chunk-b87ce3dc0d96b8fdd3e53f78334b2ef7b4c404e5db0992bf60ce4b1b3b6ba803",
+          "heading": "Nurse Managers — ANZSCO v1.3 unit group 2543 Australia. Gen AI task potential scores (dimensionless 0–1): augmentation 0.68; automation 0.28. Within-occupation task-score standard deviation:",
+          "resolves": true
+        },
+        {
+          "rank": 7,
+          "source_label": "au-government-2026-09-06/labour-market/JSA 2025 Shortages OSCA 2024.json",
+          "chunk_id": "chunk-8c0a76c08ec186c1d1afdc9eed03f34e28aae45a6853dea7030245910a98a965",
+          "heading": "Registered Nurse (Acute Care) — OSCA 2024 265432 2025 shortage ratings. Australia: Shortage; NSW: Shortage; VIC: Shortage; QLD: Shortage; SA: Shortage; WA: Shortage; TAS: Shortage; NT: Short",
+          "resolves": true
+        },
+        {
+          "rank": 8,
+          "source_label": "au-government-2026-09-06/labour-market/JSA 2025 Shortages ANZSCO 2022.json",
+          "chunk_id": "chunk-6fef8948b0bb348efecd00aead8077ae2cbc5813e2a194d070c1a15685b903d9",
+          "heading": "Registered Nurse (Perioperative) — ANZSCO 2022 254423 2025 shortage ratings. Australia: Shortage; NSW: Shortage; VIC: Shortage; QLD: Shortage; SA: Shortage; WA: Shortage; TAS: Shortage; NT: ",
+          "resolves": true
+        }
+      ]
+    }
+  ],
+  "api_observations": [
+    {
+      "case": "accountant_zh",
+      "expected_language": "zh",
+      "review_result_sets": {
+        "evidence_review": {
+          "present": true,
+          "count": 3,
+          "attempt": 1
+        },
+        "boundary_review": {
+          "present": true,
+          "count": 3,
+          "attempt": 1
+        }
+      },
+      "reader_error": null,
+      "source_sha256": "391e674d439edd8fcc0908ee6ce9f8e0873ef0dde8ac4b566ec4b60138daef00",
+      "chat_id": "17caaa1a-db10-4c13-8d14-a0a9e8a1d0f8",
+      "run_id": "5f6885c5-2d13-4c61-85f4-5b9a51b87521",
+      "confirmed_occupations": [
+        "会计"
+      ],
+      "public_run": {
+        "run_id": "5f6885c5-2d13-4c61-85f4-5b9a51b87521",
+        "status": "failed",
+        "current_stage": "failed",
+        "completed_stages": 4,
+        "total_stages": 9,
+        "report_id": null,
+        "error_code": "REVIEW_INCOMPLETE",
+        "message": "The required review could not be completed. You can start a new analysis.",
+        "last_event_id": 9
+      },
+      "database_report_count": 2,
+      "diagnostic_checkpoint_reason": "finally",
+      "report_count": 0,
+      "event_sequence": [
+        "retrieval",
+        "retrieval",
+        "draft",
+        "draft",
+        "evidence_review",
+        "evidence_review",
+        "boundary_review",
+        "boundary_review",
+        "safety_review",
+        "failed"
+      ],
+      "event_status_sequence": [
+        [
+          "retrieval",
+          "running"
+        ],
+        [
+          "retrieval",
+          "complete"
+        ],
+        [
+          "draft",
+          "running"
+        ],
+        [
+          "draft",
+          "complete"
+        ],
+        [
+          "evidence_review",
+          "running"
+        ],
+        [
+          "evidence_review",
+          "complete"
+        ],
+        [
+          "boundary_review",
+          "running"
+        ],
+        [
+          "boundary_review",
+          "complete"
+        ],
+        [
+          "safety_review",
+          "running"
+        ],
+        [
+          "failed",
+          "failed"
+        ]
+      ],
+      "completed_event_sequence": [
+        "retrieval",
+        "draft",
+        "evidence_review",
+        "boundary_review"
+      ],
+      "completed_stage_count": 4,
+      "event_sequence_exact": false,
+      "exactly_nine_completed_stages": false,
+      "f1_product_stage_gate_passed": false,
+      "run_status": "REVIEW_INCOMPLETE",
+      "product_failure_code": "REVIEW_INCOMPLETE",
+      "response_language": "zh",
+      "progress_completed_stages": 4,
+      "progress_total_stages": 9,
+      "progress_status": "failed",
+      "progress_9_of_9": false,
+      "run_stage_attempts": [
+        {
+          "stage": "draft",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 9620,
+            "generation_tokens": 1794,
+            "total_tokens": 11414,
+            "generation_limit": 4096,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 23778,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "evidence_review",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 10591,
+            "generation_tokens": 1849,
+            "total_tokens": 12440,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 25099,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "boundary_review",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 10591,
+            "generation_tokens": 1201,
+            "total_tokens": 11792,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 25136,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "safety_review",
+          "attempt": 1,
+          "status": "failed",
+          "boundary": "generation",
+          "category": "truncated",
+          "metrics": {
+            "prompt_tokens": 10617,
+            "generation_tokens": 2048,
+            "total_tokens": 12665,
+            "generation_limit": 2048,
+            "reached_generation_limit": true
+          },
+          "schema_error_path": [],
+          "parse_error_offset": 2853,
+          "context_codepoints": 25235,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "safety_review",
+          "attempt": 2,
+          "status": "failed",
+          "boundary": "generation",
+          "category": "truncated",
+          "metrics": {
+            "prompt_tokens": 10669,
+            "generation_tokens": 2048,
+            "total_tokens": 12717,
+            "generation_limit": 2048,
+            "reached_generation_limit": true
+          },
+          "schema_error_path": [],
+          "parse_error_offset": 2938,
+          "context_codepoints": 25448,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        }
+      ],
+      "product_failure_stage": "safety_review",
+      "product_failure_category": "truncated",
+      "status": "FAILED",
+      "seconds": 270.851,
+      "profile_stage_attempts": [
+        {
+          "stage": "profile",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "contract",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 738,
+            "generation_tokens": 139,
+            "total_tokens": 877,
+            "generation_limit": 1600,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 2333
+        }
+      ],
+      "topic_coverage": {
+        "meaning": "Directory coverage only; relevance and support must still be checked against each passage.",
+        "missing_topics": [],
+        "mode": "topic_directories",
+        "query_counts": {
+          "ai-impact": 2,
+          "labour-market": 2,
+          "occupations": 4
+        },
+        "topic_counts": {
+          "ai-impact": 2,
+          "labour-market": 2,
+          "occupations": 4
+        },
+        "unclassified_count": 0
+      },
+      "cleanup": {
+        "worker_returncodes": [
+          -15,
+          -15
+        ],
+        "qwen_processes_remaining": 0,
+        "uploads_remaining": 0,
+        "preexisting_chat_message_report_rows_unchanged": true,
+        "database_retained": true,
+        "source_unchanged_during_api": true
+      }
+    },
+    {
+      "case": "accountant_zh",
+      "expected_language": "zh",
+      "review_result_sets": {
+        "evidence_review": {
+          "present": true,
+          "count": 3,
+          "attempt": 1
+        },
+        "boundary_review": {
+          "present": true,
+          "count": 3,
+          "attempt": 1
+        },
+        "safety_review": {
+          "present": true,
+          "count": 3,
+          "attempt": 1
+        }
+      },
+      "reader_error": null,
+      "source_sha256": "166a2469eff88bd6081ed92afbcc1a224f5398e610422d1408de90294a33978a",
+      "chat_id": "cef4ddaf-7117-452c-a532-39789be4b351",
+      "run_id": "587d5760-cab6-4b7c-bbf2-503a46bd834d",
+      "confirmed_occupations": [
+        "会计"
+      ],
+      "public_run": {
+        "run_id": "587d5760-cab6-4b7c-bbf2-503a46bd834d",
+        "status": "complete",
+        "current_stage": "validation",
+        "completed_stages": 9,
+        "total_stages": 9,
+        "report_id": "a5d51350-b26b-4dcb-a1c8-400a09241689",
+        "error_code": null,
+        "message": "Analysis complete.",
+        "last_event_id": 17
+      },
+      "database_report_count": 3,
+      "diagnostic_checkpoint_reason": "finally",
+      "report_count": 1,
+      "event_sequence": [
+        "retrieval",
+        "retrieval",
+        "draft",
+        "draft",
+        "evidence_review",
+        "evidence_review",
+        "boundary_review",
+        "boundary_review",
+        "safety_review",
+        "safety_review",
+        "resolution_decision",
+        "resolution_decision",
+        "revised_claims",
+        "revised_claims",
+        "report_narratives",
+        "report_narratives",
+        "validation",
+        "validation"
+      ],
+      "event_status_sequence": [
+        [
+          "retrieval",
+          "running"
+        ],
+        [
+          "retrieval",
+          "complete"
+        ],
+        [
+          "draft",
+          "running"
+        ],
+        [
+          "draft",
+          "complete"
+        ],
+        [
+          "evidence_review",
+          "running"
+        ],
+        [
+          "evidence_review",
+          "complete"
+        ],
+        [
+          "boundary_review",
+          "running"
+        ],
+        [
+          "boundary_review",
+          "complete"
+        ],
+        [
+          "safety_review",
+          "running"
+        ],
+        [
+          "safety_review",
+          "complete"
+        ],
+        [
+          "resolution_decision",
+          "running"
+        ],
+        [
+          "resolution_decision",
+          "complete"
+        ],
+        [
+          "revised_claims",
+          "running"
+        ],
+        [
+          "revised_claims",
+          "complete"
+        ],
+        [
+          "report_narratives",
+          "running"
+        ],
+        [
+          "report_narratives",
+          "complete"
+        ],
+        [
+          "validation",
+          "running"
+        ],
+        [
+          "validation",
+          "complete"
+        ]
+      ],
+      "completed_event_sequence": [
+        "retrieval",
+        "draft",
+        "evidence_review",
+        "boundary_review",
+        "safety_review",
+        "resolution_decision",
+        "revised_claims",
+        "report_narratives",
+        "validation"
+      ],
+      "completed_stage_count": 9,
+      "event_sequence_exact": true,
+      "exactly_nine_completed_stages": true,
+      "f1_product_stage_gate_passed": true,
+      "run_status": "COMPLETE",
+      "product_failure_code": null,
+      "response_language": "zh",
+      "progress_completed_stages": 9,
+      "progress_total_stages": 9,
+      "progress_status": "complete",
+      "progress_9_of_9": true,
+      "run_stage_attempts": [
+        {
+          "stage": "draft",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 9597,
+            "generation_tokens": 1733,
+            "total_tokens": 11330,
+            "generation_limit": 4096,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 23778,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "evidence_review",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 10795,
+            "generation_tokens": 725,
+            "total_tokens": 11520,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 25702,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "boundary_review",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 10795,
+            "generation_tokens": 714,
+            "total_tokens": 11509,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 25739,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "safety_review",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 10821,
+            "generation_tokens": 732,
+            "total_tokens": 11553,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 25838,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "resolution_decision",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 11409,
+            "generation_tokens": 599,
+            "total_tokens": 12008,
+            "generation_limit": 1536,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 27978,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "revised_claims",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 12351,
+            "generation_tokens": 823,
+            "total_tokens": 13174,
+            "generation_limit": 3072,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 30162,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "report_narratives",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 5008,
+            "generation_tokens": 912,
+            "total_tokens": 5920,
+            "generation_limit": 4096,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 15850,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        }
+      ],
+      "product_failure_stage": null,
+      "product_failure_category": null,
+      "saved_report_path": "var/au-government/2026-09-06/grounded-demo-accountant_zh-587d5760.json",
+      "report_sha256": "76ff6255bf536cdd903eaa92afdbde47b44ef4c7adff81d6cc2f57d7ef785ac2",
+      "reader_recomputed": {
+        "valid": true,
+        "validator_category_counts": {},
+        "suggestion_multiset_matches": true,
+        "basis_counts": {
+          "profile": 1,
+          "reasoned_scenario": 6,
+          "recommendation": 1
+        },
+        "claim_count": 8,
+        "citation_count": 0,
+        "citation_detail_count": 0,
+        "citations_resolve": true,
+        "language": "zh"
+      },
+      "status": "FLOW_PASS",
+      "seconds": 238.967,
+      "profile_stage_attempts": [
+        {
+          "stage": "profile",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "contract",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 738,
+            "generation_tokens": 139,
+            "total_tokens": 877,
+            "generation_limit": 1600,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 2333
+        }
+      ],
+      "topic_coverage": {
+        "meaning": "Directory coverage only; relevance and support must still be checked against each passage.",
+        "missing_topics": [],
+        "mode": "topic_directories",
+        "query_counts": {
+          "ai-impact": 2,
+          "labour-market": 2,
+          "occupations": 4
+        },
+        "topic_counts": {
+          "ai-impact": 2,
+          "labour-market": 2,
+          "occupations": 4
+        },
+        "unclassified_count": 0
+      },
+      "cleanup": {
+        "worker_returncodes": [
+          -15,
+          -15
+        ],
+        "qwen_processes_remaining": 0,
+        "uploads_remaining": 0,
+        "preexisting_chat_message_report_rows_unchanged": true,
+        "database_retained": true,
+        "source_unchanged_during_api": true
+      },
+      "manual_content_review": {
+        "status": "FAILED",
+        "issues": [
+          "No RAG claim or citation despite relevant frozen passages.",
+          "Profile claim and occupation summary include an automation assessment not provided by the candidate."
+        ],
+        "scope": "All report claims, sections and all eight frozen passages read; structural FLOW_PASS retained separately."
+      }
+    },
+    {
+      "case": "software_en",
+      "expected_language": "en",
+      "review_result_sets": {},
+      "reader_error": null,
+      "source_sha256": "166a2469eff88bd6081ed92afbcc1a224f5398e610422d1408de90294a33978a",
+      "chat_id": "905447f9-9206-4533-9f44-975d6eaa4500",
+      "run_id": "34d962f4-c719-4031-bd2d-8e48368fb9fa",
+      "confirmed_occupations": [
+        "Software Engineer"
+      ],
+      "public_run": {
+        "run_id": "34d962f4-c719-4031-bd2d-8e48368fb9fa",
+        "status": "failed",
+        "current_stage": "failed",
+        "completed_stages": 1,
+        "total_stages": 9,
+        "report_id": null,
+        "error_code": "MAIN_AGENT_FAILED",
+        "message": "The main model could not complete a valid analysis. You can try again with a new profile confirmation.",
+        "last_event_id": 3
+      },
+      "database_report_count": 3,
+      "diagnostic_checkpoint_reason": "finally",
+      "report_count": 0,
+      "event_sequence": [
+        "retrieval",
+        "retrieval",
+        "draft",
+        "failed"
+      ],
+      "event_status_sequence": [
+        [
+          "retrieval",
+          "running"
+        ],
+        [
+          "retrieval",
+          "complete"
+        ],
+        [
+          "draft",
+          "running"
+        ],
+        [
+          "failed",
+          "failed"
+        ]
+      ],
+      "completed_event_sequence": [
+        "retrieval"
+      ],
+      "completed_stage_count": 1,
+      "event_sequence_exact": false,
+      "exactly_nine_completed_stages": false,
+      "f1_product_stage_gate_passed": false,
+      "run_status": "MAIN_AGENT_FAILED",
+      "product_failure_code": "MAIN_AGENT_FAILED",
+      "response_language": "en",
+      "progress_completed_stages": 1,
+      "progress_total_stages": 9,
+      "progress_status": "failed",
+      "progress_9_of_9": false,
+      "run_stage_attempts": [
+        {
+          "stage": "draft",
+          "attempt": 1,
+          "status": "failed",
+          "boundary": "validation",
+          "category": "EVIDENCE_REFERENCE",
+          "metrics": {
+            "prompt_tokens": 8926,
+            "generation_tokens": 1868,
+            "total_tokens": 10794,
+            "generation_limit": 4096,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [
+            "claims",
+            3,
+            "evidence_refs"
+          ],
+          "parse_error_offset": null,
+          "context_codepoints": 23304,
+          "validator_categories": {
+            "EVIDENCE_REFERENCE": 2
+          },
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "draft",
+          "attempt": 2,
+          "status": "failed",
+          "boundary": "validation",
+          "category": "EVIDENCE_REFERENCE",
+          "metrics": {
+            "prompt_tokens": 9037,
+            "generation_tokens": 1801,
+            "total_tokens": 10838,
+            "generation_limit": 4096,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [
+            "claims",
+            3,
+            "evidence_refs"
+          ],
+          "parse_error_offset": null,
+          "context_codepoints": 23834,
+          "validator_categories": {
+            "EVIDENCE_REFERENCE": 2
+          },
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        }
+      ],
+      "product_failure_stage": "draft",
+      "product_failure_category": "EVIDENCE_REFERENCE",
+      "status": "FAILED",
+      "seconds": 113.335,
+      "profile_stage_attempts": [
+        {
+          "stage": "profile",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "contract",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 746,
+            "generation_tokens": 161,
+            "total_tokens": 907,
+            "generation_limit": 1600,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 2604
+        }
+      ],
+      "topic_coverage": {
+        "meaning": "Directory coverage only; relevance and support must still be checked against each passage.",
+        "missing_topics": [],
+        "mode": "topic_directories",
+        "query_counts": {
+          "ai-impact": 2,
+          "labour-market": 2,
+          "occupations": 4
+        },
+        "topic_counts": {
+          "ai-impact": 2,
+          "labour-market": 2,
+          "occupations": 4
+        },
+        "unclassified_count": 0
+      },
+      "cleanup": {
+        "worker_returncodes": [
+          -15,
+          -15
+        ],
+        "qwen_processes_remaining": 0,
+        "uploads_remaining": 0,
+        "preexisting_chat_message_report_rows_unchanged": true,
+        "database_retained": true,
+        "source_unchanged_during_api": true
+      }
+    },
+    {
+      "case": "accountant_zh",
+      "expected_language": "zh",
+      "review_result_sets": {
+        "evidence_review": {
+          "present": true,
+          "count": 3,
+          "attempt": 1
+        },
+        "boundary_review": {
+          "present": true,
+          "count": 3,
+          "attempt": 1
+        },
+        "safety_review": {
+          "present": true,
+          "count": 3,
+          "attempt": 1
+        }
+      },
+      "reader_error": null,
+      "source_sha256": "c991976960066afcc7608b687b55f66d0c7c0aa9f2361f71c5d4dde9a928d2f4",
+      "chat_id": "9c152bdf-02b7-4a28-8010-fc5897553670",
+      "run_id": "776eb753-29c6-4f7f-97a2-3b5f8bbc9bea",
+      "confirmed_occupations": [
+        "会计"
+      ],
+      "public_run": {
+        "run_id": "776eb753-29c6-4f7f-97a2-3b5f8bbc9bea",
+        "status": "complete",
+        "current_stage": "validation",
+        "completed_stages": 9,
+        "total_stages": 9,
+        "report_id": "12c2ea4a-8ef8-4466-b90b-dc8f144212f7",
+        "error_code": null,
+        "message": "Analysis complete.",
+        "last_event_id": 17
+      },
+      "database_report_count": 4,
+      "diagnostic_checkpoint_reason": "finally",
+      "report_count": 1,
+      "event_sequence": [
+        "retrieval",
+        "retrieval",
+        "draft",
+        "draft",
+        "evidence_review",
+        "evidence_review",
+        "boundary_review",
+        "boundary_review",
+        "safety_review",
+        "safety_review",
+        "resolution_decision",
+        "resolution_decision",
+        "revised_claims",
+        "revised_claims",
+        "report_narratives",
+        "report_narratives",
+        "validation",
+        "validation"
+      ],
+      "event_status_sequence": [
+        [
+          "retrieval",
+          "running"
+        ],
+        [
+          "retrieval",
+          "complete"
+        ],
+        [
+          "draft",
+          "running"
+        ],
+        [
+          "draft",
+          "complete"
+        ],
+        [
+          "evidence_review",
+          "running"
+        ],
+        [
+          "evidence_review",
+          "complete"
+        ],
+        [
+          "boundary_review",
+          "running"
+        ],
+        [
+          "boundary_review",
+          "complete"
+        ],
+        [
+          "safety_review",
+          "running"
+        ],
+        [
+          "safety_review",
+          "complete"
+        ],
+        [
+          "resolution_decision",
+          "running"
+        ],
+        [
+          "resolution_decision",
+          "complete"
+        ],
+        [
+          "revised_claims",
+          "running"
+        ],
+        [
+          "revised_claims",
+          "complete"
+        ],
+        [
+          "report_narratives",
+          "running"
+        ],
+        [
+          "report_narratives",
+          "complete"
+        ],
+        [
+          "validation",
+          "running"
+        ],
+        [
+          "validation",
+          "complete"
+        ]
+      ],
+      "completed_event_sequence": [
+        "retrieval",
+        "draft",
+        "evidence_review",
+        "boundary_review",
+        "safety_review",
+        "resolution_decision",
+        "revised_claims",
+        "report_narratives",
+        "validation"
+      ],
+      "completed_stage_count": 9,
+      "event_sequence_exact": true,
+      "exactly_nine_completed_stages": true,
+      "f1_product_stage_gate_passed": true,
+      "run_status": "COMPLETE",
+      "product_failure_code": null,
+      "response_language": "zh",
+      "progress_completed_stages": 9,
+      "progress_total_stages": 9,
+      "progress_status": "complete",
+      "progress_9_of_9": true,
+      "run_stage_attempts": [
+        {
+          "stage": "draft",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 10155,
+            "generation_tokens": 2212,
+            "total_tokens": 12367,
+            "generation_limit": 4096,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 24830,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "evidence_review",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 11149,
+            "generation_tokens": 680,
+            "total_tokens": 11829,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 25921,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "boundary_review",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 11149,
+            "generation_tokens": 661,
+            "total_tokens": 11810,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 25958,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "safety_review",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 11175,
+            "generation_tokens": 716,
+            "total_tokens": 11891,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 26057,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "resolution_decision",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 11689,
+            "generation_tokens": 387,
+            "total_tokens": 12076,
+            "generation_limit": 1536,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 27738,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "revised_claims",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 12891,
+            "generation_tokens": 817,
+            "total_tokens": 13708,
+            "generation_limit": 3072,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 30141,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "report_narratives",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 4794,
+            "generation_tokens": 863,
+            "total_tokens": 5657,
+            "generation_limit": 4096,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 15463,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        }
+      ],
+      "product_failure_stage": null,
+      "product_failure_category": null,
+      "saved_report_path": "var/au-government/2026-09-06/grounded-demo-accountant_zh-776eb753.json",
+      "report_sha256": "16f94d27d3c4409bb29b7e58b00d48682e50b533c6c70f6964a7f61123b5731c",
+      "reader_recomputed": {
+        "valid": true,
+        "validator_category_counts": {},
+        "suggestion_multiset_matches": true,
+        "basis_counts": {
+          "rag": 2,
+          "reasoned_scenario": 2,
+          "recommendation": 1
+        },
+        "claim_count": 5,
+        "citation_count": 4,
+        "citation_detail_count": 4,
+        "citations_resolve": true,
+        "language": "zh"
+      },
+      "status": "FLOW_PASS",
+      "seconds": 251.453,
+      "profile_stage_attempts": [
+        {
+          "stage": "profile",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "contract",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 738,
+            "generation_tokens": 139,
+            "total_tokens": 877,
+            "generation_limit": 1600,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 2333
+        }
+      ],
+      "topic_coverage": {
+        "meaning": "Directory coverage only; relevance and support must still be checked against each passage.",
+        "missing_topics": [],
+        "mode": "topic_directories",
+        "query_counts": {
+          "ai-impact": 2,
+          "labour-market": 2,
+          "occupations": 4
+        },
+        "topic_counts": {
+          "ai-impact": 2,
+          "labour-market": 2,
+          "occupations": 4
+        },
+        "unclassified_count": 0
+      },
+      "cleanup": {
+        "worker_returncodes": [
+          -15,
+          -15
+        ],
+        "qwen_processes_remaining": 0,
+        "uploads_remaining": 0,
+        "preexisting_chat_message_report_rows_unchanged": true,
+        "database_retained": true,
+        "source_unchanged_during_api": true
+      },
+      "manual_content_review": {
+        "status": "FAILED",
+        "issues": [
+          "ANZSCO Accountants duties combined with OSCA Bookkeeper citation.",
+          "Management Accountant 2025 shortage rating generalized to all accountants and paired with an unrelated Finance Managers projection.",
+          "Occupation summary attaches labour-market claims without discussing them.",
+          "Unsupported generalization in some reviewer decisions."
+        ],
+        "independent_review": "Confirmed by separate read-only review."
+      }
+    },
+    {
+      "case": "software_en",
+      "expected_language": "en",
+      "review_result_sets": {
+        "evidence_review": {
+          "present": true,
+          "count": 3,
+          "attempt": 1
+        },
+        "boundary_review": {
+          "present": true,
+          "count": 3,
+          "attempt": 1
+        },
+        "safety_review": {
+          "present": true,
+          "count": 3,
+          "attempt": 1
+        }
+      },
+      "reader_error": null,
+      "source_sha256": "c991976960066afcc7608b687b55f66d0c7c0aa9f2361f71c5d4dde9a928d2f4",
+      "chat_id": "670ba7ce-084e-4271-a294-7fa24e7bef9f",
+      "run_id": "c4879561-78d2-4780-84b1-7e04cea6be85",
+      "confirmed_occupations": [
+        "Software Engineer"
+      ],
+      "public_run": {
+        "run_id": "c4879561-78d2-4780-84b1-7e04cea6be85",
+        "status": "failed",
+        "current_stage": "failed",
+        "completed_stages": 5,
+        "total_stages": 9,
+        "report_id": null,
+        "error_code": "MAIN_AGENT_FAILED",
+        "message": "The main model could not complete a valid analysis. You can try again with a new profile confirmation.",
+        "last_event_id": 11
+      },
+      "database_report_count": 4,
+      "diagnostic_checkpoint_reason": "finally",
+      "report_count": 0,
+      "event_sequence": [
+        "retrieval",
+        "retrieval",
+        "draft",
+        "draft",
+        "evidence_review",
+        "evidence_review",
+        "boundary_review",
+        "boundary_review",
+        "safety_review",
+        "safety_review",
+        "resolution_decision",
+        "failed"
+      ],
+      "event_status_sequence": [
+        [
+          "retrieval",
+          "running"
+        ],
+        [
+          "retrieval",
+          "complete"
+        ],
+        [
+          "draft",
+          "running"
+        ],
+        [
+          "draft",
+          "complete"
+        ],
+        [
+          "evidence_review",
+          "running"
+        ],
+        [
+          "evidence_review",
+          "complete"
+        ],
+        [
+          "boundary_review",
+          "running"
+        ],
+        [
+          "boundary_review",
+          "complete"
+        ],
+        [
+          "safety_review",
+          "running"
+        ],
+        [
+          "safety_review",
+          "complete"
+        ],
+        [
+          "resolution_decision",
+          "running"
+        ],
+        [
+          "failed",
+          "failed"
+        ]
+      ],
+      "completed_event_sequence": [
+        "retrieval",
+        "draft",
+        "evidence_review",
+        "boundary_review",
+        "safety_review"
+      ],
+      "completed_stage_count": 5,
+      "event_sequence_exact": false,
+      "exactly_nine_completed_stages": false,
+      "f1_product_stage_gate_passed": false,
+      "run_status": "MAIN_AGENT_FAILED",
+      "product_failure_code": "MAIN_AGENT_FAILED",
+      "response_language": "en",
+      "progress_completed_stages": 5,
+      "progress_total_stages": 9,
+      "progress_status": "failed",
+      "progress_9_of_9": false,
+      "run_stage_attempts": [
+        {
+          "stage": "draft",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 9480,
+            "generation_tokens": 2270,
+            "total_tokens": 11750,
+            "generation_limit": 4096,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 24356,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "evidence_review",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 10605,
+            "generation_tokens": 705,
+            "total_tokens": 11310,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 28629,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "boundary_review",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 10605,
+            "generation_tokens": 687,
+            "total_tokens": 11292,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 28666,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "safety_review",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 10631,
+            "generation_tokens": 704,
+            "total_tokens": 11335,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 28765,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "resolution_decision",
+          "attempt": 1,
+          "status": "failed",
+          "boundary": "validation",
+          "category": "SUGGESTION_BINDING",
+          "metrics": {
+            "prompt_tokens": 11281,
+            "generation_tokens": 605,
+            "total_tokens": 11886,
+            "generation_limit": 1536,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 31295,
+          "validator_categories": {
+            "SUGGESTION_BINDING": 1
+          },
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "resolution_decision",
+          "attempt": 2,
+          "status": "failed",
+          "boundary": "validation",
+          "category": "SUGGESTION_BINDING",
+          "metrics": {
+            "prompt_tokens": 11333,
+            "generation_tokens": 605,
+            "total_tokens": 11938,
+            "generation_limit": 1536,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 31517,
+          "validator_categories": {
+            "SUGGESTION_BINDING": 1
+          },
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        }
+      ],
+      "product_failure_stage": "resolution_decision",
+      "product_failure_category": "SUGGESTION_BINDING",
+      "status": "FAILED",
+      "seconds": 213.523,
+      "profile_stage_attempts": [
+        {
+          "stage": "profile",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "contract",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 746,
+            "generation_tokens": 161,
+            "total_tokens": 907,
+            "generation_limit": 1600,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 2604
+        }
+      ],
+      "topic_coverage": {
+        "meaning": "Directory coverage only; relevance and support must still be checked against each passage.",
+        "missing_topics": [],
+        "mode": "topic_directories",
+        "query_counts": {
+          "ai-impact": 2,
+          "labour-market": 2,
+          "occupations": 4
+        },
+        "topic_counts": {
+          "ai-impact": 2,
+          "labour-market": 2,
+          "occupations": 4
+        },
+        "unclassified_count": 0
+      },
+      "cleanup": {
+        "worker_returncodes": [
+          -15,
+          -15
+        ],
+        "qwen_processes_remaining": 0,
+        "uploads_remaining": 0,
+        "preexisting_chat_message_report_rows_unchanged": true,
+        "database_retained": true,
+        "source_unchanged_during_api": true
+      }
+    },
+    {
+      "case": "accountant_zh",
+      "expected_language": "zh",
+      "review_result_sets": {
+        "evidence_review": {
+          "present": true,
+          "count": 3,
+          "attempt": 1
+        },
+        "boundary_review": {
+          "present": true,
+          "count": 3,
+          "attempt": 1
+        },
+        "safety_review": {
+          "present": true,
+          "count": 3,
+          "attempt": 1
+        }
+      },
+      "reader_error": null,
+      "source_sha256": "9d5c481c853fef4fbb5de2c9d8f3bc72b66c120c39141dc883e7a2c917347017",
+      "chat_id": "75ce8408-eec0-4ef1-ad61-875bc23c794f",
+      "run_id": "a6c00416-11b3-4495-a82a-9a3774b2e434",
+      "confirmed_occupations": [
+        "会计"
+      ],
+      "public_run": {
+        "run_id": "a6c00416-11b3-4495-a82a-9a3774b2e434",
+        "status": "complete",
+        "current_stage": "validation",
+        "completed_stages": 9,
+        "total_stages": 9,
+        "report_id": "08e4b783-d382-4e3d-8352-695203eef683",
+        "error_code": null,
+        "message": "Analysis complete.",
+        "last_event_id": 17
+      },
+      "database_report_count": 5,
+      "diagnostic_checkpoint_reason": "finally",
+      "report_count": 1,
+      "event_sequence": [
+        "retrieval",
+        "retrieval",
+        "draft",
+        "draft",
+        "evidence_review",
+        "evidence_review",
+        "boundary_review",
+        "boundary_review",
+        "safety_review",
+        "safety_review",
+        "resolution_decision",
+        "resolution_decision",
+        "revised_claims",
+        "revised_claims",
+        "report_narratives",
+        "report_narratives",
+        "validation",
+        "validation"
+      ],
+      "event_status_sequence": [
+        [
+          "retrieval",
+          "running"
+        ],
+        [
+          "retrieval",
+          "complete"
+        ],
+        [
+          "draft",
+          "running"
+        ],
+        [
+          "draft",
+          "complete"
+        ],
+        [
+          "evidence_review",
+          "running"
+        ],
+        [
+          "evidence_review",
+          "complete"
+        ],
+        [
+          "boundary_review",
+          "running"
+        ],
+        [
+          "boundary_review",
+          "complete"
+        ],
+        [
+          "safety_review",
+          "running"
+        ],
+        [
+          "safety_review",
+          "complete"
+        ],
+        [
+          "resolution_decision",
+          "running"
+        ],
+        [
+          "resolution_decision",
+          "complete"
+        ],
+        [
+          "revised_claims",
+          "running"
+        ],
+        [
+          "revised_claims",
+          "complete"
+        ],
+        [
+          "report_narratives",
+          "running"
+        ],
+        [
+          "report_narratives",
+          "complete"
+        ],
+        [
+          "validation",
+          "running"
+        ],
+        [
+          "validation",
+          "complete"
+        ]
+      ],
+      "completed_event_sequence": [
+        "retrieval",
+        "draft",
+        "evidence_review",
+        "boundary_review",
+        "safety_review",
+        "resolution_decision",
+        "revised_claims",
+        "report_narratives",
+        "validation"
+      ],
+      "completed_stage_count": 9,
+      "event_sequence_exact": true,
+      "exactly_nine_completed_stages": true,
+      "f1_product_stage_gate_passed": true,
+      "run_status": "COMPLETE",
+      "product_failure_code": null,
+      "response_language": "zh",
+      "progress_completed_stages": 9,
+      "progress_total_stages": 9,
+      "progress_status": "complete",
+      "progress_9_of_9": true,
+      "run_stage_attempts": [
+        {
+          "stage": "draft",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 10262,
+            "generation_tokens": 2582,
+            "total_tokens": 12844,
+            "generation_limit": 4096,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 25358,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "evidence_review",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 11583,
+            "generation_tokens": 722,
+            "total_tokens": 12305,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 27516,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "boundary_review",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 11541,
+            "generation_tokens": 679,
+            "total_tokens": 12220,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 27309,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "safety_review",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 11567,
+            "generation_tokens": 727,
+            "total_tokens": 12294,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 27408,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "resolution_decision",
+          "attempt": 1,
+          "status": "failed",
+          "boundary": "generation",
+          "category": "truncated",
+          "metrics": {
+            "prompt_tokens": 12423,
+            "generation_tokens": 1536,
+            "total_tokens": 13959,
+            "generation_limit": 1536,
+            "reached_generation_limit": true
+          },
+          "schema_error_path": [],
+          "parse_error_offset": 2845,
+          "context_codepoints": 30149,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "resolution_decision",
+          "attempt": 2,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 12475,
+            "generation_tokens": 384,
+            "total_tokens": 12859,
+            "generation_limit": 1536,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 30362,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "revised_claims",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 13334,
+            "generation_tokens": 957,
+            "total_tokens": 14291,
+            "generation_limit": 3072,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 31559,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "report_narratives",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 5310,
+            "generation_tokens": 1061,
+            "total_tokens": 6371,
+            "generation_limit": 4096,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 17025,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        }
+      ],
+      "product_failure_stage": null,
+      "product_failure_category": null,
+      "saved_report_path": "var/au-government/2026-09-06/grounded-demo-accountant_zh-a6c00416.json",
+      "report_sha256": "e689d42e7835a31fe42a75de6655fc30176582f361538e004c782703a6ffb7c0",
+      "reader_recomputed": {
+        "valid": true,
+        "validator_category_counts": {},
+        "suggestion_multiset_matches": true,
+        "basis_counts": {
+          "rag": 1,
+          "reasoned_scenario": 6,
+          "recommendation": 1
+        },
+        "claim_count": 8,
+        "citation_count": 1,
+        "citation_detail_count": 1,
+        "citations_resolve": true,
+        "language": "zh"
+      },
+      "status": "FLOW_PASS",
+      "seconds": 357.133,
+      "profile_stage_attempts": [
+        {
+          "stage": "profile",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "contract",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 738,
+            "generation_tokens": 139,
+            "total_tokens": 877,
+            "generation_limit": 1600,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 2333
+        }
+      ],
+      "topic_coverage": {
+        "meaning": "Directory coverage only; relevance and support must still be checked against each passage.",
+        "missing_topics": [],
+        "mode": "topic_directories",
+        "query_counts": {
+          "ai-impact": 2,
+          "labour-market": 2,
+          "occupations": 4
+        },
+        "topic_counts": {
+          "ai-impact": 2,
+          "labour-market": 2,
+          "occupations": 4
+        },
+        "unclassified_count": 0
+      },
+      "cleanup": {
+        "worker_returncodes": [
+          -15,
+          -15
+        ],
+        "qwen_processes_remaining": 0,
+        "uploads_remaining": 0,
+        "preexisting_chat_message_report_rows_unchanged": true,
+        "database_retained": true,
+        "source_unchanged_during_api": true
+      },
+      "manual_content_review": {
+        "status": "FAILED",
+        "issues": [
+          "Source describes general financial reporting and related accounting functions; RAG claim additionally copies user-specific month-end closing and invoice checking.",
+          "RAG uncertainty incorrectly describes its information as user self-report."
+        ],
+        "improvements_observed": [
+          "One source per RAG claim; no mixed occupation references.",
+          "Scenarios and recommendations retain separate origins."
+        ]
+      }
+    },
+    {
+      "case": "software_en",
+      "expected_language": "en",
+      "review_result_sets": {},
+      "reader_error": null,
+      "source_sha256": "9d5c481c853fef4fbb5de2c9d8f3bc72b66c120c39141dc883e7a2c917347017",
+      "chat_id": "d70b2833-d01a-4640-8ef5-b6cd48ed2851",
+      "run_id": "37eb806f-9e88-4444-8bd5-4c26a51aa26f",
+      "confirmed_occupations": [
+        "Software Engineer"
+      ],
+      "public_run": {
+        "run_id": "37eb806f-9e88-4444-8bd5-4c26a51aa26f",
+        "status": "failed",
+        "current_stage": "failed",
+        "completed_stages": 1,
+        "total_stages": 9,
+        "report_id": null,
+        "error_code": "MAIN_AGENT_FAILED",
+        "message": "The main model could not complete a valid analysis. You can try again with a new profile confirmation.",
+        "last_event_id": 3
+      },
+      "database_report_count": 5,
+      "diagnostic_checkpoint_reason": "finally",
+      "report_count": 0,
+      "event_sequence": [
+        "retrieval",
+        "retrieval",
+        "draft",
+        "failed"
+      ],
+      "event_status_sequence": [
+        [
+          "retrieval",
+          "running"
+        ],
+        [
+          "retrieval",
+          "complete"
+        ],
+        [
+          "draft",
+          "running"
+        ],
+        [
+          "failed",
+          "failed"
+        ]
+      ],
+      "completed_event_sequence": [
+        "retrieval"
+      ],
+      "completed_stage_count": 1,
+      "event_sequence_exact": false,
+      "exactly_nine_completed_stages": false,
+      "f1_product_stage_gate_passed": false,
+      "run_status": "MAIN_AGENT_FAILED",
+      "product_failure_code": "MAIN_AGENT_FAILED",
+      "response_language": "en",
+      "progress_completed_stages": 1,
+      "progress_total_stages": 9,
+      "progress_status": "failed",
+      "progress_9_of_9": false,
+      "run_stage_attempts": [
+        {
+          "stage": "draft",
+          "attempt": 1,
+          "status": "failed",
+          "boundary": "validation",
+          "category": "CLAIM_BINDING",
+          "metrics": {
+            "prompt_tokens": 9571,
+            "generation_tokens": 2499,
+            "total_tokens": 12070,
+            "generation_limit": 4096,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [
+            "claims"
+          ],
+          "parse_error_offset": null,
+          "context_codepoints": 24884,
+          "validator_categories": {
+            "CLAIM_BINDING": 1
+          },
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "draft",
+          "attempt": 2,
+          "status": "failed",
+          "boundary": "validation",
+          "category": "CLAIM_BINDING",
+          "metrics": {
+            "prompt_tokens": 9707,
+            "generation_tokens": 2151,
+            "total_tokens": 11858,
+            "generation_limit": 4096,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [
+            "claims"
+          ],
+          "parse_error_offset": null,
+          "context_codepoints": 25558,
+          "validator_categories": {
+            "CLAIM_BINDING": 1,
+            "HORIZON_STRUCTURE": 1
+          },
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        }
+      ],
+      "product_failure_stage": "draft",
+      "product_failure_category": "CLAIM_BINDING",
+      "status": "FAILED",
+      "seconds": 129.764,
+      "profile_stage_attempts": [
+        {
+          "stage": "profile",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "contract",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 746,
+            "generation_tokens": 161,
+            "total_tokens": 907,
+            "generation_limit": 1600,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 2604
+        }
+      ],
+      "topic_coverage": {
+        "meaning": "Directory coverage only; relevance and support must still be checked against each passage.",
+        "missing_topics": [],
+        "mode": "topic_directories",
+        "query_counts": {
+          "ai-impact": 2,
+          "labour-market": 2,
+          "occupations": 4
+        },
+        "topic_counts": {
+          "ai-impact": 2,
+          "labour-market": 2,
+          "occupations": 4
+        },
+        "unclassified_count": 0
+      },
+      "cleanup": {
+        "worker_returncodes": [
+          -15,
+          -15
+        ],
+        "qwen_processes_remaining": 0,
+        "uploads_remaining": 0,
+        "preexisting_chat_message_report_rows_unchanged": true,
+        "database_retained": true,
+        "source_unchanged_during_api": true
+      }
+    },
+    {
+      "case": "accountant_zh",
+      "expected_language": "zh",
+      "review_result_sets": {
+        "evidence_review": {
+          "present": true,
+          "count": 3,
+          "attempt": 1
+        },
+        "boundary_review": {
+          "present": true,
+          "count": 1,
+          "attempt": 1
+        },
+        "safety_review": {
+          "present": true,
+          "count": 3,
+          "attempt": 1
+        }
+      },
+      "reader_error": null,
+      "source_sha256": "49a04c969beef0713acbaac070e563a91d3d65022bd915a147eff11ad0ebe84b",
+      "chat_id": "9917ffa6-511c-489c-a272-4c7bca9a769f",
+      "run_id": "64b822ad-434c-4aca-847e-fcdff5feea46",
+      "confirmed_occupations": [
+        "会计"
+      ],
+      "public_run": {
+        "run_id": "64b822ad-434c-4aca-847e-fcdff5feea46",
+        "status": "complete",
+        "current_stage": "validation",
+        "completed_stages": 9,
+        "total_stages": 9,
+        "report_id": "165a6b29-b026-4dec-95fc-bd2aef3d0723",
+        "error_code": null,
+        "message": "Analysis complete.",
+        "last_event_id": 17
+      },
+      "database_report_count": 6,
+      "diagnostic_checkpoint_reason": "finally",
+      "report_count": 1,
+      "event_sequence": [
+        "retrieval",
+        "retrieval",
+        "draft",
+        "draft",
+        "evidence_review",
+        "evidence_review",
+        "boundary_review",
+        "boundary_review",
+        "safety_review",
+        "safety_review",
+        "resolution_decision",
+        "resolution_decision",
+        "revised_claims",
+        "revised_claims",
+        "report_narratives",
+        "report_narratives",
+        "validation",
+        "validation"
+      ],
+      "event_status_sequence": [
+        [
+          "retrieval",
+          "running"
+        ],
+        [
+          "retrieval",
+          "complete"
+        ],
+        [
+          "draft",
+          "running"
+        ],
+        [
+          "draft",
+          "complete"
+        ],
+        [
+          "evidence_review",
+          "running"
+        ],
+        [
+          "evidence_review",
+          "complete"
+        ],
+        [
+          "boundary_review",
+          "running"
+        ],
+        [
+          "boundary_review",
+          "complete"
+        ],
+        [
+          "safety_review",
+          "running"
+        ],
+        [
+          "safety_review",
+          "complete"
+        ],
+        [
+          "resolution_decision",
+          "running"
+        ],
+        [
+          "resolution_decision",
+          "complete"
+        ],
+        [
+          "revised_claims",
+          "running"
+        ],
+        [
+          "revised_claims",
+          "complete"
+        ],
+        [
+          "report_narratives",
+          "running"
+        ],
+        [
+          "report_narratives",
+          "complete"
+        ],
+        [
+          "validation",
+          "running"
+        ],
+        [
+          "validation",
+          "complete"
+        ]
+      ],
+      "completed_event_sequence": [
+        "retrieval",
+        "draft",
+        "evidence_review",
+        "boundary_review",
+        "safety_review",
+        "resolution_decision",
+        "revised_claims",
+        "report_narratives",
+        "validation"
+      ],
+      "completed_stage_count": 9,
+      "event_sequence_exact": true,
+      "exactly_nine_completed_stages": true,
+      "f1_product_stage_gate_passed": true,
+      "run_status": "COMPLETE",
+      "product_failure_code": null,
+      "response_language": "zh",
+      "progress_completed_stages": 9,
+      "progress_total_stages": 9,
+      "progress_status": "complete",
+      "progress_9_of_9": true,
+      "run_stage_attempts": [
+        {
+          "stage": "draft",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 10449,
+            "generation_tokens": 2042,
+            "total_tokens": 12491,
+            "generation_limit": 4096,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 26227,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "evidence_review",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 11280,
+            "generation_tokens": 759,
+            "total_tokens": 12039,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 27257,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "boundary_review",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 11193,
+            "generation_tokens": 242,
+            "total_tokens": 11435,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 26809,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "safety_review",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 11219,
+            "generation_tokens": 667,
+            "total_tokens": 11886,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 26908,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "resolution_decision",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 11676,
+            "generation_tokens": 266,
+            "total_tokens": 11942,
+            "generation_limit": 1536,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 28588,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "revised_claims",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 12615,
+            "generation_tokens": 498,
+            "total_tokens": 13113,
+            "generation_limit": 3072,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 30132,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "report_narratives",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 4614,
+            "generation_tokens": 961,
+            "total_tokens": 5575,
+            "generation_limit": 4096,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 15942,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        }
+      ],
+      "product_failure_stage": null,
+      "product_failure_category": null,
+      "saved_report_path": "var/au-government/2026-09-06/grounded-demo-accountant_zh-64b822ad.json",
+      "report_sha256": "093876ec3934ad7c1e8c75dee4d6b4800a41daaa1c9caa2a9160fbcb5477aff5",
+      "reader_recomputed": {
+        "valid": true,
+        "validator_category_counts": {},
+        "suggestion_multiset_matches": true,
+        "basis_counts": {
+          "rag": 1,
+          "reasoned_scenario": 2,
+          "recommendation": 1
+        },
+        "claim_count": 4,
+        "citation_count": 1,
+        "citation_detail_count": 1,
+        "citations_resolve": true,
+        "language": "zh"
+      },
+      "status": "FLOW_PASS",
+      "seconds": 281.903,
+      "profile_stage_attempts": [
+        {
+          "stage": "profile",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "contract",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 738,
+            "generation_tokens": 139,
+            "total_tokens": 877,
+            "generation_limit": 1600,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 2333
+        }
+      ],
+      "topic_coverage": {
+        "meaning": "Directory coverage only; relevance and support must still be checked against each passage.",
+        "missing_topics": [],
+        "mode": "topic_directories",
+        "query_counts": {
+          "ai-impact": 2,
+          "labour-market": 2,
+          "occupations": 4
+        },
+        "topic_counts": {
+          "ai-impact": 2,
+          "labour-market": 2,
+          "occupations": 4
+        },
+        "unclassified_count": 0
+      },
+      "cleanup": {
+        "worker_returncodes": [
+          -15,
+          -15
+        ],
+        "qwen_processes_remaining": 0,
+        "uploads_remaining": 0,
+        "preexisting_chat_message_report_rows_unchanged": true,
+        "database_retained": true,
+        "source_unchanged_during_api": true
+      },
+      "manual_content_review": {
+        "status": "FAILED",
+        "scope": "Manual and independent comparison of claims, occupation summary, future sections and actual citation text.",
+        "findings": [
+          "Occupation summary duties are directly supported and future sections use scenario origin.",
+          "RAG claim-001 adds OSCA 2024 v1.0 although its sole reference is ANZSCO 2013 v1.3.",
+          "F1 boundary rejection overstates evidence confirmation of the specific future task outcome; general AI background does not directly establish its timing."
+        ],
+        "positive_changes": [
+          "No user month-end/invoice duties added to the RAG background.",
+          "No repeated occupation/risk summary."
+        ]
+      }
+    },
+    {
+      "case": "software_en",
+      "expected_language": "en",
+      "review_result_sets": {
+        "evidence_review": {
+          "present": true,
+          "count": 3,
+          "attempt": 1
+        },
+        "boundary_review": {
+          "present": true,
+          "count": 3,
+          "attempt": 1
+        },
+        "safety_review": {
+          "present": true,
+          "count": 3,
+          "attempt": 1
+        }
+      },
+      "reader_error": null,
+      "source_sha256": "49a04c969beef0713acbaac070e563a91d3d65022bd915a147eff11ad0ebe84b",
+      "chat_id": "3d685857-9138-4580-b7c5-cc1dea5122d2",
+      "run_id": "8a67e458-73aa-4d29-b372-fa84dbe7997f",
+      "confirmed_occupations": [
+        "Software Engineer"
+      ],
+      "public_run": {
+        "run_id": "8a67e458-73aa-4d29-b372-fa84dbe7997f",
+        "status": "complete",
+        "current_stage": "validation",
+        "completed_stages": 9,
+        "total_stages": 9,
+        "report_id": "4dc5011f-5f2c-4f2b-beee-cb2c93bd7975",
+        "error_code": null,
+        "message": "Analysis complete.",
+        "last_event_id": 17
+      },
+      "database_report_count": 7,
+      "diagnostic_checkpoint_reason": "finally",
+      "report_count": 1,
+      "event_sequence": [
+        "retrieval",
+        "retrieval",
+        "draft",
+        "draft",
+        "evidence_review",
+        "evidence_review",
+        "boundary_review",
+        "boundary_review",
+        "safety_review",
+        "safety_review",
+        "resolution_decision",
+        "resolution_decision",
+        "revised_claims",
+        "revised_claims",
+        "report_narratives",
+        "report_narratives",
+        "validation",
+        "validation"
+      ],
+      "event_status_sequence": [
+        [
+          "retrieval",
+          "running"
+        ],
+        [
+          "retrieval",
+          "complete"
+        ],
+        [
+          "draft",
+          "running"
+        ],
+        [
+          "draft",
+          "complete"
+        ],
+        [
+          "evidence_review",
+          "running"
+        ],
+        [
+          "evidence_review",
+          "complete"
+        ],
+        [
+          "boundary_review",
+          "running"
+        ],
+        [
+          "boundary_review",
+          "complete"
+        ],
+        [
+          "safety_review",
+          "running"
+        ],
+        [
+          "safety_review",
+          "complete"
+        ],
+        [
+          "resolution_decision",
+          "running"
+        ],
+        [
+          "resolution_decision",
+          "complete"
+        ],
+        [
+          "revised_claims",
+          "running"
+        ],
+        [
+          "revised_claims",
+          "complete"
+        ],
+        [
+          "report_narratives",
+          "running"
+        ],
+        [
+          "report_narratives",
+          "complete"
+        ],
+        [
+          "validation",
+          "running"
+        ],
+        [
+          "validation",
+          "complete"
+        ]
+      ],
+      "completed_event_sequence": [
+        "retrieval",
+        "draft",
+        "evidence_review",
+        "boundary_review",
+        "safety_review",
+        "resolution_decision",
+        "revised_claims",
+        "report_narratives",
+        "validation"
+      ],
+      "completed_stage_count": 9,
+      "event_sequence_exact": true,
+      "exactly_nine_completed_stages": true,
+      "f1_product_stage_gate_passed": true,
+      "run_status": "COMPLETE",
+      "product_failure_code": null,
+      "response_language": "en",
+      "progress_completed_stages": 9,
+      "progress_total_stages": 9,
+      "progress_status": "complete",
+      "progress_9_of_9": true,
+      "run_stage_attempts": [
+        {
+          "stage": "draft",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 9770,
+            "generation_tokens": 1823,
+            "total_tokens": 11593,
+            "generation_limit": 4096,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 25753,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "evidence_review",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 10426,
+            "generation_tokens": 627,
+            "total_tokens": 11053,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 28840,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "boundary_review",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 10339,
+            "generation_tokens": 679,
+            "total_tokens": 11018,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 28392,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "safety_review",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 10365,
+            "generation_tokens": 626,
+            "total_tokens": 10991,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 28491,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "resolution_decision",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 11165,
+            "generation_tokens": 329,
+            "total_tokens": 11494,
+            "generation_limit": 1536,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 31841,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "revised_claims",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 12086,
+            "generation_tokens": 853,
+            "total_tokens": 12939,
+            "generation_limit": 3072,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 33847,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "report_narratives",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 5251,
+            "generation_tokens": 846,
+            "total_tokens": 6097,
+            "generation_limit": 4096,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 18427,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        }
+      ],
+      "product_failure_stage": null,
+      "product_failure_category": null,
+      "saved_report_path": "var/au-government/2026-09-06/grounded-demo-software_en-8a67e458.json",
+      "report_sha256": "5f8bcb95ee5071023957ae5dc50a161a8c85d545b1dbfaa01420e852e3e53645",
+      "reader_recomputed": {
+        "valid": true,
+        "validator_category_counts": {},
+        "suggestion_multiset_matches": true,
+        "basis_counts": {
+          "rag": 3,
+          "reasoned_scenario": 4,
+          "recommendation": 1
+        },
+        "claim_count": 8,
+        "citation_count": 3,
+        "citation_detail_count": 3,
+        "citations_resolve": true,
+        "language": "en"
+      },
+      "status": "FLOW_PASS",
+      "seconds": 247.5,
+      "profile_stage_attempts": [
+        {
+          "stage": "profile",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "contract",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 746,
+            "generation_tokens": 161,
+            "total_tokens": 907,
+            "generation_limit": 1600,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 2604
+        }
+      ],
+      "topic_coverage": {
+        "meaning": "Directory coverage only; relevance and support must still be checked against each passage.",
+        "missing_topics": [],
+        "mode": "topic_directories",
+        "query_counts": {
+          "ai-impact": 2,
+          "labour-market": 2,
+          "occupations": 4
+        },
+        "topic_counts": {
+          "ai-impact": 2,
+          "labour-market": 2,
+          "occupations": 4
+        },
+        "unclassified_count": 0
+      },
+      "cleanup": {
+        "worker_returncodes": [
+          -15,
+          -15
+        ],
+        "qwen_processes_remaining": 0,
+        "uploads_remaining": 0,
+        "preexisting_chat_message_report_rows_unchanged": true,
+        "database_retained": true,
+        "source_unchanged_during_api": true
+      },
+      "manual_content_review": {
+        "status": "FAILED",
+        "scope": "Manual comparison of full English report with all three returned citation texts.",
+        "findings": [
+          "RAG claim-001 and occupation summary duties match the cited Software Engineer lead statement.",
+          "RAG claim-005 asserts production defects and automated testing but its cited passage only lists specialisations.",
+          "RAG uncertainty makes an unsupported statement about AI/cloud role coverage; scenario uncertainty is separate from source coverage.",
+          "Scenario sections are labelled correctly but some summaries merely repeat current duties; future change appears mainly in uncertainty text."
+        ],
+        "positive_changes": [
+          "Shortage claim keeps 2025 and national/Victoria scope, with point-in-time limitation.",
+          "No job-loss probability."
+        ]
+      }
+    },
+    {
+      "case": "accountant_zh",
+      "expected_language": "zh",
+      "review_result_sets": {
+        "evidence_review": {
+          "present": true,
+          "count": 3,
+          "attempt": 1
+        },
+        "boundary_review": {
+          "present": true,
+          "count": 3,
+          "attempt": 1
+        },
+        "safety_review": {
+          "present": true,
+          "count": 3,
+          "attempt": 1
+        }
+      },
+      "reader_error": null,
+      "source_sha256": "bf6374656bbd56bfbe03097d19bb91bf4220a15dca69bd6d50e3e6b4b03c1547",
+      "chat_id": "be750a02-7ac0-460e-94a4-d2de970bce8c",
+      "run_id": "317181c8-8d6a-45c1-b871-2f2059178eb9",
+      "confirmed_occupations": [
+        "会计"
+      ],
+      "public_run": {
+        "run_id": "317181c8-8d6a-45c1-b871-2f2059178eb9",
+        "status": "complete",
+        "current_stage": "validation",
+        "completed_stages": 9,
+        "total_stages": 9,
+        "report_id": "baedbbb1-37ba-4989-a53e-1331fd8a014a",
+        "error_code": null,
+        "message": "Analysis complete.",
+        "last_event_id": 17
+      },
+      "database_report_count": 8,
+      "diagnostic_checkpoint_reason": "finally",
+      "report_count": 1,
+      "event_sequence": [
+        "retrieval",
+        "retrieval",
+        "draft",
+        "draft",
+        "evidence_review",
+        "evidence_review",
+        "boundary_review",
+        "boundary_review",
+        "safety_review",
+        "safety_review",
+        "resolution_decision",
+        "resolution_decision",
+        "revised_claims",
+        "revised_claims",
+        "report_narratives",
+        "report_narratives",
+        "validation",
+        "validation"
+      ],
+      "event_status_sequence": [
+        [
+          "retrieval",
+          "running"
+        ],
+        [
+          "retrieval",
+          "complete"
+        ],
+        [
+          "draft",
+          "running"
+        ],
+        [
+          "draft",
+          "complete"
+        ],
+        [
+          "evidence_review",
+          "running"
+        ],
+        [
+          "evidence_review",
+          "complete"
+        ],
+        [
+          "boundary_review",
+          "running"
+        ],
+        [
+          "boundary_review",
+          "complete"
+        ],
+        [
+          "safety_review",
+          "running"
+        ],
+        [
+          "safety_review",
+          "complete"
+        ],
+        [
+          "resolution_decision",
+          "running"
+        ],
+        [
+          "resolution_decision",
+          "complete"
+        ],
+        [
+          "revised_claims",
+          "running"
+        ],
+        [
+          "revised_claims",
+          "complete"
+        ],
+        [
+          "report_narratives",
+          "running"
+        ],
+        [
+          "report_narratives",
+          "complete"
+        ],
+        [
+          "validation",
+          "running"
+        ],
+        [
+          "validation",
+          "complete"
+        ]
+      ],
+      "completed_event_sequence": [
+        "retrieval",
+        "draft",
+        "evidence_review",
+        "boundary_review",
+        "safety_review",
+        "resolution_decision",
+        "revised_claims",
+        "report_narratives",
+        "validation"
+      ],
+      "completed_stage_count": 9,
+      "event_sequence_exact": true,
+      "exactly_nine_completed_stages": true,
+      "f1_product_stage_gate_passed": true,
+      "run_status": "COMPLETE",
+      "product_failure_code": null,
+      "response_language": "zh",
+      "progress_completed_stages": 9,
+      "progress_total_stages": 9,
+      "progress_status": "complete",
+      "progress_9_of_9": true,
+      "run_stage_attempts": [
+        {
+          "stage": "draft",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 10528,
+            "generation_tokens": 1541,
+            "total_tokens": 12069,
+            "generation_limit": 4096,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 26596,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "evidence_review",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 10901,
+            "generation_tokens": 675,
+            "total_tokens": 11576,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 27107,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "boundary_review",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 10812,
+            "generation_tokens": 690,
+            "total_tokens": 11502,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 26647,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "safety_review",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 10838,
+            "generation_tokens": 716,
+            "total_tokens": 11554,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 26746,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "resolution_decision",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 11732,
+            "generation_tokens": 340,
+            "total_tokens": 12072,
+            "generation_limit": 1536,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 29701,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "revised_claims",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 12650,
+            "generation_tokens": 523,
+            "total_tokens": 13173,
+            "generation_limit": 3072,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 31077,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "report_narratives",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 4704,
+            "generation_tokens": 746,
+            "total_tokens": 5450,
+            "generation_limit": 4096,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 16360,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        }
+      ],
+      "product_failure_stage": null,
+      "product_failure_category": null,
+      "saved_report_path": "var/au-government/2026-09-06/grounded-demo-accountant_zh-317181c8.json",
+      "report_sha256": "b2f7267b51889f156a5198ba3dedda94d67ee8928ac6acf522c97e9c7e478f11",
+      "reader_recomputed": {
+        "valid": true,
+        "validator_category_counts": {},
+        "suggestion_multiset_matches": true,
+        "basis_counts": {
+          "rag": 1,
+          "reasoned_scenario": 2,
+          "recommendation": 1
+        },
+        "claim_count": 4,
+        "citation_count": 1,
+        "citation_detail_count": 1,
+        "citations_resolve": true,
+        "language": "zh",
+        "citations_nonempty": true,
+        "suggestion_decision_count": 9,
+        "task_row_count": 4,
+        "action_count": 1
+      },
+      "status": "FLOW_PASS",
+      "seconds": 257.101,
+      "profile_stage_attempts": [
+        {
+          "stage": "profile",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "contract",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 738,
+            "generation_tokens": 139,
+            "total_tokens": 877,
+            "generation_limit": 1600,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 2333
+        }
+      ],
+      "topic_coverage": {
+        "meaning": "Directory coverage only; relevance and support must still be checked against each passage.",
+        "missing_topics": [],
+        "mode": "topic_directories",
+        "query_counts": {
+          "ai-impact": 2,
+          "labour-market": 2,
+          "occupations": 4
+        },
+        "topic_counts": {
+          "ai-impact": 2,
+          "labour-market": 2,
+          "occupations": 4
+        },
+        "unclassified_count": 0
+      },
+      "cleanup": {
+        "worker_returncodes": [
+          -15,
+          -15
+        ],
+        "qwen_processes_remaining": 0,
+        "uploads_remaining": 0,
+        "preexisting_chat_message_report_rows_unchanged": true,
+        "database_retained": true,
+        "source_unchanged_during_api": true
+      },
+      "manual_content_review": {
+        "status": "LIMITED_PASS",
+        "scope": "Manual full-report reading plus independent claim/occupation-summary/citation comparison.",
+        "findings": [
+          "RAG duties and occupation summary match the sole ANZSCO Accountants passage; no OSCA or user-duty contamination observed.",
+          "Source uncertainty describes coverage limits; both future scenarios and task rows use reasoned_scenario and advice uses recommendation.",
+          "No exact job-loss probability; risk paragraph differs from occupation summary."
+        ],
+        "limitations": [
+          "Future impact levels, timing and human-role judgments remain model scenarios, not verified forecasts.",
+          "F1 rejection reasons are terse and partly ambiguous; exact ID binding does not prove every reviewer decision is semantically correct.",
+          "One directly cited background record, not comprehensive use of all eight retrieved passages.",
+          "Independent review did not have reviewer suggestion text; root separately read the stored boundary suggestions."
+        ]
+      }
+    },
+    {
+      "case": "software_en",
+      "expected_language": "en",
+      "review_result_sets": {
+        "evidence_review": {
+          "present": true,
+          "count": 3,
+          "attempt": 1
+        },
+        "boundary_review": {
+          "present": true,
+          "count": 1,
+          "attempt": 1
+        },
+        "safety_review": {
+          "present": true,
+          "count": 3,
+          "attempt": 1
+        }
+      },
+      "reader_error": null,
+      "source_sha256": "bf6374656bbd56bfbe03097d19bb91bf4220a15dca69bd6d50e3e6b4b03c1547",
+      "chat_id": "fda983ea-0b20-4aca-bc93-9786d105c3e4",
+      "run_id": "284409de-70db-4ac8-b088-c6d8750c4500",
+      "confirmed_occupations": [
+        "Software Engineer"
+      ],
+      "public_run": {
+        "run_id": "284409de-70db-4ac8-b088-c6d8750c4500",
+        "status": "complete",
+        "current_stage": "validation",
+        "completed_stages": 9,
+        "total_stages": 9,
+        "report_id": "4d98f261-3080-480d-a625-97e2b02f336b",
+        "error_code": null,
+        "message": "Analysis complete.",
+        "last_event_id": 17
+      },
+      "database_report_count": 9,
+      "diagnostic_checkpoint_reason": "finally",
+      "report_count": 1,
+      "event_sequence": [
+        "retrieval",
+        "retrieval",
+        "draft",
+        "draft",
+        "evidence_review",
+        "evidence_review",
+        "boundary_review",
+        "boundary_review",
+        "safety_review",
+        "safety_review",
+        "resolution_decision",
+        "resolution_decision",
+        "revised_claims",
+        "revised_claims",
+        "report_narratives",
+        "report_narratives",
+        "validation",
+        "validation"
+      ],
+      "event_status_sequence": [
+        [
+          "retrieval",
+          "running"
+        ],
+        [
+          "retrieval",
+          "complete"
+        ],
+        [
+          "draft",
+          "running"
+        ],
+        [
+          "draft",
+          "complete"
+        ],
+        [
+          "evidence_review",
+          "running"
+        ],
+        [
+          "evidence_review",
+          "complete"
+        ],
+        [
+          "boundary_review",
+          "running"
+        ],
+        [
+          "boundary_review",
+          "complete"
+        ],
+        [
+          "safety_review",
+          "running"
+        ],
+        [
+          "safety_review",
+          "complete"
+        ],
+        [
+          "resolution_decision",
+          "running"
+        ],
+        [
+          "resolution_decision",
+          "complete"
+        ],
+        [
+          "revised_claims",
+          "running"
+        ],
+        [
+          "revised_claims",
+          "complete"
+        ],
+        [
+          "report_narratives",
+          "running"
+        ],
+        [
+          "report_narratives",
+          "complete"
+        ],
+        [
+          "validation",
+          "running"
+        ],
+        [
+          "validation",
+          "complete"
+        ]
+      ],
+      "completed_event_sequence": [
+        "retrieval",
+        "draft",
+        "evidence_review",
+        "boundary_review",
+        "safety_review",
+        "resolution_decision",
+        "revised_claims",
+        "report_narratives",
+        "validation"
+      ],
+      "completed_stage_count": 9,
+      "event_sequence_exact": true,
+      "exactly_nine_completed_stages": true,
+      "f1_product_stage_gate_passed": true,
+      "run_status": "COMPLETE",
+      "product_failure_code": null,
+      "response_language": "en",
+      "progress_completed_stages": 9,
+      "progress_total_stages": 9,
+      "progress_status": "complete",
+      "progress_9_of_9": true,
+      "run_stage_attempts": [
+        {
+          "stage": "draft",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 9837,
+            "generation_tokens": 1334,
+            "total_tokens": 11171,
+            "generation_limit": 4096,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 26122,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "evidence_review",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 9921,
+            "generation_tokens": 679,
+            "total_tokens": 10600,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 27195,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "boundary_review",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 9832,
+            "generation_tokens": 244,
+            "total_tokens": 10076,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 26735,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "safety_review",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 9858,
+            "generation_tokens": 650,
+            "total_tokens": 10508,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 26834,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "resolution_decision",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 10370,
+            "generation_tokens": 261,
+            "total_tokens": 10631,
+            "generation_limit": 1536,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 29342,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "revised_claims",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 11265,
+            "generation_tokens": 492,
+            "total_tokens": 11757,
+            "generation_limit": 3072,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 31110,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "report_narratives",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 4683,
+            "generation_tokens": 938,
+            "total_tokens": 5621,
+            "generation_limit": 4096,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 17198,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        }
+      ],
+      "product_failure_stage": null,
+      "product_failure_category": null,
+      "saved_report_path": "var/au-government/2026-09-06/grounded-demo-software_en-284409de.json",
+      "report_sha256": "319253b0c64eb205395eb73e4974e7f12b7d6477bddfd8c0efe67c7bf15fd42b",
+      "reader_recomputed": {
+        "valid": true,
+        "validator_category_counts": {},
+        "suggestion_multiset_matches": true,
+        "basis_counts": {
+          "rag": 1,
+          "reasoned_scenario": 2,
+          "recommendation": 1
+        },
+        "claim_count": 4,
+        "citation_count": 1,
+        "citation_detail_count": 1,
+        "citations_resolve": true,
+        "language": "en",
+        "citations_nonempty": true,
+        "suggestion_decision_count": 7,
+        "task_row_count": 4,
+        "action_count": 3
+      },
+      "status": "FLOW_PASS",
+      "seconds": 203.06,
+      "profile_stage_attempts": [
+        {
+          "stage": "profile",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "contract",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 746,
+            "generation_tokens": 161,
+            "total_tokens": 907,
+            "generation_limit": 1600,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 2604
+        }
+      ],
+      "topic_coverage": {
+        "meaning": "Directory coverage only; relevance and support must still be checked against each passage.",
+        "missing_topics": [],
+        "mode": "topic_directories",
+        "query_counts": {
+          "ai-impact": 2,
+          "labour-market": 2,
+          "occupations": 4
+        },
+        "topic_counts": {
+          "ai-impact": 2,
+          "labour-market": 2,
+          "occupations": 4
+        },
+        "unclassified_count": 0
+      },
+      "cleanup": {
+        "worker_returncodes": [
+          -15,
+          -15
+        ],
+        "qwen_processes_remaining": 0,
+        "uploads_remaining": 0,
+        "preexisting_chat_message_report_rows_unchanged": true,
+        "database_retained": true,
+        "source_unchanged_during_api": true
+      },
+      "manual_content_review": {
+        "status": "LIMITED_PASS",
+        "scope": "Manual full-report reading plus independent RAG claim/uncertainty/occupation-summary/citation comparison.",
+        "findings": [
+          "RAG duties match the sole OSCA Software Engineer lead statement.",
+          "RAG uncertainty explicitly distinguishes user web-development/code-review duties absent from that passage.",
+          "Both future summaries describe conditional AI changes and carry scenario origin; advice is recommendation.",
+          "No extra unsupported RAG claims, mixed classifications, or exact job-loss probability observed."
+        ],
+        "limitations": [
+          "One F1 reason ends with an incomplete list despite sentence punctuation; this is a model text-quality limitation, not token-limit truncation.",
+          "Some accepted reviewer reasons call for scenario/advice citations inconsistent with the conservative final origin policy; F1 semantic correctness is not established.",
+          "Recommendation wording such as future-proof is stronger than warranted; attached uncertainty and advice origin do not establish future outcomes.",
+          "One directly cited background record, not comprehensive use of all eight retrieved passages."
+        ]
+      }
+    }
+  ],
+  "verification": {
+    "existing_tests": "134 passed in 3.24s",
+    "compileall": "PASS",
+    "diff_check": "PASS",
+    "known_negative": {
+      "f2_valid": false,
+      "first_category": "CLAIM_BINDING",
+      "first_path": [
+        "claims",
+        0,
+        "horizon"
+      ],
+      "final_valid": false
+    },
+    "skill_loaded_exactly": true,
+    "skill_sha256": "6a9418b617246ac910d749bcdea843a5a0b23357ee0890135df3eea82ea68a3c",
+    "wheel_build": "PASS",
+    "reviewer_grammar_compile": "PASS: all three actual generated schemas; delegated read-only verification",
+    "skill_in_wheel": true,
+    "wheel_skill_bytes_match": true,
+    "punctuation_role_fallback": {
+      "passed": true,
+      "passage_count": 8
+    },
+    "pre_ingestion_rows": {
+      "chats": {
+        "count": 8,
+        "unchanged": true
+      },
+      "messages": {
+        "count": 16,
+        "unchanged": true
+      }
+    },
+    "raw_source_hashes": {
+      "count": 10,
+      "match": true
+    },
+    "prepared_file_hashes": {
+      "count": 26,
+      "match": true,
+      "sections": 9262
+    },
+    "test_sources": {
+      "count": 11,
+      "changed": 0
+    },
+    "grounding_grammar_compile": "PASS: actual frozen ID schemas; draft/F2 minItems=maxItems=4",
+    "known_negatives": [
+      {
+        "report": "chinese-demo-report.json",
+        "f2_valid": false,
+        "path": [
+          "claims",
+          0,
+          "horizon"
+        ],
+        "final_valid": false
+      },
+      {
+        "report": "grounded-demo-accountant_zh-587d5760.json",
+        "f2_valid": false,
+        "path": [
+          "claims",
+          0,
+          "basis"
+        ],
+        "final_valid": false
+      }
+    ],
+    "f1_grammar_compile": {
+      "actual_request_schema": true,
+      "suggestion_counts": [
+        0,
+        3,
+        9
+      ],
+      "result": "PASS; includes 96-character complete reasons"
+    },
+    "latest_known_negative": {
+      "report": "grounded-demo-accountant_zh-776eb753.json",
+      "f2_valid": false,
+      "f2_path": [
+        "claims",
+        0,
+        "evidence_refs"
+      ],
+      "f3_valid": false,
+      "f3_path": [
+        "sections",
+        "occupation_summary",
+        "summary",
+        "supporting_claim_ids"
+      ],
+      "final_valid": false
+    },
+    "classification_marker_negative": {
+      "report": "grounded-demo-accountant_zh-64b822ad.json",
+      "f2_valid": false,
+      "final_valid": false,
+      "category": "EVIDENCE_REFERENCE",
+      "path": [
+        "claims",
+        0,
+        "text"
+      ]
+    },
+    "classification_retry_paths": "text/uncertainty accepted; arbitrary fields rejected",
+    "saved_report_schema_sha256": "ef98d30dacbc735478fcdce0a89721ac6bc403cbbe96c2c511459a4bcccd8a2e",
+    "saved_report_schema_unchanged": true
+  },
+  "cleanup": {
+    "worker_returncodes": [
+      -15,
+      -15
+    ],
+    "qwen_processes_remaining": 0,
+    "uploads_remaining": 0,
+    "preexisting_chat_message_report_rows_unchanged": true,
+    "database_retained": true,
+    "source_unchanged_during_api": true
+  },
+  "api_source_manifests": {
+    "166a2469eff88bd6081ed92afbcc1a224f5398e610422d1408de90294a33978a": {
+      "src/localcareerimpact/agent/__init__.py": "90f0ca24aca898b0c46049f6f379ae7962b052594335eb1c37fe3efe0e35cc53",
+      "src/localcareerimpact/agent/assembler.py": "8527a000736b782c47e9357c0625d26098049c805aee9ca5e07e029401a95dd9",
+      "src/localcareerimpact/agent/contracts.py": "5e840cb5ae77eece69a467ded0e5e144a4501e49b37042603a2248905aefa8d6",
+      "src/localcareerimpact/agent/language.py": "f36cb9aaf8cdda11c0c6051fb153f6a0028715e7caa978a11a71523fd6537307",
+      "src/localcareerimpact/agent/orchestrator.py": "d31d1db6d95f028f23af202fc7f5225655549939e30a19f80bd7346a920cca09",
+      "src/localcareerimpact/agent/prompts.py": "8ec129c073d575955554088c3624777c3dc296fda14e1420a7b9eaff99ba7994",
+      "src/localcareerimpact/agent/report_store.py": "b0700702d0d31591f13bda9e8cec29dcf348d5976c5879c837267c6658d85f5e",
+      "src/localcareerimpact/agent/skills/career-impact/SKILL.md": "52c5fc8c8d5aba660c0ed2be7ec607cb428d94ffe444c719e3ed80c77ef41755",
+      "src/localcareerimpact/agent/validator.py": "459b093858fc5409b118f35e062a358e3a3a3414f3fc544ce734128ae1dea0b7",
+      "src/localcareerimpact/knowledge/__init__.py": "2a2e678aa191a175b9136a0e6ed15138f75b713dfd11f3774b4235bd3c61d524",
+      "src/localcareerimpact/knowledge/chunking.py": "070055bcdb0ff464f10a58745be4b900766823b6bd5336a4c142d622f44c4448",
+      "src/localcareerimpact/knowledge/documents.py": "b14a2d7e7f80104bf8382e3213b9af1df1f21dbf5b2368802db1719a5ccfdc8d",
+      "src/localcareerimpact/knowledge/embeddings.py": "13bafe47cad5a6b9666f83c2b5296ca9e1690ace3dd9a09a4795a1324af2d9ba",
+      "src/localcareerimpact/knowledge/factpack_adapter.py": "bc9e9ed764d4407e0ed8a253812253010a58b58e2dd9c69a863d1c47c9062e96",
+      "src/localcareerimpact/knowledge/repository.py": "a2348cdac15b53e805991194c61e52d34df51acf17ace30f5cae73c13725d653",
+      "src/localcareerimpact/knowledge/retrieval.py": "e277d031b8752583eb0013d696ad4f0ebb3c600a64da0fce29542a68ef237d31"
+    },
+    "c991976960066afcc7608b687b55f66d0c7c0aa9f2361f71c5d4dde9a928d2f4": {
+      "src/localcareerimpact/agent/__init__.py": "90f0ca24aca898b0c46049f6f379ae7962b052594335eb1c37fe3efe0e35cc53",
+      "src/localcareerimpact/agent/assembler.py": "8527a000736b782c47e9357c0625d26098049c805aee9ca5e07e029401a95dd9",
+      "src/localcareerimpact/agent/contracts.py": "32937e72a51272f4977d857f84d689d71a70a43aba4bcf471ab08b6c7a09839c",
+      "src/localcareerimpact/agent/language.py": "f36cb9aaf8cdda11c0c6051fb153f6a0028715e7caa978a11a71523fd6537307",
+      "src/localcareerimpact/agent/orchestrator.py": "dc15438a2316b07f4feefced520f8ca795f6368435d377a304910b2eaeaa0c4c",
+      "src/localcareerimpact/agent/prompts.py": "e7dfc0b6a97e2c25f8538d95808638bc39de06ac7048feaae3253af4a74c94f0",
+      "src/localcareerimpact/agent/report_store.py": "b0700702d0d31591f13bda9e8cec29dcf348d5976c5879c837267c6658d85f5e",
+      "src/localcareerimpact/agent/skills/career-impact/SKILL.md": "a79043f1f655e290a0fa1a04a6cdb888743cf8168c981a9c02790113273058c4",
+      "src/localcareerimpact/agent/validator.py": "b507a28278a3c74f92e48bf0c3787e65756707e857cdb658549a38b1c95ef16a",
+      "src/localcareerimpact/knowledge/__init__.py": "2a2e678aa191a175b9136a0e6ed15138f75b713dfd11f3774b4235bd3c61d524",
+      "src/localcareerimpact/knowledge/chunking.py": "070055bcdb0ff464f10a58745be4b900766823b6bd5336a4c142d622f44c4448",
+      "src/localcareerimpact/knowledge/documents.py": "b14a2d7e7f80104bf8382e3213b9af1df1f21dbf5b2368802db1719a5ccfdc8d",
+      "src/localcareerimpact/knowledge/embeddings.py": "13bafe47cad5a6b9666f83c2b5296ca9e1690ace3dd9a09a4795a1324af2d9ba",
+      "src/localcareerimpact/knowledge/factpack_adapter.py": "bc9e9ed764d4407e0ed8a253812253010a58b58e2dd9c69a863d1c47c9062e96",
+      "src/localcareerimpact/knowledge/repository.py": "a2348cdac15b53e805991194c61e52d34df51acf17ace30f5cae73c13725d653",
+      "src/localcareerimpact/knowledge/retrieval.py": "e277d031b8752583eb0013d696ad4f0ebb3c600a64da0fce29542a68ef237d31"
+    },
+    "9d5c481c853fef4fbb5de2c9d8f3bc72b66c120c39141dc883e7a2c917347017": {
+      "src/localcareerimpact/agent/__init__.py": "90f0ca24aca898b0c46049f6f379ae7962b052594335eb1c37fe3efe0e35cc53",
+      "src/localcareerimpact/agent/assembler.py": "8527a000736b782c47e9357c0625d26098049c805aee9ca5e07e029401a95dd9",
+      "src/localcareerimpact/agent/contracts.py": "23e3849d02f546c71d2660ab17feb374594cab95d286b63356621b6a3abd2f00",
+      "src/localcareerimpact/agent/language.py": "f36cb9aaf8cdda11c0c6051fb153f6a0028715e7caa978a11a71523fd6537307",
+      "src/localcareerimpact/agent/orchestrator.py": "a14ac8ba0cef981bf83c82f3a30cc771d38aea5b46b780fdb0d4eab097f6c1a6",
+      "src/localcareerimpact/agent/prompts.py": "57810c0903733240f310315495d66225520955b98548a081172328f56a5dde99",
+      "src/localcareerimpact/agent/report_store.py": "b0700702d0d31591f13bda9e8cec29dcf348d5976c5879c837267c6658d85f5e",
+      "src/localcareerimpact/agent/skills/career-impact/SKILL.md": "adfffad8aa75bda7a6c3750b1dbcced7ad6aef3f60a84da26999d3e0b77842de",
+      "src/localcareerimpact/agent/validator.py": "30b2d93fac569024df764a1d65fb0c91f55bc542ec7db37b9b76618e7ed06354",
+      "src/localcareerimpact/knowledge/__init__.py": "2a2e678aa191a175b9136a0e6ed15138f75b713dfd11f3774b4235bd3c61d524",
+      "src/localcareerimpact/knowledge/chunking.py": "070055bcdb0ff464f10a58745be4b900766823b6bd5336a4c142d622f44c4448",
+      "src/localcareerimpact/knowledge/documents.py": "b14a2d7e7f80104bf8382e3213b9af1df1f21dbf5b2368802db1719a5ccfdc8d",
+      "src/localcareerimpact/knowledge/embeddings.py": "13bafe47cad5a6b9666f83c2b5296ca9e1690ace3dd9a09a4795a1324af2d9ba",
+      "src/localcareerimpact/knowledge/factpack_adapter.py": "bc9e9ed764d4407e0ed8a253812253010a58b58e2dd9c69a863d1c47c9062e96",
+      "src/localcareerimpact/knowledge/repository.py": "a2348cdac15b53e805991194c61e52d34df51acf17ace30f5cae73c13725d653",
+      "src/localcareerimpact/knowledge/retrieval.py": "e277d031b8752583eb0013d696ad4f0ebb3c600a64da0fce29542a68ef237d31"
+    },
+    "49a04c969beef0713acbaac070e563a91d3d65022bd915a147eff11ad0ebe84b": {
+      "src/localcareerimpact/agent/__init__.py": "90f0ca24aca898b0c46049f6f379ae7962b052594335eb1c37fe3efe0e35cc53",
+      "src/localcareerimpact/agent/assembler.py": "8527a000736b782c47e9357c0625d26098049c805aee9ca5e07e029401a95dd9",
+      "src/localcareerimpact/agent/contracts.py": "c0127e387343bc8de5e489487ab3a4ad0e551abae0d8d6c9fca7b6ed9b788c50",
+      "src/localcareerimpact/agent/language.py": "f36cb9aaf8cdda11c0c6051fb153f6a0028715e7caa978a11a71523fd6537307",
+      "src/localcareerimpact/agent/orchestrator.py": "c32c553385e9d72e4a28e6f1b56738ae78825aedddb3d720fd3b970e9e2e0581",
+      "src/localcareerimpact/agent/prompts.py": "e5dce1fee28a6c287194cb9f3e87cbcf58b94d917282a261ce1e814da0160b91",
+      "src/localcareerimpact/agent/report_store.py": "b0700702d0d31591f13bda9e8cec29dcf348d5976c5879c837267c6658d85f5e",
+      "src/localcareerimpact/agent/skills/career-impact/SKILL.md": "f96411c23912d8357518751398909112a68a1d8ab8f964e9dbf3f5add46a4cef",
+      "src/localcareerimpact/agent/validator.py": "30b2d93fac569024df764a1d65fb0c91f55bc542ec7db37b9b76618e7ed06354",
+      "src/localcareerimpact/knowledge/__init__.py": "2a2e678aa191a175b9136a0e6ed15138f75b713dfd11f3774b4235bd3c61d524",
+      "src/localcareerimpact/knowledge/chunking.py": "070055bcdb0ff464f10a58745be4b900766823b6bd5336a4c142d622f44c4448",
+      "src/localcareerimpact/knowledge/documents.py": "b14a2d7e7f80104bf8382e3213b9af1df1f21dbf5b2368802db1719a5ccfdc8d",
+      "src/localcareerimpact/knowledge/embeddings.py": "13bafe47cad5a6b9666f83c2b5296ca9e1690ace3dd9a09a4795a1324af2d9ba",
+      "src/localcareerimpact/knowledge/factpack_adapter.py": "bc9e9ed764d4407e0ed8a253812253010a58b58e2dd9c69a863d1c47c9062e96",
+      "src/localcareerimpact/knowledge/repository.py": "a2348cdac15b53e805991194c61e52d34df51acf17ace30f5cae73c13725d653",
+      "src/localcareerimpact/knowledge/retrieval.py": "e277d031b8752583eb0013d696ad4f0ebb3c600a64da0fce29542a68ef237d31"
+    },
+    "bf6374656bbd56bfbe03097d19bb91bf4220a15dca69bd6d50e3e6b4b03c1547": {
+      "src/localcareerimpact/agent/__init__.py": "90f0ca24aca898b0c46049f6f379ae7962b052594335eb1c37fe3efe0e35cc53",
+      "src/localcareerimpact/agent/assembler.py": "8527a000736b782c47e9357c0625d26098049c805aee9ca5e07e029401a95dd9",
+      "src/localcareerimpact/agent/contracts.py": "077c45f883ade47ed032d37dde1bfc7aad110c91829e7c608cdd9efa5bd70da2",
+      "src/localcareerimpact/agent/language.py": "f36cb9aaf8cdda11c0c6051fb153f6a0028715e7caa978a11a71523fd6537307",
+      "src/localcareerimpact/agent/orchestrator.py": "c32c553385e9d72e4a28e6f1b56738ae78825aedddb3d720fd3b970e9e2e0581",
+      "src/localcareerimpact/agent/prompts.py": "6c5d52ea5df8039a066850296f624d6e666fc76414035a0a260f112be24f1f6c",
+      "src/localcareerimpact/agent/report_store.py": "b0700702d0d31591f13bda9e8cec29dcf348d5976c5879c837267c6658d85f5e",
+      "src/localcareerimpact/agent/skills/career-impact/SKILL.md": "6a9418b617246ac910d749bcdea843a5a0b23357ee0890135df3eea82ea68a3c",
+      "src/localcareerimpact/agent/validator.py": "73cf6a2b954098e9e777295f43a04c9e1df2f1d8066fece42c4d6c0c9c4d079b",
+      "src/localcareerimpact/knowledge/__init__.py": "2a2e678aa191a175b9136a0e6ed15138f75b713dfd11f3774b4235bd3c61d524",
+      "src/localcareerimpact/knowledge/chunking.py": "070055bcdb0ff464f10a58745be4b900766823b6bd5336a4c142d622f44c4448",
+      "src/localcareerimpact/knowledge/documents.py": "b14a2d7e7f80104bf8382e3213b9af1df1f21dbf5b2368802db1719a5ccfdc8d",
+      "src/localcareerimpact/knowledge/embeddings.py": "13bafe47cad5a6b9666f83c2b5296ca9e1690ace3dd9a09a4795a1324af2d9ba",
+      "src/localcareerimpact/knowledge/factpack_adapter.py": "bc9e9ed764d4407e0ed8a253812253010a58b58e2dd9c69a863d1c47c9062e96",
+      "src/localcareerimpact/knowledge/repository.py": "a2348cdac15b53e805991194c61e52d34df51acf17ace30f5cae73c13725d653",
+      "src/localcareerimpact/knowledge/retrieval.py": "e277d031b8752583eb0013d696ad4f0ebb3c600a64da0fce29542a68ef237d31"
+    }
+  },
+  "overall_status": "LIMITED_LOCALHOST_DEMO_ACCEPTED",
+  "first_api_source_sha256": "391e674d439edd8fcc0908ee6ce9f8e0873ef0dde8ac4b566ec4b60138daef00",
+  "final_version": {
+    "source_sha256": "bf6374656bbd56bfbe03097d19bb91bf4220a15dca69bd6d50e3e6b4b03c1547",
+    "run_ids": [
+      "317181c8-8d6a-45c1-b871-2f2059178eb9",
+      "284409de-70db-4ac8-b088-c6d8750c4500"
+    ],
+    "api_flow": "2/2 complete; all model stages first attempt",
+    "report_count": 2,
+    "manual_grounding_scope": "2/2 directly cited occupation backgrounds supported; scenario and advice labels distinct",
+    "repeat_stability": "NOT_ESTABLISHED_ON_THIS_VERSION; two different normal profiles, not five repeats or a new extreme-input batch",
+    "semantic_review": "LIMITED; F1 explanation quality and forecast validity not established",
+    "corpus_snapshot": "sha256:fd3565036619143a0d245bd38560f97f80ad4598d51ba387b9b40060ec91ca27",
+    "source_files_unchanged_after_runs": true,
+    "historical_adaptive_observations_preserved": 9
+  }
+}

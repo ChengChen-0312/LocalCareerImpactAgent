@@ -164,6 +164,9 @@ async def draft_candidate_profile(
         record("started", "request")
         try:
             response_schema = CandidateProfileDraft.model_json_schema()
+            # Explicit empty/null values preserve unknowns without letting the
+            # ordered generation grammar skip known candidate fields entirely.
+            response_schema["required"] = list(response_schema["properties"])
             messages = profile_extraction_messages(
                 user_text=user_text,
                 extracted_text=extracted_text,

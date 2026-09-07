@@ -534,19 +534,31 @@ class KnowledgeRepository:
             dimension=dimension,
         )
 
-    def sparse_chunk_ids(self, snapshot_id: str, query: str, limit: int = 20) -> tuple[str, ...]:
+    def sparse_chunk_ids(
+        self, snapshot_id: str, query: str, limit: int = 20,
+        *, document_ids: Sequence[str] | None = None,
+    ) -> tuple[str, ...]:
         table = knowledge_snapshot_fts_table(snapshot_id)
+        document_filter = ""
+        parameters: list[object] = [query, snapshot_id]
+        if document_ids is not None:
+            if not document_ids:
+                return ()
+            unique_ids = tuple(dict.fromkeys(document_ids))
+            document_filter = " AND chunks.document_id IN (" + ",".join("?" for _ in unique_ids) + ")"
+            parameters.extend(unique_ids)
+        parameters.append(limit)
         with self._database.connect() as connection:
             rows = connection.execute(
                 f"""
                 SELECT chunks.chunk_id
                 FROM {table} AS search
                 JOIN knowledge_chunks AS chunks ON chunks.row_id = search.rowid
-                WHERE {table} MATCH ? AND chunks.snapshot_id = ?
+                WHERE {table} MATCH ? AND chunks.snapshot_id = ? {document_filter}
                 ORDER BY bm25({table}), chunks.chunk_id
                 LIMIT ?
                 """,
-                (query, snapshot_id, limit),
+                parameters,
             ).fetchall()
         return tuple(str(row[0]) for row in rows)
 

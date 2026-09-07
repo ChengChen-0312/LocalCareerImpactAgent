@@ -154,3 +154,121 @@ export interface KnowledgeCitation {
   content_hash: string;
   chunk_hash: string;
 }
+
+export interface RunDetail extends RunProgress {
+  report_id: string | null;
+  error_code: string | null;
+  message: string;
+  last_event_id: number;
+}
+
+export interface RunEvent {
+  run_id: string;
+  stage: string;
+  status: "running" | "complete" | "failed" | "cancelled";
+  message: string;
+  completed_stages: number;
+  total_stages: number;
+  report_id: string | null;
+}
+
+export type ImpactBand = "low" | "medium" | "medium-high" | "high";
+export type ReportHorizon = "1-3-years" | "3-5-years";
+export type StatementOrigin = "profile" | "rag" | "reasoned_scenario" | "recommendation";
+
+export interface GroundedNarrative {
+  text: string;
+  origin: StatementOrigin;
+  evidence_refs: string[];
+}
+
+export interface ReportClaim {
+  claim_id: string;
+  text: string;
+  basis: StatementOrigin;
+  horizon: ReportHorizon | null;
+  impact_band: ImpactBand | null;
+  evidence_refs: string[];
+  uncertainty: string;
+}
+
+export interface NarrativeSection {
+  summary: GroundedNarrative;
+  claim_ids: string[];
+}
+
+export interface HorizonScenario {
+  horizon: ReportHorizon;
+  impact_band: ImpactBand;
+  summary: GroundedNarrative;
+  claim_ids: string[];
+  uncertainty: GroundedNarrative;
+}
+
+export interface TaskImpactRow {
+  row_id: string;
+  task: GroundedNarrative;
+  horizon: ReportHorizon;
+  automation: ImpactBand;
+  augmentation: ImpactBand;
+  human_led: ImpactBand;
+  rationale: GroundedNarrative;
+  claim_ids: string[];
+}
+
+export interface ReportAction {
+  action_id: string;
+  action: GroundedNarrative;
+  rationale: GroundedNarrative;
+  claim_ids: string[];
+}
+
+export interface ReportCitation {
+  evidence_ref: string;
+  claim_ids: string[];
+  relevance: GroundedNarrative;
+}
+
+export interface SuggestionResolution {
+  suggestion_id: string;
+  decision: "accepted" | "rejected";
+  reason: string;
+}
+
+export interface MvpReport {
+  schema_version: "mvp-report.v1";
+  run_id: string;
+  snapshot_id: string;
+  language: "en" | "zh";
+  title: string;
+  overall_impact_band: ImpactBand;
+  claims: ReportClaim[];
+  sections: {
+    occupation_summary: NarrativeSection;
+    horizon_scenarios: HorizonScenario[];
+    task_impact_matrix: TaskImpactRow[];
+    opportunities: NarrativeSection;
+    risks_and_uncertainty: NarrativeSection;
+    practical_next_actions: ReportAction[];
+  };
+  citations: ReportCitation[];
+  suggestion_resolutions: SuggestionResolution[];
+}
+
+export interface ReportCitationDetail {
+  evidence_ref: string;
+  citation_scope: "passage" | "source";
+  source_title: string;
+  publisher: string;
+  release_date: string | null;
+  licence: string;
+  locator: string;
+  text: string;
+}
+
+export interface ReportDetail {
+  report_id: string;
+  created_at: string;
+  report: MvpReport;
+  citation_details: ReportCitationDetail[];
+}

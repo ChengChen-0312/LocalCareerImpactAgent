@@ -1,0 +1,36 @@
+{
+  "chat_id": "8ea1115f-e1be-4018-b59e-dfef044a95d4",
+  "profile_id": "831f305f-274d-416c-b5f4-05afb64b181a",
+  "confirmed": 0,
+  "profile": {
+    "occupation_candidates": [
+      "软件测试工程师"
+    ],
+    "region": "澳大利亚维多利亚州",
+    "years_of_experience": 3.0,
+    "responsibilities": [
+      "根据产品需求编写功能测试用例",
+      "执行回归测试并复核异常",
+      "整理缺陷报告并与开发者沟通"
+    ],
+    "skills": [
+      "需求分析",
+      "测试用例设计",
+      "Python",
+      "SQL"
+    ],
+    "industry_context": "企业软件团队",
+    "goals": [
+      "了解未来1–3年及3–5年的工作变化",
+      "近期行动建议需符合现行公司规定"
+    ],
+    "confidence_notes": [
+      "职位名称明确为软件测试工程师，但未提及其他可能的兼职或扩展角色",
+      "工作经验为3年，无更多年限细节",
+      "技能和职责描述完整，但未提及其他工具或流程",
+      "公司规定提及使用批准的本地AI工具，但未说明具体限制或合规流程",
+      "目标为了解未来工作变化和近期行动建议，但未提供具体时间框架或优先级"
+    ]
+  },
+  "input_matches_after_line_ending_normalization": true
+}

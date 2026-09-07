@@ -17,6 +17,7 @@ from .chat_store import ChatStore
 from .config import AppSettings, ConfigurationError
 from .database import Database
 from .model_runtime import ModelRuntime
+from .run_service import RunService
 
 
 @asynccontextmanager
@@ -49,11 +50,17 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     app.state.database = database
     app.state.chat_store = ChatStore(database)
     app.state.knowledge_service = knowledge_service
+    run_service = RunService(database, model_runtime, knowledge_service)
+    app.state.run_service = run_service
     try:
+        await run_service.start()
         yield
     finally:
-        if model_runtime is not None:
-            await model_runtime.stop()
+        try:
+            await run_service.stop()
+        finally:
+            if model_runtime is not None:
+                await model_runtime.stop()
 
 
 def create_app() -> FastAPI:

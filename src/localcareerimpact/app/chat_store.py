@@ -10,7 +10,9 @@ from uuid import uuid4
 
 from localcareerimpact.intake.profile import CandidateProfileDraft, ProfileAttemptDiagnostics
 
-from .database import ANALYSIS_TOTAL_STAGES, Database, utc_now_iso
+from .database import (
+    ANALYSIS_TOTAL_STAGES, RUN_ERROR_MESSAGES, Database, append_run_message, utc_now_iso,
+)
 from .schemas import (
     ChatDetailOut,
     ChatMessageOut,
@@ -80,6 +82,24 @@ class ChatStore:
     def get_chat(self, owner_username: str, chat_id: str) -> ChatDetailOut:
         with self._database.connect() as connection:
             connection.row_factory = sqlite3.Row
+            connection.execute("BEGIN IMMEDIATE")
+            self._owned_chat_row(connection, owner_username, chat_id)
+            for run in connection.execute(
+                "SELECT runs.run_id, runs.status, reports.report_id, reports.report_json "
+                "FROM runs LEFT JOIN reports ON reports.run_id = runs.run_id "
+                "WHERE runs.chat_id = ? ORDER BY runs.created_at, runs.run_id", (chat_id,)
+            ).fetchall():
+                if run["status"] == "COMPLETE" and run["report_id"]:
+                    saved = self._decoded_object(run["report_json"])
+                    append_run_message(
+                        connection, run["run_id"], kind="report", text=str(saved["title"]),
+                        payload={"run_id": run["run_id"], "report_id": run["report_id"]},
+                    )
+                elif run["status"] in RUN_ERROR_MESSAGES:
+                    append_run_message(
+                        connection, run["run_id"], kind="error", text=RUN_ERROR_MESSAGES[run["status"]],
+                        payload={"run_id": run["run_id"], "code": run["status"]},
+                    )
             chat_row = connection.execute(
                 """
                 SELECT chat_id, title, created_at, updated_at

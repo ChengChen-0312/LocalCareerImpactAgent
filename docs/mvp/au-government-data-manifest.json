@@ -1,0 +1,463 @@
+{
+  "schema_version": "au-government-corpus.v1",
+  "prepared_at_utc": "2026-09-06T05:16:02.835255+00:00",
+  "source_count": 10,
+  "sources": [
+    {
+      "id": "abs-osca",
+      "file": "abs-osca-2024-category-descriptions.xlsx",
+      "publisher": "Australian Bureau of Statistics",
+      "title": "OSCA 2024 Version 1.0 Category Descriptions",
+      "date": "2025-07-28",
+      "period": "2024 Version 1.0, July 2025 corrections",
+      "url": "https://www.abs.gov.au/statistics/classifications/osca-occupation-standard-classification-australia/2024-version-1-0/data-downloads/OSCA%20Category%20Descriptions.xlsx",
+      "page": "https://www.abs.gov.au/statistics/classifications/osca-occupation-standard-classification-australia/2024-version-1-0/data-downloads",
+      "licence": "https://www.abs.gov.au/website-privacy-copyright-and-disclaimer",
+      "raw_relative_path": "var/au-government/2026-09-06/abs-osca-2024-category-descriptions.xlsx",
+      "bytes": 493401,
+      "sha256": "4412b0a20a54ab7bab01063b83bec4ee0a29768204f84a36851d82b661238fe8",
+      "attribution": "Based on Australian Bureau of Statistics material; © Commonwealth of Australia",
+      "transformation": "Selected table rows or PDF text normalized and segmented for local retrieval; original retained."
+    },
+    {
+      "id": "jsa-anzsco",
+      "file": "jsa-anzsco-occupation-data-february-2026.xlsx",
+      "publisher": "Jobs and Skills Australia; occupation definitions sourced from ABS",
+      "title": "ANZSCO Occupation data February 2026 - descriptions and tasks only",
+      "date": null,
+      "period": "February 2026 frozen workbook; ANZSCO 2013 version 1.3",
+      "url": "https://www.jobsandskills.gov.au/sites/default/files/2026-07/ANZSCO%20Occupation%20data%20-%20February%202026.xlsx",
+      "page": "https://www.jobsandskills.gov.au/sites/default/files/2026-07/ANZSCO%20Occupation%20data%20-%20February%202026.xlsx",
+      "licence": "https://www.jobsandskills.gov.au/copyright-and-disclaimer",
+      "raw_relative_path": "var/au-government/2026-09-06/jsa-anzsco-occupation-data-february-2026.xlsx",
+      "bytes": 942146,
+      "sha256": "89d806c55e37c5f688664fe56b5f9815586890527edc5b7f2369edefff899b67",
+      "attribution": "Based on Jobs and Skills Australia; occupation definitions sourced from ABS material; © Commonwealth of Australia",
+      "transformation": "Selected table rows or PDF text normalized and segmented for local retrieval; original retained."
+    },
+    {
+      "id": "jsa-projections",
+      "file": "jsa-employment-projections-2025-2035.xlsx",
+      "publisher": "Jobs and Skills Australia; produced by Victoria University",
+      "title": "Employment Projections May 2025 to May 2035",
+      "date": null,
+      "period": "May 2025 baseline; May 2030 and May 2035 projections",
+      "url": "https://www.jobsandskills.gov.au/sites/default/files/2025-11/employment_projections_-_may_2025_to_may_2035.xlsx",
+      "page": "https://www.jobsandskills.gov.au/data/employment-projections",
+      "licence": "https://www.jobsandskills.gov.au/copyright-and-disclaimer",
+      "raw_relative_path": "var/au-government/2026-09-06/jsa-employment-projections-2025-2035.xlsx",
+      "bytes": 275457,
+      "sha256": "3127c789812f43911a1e9d3f9deca063e7cf134cdcf4d3f0773303afc9da0bbd",
+      "attribution": "Based on Jobs and Skills Australia; produced by Victoria University material; © Commonwealth of Australia",
+      "transformation": "Selected table rows or PDF text normalized and segmented for local retrieval; original retained."
+    },
+    {
+      "id": "jsa-osl",
+      "file": "jsa-osl-2025-anzsco-osca.xlsx",
+      "publisher": "Jobs and Skills Australia",
+      "title": "2025 Occupation Shortage List, ANZSCO 2022 and OSCA 2024",
+      "date": null,
+      "period": "2025 point-in-time assessment",
+      "url": "https://www.jobsandskills.gov.au/sites/default/files/2025-10/2025%20Occupation%20Shortage%20List%20-%206%20digit%20ANZSCO%20and%20OSCA.xlsx",
+      "page": "https://www.jobsandskills.gov.au/data/occupation-shortage",
+      "licence": "https://www.jobsandskills.gov.au/copyright-and-disclaimer",
+      "raw_relative_path": "var/au-government/2026-09-06/jsa-osl-2025-anzsco-osca.xlsx",
+      "bytes": 190031,
+      "sha256": "feb9bc5e4a60443f01226b0937c7b7db8786317ddf2bffef8a370ad5e1e24f23",
+      "attribution": "Based on Jobs and Skills Australia material; © Commonwealth of Australia",
+      "transformation": "Selected table rows or PDF text normalized and segmented for local retrieval; original retained."
+    },
+    {
+      "id": "jsa-genai-analysis",
+      "file": "jsa-genai-analysis-2025.pdf",
+      "publisher": "Jobs and Skills Australia",
+      "title": "Our Gen AI Transition - Analysis Papers A to E",
+      "date": "2025-09-02",
+      "period": "Research published September 2025",
+      "url": "https://www.jobsandskills.gov.au/download/19828/our-gen-ai-transition-analysis-papers/3404/our-gen-ai-transition-analysis-papers/pdf",
+      "page": "https://www.jobsandskills.gov.au/download/19828/our-gen-ai-transition-analysis-papers/3404/our-gen-ai-transition-analysis-papers/pdf",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "raw_relative_path": "var/au-government/2026-09-06/jsa-genai-analysis-2025.pdf",
+      "bytes": 4307113,
+      "sha256": "880c2c8c1fcdac95238b9e0e2cc06ba9fb5cb9c72ba47cf3f9fc4bf9809b4330",
+      "attribution": "Based on Jobs and Skills Australia material; © Commonwealth of Australia",
+      "transformation": "Selected table rows or PDF text normalized and segmented for local retrieval; original retained."
+    },
+    {
+      "id": "jsa-genai-final",
+      "file": "jsa-genai-final-2025.pdf",
+      "publisher": "Jobs and Skills Australia",
+      "title": "Our Gen AI Transition - Final Release, cohorts and technical notes",
+      "date": "2025-09-30",
+      "period": "Research published September 2025; complements Analysis Papers",
+      "url": "https://www.jobsandskills.gov.au/download/19846/our-gen-ai-transition-final-release/3462/our-gen-ai-transition-final-release/pdf",
+      "page": "https://www.jobsandskills.gov.au/download/19846/our-gen-ai-transition-final-release/3462/our-gen-ai-transition-final-release/pdf",
+      "licence": "https://creativecommons.org/licenses/by/4.0/",
+      "raw_relative_path": "var/au-government/2026-09-06/jsa-genai-final-2025.pdf",
+      "bytes": 2839947,
+      "sha256": "944b2f3f5443efc62d21f6a66a6dfe8261cc3aa7a0fe350de73a20c25507984f",
+      "attribution": "Based on Jobs and Skills Australia material; © Commonwealth of Australia",
+      "transformation": "Selected table rows or PDF text normalized and segmented for local retrieval; original retained."
+    },
+    {
+      "id": "jsa-osl-report",
+      "file": "jsa-osl-key-findings-2025.pdf",
+      "publisher": "Jobs and Skills Australia",
+      "title": "2025 Occupation Shortage List - Key Findings Report",
+      "date": null,
+      "period": "October 2025 report; current download file April 2026",
+      "url": "https://www.jobsandskills.gov.au/sites/default/files/2026-04/2025%20OSL%20Key%20Findings%20Report.pdf",
+      "page": "https://www.jobsandskills.gov.au/data/occupation-shortage",
+      "licence": "https://www.jobsandskills.gov.au/copyright-and-disclaimer",
+      "raw_relative_path": "var/au-government/2026-09-06/jsa-osl-key-findings-2025.pdf",
+      "bytes": 524017,
+      "sha256": "ee05a6a7f7015fbd0da84c8141eb9e160ca1659d0235892c684e2981f19b4111",
+      "attribution": "Based on Jobs and Skills Australia material; © Commonwealth of Australia",
+      "transformation": "Selected table rows or PDF text normalized and segmented for local retrieval; original retained."
+    },
+    {
+      "id": "jsa-quarterly-shortage",
+      "file": "jsa-shortage-march-2026.pdf",
+      "publisher": "Jobs and Skills Australia",
+      "title": "Occupation Shortage Report - March quarter 2026",
+      "date": "2026-06-03",
+      "period": "March quarter 2026",
+      "url": "https://www.jobsandskills.gov.au/download/19956/occupation-shortage-report-march-2026/4025/occupation-shortage-report-march-2026/pdf",
+      "page": "https://www.jobsandskills.gov.au/download/19956/occupation-shortage-report-march-2026/4025/occupation-shortage-report-march-2026/pdf",
+      "licence": "https://www.jobsandskills.gov.au/copyright-and-disclaimer",
+      "raw_relative_path": "var/au-government/2026-09-06/jsa-shortage-march-2026.pdf",
+      "bytes": 451251,
+      "sha256": "10c77b0fdd8368c65cd9e8f0d02d9f4074bc59f94dd751776c03b668a1680ab1",
+      "attribution": "Based on Jobs and Skills Australia material; © Commonwealth of Australia",
+      "transformation": "Selected table rows or PDF text normalized and segmented for local retrieval; original retained."
+    },
+    {
+      "id": "jsa-genai-interactive",
+      "file": "ai-detail/jsa_gen_ai_interactive_table_data_pack_20250903.xlsx",
+      "publisher": "Jobs and Skills Australia",
+      "title": "Gen AI Capacity Study Interactive Table Data Pack - selected occupation and industry exposure scores",
+      "date": "2025-09-03",
+      "period": "2025-09-03 workbook; Australia; Gen AI potential study",
+      "url": "https://www.jobsandskills.gov.au/sites/default/files/2025-09/jsa_gen_ai_interactive_table_data_pack_20250903.xlsx",
+      "page": "https://www.jobsandskills.gov.au/sites/default/files/2025-09/jsa_gen_ai_interactive_table_data_pack_20250903.xlsx",
+      "licence": "https://www.jobsandskills.gov.au/copyright-and-disclaimer",
+      "raw_relative_path": "var/au-government/2026-09-06/ai-detail/jsa_gen_ai_interactive_table_data_pack_20250903.xlsx",
+      "bytes": 702628,
+      "sha256": "1dbc5f68eaea59736ffc26ac6535bc5ba6cdd250bf7851f139365bf90691a7a7",
+      "attribution": "Based on Jobs and Skills Australia material; © Commonwealth of Australia",
+      "transformation": "Only Occupation A8:G364 and Industry A8:C26 become two knowledge documents. Preserve 0–1 potential scores, occupation SD and missing marker; no risk bins or percentage conversion."
+    },
+    {
+      "id": "jsa-genai-chart-data",
+      "file": "ai-detail/JSA Gen AI Capacity Study AP Publication Chart Data 20250930.xlsx",
+      "publisher": "Jobs and Skills Australia",
+      "title": "Gen AI Capacity Study AP Publication Chart Data - consistency and industry code reference only",
+      "date": "2025-09-30",
+      "period": "2025-09-30 workbook; Australia; published 2021 Census composition context",
+      "url": "https://www.jobsandskills.gov.au/sites/default/files/2025-09/JSA%20Gen%20AI%20Capacity%20Study%20AP%20Publication%20Chart%20Data%2020250930.xlsx",
+      "page": "https://www.jobsandskills.gov.au/studies/generative-artificial-intelligence-capacity-study",
+      "licence": "https://www.jobsandskills.gov.au/copyright-and-disclaimer",
+      "raw_relative_path": "var/au-government/2026-09-06/ai-detail/JSA Gen AI Capacity Study AP Publication Chart Data 20250930.xlsx",
+      "bytes": 11513929,
+      "sha256": "d2c05ffcd4584e5164477cbd8be3a57c4c9d620ea2244bc5ef360a1b069e369c",
+      "attribution": "Based on Jobs and Skills Australia material; © Commonwealth of Australia",
+      "transformation": "Reference only: APA Figure 2 A5:D361 and APA Table 2 A5:C23 confirm all selected exposure scores; APA Figure 7 B5:C194 supplies official ANZSIC Division code/title pairs. No independent chart knowledge document or workforce/profile/job-ad columns ingested."
+    }
+  ],
+  "coverage": {
+    "osca_six_digit_occupations": 1156,
+    "anzsco_unit_groups": 358,
+    "anzsco_unit_group_tasks": 3037,
+    "projected_anzsco_unit_groups": 358,
+    "shortage_ANZSCO_2022": 916,
+    "shortage_OSCA_2024": 1022,
+    "ai_exposure_anzsco_v1_3_unit_groups": 357,
+    "ai_exposure_anzsic_2006_divisions": 19,
+    "ai_exposure_missing_standard_deviations": [
+      {
+        "code": "1419",
+        "sheet": "Occupation",
+        "cell": "E39",
+        "measure": "augmentation_standard_deviation",
+        "raw_value": " - ",
+        "normalized_value": null
+      }
+    ],
+    "ai_exposure_cross_workbook_consistency": {
+      "occupation_rows_matched": 357,
+      "industry_rows_matched": 19,
+      "all_selected_scores_match": true,
+      "industry_code_title_pairs": 19
+    },
+    "jsa-genai-analysis": {
+      "pdf_pages": 157,
+      "extracted_codepoints": 358668,
+      "retained_pages": 136,
+      "retained_codepoints": 309978,
+      "excluded_nonbody_physical_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        30,
+        54,
+        72,
+        100,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155
+      ]
+    },
+    "jsa-genai-final": {
+      "pdf_pages": 93,
+      "extracted_codepoints": 222271,
+      "retained_pages": 80,
+      "retained_codepoints": 200538,
+      "excluded_nonbody_physical_pages": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        28,
+        29,
+        30,
+        31,
+        90,
+        91,
+        92,
+        93
+      ]
+    },
+    "jsa-osl-report": {
+      "pdf_pages": 17,
+      "extracted_codepoints": 33057,
+      "retained_pages": 14,
+      "retained_codepoints": 28331,
+      "excluded_nonbody_physical_pages": [
+        1,
+        2,
+        3
+      ]
+    },
+    "jsa-quarterly-shortage": {
+      "pdf_pages": 10,
+      "extracted_codepoints": 15530,
+      "retained_pages": 8,
+      "retained_codepoints": 14332,
+      "excluded_nonbody_physical_pages": [
+        1,
+        2
+      ]
+    }
+  },
+  "prepared_files": [
+    {
+      "path": "data/knowledge/inbox/au-government-2026-09-06/labour-market/2025 Occupation Shortage List - Key Findings Report.json",
+      "sections": 45,
+      "codepoints": 37549,
+      "bytes": 38090,
+      "sha256": "624f11ff9412191e33eceeec0aecceab577e8bd97026ee3811dfbbb0691a583f"
+    },
+    {
+      "path": "data/knowledge/inbox/au-government-2026-09-06/occupations/ABS OSCA 2024 occupations group 1.json",
+      "sections": 265,
+      "codepoints": 189330,
+      "bytes": 191983,
+      "sha256": "4c7bd17d5d3abd41815f2d6baf531a4d2d585956fcaf448e0c367f69c9565fbb"
+    },
+    {
+      "path": "data/knowledge/inbox/au-government-2026-09-06/occupations/ABS OSCA 2024 occupations group 2.json",
+      "sections": 707,
+      "codepoints": 516708,
+      "bytes": 523785,
+      "sha256": "422c379a77b0eaf44283c7212c1ce9802f5fd926163297f9252f13e253f2f61d"
+    },
+    {
+      "path": "data/knowledge/inbox/au-government-2026-09-06/occupations/ABS OSCA 2024 occupations group 3.json",
+      "sections": 412,
+      "codepoints": 288623,
+      "bytes": 292746,
+      "sha256": "49879df06322710655bd0c920cf3ca2f64865cabae20ef65ebcb97a46331564f"
+    },
+    {
+      "path": "data/knowledge/inbox/au-government-2026-09-06/occupations/ABS OSCA 2024 occupations group 4.json",
+      "sections": 270,
+      "codepoints": 190401,
+      "bytes": 193104,
+      "sha256": "bf158ec111c9dcec83a6be32b5defac5985e5df37860d4a0eecf2d4c2cd7f902"
+    },
+    {
+      "path": "data/knowledge/inbox/au-government-2026-09-06/occupations/ABS OSCA 2024 occupations group 5.json",
+      "sections": 134,
+      "codepoints": 93223,
+      "bytes": 94566,
+      "sha256": "226322f9faae07e9f73687ab5531fa0e035e31d90096bcf17908415a86195124"
+    },
+    {
+      "path": "data/knowledge/inbox/au-government-2026-09-06/occupations/ABS OSCA 2024 occupations group 6.json",
+      "sections": 67,
+      "codepoints": 45528,
+      "bytes": 46201,
+      "sha256": "9b7624bfde2833485f089cfc6ec064a2f96377563946db240fc46665a49bd16e"
+    },
+    {
+      "path": "data/knowledge/inbox/au-government-2026-09-06/occupations/ABS OSCA 2024 occupations group 7.json",
+      "sections": 123,
+      "codepoints": 84778,
+      "bytes": 86011,
+      "sha256": "195d41102a7341b0e4ff01a90a0a27926edef2e7931330e8c3250212ecdf6fa2"
+    },
+    {
+      "path": "data/knowledge/inbox/au-government-2026-09-06/occupations/ABS OSCA 2024 occupations group 8.json",
+      "sections": 208,
+      "codepoints": 139237,
+      "bytes": 141320,
+      "sha256": "53ece7300ddc9f16e3a1fbe1d34b8736cefeacd82f24d4e8e846f7071b36f2c9"
+    },
+    {
+      "path": "data/knowledge/inbox/au-government-2026-09-06/Corpus source and interpretation notes.json",
+      "sections": 1,
+      "codepoints": 558,
+      "bytes": 567,
+      "sha256": "9a12b84e94290a814b086b295fbe62907c20d81b8d8aeb5e42567c666d6a563c"
+    },
+    {
+      "path": "data/knowledge/inbox/au-government-2026-09-06/labour-market/JSA 2025 Shortages ANZSCO 2022.json",
+      "sections": 916,
+      "codepoints": 427571,
+      "bytes": 436734,
+      "sha256": "abba49062639787423a1e5045b6ed9b7d89270015d81d2f8ca0d3b3defb5a591"
+    },
+    {
+      "path": "data/knowledge/inbox/au-government-2026-09-06/labour-market/JSA 2025 Shortages OSCA 2024.json",
+      "sections": 1022,
+      "codepoints": 472821,
+      "bytes": 483044,
+      "sha256": "c36535784d3264a17ddce426f7de5168911d2d4d779cb4b51591c37f26301b6d"
+    },
+    {
+      "path": "data/knowledge/inbox/au-government-2026-09-06/occupations/JSA ANZSCO v1.3 unit groups 1.json",
+      "sections": 340,
+      "codepoints": 125202,
+      "bytes": 128605,
+      "sha256": "3dcd0a587e72f5484bb1a383c8576687fa06cda0dfa27177bbf8311b9fe1ab2c"
+    },
+    {
+      "path": "data/knowledge/inbox/au-government-2026-09-06/occupations/JSA ANZSCO v1.3 unit groups 2.json",
+      "sections": 976,
+      "codepoints": 384596,
+      "bytes": 394370,
+      "sha256": "fd9508b4cfd7877549e15e8780a55930d457a10fb471adae23c93bf0393ab6ec"
+    },
+    {
+      "path": "data/knowledge/inbox/au-government-2026-09-06/occupations/JSA ANZSCO v1.3 unit groups 3.json",
+      "sections": 648,
+      "codepoints": 232387,
+      "bytes": 238870,
+      "sha256": "1d4090f263ffb45ba1c66b84f4eb80f807eb2b9c35165d1785828c684d9848e2"
+    },
+    {
+      "path": "data/knowledge/inbox/au-government-2026-09-06/occupations/JSA ANZSCO v1.3 unit groups 4.json",
+      "sections": 348,
+      "codepoints": 121639,
+      "bytes": 125122,
+      "sha256": "5817ee2df495e5ddba45e167c4d923df376aebfa8b6f72ff059d4d08a51ad208"
+    },
+    {
+      "path": "data/knowledge/inbox/au-government-2026-09-06/occupations/JSA ANZSCO v1.3 unit groups 5.json",
+      "sections": 314,
+      "codepoints": 112263,
+      "bytes": 115406,
+      "sha256": "9653f78cf34a85c15e67b7b2fd81dc745958cc6155da6db7030faa1733a83eca"
+    },
+    {
+      "path": "data/knowledge/inbox/au-government-2026-09-06/occupations/JSA ANZSCO v1.3 unit groups 6.json",
+      "sections": 165,
+      "codepoints": 58654,
+      "bytes": 60307,
+      "sha256": "2581e2470878b369ae39d62a923f0b35ec5d7bd44244cb1d793d5a9ad5c1c671"
+    },
+    {
+      "path": "data/knowledge/inbox/au-government-2026-09-06/occupations/JSA ANZSCO v1.3 unit groups 7.json",
+      "sections": 201,
+      "codepoints": 72762,
+      "bytes": 74775,
+      "sha256": "2004c8ca0557f9b041bdc7040d407efa1b83128aa97a846af3ed33862d12791a"
+    },
+    {
+      "path": "data/knowledge/inbox/au-government-2026-09-06/occupations/JSA ANZSCO v1.3 unit groups 8.json",
+      "sections": 403,
+      "codepoints": 143311,
+      "bytes": 147344,
+      "sha256": "8d7883c5a937c9af8ff1eb32ed6cd0b5b7d11fa46438a4cd853c2359986a2767"
+    },
+    {
+      "path": "data/knowledge/inbox/au-government-2026-09-06/labour-market/JSA Employment Projections 2025 to 2035.json",
+      "sections": 358,
+      "codepoints": 203372,
+      "bytes": 207672,
+      "sha256": "8a23108fac1a11ca19c8b9bd874da270528c0a333b07289a172aa3257e57fc4a"
+    },
+    {
+      "path": "data/knowledge/inbox/au-government-2026-09-06/ai-impact/JSA Gen AI 2025 industry exposure scores.json",
+      "sections": 19,
+      "codepoints": 14374,
+      "bytes": 14605,
+      "sha256": "ff975918d7716a28d8cae226ae6fa080e28eb01fe8c89bb945fe7689332877d5"
+    },
+    {
+      "path": "data/knowledge/inbox/au-government-2026-09-06/ai-impact/JSA Gen AI 2025 occupation exposure scores.json",
+      "sections": 357,
+      "codepoints": 247373,
+      "bytes": 251661,
+      "sha256": "d94fe8e3317b3ad14be7839664eba3275c69b897b52735f5b9d7d5f154552081"
+    },
+    {
+      "path": "data/knowledge/inbox/au-government-2026-09-06/labour-market/Occupation Shortage Report - March quarter 2026.json",
+      "sections": 26,
+      "codepoints": 20584,
+      "bytes": 21137,
+      "sha256": "562fe030bc98981540395b2d71076c9e6c4c22536d8eae3833d1f23818c82cc0"
+    },
+    {
+      "path": "data/knowledge/inbox/au-government-2026-09-06/ai-impact/Our Gen AI Transition - Analysis Papers A to E.json",
+      "sections": 556,
+      "codepoints": 452616,
+      "bytes": 458426,
+      "sha256": "7b8301f9aa70a6ebc17d48a929c0ebdeac886104cb2193e4aaa882ee46f4c0fe"
+    },
+    {
+      "path": "data/knowledge/inbox/au-government-2026-09-06/ai-impact/Our Gen AI Transition - Final Release, cohorts and technical notes.json",
+      "sections": 381,
+      "codepoints": 314903,
+      "bytes": 318823,
+      "sha256": "6e88dffddb0780bc4e68ccbf28e7b871db3d3732b1171b0d7b1913fd877946ef"
+    }
+  ],
+  "preparation": {
+    "spreadsheet": "Explicit selected tables; exact codes and values; employment rounded to 0.001 thousand and percentage growth to 0.01 percentage points; NFD and aggregate projection rows excluded.",
+    "pdf": "Text only, NFKC and whitespace normalization; original physical page numbers retained. Exclude verified whole pages containing only front matter, section covers, contents, references or blank footers (listed per PDF). Mixed analysis/reference pages and substantive technical appendices remain. Figures are not interpreted; complex table layout may require checking the original PDF.",
+    "rights": "Based on Australian Bureau of Statistics / Jobs and Skills Australia material, © Commonwealth of Australia. CC BY 4.0 for the selected official text and data, excluding third-party content and artwork. No images, logos, microdata or customised occupation Census/salary tables included.",
+    "ai_exposure": "Interactive workbook Occupation A8:G364 and Industry A8:C26 only. Scores retain original dimensionless 0–1 units, not percentages, unemployment probabilities or inferred risk categories. Occupation SD E39 raw marker is preserved as null with an explanation. Chart workbook supplies consistency checks and official ANZSIC Division code/title pairs only; no chart statistics are added. The ambiguous APA Table 2 D column, third-party profile/job-ad columns and scenario transition rates are excluded.",
+    "directories": {
+      "occupations": "ABS OSCA and JSA ANZSCO occupation descriptions and tasks",
+      "ai-impact": "Gen AI substantive PDF text and two selected exposure tables",
+      "labour-market": "Employment projections and occupation shortage tables/reports",
+      ".": "Explicit local operator interpretation notes"
+    },
+    "database_metadata": "Existing generic local-import metadata is unchanged; official publisher, URL, date and table/page locator are retained in passage text and this manifest."
+  },
+  "prepared_file_count": 26,
+  "prepared_section_count": 9262
+}

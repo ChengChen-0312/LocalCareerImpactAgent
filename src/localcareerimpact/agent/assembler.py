@@ -22,6 +22,7 @@ from .contracts import (
     TaskImpactRow,
 )
 from .validator import (
+    ReportValidationResult,
     citation_relevance_text,
     validate_report,
     validate_report_narrative_pack,
@@ -32,6 +33,22 @@ from .validator import (
 
 class ReportAssemblyError(RuntimeError):
     """A content-free failure at the deterministic assembly boundary."""
+
+    def __init__(
+        self,
+        message: str,
+        *,
+        validation: ReportValidationResult | None = None,
+    ) -> None:
+        # Keep only closed category codes and counts, never dynamic error text.
+        self.validation = (
+            ReportValidationResult(
+                errors=tuple(category for category, _ in validation.category_counts),
+                category_counts=validation.category_counts,
+            )
+            if validation is not None else None
+        )
+        super().__init__(message)
 
 
 _ASSEMBLY_ERROR = "report assembly failed"
@@ -189,7 +206,7 @@ def assemble_report(
             suggestions=suggestions,
         )
         if not result.valid:
-            raise ReportAssemblyError(_ASSEMBLY_ERROR)
+            raise ReportAssemblyError(_ASSEMBLY_ERROR, validation=result)
         return report
     except ReportAssemblyError:
         raise

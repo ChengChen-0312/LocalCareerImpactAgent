@@ -201,3 +201,38 @@ class KnowledgeCitationOut(ClosedModel):
     text: str
     content_hash: str
     chunk_hash: str
+
+
+class RunDetailOut(RunProgressOut):
+    report_id: str | None
+    error_code: str | None
+    message: str
+    last_event_id: int = Field(ge=-1)
+
+
+class RunEventOut(ClosedModel):
+    run_id: str
+    stage: str
+    status: Literal["running", "complete", "failed", "cancelled"]
+    message: str
+    completed_stages: int = Field(ge=0)
+    total_stages: int = Field(ge=0)
+    report_id: str | None = None
+
+
+class ReportCitationDetailOut(ClosedModel):
+    evidence_ref: str
+    citation_scope: Literal["passage", "source"]
+    source_title: str
+    publisher: str
+    release_date: str | None
+    licence: str
+    locator: str
+    text: str
+
+
+class ReportDetailOut(ClosedModel):
+    report_id: str
+    created_at: str
+    report: dict[str, object]
+    citation_details: list[ReportCitationDetailOut]

@@ -6,7 +6,8 @@ import asyncio
 import math
 import re
 from collections import defaultdict
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
+from pathlib import PurePosixPath
 from typing import Sequence
 from urllib.parse import quote
 
@@ -18,6 +19,14 @@ SPARSE_LIMIT = 20
 DENSE_LIMIT = 20
 FINAL_LIMIT = 8
 RRF_K = 60
+ANALYSIS_TOPIC_LIMITS = {"occupations": 4, "ai-impact": 2, "labour-market": 2}
+
+
+def analysis_topic(source_label: str) -> str:
+    """Operator-assigned directory names, not inferred authority or relevance."""
+
+    return next((part for part in PurePosixPath(source_label).parts[:-1]
+                 if part in ANALYSIS_TOPIC_LIMITS), "unclassified")
 
 
 @dataclass(frozen=True, slots=True)
@@ -78,7 +87,10 @@ class HybridRetriever:
         snapshot_id: str | None = None,
         run_id: str | None = None,
         scope: RetrievalScope | None = None,
+        limit: int = FINAL_LIMIT,
     ) -> tuple[RetrievedChunk, ...]:
+        if not 1 <= limit <= FINAL_LIMIT:
+            raise ValueError("The retrieval limit must be between one and eight.")
         normalized_query = " ".join(query.split())
         if not normalized_query:
             raise ValueError("A non-empty retrieval query is required.")
@@ -103,6 +115,11 @@ class HybridRetriever:
         chunks = await asyncio.to_thread(
             self._repository.snapshot_chunks, selected_snapshot
         )
+        selected_scope = scope or RetrievalScope()
+        if scope is not None:
+            chunks = tuple(chunk for chunk in chunks if selected_scope.accepts(chunk))
+            if not chunks:
+                return ()
         chunks_by_id = {chunk.chunk_id: chunk for chunk in chunks}
         sparse_query = _fts_query(normalized_query)
         sparse_ids = await asyncio.to_thread(
@@ -110,6 +127,8 @@ class HybridRetriever:
             selected_snapshot,
             sparse_query,
             SPARSE_LIMIT,
+            **({"document_ids": tuple(dict.fromkeys(chunk.document_id for chunk in chunks))}
+               if scope is not None else {}),
         )
         query_result = await self._embedding_client.embed((normalized_query,))
         if query_result.model_fingerprint != embedding_spec.model_fingerprint:
@@ -131,7 +150,6 @@ class HybridRetriever:
         fused_ids = reciprocal_rank_fusion(sparse_ids, dense_ids, k=RRF_K)
         sparse_ranks = {chunk_id: rank for rank, chunk_id in enumerate(sparse_ids, start=1)}
         dense_ranks = {chunk_id: rank for rank, chunk_id in enumerate(dense_ids, start=1)}
-        selected_scope = scope or RetrievalScope()
         seen_hashes: set[str] = set()
         selected: list[RetrievedChunk] = []
         for chunk_id in fused_ids:
@@ -157,9 +175,74 @@ class HybridRetriever:
                     chunk=chunk,
                 )
             )
-            if len(selected) == FINAL_LIMIT:
+            if len(selected) == limit:
                 break
         return tuple(selected)
+
+    async def retrieve_analysis(
+        self, query: str, *, occupation_query: str | None = None,
+        run_id: str | None = None, snapshot_id: str | None = None,
+    ) -> tuple[tuple[RetrievedChunk, ...], dict[str, object]]:
+        """Keep task, AI and labour context in one frozen, eight-passage budget."""
+
+        query = " ".join(query.split())
+        if not query or len(query) > 2_000:
+            raise ValueError("An analysis retrieval query must contain one to 2000 characters.")
+        if run_id is not None and snapshot_id is not None:
+            raise ValueError("Choose either an explicit snapshot or a run binding.")
+        if run_id is not None:
+            snapshot_id = await asyncio.to_thread(self._repository.bind_run_to_active_snapshot, run_id)
+        elif snapshot_id is None:
+            snapshot_id = await asyncio.to_thread(self._repository.active_snapshot_id)
+        chunks = await asyncio.to_thread(self._repository.snapshot_chunks, snapshot_id)
+        documents: dict[str, set[str]] = {key: set() for key in (*ANALYSIS_TOPIC_LIMITS, "unclassified")}
+        for chunk in chunks:
+            documents[analysis_topic(chunk.source_label)].add(chunk.document_id)
+        if not any(documents[key] for key in ANALYSIS_TOPIC_LIMITS):
+            found = await self.retrieve(query, snapshot_id=snapshot_id)
+            return found, {"mode": "unclassified", "unclassified_count": len(found)}
+
+        role_query = " ".join((occupation_query or query).split())[:2_000] or query
+        if not re.search(r"\w", role_query, flags=re.UNICODE):
+            role_query = query
+        # Ordinary manual uploads still participate in the occupational query.
+        documents["occupations"].update(documents["unclassified"])
+        selected: list[RetrievedChunk] = []
+        seen_hashes: set[str] = set()
+        counts: dict[str, int] = {}
+        for topic, budget in ANALYSIS_TOPIC_LIMITS.items():
+            found = await self.retrieve(
+                role_query, snapshot_id=snapshot_id,
+                scope=RetrievalScope(document_ids=frozenset(documents[topic])),
+                limit=budget,
+            ) if documents[topic] else ()
+            if topic == "occupations" and query != role_query and documents[topic]:
+                task_matches = await self.retrieve(
+                    query, snapshot_id=snapshot_id,
+                    scope=RetrievalScope(document_ids=frozenset(documents[topic])), limit=budget,
+                )
+                # Keep two role matches, then task context, and fill duplicates
+                # from the remaining role matches without exceeding four.
+                found = (*found[:2], *task_matches, *found[2:])
+            counts[topic] = 0
+            for item in found:
+                if item.chunk.chunk_hash in seen_hashes:
+                    continue
+                seen_hashes.add(item.chunk.chunk_hash)
+                selected.append(replace(item, rank=len(selected) + 1))
+                counts[topic] += 1
+                if counts[topic] == budget:
+                    break
+        source_counts = {topic: sum(analysis_topic(item.chunk.source_label) == topic
+                                    for item in selected) for topic in ANALYSIS_TOPIC_LIMITS}
+        return tuple(selected), {
+            "mode": "topic_directories", "topic_counts": source_counts,
+            "query_counts": counts,
+            "unclassified_count": sum(analysis_topic(item.chunk.source_label) == "unclassified"
+                                      for item in selected),
+            "missing_topics": [topic for topic, count in source_counts.items() if not count],
+            "meaning": "Directory coverage only; relevance and support must still be checked against each passage.",
+        }
 
 
 def _fts_query(text: str) -> str:

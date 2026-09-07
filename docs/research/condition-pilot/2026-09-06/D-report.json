@@ -1,0 +1,280 @@
+{
+  "schema_version": "mvp-report.v1",
+  "run_id": "c28f5372-5ca4-4e0c-9af3-22decef16e2c",
+  "snapshot_id": "sha256:fd3565036619143a0d245bd38560f97f80ad4598d51ba387b9b40060ec91ca27",
+  "language": "zh",
+  "title": "软件测试工程师职业影响分析",
+  "overall_impact_band": "medium",
+  "claims": [
+    {
+      "claim_id": "claim-001",
+      "text": "根据用户自述，其职业职责包括根据产品需求编写功能测试用例、执行回归测试并复核异常、整理缺陷报告并与开发者沟通。",
+      "basis": "rag",
+      "horizon": null,
+      "impact_band": null,
+      "evidence_refs": [
+        "evidence-2a0d09c48d4d9daa122a26201331b3734e85196d6b980e0d61c3db2747dfaebf"
+      ],
+      "uncertainty": "用户自述的职责未在证据中直接验证，仅能基于其提供的信息进行推断。"
+    },
+    {
+      "claim_id": "claim-002",
+      "text": "在1-3年内，AI工具可能在测试用例编写中发挥辅助作用，但公司规定要求所有测试用例必须经人工审核后才能进入正式测试库，因此自动化程度有限。",
+      "basis": "reasoned_scenario",
+      "horizon": "1-3-years",
+      "impact_band": "medium",
+      "evidence_refs": [],
+      "uncertainty": "AI工具的具体使用方式和公司对AI工具的审批流程未明确，因此对自动化程度的评估存在不确定性。"
+    },
+    {
+      "claim_id": "claim-003",
+      "text": "在3-5年内，随着AI技术的发展，测试用例的自动化编写可能成为主流，但人工审核环节仍将保留，以确保测试用例的质量和准确性。",
+      "basis": "reasoned_scenario",
+      "horizon": "3-5-years",
+      "impact_band": "medium-high",
+      "evidence_refs": [],
+      "uncertainty": "AI技术的发展速度和公司对AI工具的接受程度存在不确定性，因此对长期影响的评估存在不确定性。"
+    },
+    {
+      "claim_id": "claim-004",
+      "text": "建议在1-3年内，利用公司批准的本地AI工具辅助测试用例编写，同时保持对测试用例的全面人工审核，以确保测试质量。",
+      "basis": "recommendation",
+      "horizon": null,
+      "impact_band": null,
+      "evidence_refs": [],
+      "uncertainty": "公司对AI工具的使用政策和具体实施细节未明确，因此建议的可行性存在不确定性。"
+    }
+  ],
+  "sections": {
+    "occupation_summary": {
+      "summary": {
+        "text": "根据用户自述，其职业职责包括根据产品需求编写功能测试用例、执行回归测试并复核异常、整理缺陷报告并与开发者沟通。",
+        "origin": "rag",
+        "evidence_refs": [
+          "evidence-2a0d09c48d4d9daa122a26201331b3734e85196d6b980e0d61c3db2747dfaebf"
+        ]
+      },
+      "claim_ids": [
+        "claim-001"
+      ]
+    },
+    "horizon_scenarios": [
+      {
+        "horizon": "1-3-years",
+        "impact_band": "medium",
+        "summary": {
+          "text": "在1-3年内，AI工具可能在测试用例编写中发挥辅助作用，但公司规定要求所有测试用例必须经人工审核后才能进入正式测试库，因此自动化程度有限。",
+          "origin": "reasoned_scenario",
+          "evidence_refs": []
+        },
+        "claim_ids": [
+          "claim-002"
+        ],
+        "uncertainty": {
+          "text": "AI工具的具体使用方式和公司对AI工具的审批流程未明确，因此对自动化程度的评估存在不确定性。",
+          "origin": "reasoned_scenario",
+          "evidence_refs": []
+        }
+      },
+      {
+        "horizon": "3-5-years",
+        "impact_band": "medium-high",
+        "summary": {
+          "text": "在3-5年内，随着AI技术的发展，测试用例的自动化编写可能成为主流，但人工审核环节仍将保留，以确保测试用例的质量和准确性。",
+          "origin": "reasoned_scenario",
+          "evidence_refs": []
+        },
+        "claim_ids": [
+          "claim-003"
+        ],
+        "uncertainty": {
+          "text": "AI技术的发展速度和公司对AI工具的接受程度存在不确定性，因此对长期影响的评估存在不确定性。",
+          "origin": "reasoned_scenario",
+          "evidence_refs": []
+        }
+      }
+    ],
+    "task_impact_matrix": [
+      {
+        "row_id": "task-001",
+        "task": {
+          "text": "测试用例编写",
+          "origin": "reasoned_scenario",
+          "evidence_refs": []
+        },
+        "horizon": "1-3-years",
+        "automation": "medium",
+        "augmentation": "low",
+        "human_led": "high",
+        "rationale": {
+          "text": "AI工具可能辅助编写测试用例，但需人工审核，因此自动化程度有限。",
+          "origin": "reasoned_scenario",
+          "evidence_refs": []
+        },
+        "claim_ids": [
+          "claim-002"
+        ]
+      },
+      {
+        "row_id": "task-002",
+        "task": {
+          "text": "测试用例编写",
+          "origin": "reasoned_scenario",
+          "evidence_refs": []
+        },
+        "horizon": "3-5-years",
+        "automation": "high",
+        "augmentation": "medium",
+        "human_led": "medium",
+        "rationale": {
+          "text": "AI技术发展可能使测试用例编写自动化，但人工审核仍需保留以确保质量。",
+          "origin": "reasoned_scenario",
+          "evidence_refs": []
+        },
+        "claim_ids": [
+          "claim-003"
+        ]
+      },
+      {
+        "row_id": "task-003",
+        "task": {
+          "text": "回归测试执行",
+          "origin": "reasoned_scenario",
+          "evidence_refs": []
+        },
+        "horizon": "1-3-years",
+        "automation": "low",
+        "augmentation": "medium",
+        "human_led": "high",
+        "rationale": {
+          "text": "AI工具可能辅助测试执行，但人工复核仍需进行以确保测试准确性。",
+          "origin": "reasoned_scenario",
+          "evidence_refs": []
+        },
+        "claim_ids": [
+          "claim-002"
+        ]
+      },
+      {
+        "row_id": "task-004",
+        "task": {
+          "text": "缺陷报告整理",
+          "origin": "reasoned_scenario",
+          "evidence_refs": []
+        },
+        "horizon": "3-5-years",
+        "automation": "medium",
+        "augmentation": "high",
+        "human_led": "medium",
+        "rationale": {
+          "text": "AI工具可能辅助缺陷报告整理，但人工复核仍需进行以确保报告准确性。",
+          "origin": "reasoned_scenario",
+          "evidence_refs": []
+        },
+        "claim_ids": [
+          "claim-003"
+        ]
+      }
+    ],
+    "opportunities": {
+      "summary": {
+        "text": "建议在1-3年内，利用公司批准的本地AI工具辅助测试用例编写，同时保持对测试用例的全面人工审核，以确保测试质量。",
+        "origin": "recommendation",
+        "evidence_refs": []
+      },
+      "claim_ids": [
+        "claim-004"
+      ]
+    },
+    "risks_and_uncertainty": {
+      "summary": {
+        "text": "AI工具的具体使用方式和公司对AI工具的审批流程未明确，因此对自动化程度的评估存在不确定性。",
+        "origin": "reasoned_scenario",
+        "evidence_refs": []
+      },
+      "claim_ids": [
+        "claim-002"
+      ]
+    },
+    "practical_next_actions": [
+      {
+        "action_id": "action-001",
+        "action": {
+          "text": "利用公司批准的本地AI工具辅助测试用例编写，同时保持对测试用例的全面人工审核。",
+          "origin": "recommendation",
+          "evidence_refs": []
+        },
+        "rationale": {
+          "text": "这有助于提高测试效率，同时确保测试质量。",
+          "origin": "recommendation",
+          "evidence_refs": []
+        },
+        "claim_ids": [
+          "claim-004"
+        ]
+      }
+    ]
+  },
+  "citations": [
+    {
+      "evidence_ref": "evidence-2a0d09c48d4d9daa122a26201331b3734e85196d6b980e0d61c3db2747dfaebf",
+      "claim_ids": [
+        "claim-001"
+      ],
+      "relevance": {
+        "text": "所关联声明引用的冻结本地证据。",
+        "origin": "rag",
+        "evidence_refs": [
+          "evidence-2a0d09c48d4d9daa122a26201331b3734e85196d6b980e0d61c3db2747dfaebf"
+        ]
+      }
+    }
+  ],
+  "suggestion_resolutions": [
+    {
+      "suggestion_id": "evidence-1",
+      "decision": "accepted",
+      "reason": "用户自述职责与ICT Test Analyst官方描述一致，可直接引用证据支持。"
+    },
+    {
+      "suggestion_id": "evidence-2",
+      "decision": "accepted",
+      "reason": "ICT Test Analyst职责与用户描述完全匹配，支持任务评估。"
+    },
+    {
+      "suggestion_id": "evidence-3",
+      "decision": "accepted",
+      "reason": "官方职责描述与用户自述一致，支持任务分析。"
+    },
+    {
+      "suggestion_id": "boundary-1",
+      "decision": "accepted",
+      "reason": "应以官方描述为准，避免基于用户自述的推断。"
+    },
+    {
+      "suggestion_id": "boundary-2",
+      "decision": "accepted",
+      "reason": "未来影响评估需基于官方职责，而非用户自述。"
+    },
+    {
+      "suggestion_id": "boundary-3",
+      "decision": "accepted",
+      "reason": "建议应基于证据中的AI任务潜力评分，确保可验证性。"
+    },
+    {
+      "suggestion_id": "safety-1",
+      "decision": "accepted",
+      "reason": "职责描述应以官方来源为准，避免主观推断。"
+    },
+    {
+      "suggestion_id": "safety-2",
+      "decision": "accepted",
+      "reason": "未来影响评估应基于证据中的职责范围，避免脱离来源。"
+    },
+    {
+      "suggestion_id": "safety-3",
+      "decision": "accepted",
+      "reason": "建议应基于证据中的AI任务潜力评分，确保建议可验证。"
+    }
+  ]
+}

@@ -1,0 +1,280 @@
+{
+  "schema_version": "mvp-report.v1",
+  "run_id": "e469b327-ddde-4fa2-bcfc-41904c6ff677",
+  "snapshot_id": "sha256:fd3565036619143a0d245bd38560f97f80ad4598d51ba387b9b40060ec91ca27",
+  "language": "zh",
+  "title": "测试分析师职业影响分析",
+  "overall_impact_band": "medium",
+  "claims": [
+    {
+      "claim_id": "claim-001",
+      "text": "根据用户自述，其职业职责包括根据产品需求编写功能测试用例、执行回归测试并复核异常、整理缺陷报告并与开发者沟通。",
+      "basis": "rag",
+      "horizon": null,
+      "impact_band": null,
+      "evidence_refs": [
+        "evidence-2a0d09c48d4d9daa122a26201331b3734e85196d6b980e0d61c3db2747dfaebf"
+      ],
+      "uncertainty": "用户自述的职责与ICT Test Analyst（OSCA 2024 v1.0）的职责描述一致，已在证据中直接验证。"
+    },
+    {
+      "claim_id": "claim-002",
+      "text": "在1-3年内，AI可能在测试用例生成和缺陷识别方面提供辅助，但公司禁止使用AI工具的政策将限制其应用，导致自动化水平低。",
+      "basis": "reasoned_scenario",
+      "horizon": "1-3-years",
+      "impact_band": "medium",
+      "evidence_refs": [],
+      "uncertainty": "公司禁止使用AI工具的政策未明确实施细节，且AI工具的实际应用效果受具体技术发展和团队采纳速度影响。"
+    },
+    {
+      "claim_id": "claim-003",
+      "text": "在3-5年内，若公司政策放宽或AI工具成熟，测试用例编写和缺陷分析可能被AI部分自动化，但人工审核和沟通仍为必要环节。",
+      "basis": "reasoned_scenario",
+      "horizon": "3-5-years",
+      "impact_band": "medium-high",
+      "evidence_refs": [],
+      "uncertainty": "公司政策是否放宽存在不确定性，且AI工具在复杂场景下的准确性和可靠性仍需验证。"
+    },
+    {
+      "claim_id": "claim-004",
+      "text": "建议在当前政策下，专注于提升需求分析和测试用例设计能力，以增强在AI辅助环境中的不可替代性。",
+      "basis": "recommendation",
+      "horizon": null,
+      "impact_band": null,
+      "evidence_refs": [],
+      "uncertainty": "能力提升的效果受个人学习能力和实际应用场景影响，无法保证未来职业竞争力。"
+    }
+  ],
+  "sections": {
+    "occupation_summary": {
+      "summary": {
+        "text": "根据用户自述，其职业职责包括根据产品需求编写功能测试用例、执行回归测试并复核异常、整理缺陷报告并与开发者沟通。",
+        "origin": "rag",
+        "evidence_refs": [
+          "evidence-2a0d09c48d4d9daa122a26201331b3734e85196d6b980e0d61c3db2747dfaebf"
+        ]
+      },
+      "claim_ids": [
+        "claim-001"
+      ]
+    },
+    "horizon_scenarios": [
+      {
+        "horizon": "1-3-years",
+        "impact_band": "medium",
+        "summary": {
+          "text": "在1-3年内，AI可能在测试用例生成和缺陷识别方面提供辅助，但公司禁止使用AI工具的政策将限制其应用，导致自动化水平低。",
+          "origin": "reasoned_scenario",
+          "evidence_refs": []
+        },
+        "claim_ids": [
+          "claim-002"
+        ],
+        "uncertainty": {
+          "text": "公司禁止使用AI工具的政策未明确实施细节，且AI工具的实际应用效果受具体技术发展和团队采纳速度影响。",
+          "origin": "reasoned_scenario",
+          "evidence_refs": []
+        }
+      },
+      {
+        "horizon": "3-5-years",
+        "impact_band": "medium-high",
+        "summary": {
+          "text": "在3-5年内，若公司政策放宽或AI工具成熟，测试用例编写和缺陷分析可能被AI部分自动化，但人工审核和沟通仍为必要环节。",
+          "origin": "reasoned_scenario",
+          "evidence_refs": []
+        },
+        "claim_ids": [
+          "claim-003"
+        ],
+        "uncertainty": {
+          "text": "公司政策是否放宽存在不确定性，且AI工具在复杂场景下的准确性和可靠性仍需验证。",
+          "origin": "reasoned_scenario",
+          "evidence_refs": []
+        }
+      }
+    ],
+    "task_impact_matrix": [
+      {
+        "row_id": "task-001",
+        "task": {
+          "text": "测试用例编写",
+          "origin": "reasoned_scenario",
+          "evidence_refs": []
+        },
+        "horizon": "1-3-years",
+        "automation": "low",
+        "augmentation": "medium",
+        "human_led": "high",
+        "rationale": {
+          "text": "AI可能辅助生成测试用例，但公司禁止使用AI工具的政策限制其应用，人工主导设计仍为必要。",
+          "origin": "reasoned_scenario",
+          "evidence_refs": []
+        },
+        "claim_ids": [
+          "claim-002"
+        ]
+      },
+      {
+        "row_id": "task-002",
+        "task": {
+          "text": "缺陷识别与复核",
+          "origin": "reasoned_scenario",
+          "evidence_refs": []
+        },
+        "horizon": "1-3-years",
+        "automation": "low",
+        "augmentation": "medium",
+        "human_led": "high",
+        "rationale": {
+          "text": "AI可能辅助识别缺陷，但公司禁止使用AI工具的政策限制其应用，人工复核仍为必要。",
+          "origin": "reasoned_scenario",
+          "evidence_refs": []
+        },
+        "claim_ids": [
+          "claim-002"
+        ]
+      },
+      {
+        "row_id": "task-003",
+        "task": {
+          "text": "测试用例编写",
+          "origin": "reasoned_scenario",
+          "evidence_refs": []
+        },
+        "horizon": "3-5-years",
+        "automation": "medium",
+        "augmentation": "high",
+        "human_led": "medium",
+        "rationale": {
+          "text": "若公司政策放宽或AI工具成熟，AI可能部分自动化用例编写，但人工审核仍为必要环节。",
+          "origin": "reasoned_scenario",
+          "evidence_refs": []
+        },
+        "claim_ids": [
+          "claim-003"
+        ]
+      },
+      {
+        "row_id": "task-004",
+        "task": {
+          "text": "缺陷分析与沟通",
+          "origin": "reasoned_scenario",
+          "evidence_refs": []
+        },
+        "horizon": "3-5-years",
+        "automation": "medium",
+        "augmentation": "high",
+        "human_led": "medium",
+        "rationale": {
+          "text": "AI可能辅助缺陷分析，但人工沟通和决策仍为必要环节。",
+          "origin": "reasoned_scenario",
+          "evidence_refs": []
+        },
+        "claim_ids": [
+          "claim-003"
+        ]
+      }
+    ],
+    "opportunities": {
+      "summary": {
+        "text": "建议在当前政策下，专注于提升需求分析和测试用例设计能力，以增强在AI辅助环境中的不可替代性。",
+        "origin": "recommendation",
+        "evidence_refs": []
+      },
+      "claim_ids": [
+        "claim-004"
+      ]
+    },
+    "risks_and_uncertainty": {
+      "summary": {
+        "text": "公司禁止使用AI工具的政策限制了AI在测试工作中的应用，但政策是否长期有效存在不确定性。",
+        "origin": "reasoned_scenario",
+        "evidence_refs": []
+      },
+      "claim_ids": [
+        "claim-002"
+      ]
+    },
+    "practical_next_actions": [
+      {
+        "action_id": "action-001",
+        "action": {
+          "text": "学习需求分析方法，提升测试用例设计能力。",
+          "origin": "recommendation",
+          "evidence_refs": []
+        },
+        "rationale": {
+          "text": "增强在AI辅助环境中的不可替代性，提升职业竞争力。",
+          "origin": "recommendation",
+          "evidence_refs": []
+        },
+        "claim_ids": [
+          "claim-004"
+        ]
+      }
+    ]
+  },
+  "citations": [
+    {
+      "evidence_ref": "evidence-2a0d09c48d4d9daa122a26201331b3734e85196d6b980e0d61c3db2747dfaebf",
+      "claim_ids": [
+        "claim-001"
+      ],
+      "relevance": {
+        "text": "所关联声明引用的冻结本地证据。",
+        "origin": "rag",
+        "evidence_refs": [
+          "evidence-2a0d09c48d4d9daa122a26201331b3734e85196d6b980e0d61c3db2747dfaebf"
+        ]
+      }
+    }
+  ],
+  "suggestion_resolutions": [
+    {
+      "suggestion_id": "evidence-1",
+      "decision": "accepted",
+      "reason": "用户自述职责与ICT Test Analyst职责描述一致，可直接确认。"
+    },
+    {
+      "suggestion_id": "evidence-2",
+      "decision": "accepted",
+      "reason": "ICT Test Analyst职责与用户自述完全匹配，无需额外推断。"
+    },
+    {
+      "suggestion_id": "evidence-3",
+      "decision": "accepted",
+      "reason": "用户职责与ICT Test Analyst完全一致，无需补充。"
+    },
+    {
+      "suggestion_id": "boundary-1",
+      "decision": "rejected",
+      "reason": "用户职责已在证据中直接验证，无需推断。"
+    },
+    {
+      "suggestion_id": "boundary-2",
+      "decision": "rejected",
+      "reason": "公司政策未直接验证，但影响评估基于现有信息合理。"
+    },
+    {
+      "suggestion_id": "boundary-3",
+      "decision": "rejected",
+      "reason": "能力提升效果受个人因素影响，但建议仍具参考价值。"
+    },
+    {
+      "suggestion_id": "safety-1",
+      "decision": "rejected",
+      "reason": "用户职责已通过证据直接验证，无需额外说明。"
+    },
+    {
+      "suggestion_id": "safety-2",
+      "decision": "rejected",
+      "reason": "用户职责已在证据中直接验证，无需重复。"
+    },
+    {
+      "suggestion_id": "safety-3",
+      "decision": "rejected",
+      "reason": "用户职责已直接验证，无需重复安全语言。"
+    }
+  ]
+}

@@ -1,6 +1,8 @@
 import { ChangeEvent, FormEvent, useEffect, useRef, useState } from "react";
 
 import { ApiError, api } from "./api";
+import { ReportCard } from "./ReportCard";
+import { RunProgressCard } from "./RunProgressCard";
 import type {
   ChatMessage,
   ChatSummary,
@@ -76,6 +78,33 @@ function profileFromPayload(payload: Record<string, unknown> | null): ProfileCar
     industry_context: payload.industry_context,
     goals: payload.goals,
   };
+}
+
+function mergeChatMessages(current: ChatMessage[], incoming: ChatMessage[]): ChatMessage[] {
+  const merged = new Map(current.map((message) => [message.message_id, message]));
+  const progressRank: Record<string, number> = { queued: 0, running: 1, complete: 2, failed: 2, cancelled: 2 };
+  const stages = ["retrieval", "draft", "evidence_review", "boundary_review", "safety_review",
+    "resolution_decision", "revised_claims", "report_narratives", "validation"];
+  for (const message of incoming) {
+    const existing = merged.get(message.message_id);
+    // A response can arrive after a newer terminal refresh has already included it.
+    // Confirmation and progress only move forward; message text is otherwise immutable.
+    if (existing?.kind === "profile" && existing.payload?.confirmed === true &&
+      message.payload?.confirmed !== true) continue;
+    if (existing?.kind === "progress" && message.kind === "progress") {
+      const oldStatus = typeof existing.payload?.status === "string" ? existing.payload.status : "queued";
+      const newStatus = typeof message.payload?.status === "string" ? message.payload.status : "queued";
+      const oldCount = typeof existing.payload?.completed_stages === "number" ? existing.payload.completed_stages : 0;
+      const newCount = typeof message.payload?.completed_stages === "number" ? message.payload.completed_stages : 0;
+      const oldStage = stages.indexOf(String(existing.payload?.current_stage));
+      const newStage = stages.indexOf(String(message.payload?.current_stage));
+      if ((progressRank[oldStatus] ?? 0) > (progressRank[newStatus] ?? 0) ||
+        (progressRank[oldStatus] === progressRank[newStatus] && (oldCount > newCount ||
+          (oldCount === newCount && newStage >= 0 && oldStage > newStage)))) continue;
+    }
+    merged.set(message.message_id, message);
+  }
+  return [...merged.values()].sort((left, right) => left.sequence - right.sequence);
 }
 
 function listFromEditor(value: string): string[] {
@@ -976,6 +1005,32 @@ function App() {
     }
   }
 
+  async function refreshRunResult(chatId: string, generation: number) {
+    if (!isCurrentSession(generation) || selectedChatIdRef.current !== chatId) return;
+    const selection = selectionRequestRef.current;
+    const controller = startRequest();
+    try {
+      const detail = await api.getChat(chatId, controller.signal);
+      if (!isCurrentSession(generation) || selectedChatIdRef.current !== chatId ||
+        selectionRequestRef.current !== selection) return;
+      setMessages((current) => mergeChatMessages(current, detail.messages));
+      setChats((current) => current.map((chat) => chat.chat_id === chatId
+        ? { chat_id: detail.chat_id, title: detail.title, created_at: detail.created_at, updated_at: detail.updated_at }
+        : chat));
+    } catch (error) {
+      if (isAbortError(error) || !isCurrentSession(generation) ||
+        selectedChatIdRef.current !== chatId || selectionRequestRef.current !== selection) return;
+      if (error instanceof ApiError && error.status === 401) {
+        handleRequestError(error, generation, selection, chatId);
+      } else {
+        // This background refresh must not release a newer send/confirm's busy state.
+        setErrorMessage("The latest analysis could not be loaded. Reconnect and refresh the conversation.");
+      }
+    } finally {
+      finishRequest(controller);
+    }
+  }
+
   async function handleLogin(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (isActionBusy()) return;
@@ -1097,11 +1152,7 @@ function App() {
               return { ...message, payload: { ...message.payload, confirmed: true } };
             })
           : current;
-        return [
-          ...currentMessages,
-          result.user_message,
-          result.assistant_message,
-        ];
+        return mergeChatMessages(currentMessages, [result.user_message, result.assistant_message]);
       });
       setChats((current) => [
         result.chat,
@@ -1129,14 +1180,7 @@ function App() {
     try {
       const result = await api.confirmProfile(originChatId, profile, controller.signal);
       if (!isCurrentSession(generation) || selectedChatIdRef.current !== originChatId) return;
-      setMessages((current) => [
-        ...current.map((message) =>
-          message.message_id === result.profile_message.message_id
-            ? result.profile_message
-            : message,
-        ),
-        result.progress_message,
-      ]);
+      setMessages((current) => mergeChatMessages(current, [result.profile_message, result.progress_message]));
       setChats((current) => [
         result.chat,
         ...current.filter((chat) => chat.chat_id !== result.chat.chat_id),
@@ -1268,6 +1312,15 @@ function App() {
               const profile = message.kind === "profile"
                 ? profileFromPayload(message.payload)
                 : null;
+              const messageGeneration = sessionGenerationRef.current;
+              const runId = typeof message.payload?.run_id === "string" ? message.payload.run_id : null;
+              const reportId = typeof message.payload?.report_id === "string" ? message.payload.report_id : null;
+              const expireSession = () => {
+                if (isCurrentSession(messageGeneration) && selectedChatIdRef.current === message.chat_id) {
+                  changeUser(null, "idle");
+                  setErrorMessage("Your session expired. Sign in again to reopen your saved analysis.");
+                }
+              };
               const extractedText = message.payload && typeof message.payload.extracted_text === "string"
                 ? message.payload.extracted_text
                 : "";
@@ -1275,7 +1328,7 @@ function App() {
                 ? message.payload.attachment_count
                 : 0;
               return (
-                <article key={message.message_id} className={`message ${message.role}`}>
+                <article key={`${username}:${message.chat_id}:${message.message_id}`} className={`message ${message.role}${message.kind === "report" ? " report-message" : ""}`}>
                   <div className="message-avatar" aria-hidden="true">
                     {message.role === "user" ? username.slice(0, 1).toUpperCase() : "✦"}
                   </div>
@@ -1284,7 +1337,7 @@ function App() {
                       <strong>{message.role === "user" ? "You" : "Career Impact"}</strong>
                       <time dateTime={message.created_at}>{shortTime(message.created_at)}</time>
                     </div>
-                    <p>{message.text}</p>
+                    {message.kind !== "progress" && message.kind !== "report" && <p>{message.text}</p>}
                     {attachmentCount > 0 && (
                       <div className="attachment-summary">
                         {attachmentCount} candidate attachment{attachmentCount === 1 ? "" : "s"} processed locally
@@ -1304,9 +1357,15 @@ function App() {
                         onConfirm={(editedProfile) => void handleConfirmProfile(editedProfile)}
                       />
                     )}
-                    {message.kind === "progress" && (
-                      <div className="progress-chip">Analysis queued</div>
+                    {message.kind === "progress" && runId && (
+                      <RunProgressCard runId={runId}
+                        onSettled={() => void refreshRunResult(message.chat_id, messageGeneration)}
+                        onUnauthorized={expireSession} />
                     )}
+                    {message.kind === "report" && reportId && (
+                      <ReportCard reportId={reportId} onUnauthorized={expireSession} />
+                    )}
+                    {(message.kind === "progress" && !runId || message.kind === "report" && !reportId) && <p>{message.text}</p>}
                   </div>
                 </article>
               );
@@ -1316,7 +1375,10 @@ function App() {
         </section>
 
         <footer className="composer-dock">
-          {errorMessage && <p className="request-error" role="alert">{errorMessage}</p>}
+          {errorMessage && <div className="request-error" role="alert"><p>{errorMessage}</p>
+            {selectedChatId && <button type="button" className="text-button" disabled={actionBusy}
+              onClick={() => void loadChatDetail(selectedChatId, sessionGenerationRef.current)}>Refresh conversation</button>}
+          </div>}
           {recording && (
             <div className="recording-bar" role="status">
               <span><i aria-hidden="true" /> Recording {formatElapsed(recordingElapsed)} / 15:00</span>

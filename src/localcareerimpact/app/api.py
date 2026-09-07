@@ -2,17 +2,19 @@
 
 from __future__ import annotations
 
+import asyncio
+import time
 from dataclasses import asdict
 from typing import Annotated
 from uuid import uuid4
 
 from fastapi import APIRouter, File, HTTPException, Request, Response, UploadFile, status
 from pydantic import BaseModel, ConfigDict
+from fastapi.responses import StreamingResponse
 
 from localcareerimpact.agent import (
     AnalysisRunNotFoundError,
     AnalysisRunStateError,
-    StarOrchestrator,
 )
 
 from localcareerimpact.intake import (
@@ -41,6 +43,7 @@ from .chat_store import ChatNotFoundError, ChatStore, ProfileStateError
 from .config import AppSettings, ConfigurationError
 from .database import Database
 from .model_runtime import ModelRuntime
+from .run_service import RunService
 from .schemas import (
     ChatDetailOut,
     ChatListOut,
@@ -54,7 +57,8 @@ from .schemas import (
     KnowledgeUploadOut,
     MessagePairOut,
     ProfileConfirmationOut,
-    RunExecutionOut,
+    ReportDetailOut,
+    RunDetailOut,
 )
 
 
@@ -94,6 +98,10 @@ def _chat_store(request: Request) -> ChatStore:
 
 def _knowledge_service(request: Request) -> KnowledgeService:
     return request.app.state.knowledge_service
+
+
+def _run_service(request: Request) -> RunService:
+    return request.app.state.run_service
 
 
 def _require_principal(request: Request) -> SessionPrincipal:
@@ -347,11 +355,14 @@ async def create_message(
 
             normalized_confirmation = " ".join(text.split()).casefold()
             if not uploads and normalized_confirmation in UNAMBIGUOUS_PROFILE_CONFIRMATIONS:
-                return store.confirm_profile_from_text(
-                    principal.username,
-                    chat_id,
-                    text,
+                result = await asyncio.to_thread(
+                    store.confirm_profile_from_text, principal.username, chat_id, text,
                 )
+                payload = result.assistant_message.payload
+                if payload is None or not isinstance(payload.get("run_id"), str):
+                    raise ProfileStateError("The confirmed analysis is unavailable.")
+                _run_service(request).schedule(principal.username, payload["run_id"])
+                return result
 
             runtime: ModelRuntime = request.app.state.model_runtime
 
@@ -382,7 +393,7 @@ async def create_message(
             status_code=status.HTTP_404_NOT_FOUND,
             detail="Chat not found.",
         ) from exc
-    except ProfileStateError as exc:
+    except (ProfileStateError, AnalysisRunStateError) as exc:
         raise HTTPException(
             status_code=status.HTTP_409_CONFLICT,
             detail=str(exc),
@@ -408,24 +419,24 @@ async def create_message(
     "/api/chats/{chat_id}/confirm-profile",
     response_model=ProfileConfirmationOut,
 )
-def confirm_profile(
+async def confirm_profile(
     chat_id: str,
     body: ConfirmProfileIn,
     request: Request,
 ) -> ProfileConfirmationOut:
     principal = _require_principal(request)
     try:
-        return _chat_store(request).confirm_profile(
-            principal.username,
-            chat_id,
-            body,
+        result = await asyncio.to_thread(
+            _chat_store(request).confirm_profile, principal.username, chat_id, body,
         )
+        _run_service(request).schedule(principal.username, result.run.run_id)
+        return result
     except ChatNotFoundError as exc:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail="Chat not found.",
         ) from exc
-    except ProfileStateError as exc:
+    except (ProfileStateError, AnalysisRunStateError) as exc:
         raise HTTPException(
             status_code=status.HTTP_409_CONFLICT,
             detail=str(exc),
@@ -434,32 +445,93 @@ def confirm_profile(
 
 @router.post(
     "/api/runs/{run_id}/execute",
-    response_model=RunExecutionOut,
+    response_model=RunDetailOut,
+    status_code=status.HTTP_202_ACCEPTED,
 )
-async def execute_run(run_id: str, request: Request) -> RunExecutionOut:
-    """Run one queued analysis inline; Task 7 owns background execution and SSE."""
-
+async def execute_run(run_id: str, request: Request) -> RunDetailOut:
+    """Idempotently schedule an owned run and return its current progress promptly."""
     principal = _require_principal(request)
-    orchestrator = StarOrchestrator(
-        request.app.state.database,
-        request.app.state.model_runtime,
-        request.app.state.knowledge_service,
-    )
+    service = _run_service(request)
     try:
-        result = await orchestrator.execute(principal.username, run_id)
+        detail = await asyncio.to_thread(service.get_run, principal.username, run_id)
+        if detail.status == "queued":
+            service.schedule(principal.username, run_id)
+        return detail
     except AnalysisRunNotFoundError as exc:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="Analysis run not found.",
-        ) from exc
+        raise HTTPException(status_code=404, detail="Analysis run not found.") from exc
     except AnalysisRunStateError as exc:
-        raise HTTPException(
-            status_code=status.HTTP_409_CONFLICT,
-            detail=str(exc),
-        ) from exc
-    return RunExecutionOut(
-        run_id=result.run_id,
-        status=result.status,
-        report_id=result.report_id,
-        message=result.message,
+        raise HTTPException(status_code=409, detail=str(exc)) from exc
+
+
+@router.get("/api/runs/{run_id}", response_model=RunDetailOut)
+async def get_run(run_id: str, request: Request, response: Response) -> RunDetailOut:
+    principal = _require_principal(request)
+    response.headers["Cache-Control"] = "no-store"
+    try:
+        return await asyncio.to_thread(_run_service(request).get_run, principal.username, run_id)
+    except AnalysisRunNotFoundError as exc:
+        raise HTTPException(status_code=404, detail="Analysis run not found.") from exc
+
+
+@router.get("/api/runs/{run_id}/events")
+async def run_events(run_id: str, request: Request) -> StreamingResponse:
+    principal = _require_principal(request)
+    service = _run_service(request)
+    cursor_text = request.headers.get("last-event-id")
+    if cursor_text is None:
+        cursor_text = request.query_params.get("after", "-1")
+    try:
+        cursor = int(cursor_text)
+        if cursor < -1 or cursor > 2**63 - 1:
+            raise ValueError
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail="The event cursor must be an integer of at least -1.") from exc
+    try:
+        detail = await asyncio.to_thread(service.get_run, principal.username, run_id)
+    except AnalysisRunNotFoundError as exc:
+        raise HTTPException(status_code=404, detail="Analysis run not found.") from exc
+    if cursor > detail.last_event_id:
+        raise HTTPException(status_code=400, detail="The event cursor is ahead of this analysis.")
+    session_token = request.cookies.get(SESSION_COOKIE)
+
+    async def stream():
+        after = cursor
+        last_keepalive = time.monotonic()
+        yield "retry: 1500\n\n"
+        while not service.stopping:
+            if await request.is_disconnected():
+                return
+            if _session_store(request).resolve(session_token) != principal:
+                return
+            try:
+                events, terminal = await asyncio.to_thread(service.get_events, principal.username, run_id, after)
+            except AnalysisRunNotFoundError:
+                return
+            for event_id, event in events:
+                if _session_store(request).resolve(session_token) != principal:
+                    return
+                yield f"event: progress\nid: {event_id}\ndata: {event.model_dump_json()}\n\n"
+                after = event_id
+            if terminal:
+                return
+            if time.monotonic() - last_keepalive >= 15:
+                yield ": keepalive\n\n"
+                last_keepalive = time.monotonic()
+            await asyncio.sleep(0.5)
+
+    return StreamingResponse(
+        stream(), media_type="text/event-stream",
+        headers={"Cache-Control": "no-store", "X-Accel-Buffering": "no"},
     )
+
+
+@router.get("/api/reports/{report_id}", response_model=ReportDetailOut)
+async def get_report(report_id: str, request: Request, response: Response) -> ReportDetailOut:
+    principal = _require_principal(request)
+    response.headers["Cache-Control"] = "no-store"
+    try:
+        return await asyncio.to_thread(_run_service(request).get_report, principal.username, report_id)
+    except AnalysisRunNotFoundError as exc:
+        raise HTTPException(status_code=404, detail="Report not found.") from exc
+    except AnalysisRunStateError as exc:
+        raise HTTPException(status_code=409, detail=str(exc)) from exc

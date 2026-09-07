@@ -1,0 +1,48 @@
+{
+  "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "revision": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42",
+  "licence": "Apache-2.0",
+  "files": [
+    {
+      "file": "config.json",
+      "bytes": 645,
+      "sha256": "6300193cb75e01cf80c96decef7187dfb33094d97cc1490b7ead6ff134476e4e"
+    },
+    {
+      "file": "model.safetensors",
+      "bytes": 470641600,
+      "sha256": "eaa086f0ffee582aeb45b36e34cdd1fe2d6de2bef61f8a559a1bbc9bd955917b"
+    },
+    {
+      "file": "sentence_bert_config.json",
+      "bytes": 53,
+      "sha256": "70f4448f31320443fe3557cacea5abf2dcc4915dda8c80646bec9f3bb0aa5a1f"
+    },
+    {
+      "file": "sentencepiece.bpe.model",
+      "bytes": 5069051,
+      "sha256": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865"
+    },
+    {
+      "file": "special_tokens_map.json",
+      "bytes": 239,
+      "sha256": "378eb3bf733eb16e65792d7e3fda5b8a4631387ca04d2015199c4d4f22ae554d"
+    },
+    {
+      "file": "tokenizer.json",
+      "bytes": 9081518,
+      "sha256": "2c3387be76557bd40970cec13153b3bbf80407865484b209e655e5e4729076b8"
+    },
+    {
+      "file": "tokenizer_config.json",
+      "bytes": 526,
+      "sha256": "5036ea374ffedd706e3bef33e2e0d6953cb868ef8a490e76e32ba0faa37a6b9b"
+    },
+    {
+      "file": "README.md",
+      "bytes": 3888,
+      "sha256": "1e98ea05b0de579fcaad3d625b62ea55647142ed674d5f5ebf1440e4bbbb6f23"
+    }
+  ],
+  "purpose": "Local bilingual retrieval embeddings, not an analysis decision maker"
+}

@@ -17,6 +17,7 @@ dependencies = [
 
 [dependency-groups]
 worker-runtime = [
+  "llguidance==1.8.0",
   "jsonschema==4.26.0",
 ]
 

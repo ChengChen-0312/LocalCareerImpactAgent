@@ -1,9 +1,10 @@
-"""Deterministic response-language selection from user-authored prose only."""
+"""User language preferences with a prose-only attachment language fallback."""
 
 from __future__ import annotations
 
 import re
 from collections.abc import Iterable
+from itertools import zip_longest
 from typing import Literal
 
 from .contracts import ReportLanguage
@@ -24,6 +25,12 @@ _CONFIRMATIONS = frozenset(
     }
 )
 _ATTACHMENT_PLACEHOLDER = "shared candidate material for profile extraction."
+# These match the two welcome suggestions in App.tsx. A suggested question is
+# not an English-language preference when the user also supplies a document.
+_STARTER_QUESTIONS = frozenset({
+    "how might ai change my current responsibilities?",
+    "which skills should i build over the next three years?",
+})
 _DIRECTIVE = re.compile(
     r"(?ix)"
     r"(?P<no_en>\b(?:do\s+not|don't|avoid)\s+"
@@ -77,16 +84,33 @@ def is_substantive_user_text(text: str) -> bool:
     return folded not in _CONFIRMATIONS and folded != _ATTACHMENT_PLACEHOLDER
 
 
-def select_response_language(latest_first_user_texts: Iterable[str]) -> ReportLanguage:
-    """Use the latest substantive user text; callers must not pass attachment text."""
+def select_response_language(
+    latest_first_user_texts: Iterable[str],
+    *,
+    attachment_texts: Iterable[str] = (),
+) -> ReportLanguage:
+    """Pair latest-first messages with their own extracted text, using blanks if absent.
 
-    for text in latest_first_user_texts:
-        if not is_substantive_user_text(text):
-            continue
-        explicit = _explicit_language(text)
-        if explicit is not None:
+    Typed preferences remain authoritative; attachments supply language, not commands.
+    """
+
+    for text, attachment in zip_longest(
+        latest_first_user_texts, attachment_texts, fillvalue="",
+    ):
+        substantive = is_substantive_user_text(text)
+        if substantive and (explicit := _explicit_language(text)) is not None:
             return explicit
-        return classify_narrative_language(text) or "zh"
+        attachment_language = classify_narrative_language(attachment)
+        if not substantive:
+            if attachment_language is not None:
+                return attachment_language
+            continue
+        if (
+            attachment_language is not None
+            and " ".join(text.split()).casefold() in _STARTER_QUESTIONS
+        ):
+            return attachment_language
+        return classify_narrative_language(text) or attachment_language or "zh"
     return "zh"
 
 

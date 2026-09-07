@@ -1,0 +1,712 @@
+{
+  "case": "C",
+  "chat_id": "8ea1115f-e1be-4018-b59e-dfef044a95d4",
+  "confirmed_profile": {
+    "occupation_candidates": [
+      "Software Tester"
+    ],
+    "region": "Victoria, Australia",
+    "years_of_experience": 3.0,
+    "responsibilities": [
+      "根据产品需求编写功能测试用例",
+      "执行回归测试并复核异常",
+      "整理缺陷报告并与开发者沟通"
+    ],
+    "skills": [
+      "需求分析",
+      "测试用例设计",
+      "Python",
+      "SQL"
+    ],
+    "industry_context": "企业软件团队。测试数据已经去除敏感信息。测试用例只有经过人工审核，才能纳入正式测试库；在编写这些用例时，公司只许可使用获得批准的本地AI工具。",
+    "goals": [
+      "理解未来1–3年和3–5年的工作变化",
+      "制定遵守现行公司规定的近期行动建议"
+    ],
+    "confidence_notes": [
+      "职位名称明确为软件测试工程师，但未提及其他可能的兼职或扩展角色",
+      "工作经验为3年，无更多年限细节",
+      "技能和职责描述完整，但未提及其他工具或流程",
+      "公司规定提及使用批准的本地AI工具，但未说明具体限制或合规流程",
+      "目标为了解未来工作变化和近期行动建议，但未提供具体时间框架或优先级"
+    ]
+  },
+  "confirmed": true,
+  "captured_at_utc": "2026-09-06T12:58:38.966754+00:00",
+  "runs": [
+    {
+      "run_id": "49368dca-e469-4ae4-82b3-c0f8f00955a2",
+      "chat_id": "8ea1115f-e1be-4018-b59e-dfef044a95d4",
+      "profile_id": "831f305f-274d-416c-b5f4-05afb64b181a",
+      "status": "COMPLETE",
+      "created_at": "2026-09-06T12:46:20.030571Z",
+      "updated_at": "2026-09-06T12:50:26.154031Z",
+      "snapshot_id": "sha256:fd3565036619143a0d245bd38560f97f80ad4598d51ba387b9b40060ec91ca27",
+      "response_language": "zh",
+      "error_code": null,
+      "error_message": null,
+      "diagnostics": [
+        {
+          "stage": "draft",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 10379,
+            "generation_tokens": 1194,
+            "total_tokens": 11573,
+            "generation_limit": 4096,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 26947,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "evidence_review",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 10346,
+            "generation_tokens": 720,
+            "total_tokens": 11066,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 26494,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "boundary_review",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 10257,
+            "generation_tokens": 673,
+            "total_tokens": 10930,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 26034,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "safety_review",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 10283,
+            "generation_tokens": 713,
+            "total_tokens": 10996,
+            "generation_limit": 2048,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 26133,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "resolution_decision",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 11258,
+            "generation_tokens": 383,
+            "total_tokens": 11641,
+            "generation_limit": 1536,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 29171,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "revised_claims",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 12222,
+            "generation_tokens": 548,
+            "total_tokens": 12770,
+            "generation_limit": 3072,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 30653,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        },
+        {
+          "stage": "report_narratives",
+          "attempt": 1,
+          "status": "complete",
+          "boundary": "validation",
+          "category": null,
+          "metrics": {
+            "prompt_tokens": 4728,
+            "generation_tokens": 693,
+            "total_tokens": 5421,
+            "generation_limit": 4096,
+            "reached_generation_limit": false
+          },
+          "schema_error_path": [],
+          "parse_error_offset": null,
+          "context_codepoints": 16408,
+          "validator_categories": {},
+          "numeric_digit_pattern": null,
+          "numeric_english_pattern": null,
+          "numeric_chinese_expression_pattern": null,
+          "structural_horizon_adjacent_chinese": null,
+          "numeric_after_adjacent_horizon_removal": null
+        }
+      ],
+      "events": [
+        {
+          "sequence": 0,
+          "event_type": "retrieval",
+          "payload_json": "{\"status\":\"running\"}",
+          "created_at": "2026-09-06T12:46:20.037167Z"
+        },
+        {
+          "sequence": 1,
+          "event_type": "retrieval",
+          "payload_json": "{\"evidence_count\":8,\"snapshot_id\":\"sha256:fd3565036619143a0d245bd38560f97f80ad4598d51ba387b9b40060ec91ca27\",\"status\":\"complete\",\"topic_coverage\":{\"meaning\":\"Directory coverage only; relevance and support must still be checked against each passage.\",\"missing_topics\":[],\"mode\":\"topic_directories\",\"query_counts\":{\"ai-impact\":2,\"labour-market\":2,\"occupations\":4},\"topic_counts\":{\"ai-impact\":2,\"labour-market\":2,\"occupations\":4},\"unclassified_count\":0}}",
+          "created_at": "2026-09-06T12:46:33.429461Z"
+        },
+        {
+          "sequence": 2,
+          "event_type": "draft",
+          "payload_json": "{\"status\":\"running\"}",
+          "created_at": "2026-09-06T12:46:33.430649Z"
+        },
+        {
+          "sequence": 3,
+          "event_type": "draft",
+          "payload_json": "{\"attempt\":1,\"status\":\"complete\"}",
+          "created_at": "2026-09-06T12:47:10.535117Z"
+        },
+        {
+          "sequence": 4,
+          "event_type": "evidence_review",
+          "payload_json": "{\"status\":\"running\"}",
+          "created_at": "2026-09-06T12:47:10.536155Z"
+        },
+        {
+          "sequence": 5,
+          "event_type": "evidence_review",
+          "payload_json": "{\"attempt\":1,\"count\":3,\"status\":\"complete\"}",
+          "created_at": "2026-09-06T12:47:48.457565Z"
+        },
+        {
+          "sequence": 6,
+          "event_type": "boundary_review",
+          "payload_json": "{\"status\":\"running\"}",
+          "created_at": "2026-09-06T12:47:48.458410Z"
+        },
+        {
+          "sequence": 7,
+          "event_type": "boundary_review",
+          "payload_json": "{\"attempt\":1,\"count\":3,\"status\":\"complete\"}",
+          "created_at": "2026-09-06T12:48:13.353359Z"
+        },
+        {
+          "sequence": 8,
+          "event_type": "safety_review",
+          "payload_json": "{\"status\":\"running\"}",
+          "created_at": "2026-09-06T12:48:13.353891Z"
+        },
+        {
+          "sequence": 9,
+          "event_type": "safety_review",
+          "payload_json": "{\"attempt\":1,\"count\":3,\"status\":\"complete\"}",
+          "created_at": "2026-09-06T12:48:39.050553Z"
+        },
+        {
+          "sequence": 10,
+          "event_type": "resolution_decision",
+          "payload_json": "{\"status\":\"running\"}",
+          "created_at": "2026-09-06T12:48:39.051329Z"
+        },
+        {
+          "sequence": 11,
+          "event_type": "resolution_decision",
+          "payload_json": "{\"attempt\":1,\"count\":9,\"status\":\"complete\"}",
+          "created_at": "2026-09-06T12:49:42.537950Z"
+        },
+        {
+          "sequence": 12,
+          "event_type": "revised_claims",
+          "payload_json": "{\"status\":\"running\"}",
+          "created_at": "2026-09-06T12:49:42.539740Z"
+        },
+        {
+          "sequence": 13,
+          "event_type": "revised_claims",
+          "payload_json": "{\"attempt\":1,\"count\":4,\"status\":\"complete\"}",
+          "created_at": "2026-09-06T12:50:09.951392Z"
+        },
+        {
+          "sequence": 14,
+          "event_type": "report_narratives",
+          "payload_json": "{\"status\":\"running\"}",
+          "created_at": "2026-09-06T12:50:09.952369Z"
+        },
+        {
+          "sequence": 15,
+          "event_type": "report_narratives",
+          "payload_json": "{\"attempt\":1,\"count\":17,\"status\":\"complete\"}",
+          "created_at": "2026-09-06T12:50:26.148020Z"
+        },
+        {
+          "sequence": 16,
+          "event_type": "validation",
+          "payload_json": "{\"status\":\"running\"}",
+          "created_at": "2026-09-06T12:50:26.149010Z"
+        },
+        {
+          "sequence": 17,
+          "event_type": "validation",
+          "payload_json": "{\"status\":\"complete\",\"report_id\":\"d0151e1e-92bf-4bcf-9154-d39ff3343fc8\"}",
+          "created_at": "2026-09-06T12:50:26.154031Z"
+        }
+      ],
+      "evidence_context": {
+        "schema_version": "evidence-context.v1",
+        "run_id": "49368dca-e469-4ae4-82b3-c0f8f00955a2",
+        "tenant_id": "local-user:demo",
+        "policy_version": "mvp-report.v1",
+        "confirmed_case_profile": {
+          "profile_ref": "service-hmac:73e608e5796f81e0e3418a7076f6f417a29d7503c0d0908b7edef0dec3447c1e",
+          "region": "Victoria, Australia",
+          "confirmed_occupations": [],
+          "confirmed_responsibilities": [
+            {
+              "responsibility_id": "responsibility-001",
+              "text": "根据产品需求编写功能测试用例"
+            },
+            {
+              "responsibility_id": "responsibility-002",
+              "text": "执行回归测试并复核异常"
+            },
+            {
+              "responsibility_id": "responsibility-003",
+              "text": "整理缺陷报告并与开发者沟通"
+            }
+          ],
+          "confirmed_skills": [
+            {
+              "skill_id": "skill-001",
+              "text": "需求分析"
+            },
+            {
+              "skill_id": "skill-002",
+              "text": "测试用例设计"
+            },
+            {
+              "skill_id": "skill-003",
+              "text": "Python"
+            },
+            {
+              "skill_id": "skill-004",
+              "text": "SQL"
+            }
+          ],
+          "user_goals": [
+            {
+              "goal_id": "goal-001",
+              "text": "理解未来1–3年和3–5年的工作变化"
+            },
+            {
+              "goal_id": "goal-002",
+              "text": "制定遵守现行公司规定的近期行动建议"
+            }
+          ]
+        },
+        "fact_pack": {
+          "schema_version": "factpack.v1",
+          "snapshot_id": "sha256:fd3565036619143a0d245bd38560f97f80ad4598d51ba387b9b40060ec91ca27",
+          "factpack_hash": "sha256:80ebc231921a0054b2d02c27c2180edaca4f017318c6fec061a6edc2ba65c7a5",
+          "queries": [],
+          "facts": [],
+          "passages": [
+            {
+              "evidence_id": "evidence-2a0d09c48d4d9daa122a26201331b3734e85196d6b980e0d61c3db2747dfaebf",
+              "chunk_id": "chunk-5e93a8637becc48bdb21c67033916bb78f72797cdf90354c1c71871671d872ae",
+              "source_id": "source-84db5d783c61ed36c8c4bbf66beaadd24318bf14fdb8b8a521509f7d643712eb",
+              "file_sha256": "sha256:422c379a77b0eaf44283c7212c1ce9802f5fd926163297f9252f13e253f2f61d",
+              "chunk_sha256": "sha256:3e348b84853339d4fcb756ea15c9a2bf23d4026af6b84446f6babec7622a380b",
+              "page": 1,
+              "section": "row:655",
+              "release_date": null,
+              "licence": "unavailable",
+              "jurisdiction": "UNKNOWN",
+              "authority_class": "contextual",
+              "text": "ICT Test Analyst — OSCA 2024 v1.0 272233 feedback and recommendations based on analysis of test results, and ensures it aligns with business requirements and specifications; May automate software and/or system test cases using testing tools and frameworks; May undertake system performance, load and stress testing; Specialisations: Automation Test Engineer; Software Tester; Systems Test Engineer (ICT) Source: ABS; Table 1 row 455; 2024 Version 1.0, July 2025 corrections. https://www.abs.gov.au/statistics/classifications/osca-occupation-standard-classification-australia/2024-version-1-0/data-downloads"
+            },
+            {
+              "evidence_id": "evidence-3c5e908091412d094787c220cc8845ab13e7c4a27dec6fb2dd364940f40d45cf",
+              "chunk_id": "chunk-e7475cb86065d817fcf787a160773c93b08aba6c728beca9a2f36d73449b67df",
+              "source_id": "source-84db5d783c61ed36c8c4bbf66beaadd24318bf14fdb8b8a521509f7d643712eb",
+              "file_sha256": "sha256:422c379a77b0eaf44283c7212c1ce9802f5fd926163297f9252f13e253f2f61d",
+              "chunk_sha256": "sha256:37af79b74c01bb5d9b88e06b4645cf7ccf85fd69743984f74ec1eda3a3bcb4d7",
+              "page": 1,
+              "section": "row:653",
+              "release_date": null,
+              "licence": "unavailable",
+              "jurisdiction": "UNKNOWN",
+              "authority_class": "contextual",
+              "text": "ICT Test Analyst — OSCA 2024 v1.0 272233 Lead Statement: Specifies, develops and executes test plans and test scripts, produces test cases, carries out testing using various techniques, and documents the results of tests in defect reports and related documentation. Uses automated test software applications to test the behaviour, functionality and integrity of ICT software and systems.; Inclusion and Exclusion Statements: Analysts testing technical security controls are excluded from this occupation. Analysts testing technical security controls are included in Occupation 271137 Penetration Tester.; Skill Level: 1; Main Tasks: Tests, identifies and diagnoses functionality errors Source: ABS; Table 1 row 455; 2024 Version 1.0, July 2025 corrections. https://www.abs.gov.au/statistics/classifications/osca-occupation-standard-classification-australia/2024-version-1-0/data-downloads"
+            },
+            {
+              "evidence_id": "evidence-fd8450c0805cd57cfd1cd709d37da23ea3df4d8fefd77feb0c4fd532916db45e",
+              "chunk_id": "chunk-59b4168baba65968d8309d2aa05040c37f950f1820293351cadd938f038cee2a",
+              "source_id": "source-183674c34d241e680e0a4842eb5a26d8fae6f6ce6474b43ec2272273687583eb",
+              "file_sha256": "sha256:53ece7300ddc9f16e3a1fbe1d34b8736cefeacd82f24d4e8e846f7071b36f2c9",
+              "chunk_sha256": "sha256:6ac8329d9423397ecad8b7bcce714a820c780100d179acaf87ffbf7d3e581518",
+              "page": 1,
+              "section": "row:111",
+              "release_date": null,
+              "licence": "unavailable",
+              "jurisdiction": "UNKNOWN",
+              "authority_class": "contextual",
+              "text": "Product Tester — OSCA 2024 v1.0 839233 Lead Statement: Collects product samples, conducts tests to determine quality of produce, and maintains records of results.; Skill Level: 4; Main Tasks: Obtains product samples for testing from various stages of the production process; Carries out tests using standardised procedures to assess product quality; Analyses test data and product performance during testing processes, and prepares reports summarising findings; Identifies and reports any deviations or abnormalities in test results; Specialisations: Coal Sample Tester; Concrete Tester Source: ABS; Table 1 row 1102; 2024 Version 1.0, July 2025 corrections. https://www.abs.gov.au/statistics/classifications/osca-occupation-standard-classification-australia/2024-version-1-0/data-downloads"
+            },
+            {
+              "evidence_id": "evidence-55028982c9ed5935ee497e7cd5bd6064987c8b1bfc9ede07bbd940da87b09460",
+              "chunk_id": "chunk-c30056a5f89c25759d252cfa40dbbd1be5673791f3825c8c58964ecac140dc31",
+              "source_id": "source-84db5d783c61ed36c8c4bbf66beaadd24318bf14fdb8b8a521509f7d643712eb",
+              "file_sha256": "sha256:422c379a77b0eaf44283c7212c1ce9802f5fd926163297f9252f13e253f2f61d",
+              "chunk_sha256": "sha256:bb3ba18bf405100cb021e32ce8039658d955116502ce249044c834b46307b98c",
+              "page": 1,
+              "section": "row:636",
+              "release_date": null,
+              "licence": "unavailable",
+              "jurisdiction": "UNKNOWN",
+              "authority_class": "contextual",
+              "text": "Penetration Tester — OSCA 2024 v1.0 271137 Alternative Title: Ethical Hacker; Lead Statement: Creates test cases using in-depth technical analysis of risks and typical vulnerabilities, and produces test scripts, materials and packs to test new and existing software or services. Plans, coordinates and conducts cyber threat emulation activities in support of certification, accreditation and operational priorities to verify deficiencies in technical security controls.; Skill Level: 1; Main Tasks: Develops and executes penetration testing methodologies and strategies to identify weaknesses in security controls; Creates test cases using in-depth technical analysis of risks and Source: ABS; Table 1 row 447; 2024 Version 1.0, July 2025 corrections. https://www.abs.gov.au/statistics/classifications/osca-occupation-standard-classification-australia/2024-version-1-0/data-downloads"
+            },
+            {
+              "evidence_id": "evidence-03367b1cb7eb531784f5f72abe1c59ff344c74e2d46044af1a1722a6388e6694",
+              "chunk_id": "chunk-3729ffed232da5b5522f578b1473df119dfc88a00fb7074c1447e8cd88570b16",
+              "source_id": "source-c302606a159465d3fd9ec55c01ec35f82334a9783496bf19a8e154058edfbb10",
+              "file_sha256": "sha256:d94fe8e3317b3ad14be7839664eba3275c69b897b52735f5b9d7d5f154552081",
+              "chunk_sha256": "sha256:7b2b76d666fe30343cf982f91d3dd3e8998740b8223d29368a24f7bdd2da96f0",
+              "page": 1,
+              "section": "row:125",
+              "release_date": null,
+              "licence": "unavailable",
+              "jurisdiction": "UNKNOWN",
+              "authority_class": "contextual",
+              "text": "Software and Applications Programmers — ANZSCO v1.3 unit group 2613 Australia. Gen AI task potential scores (dimensionless 0–1): augmentation 0.77; automation 0.63. Within-occupation task-score standard deviation: augmentation 0.05; automation 0.05. Scores average task potential under full adoption of current Gen AI. They are not unemployment probabilities, task percentages or predicted job losses. Standard deviation measures variation across tasks; source missing values remain null. Source: JSA; Occupation row 132, columns A:G; 2025-09-03 workbook; Australia; Gen AI potential study. https://www.jobsandskills.gov.au/sites/default/files/2025-09/jsa_gen_ai_interactive_table_data_pack_20250903.xlsx"
+            },
+            {
+              "evidence_id": "evidence-8cd95af5506722a772714d309773fd02256a4fe2788c60ac756dfe7b6f5d879d",
+              "chunk_id": "chunk-ad68b3da767aff7ba562ed858809fb763508cd5fd4ded246c2acfeebe6d173d6",
+              "source_id": "source-89479d75f3db929fed47dc9135edb6c540cbc382704a9f5862c8bbcbf73f4518",
+              "file_sha256": "sha256:6e88dffddb0780bc4e68ccbf28e7b871db3d3732b1171b0d7b1913fd877946ef",
+              "chunk_sha256": "sha256:30c561354a768b42bb31cd28b73bd9def385a84f6b7abc4407c042860c3bd297",
+              "page": 1,
+              "section": "row:356",
+              "release_date": null,
+              "licence": "unavailable",
+              "jurisdiction": "UNKNOWN",
+              "authority_class": "contextual",
+              "text": "Our Gen AI Transition - Final Release, cohorts and technical notes efficiency. Initial transcriptions used automated transcription software (e.g., Microsoft Copilot), followed by manual review and correction to ensure accuracy of content, speaker identification, and contextual nuances. Data management The Study implemented comprehensive data management procedures to ensure participant confidentiality and data security throughout the research process. All digital files were stored on secure, encrypted systems with appropriate access controls limited to authorised research team members. Analytical framework and approach Abductive thematic analysis Source: JSA; PDF physical page 85 of 93; Research published September 2025; complements Analysis Papers. https://www.jobsandskills.gov.au/download/19846/our-gen-ai-transition-final-release/3462/our-gen-ai-transition-final-release/pdf"
+            },
+            {
+              "evidence_id": "evidence-2d0e2ceaa1aa5a77f70ad10badd920bd4032f74e6c672e3b2464c9d2acd97fdf",
+              "chunk_id": "chunk-cbda670677caa9c9fd77a1ed3d38cd245daaa69452bf41ec9d11d5258e35de85",
+              "source_id": "source-1fb33dc1975ffa140b8c0cda3a704fa1573f7f88e4d862314c88772e131c63f9",
+              "file_sha256": "sha256:abba49062639787423a1e5045b6ed9b7d89270015d81d2f8ca0d3b3defb5a591",
+              "chunk_sha256": "sha256:aede13ee49e23b9574cef4366acc0082dda434c563bb435898e23e92d37fea36",
+              "page": 1,
+              "section": "row:377",
+              "release_date": null,
+              "licence": "unavailable",
+              "jurisdiction": "UNKNOWN",
+              "authority_class": "contextual",
+              "text": "Software Tester — ANZSCO 2022 261314 2025 shortage ratings. Australia: Shortage; NSW: Shortage; VIC: Shortage; QLD: Shortage; SA: Shortage; WA: Shortage; TAS: Shortage; NT: Shortage; ACT: Shortage. Point-in-time employer recruitment assessment, not a personal employment guarantee or future AI risk score. Source: JSA; 2025 OSL (ANZSCO 2022) row 385; 2025 point-in-time assessment. https://www.jobsandskills.gov.au/data/occupation-shortage"
+            },
+            {
+              "evidence_id": "evidence-8066e85673da64989ef8e56fe177ee9ed93d83110fa8b67d33b80799675ac761",
+              "chunk_id": "chunk-4e782db205c19df0276a561c2088e9ab0a21dc5503eecfd3c5e7c495de38aefa",
+              "source_id": "source-d2a124d03b5887c2221bd2ac4870c3cdf425495c46af389f134f2fc10d68dd60",
+              "file_sha256": "sha256:c36535784d3264a17ddce426f7de5168911d2d4d779cb4b51591c37f26301b6d",
+              "chunk_sha256": "sha256:58c9b7f27594dc3c57b68580517bc73f3c63ebe467f007d2438de50f06b80f74",
+              "page": 1,
+              "section": "row:1002",
+              "release_date": null,
+              "licence": "unavailable",
+              "jurisdiction": "UNKNOWN",
+              "authority_class": "contextual",
+              "text": "Product Tester — OSCA 2024 839233 2025 shortage ratings. Australia: No shortage; NSW: No shortage; VIC: No shortage; QLD: No shortage; SA: No shortage; WA: No shortage; TAS: No shortage; NT: No shortage; ACT: No shortage. Point-in-time employer recruitment assessment, not a personal employment guarantee or future AI risk score. Source: JSA; 2025 OSL (OSCA 2024) row 1010; 2025 point-in-time assessment. https://www.jobsandskills.gov.au/data/occupation-shortage"
+            }
+          ],
+          "tasks": [],
+          "methods": [],
+          "caveats": [],
+          "sources": [
+            {
+              "source_id": "source-183674c34d241e680e0a4842eb5a26d8fae6f6ce6474b43ec2272273687583eb",
+              "title": "ABS OSCA 2024 occupations group 8",
+              "publisher": "Local operator-provided source",
+              "source_uri": "knowledge://sha256%3Afd3565036619143a0d245bd38560f97f80ad4598d51ba387b9b40060ec91ca27/au-government-2026-09-06%2Foccupations%2FABS%20OSCA%202024%20occupations%20group%208.json",
+              "release_date": null,
+              "retrieved_at": "2026-09-06T05:18:40.614274Z",
+              "file_sha256": "sha256:53ece7300ddc9f16e3a1fbe1d34b8736cefeacd82f24d4e8e846f7071b36f2c9",
+              "licence": "unavailable",
+              "jurisdiction": "UNKNOWN",
+              "authority_class": "contextual"
+            },
+            {
+              "source_id": "source-1fb33dc1975ffa140b8c0cda3a704fa1573f7f88e4d862314c88772e131c63f9",
+              "title": "JSA 2025 Shortages ANZSCO 2022",
+              "publisher": "Local operator-provided source",
+              "source_uri": "knowledge://sha256%3Afd3565036619143a0d245bd38560f97f80ad4598d51ba387b9b40060ec91ca27/au-government-2026-09-06%2Flabour-market%2FJSA%202025%20Shortages%20ANZSCO%202022.json",
+              "release_date": null,
+              "retrieved_at": "2026-09-06T05:18:40.614274Z",
+              "file_sha256": "sha256:abba49062639787423a1e5045b6ed9b7d89270015d81d2f8ca0d3b3defb5a591",
+              "licence": "unavailable",
+              "jurisdiction": "UNKNOWN",
+              "authority_class": "contextual"
+            },
+            {
+              "source_id": "source-84db5d783c61ed36c8c4bbf66beaadd24318bf14fdb8b8a521509f7d643712eb",
+              "title": "ABS OSCA 2024 occupations group 2",
+              "publisher": "Local operator-provided source",
+              "source_uri": "knowledge://sha256%3Afd3565036619143a0d245bd38560f97f80ad4598d51ba387b9b40060ec91ca27/au-government-2026-09-06%2Foccupations%2FABS%20OSCA%202024%20occupations%20group%202.json",
+              "release_date": null,
+              "retrieved_at": "2026-09-06T05:18:40.614274Z",
+              "file_sha256": "sha256:422c379a77b0eaf44283c7212c1ce9802f5fd926163297f9252f13e253f2f61d",
+              "licence": "unavailable",
+              "jurisdiction": "UNKNOWN",
+              "authority_class": "contextual"
+            },
+            {
+              "source_id": "source-89479d75f3db929fed47dc9135edb6c540cbc382704a9f5862c8bbcbf73f4518",
+              "title": "Our Gen AI Transition - Final Release, cohorts and technical notes",
+              "publisher": "Local operator-provided source",
+              "source_uri": "knowledge://sha256%3Afd3565036619143a0d245bd38560f97f80ad4598d51ba387b9b40060ec91ca27/au-government-2026-09-06%2Fai-impact%2FOur%20Gen%20AI%20Transition%20-%20Final%20Release%2C%20cohorts%20and%20technical%20notes.json",
+              "release_date": null,
+              "retrieved_at": "2026-09-06T05:18:40.614274Z",
+              "file_sha256": "sha256:6e88dffddb0780bc4e68ccbf28e7b871db3d3732b1171b0d7b1913fd877946ef",
+              "licence": "unavailable",
+              "jurisdiction": "UNKNOWN",
+              "authority_class": "contextual"
+            },
+            {
+              "source_id": "source-c302606a159465d3fd9ec55c01ec35f82334a9783496bf19a8e154058edfbb10",
+              "title": "JSA Gen AI 2025 occupation exposure scores",
+              "publisher": "Local operator-provided source",
+              "source_uri": "knowledge://sha256%3Afd3565036619143a0d245bd38560f97f80ad4598d51ba387b9b40060ec91ca27/au-government-2026-09-06%2Fai-impact%2FJSA%20Gen%20AI%202025%20occupation%20exposure%20scores.json",
+              "release_date": null,
+              "retrieved_at": "2026-09-06T05:18:40.614274Z",
+              "file_sha256": "sha256:d94fe8e3317b3ad14be7839664eba3275c69b897b52735f5b9d7d5f154552081",
+              "licence": "unavailable",
+              "jurisdiction": "UNKNOWN",
+              "authority_class": "contextual"
+            },
+            {
+              "source_id": "source-d2a124d03b5887c2221bd2ac4870c3cdf425495c46af389f134f2fc10d68dd60",
+              "title": "JSA 2025 Shortages OSCA 2024",
+              "publisher": "Local operator-provided source",
+              "source_uri": "knowledge://sha256%3Afd3565036619143a0d245bd38560f97f80ad4598d51ba387b9b40060ec91ca27/au-government-2026-09-06%2Flabour-market%2FJSA%202025%20Shortages%20OSCA%202024.json",
+              "release_date": null,
+              "retrieved_at": "2026-09-06T05:18:40.614274Z",
+              "file_sha256": "sha256:c36535784d3264a17ddce426f7de5168911d2d4d779cb4b51591c37f26301b6d",
+              "licence": "unavailable",
+              "jurisdiction": "UNKNOWN",
+              "authority_class": "contextual"
+            }
+          ],
+          "registries": {
+            "query_templates": [],
+            "classifications": [],
+            "metrics": [],
+            "geographies": [],
+            "grains": [],
+            "transforms": [],
+            "formulas": [],
+            "message_templates": []
+          },
+          "gaps": []
+        },
+        "query_result_closure_hash": "sha256:036332be1fae4041eda33f35dfb5a1d8b66417feb679333ad16e399a0f7536bc"
+      },
+      "suggestions": [
+        {
+          "affected_claim_ids": [
+            "claim-001"
+          ],
+          "category": "evidence",
+          "evidence_refs": [
+            "evidence-2a0d09c48d4d9daa122a26201331b3734e85196d6b980e0d61c3db2747dfaebf",
+            "evidence-3c5e908091412d094787c220cc8845ab13e7c4a27dec6fb2dd364940f40d45cf"
+          ],
+          "proposed_correction": "软件测试工程师的核心职责之一是根据产品需求编写功能测试用例，但该职责在OSCA职业分类中被明确列为ICT Test Analyst的主要任务，而非软件测试工程师。",
+          "severity": "required",
+          "suggestion_id": "evidence-1"
+        },
+        {
+          "affected_claim_ids": [
+            "claim-002",
+            "claim-003"
+          ],
+          "category": "evidence",
+          "evidence_refs": [
+            "evidence-03367b1cb7eb531784f5f72abe1c59ff344c74e2d46044af1a1722a6388e6694",
+            "evidence-55028982c9ed5935ee497e7cd5bd6064987c8b1bfc9ede07bbd940da87b09460"
+          ],
+          "proposed_correction": "AI在软件测试领域的自动化潜力（如增强测试用例生成、缺陷预测）被JSA评估为中等至高自动化水平，但该评估仅针对软件和应用程序员（ANZSCO 2613）的特定任务，不直接支持软件测试工程师的职责。",
+          "severity": "required",
+          "suggestion_id": "evidence-2"
+        },
+        {
+          "affected_claim_ids": [
+            "claim-004"
+          ],
+          "category": "evidence",
+          "evidence_refs": [
+            "evidence-2d0e2ceaa1aa5a77f70ad10badd920bd4032f74e6c672e3b2464c9d2acd97fdf",
+            "evidence-8066e85673da64989ef8e56fe177ee9ed93d83110fa8b67d33b80799675ac761"
+          ],
+          "proposed_correction": "当前软件测试工程师的岗位在ANZSCO 2613类别下被列为短缺，但该短缺评级不等同于稳定需求，且未提供AI工具培训的直接证据支持。",
+          "severity": "required",
+          "suggestion_id": "evidence-3"
+        },
+        {
+          "affected_claim_ids": [
+            "claim-002",
+            "claim-003"
+          ],
+          "category": "reasoning_boundary",
+          "evidence_refs": [
+            "evidence-2a0d09c48d4d9daa122a26201331b3734e85196d6b980e0d61c3db2747dfaebf",
+            "evidence-3c5e908091412d094787c220cc8845ab13e7c4a27dec6fb2dd364940f40d45cf"
+          ],
+          "proposed_correction": "AI's role in testing is not directly supported by the cited OSCA 2024 source, which only mentions test case development and execution, not automation or AI enhancement.",
+          "severity": "required",
+          "suggestion_id": "boundary-1"
+        },
+        {
+          "affected_claim_ids": [
+            "claim-004"
+          ],
+          "category": "reasoning_boundary",
+          "evidence_refs": [
+            "evidence-03367b1cb7eb531784f5f72abe1c59ff344c74e2d46044af1a1722a6388e6694",
+            "evidence-55028982c9ed5935ee497e7cd5bd6064987c8b1bfc9ede07bbd940da87b09460"
+          ],
+          "proposed_correction": "The recommendation to learn AI tools lacks evidence; no source supports AI tool training as a necessary or effective action for this role.",
+          "severity": "required",
+          "suggestion_id": "boundary-2"
+        },
+        {
+          "affected_claim_ids": [
+            "claim-002",
+            "claim-003"
+          ],
+          "category": "reasoning_boundary",
+          "evidence_refs": [
+            "evidence-03367b1cb7eb531784f5f72abe1c59ff344c74e2d46044af1a1722a6388e6694",
+            "evidence-8cd95af5506722a772714d309773fd02256a4fe2788c60ac756dfe7b6f5d879d"
+          ],
+          "proposed_correction": "The claim of AI automation in testing is unsupported by evidence; no source indicates AI will replace or augment human tasks in this role.",
+          "severity": "recommended",
+          "suggestion_id": "boundary-3"
+        },
+        {
+          "affected_claim_ids": [
+            "claim-001",
+            "claim-002",
+            "claim-003"
+          ],
+          "category": "safety_language",
+          "evidence_refs": [
+            "evidence-2a0d09c48d4d9daa122a26201331b3734e85196d6b980e0d61c3db2747dfaebf",
+            "evidence-3c5e908091412d094787c220cc8845ab13e7c4a27dec6fb2dd364940f40d45cf"
+          ],
+          "proposed_correction": "根据产品需求编写功能测试用例是软件测试工程师的核心职责之一，依据OSCA 2024 v1.0中对ICT Test Analyst的描述，该职责明确包含在主要任务中。",
+          "severity": "required",
+          "suggestion_id": "safety-1"
+        },
+        {
+          "affected_claim_ids": [
+            "claim-002",
+            "claim-003"
+          ],
+          "category": "safety_language",
+          "evidence_refs": [
+            "evidence-2a0d09c48d4d9daa122a26201331b3734e85196d6b980e0d61c3db2747dfaebf",
+            "evidence-3c5e908091412d094787c220cc8845ab13e7c4a27dec6fb2dd364940f40d45cf"
+          ],
+          "proposed_correction": "未来AI对测试用例生成和缺陷报告整理的自动化影响，需基于现有证据明确其在OSCA职业分类中的任务范围，避免过度推断。",
+          "severity": "required",
+          "suggestion_id": "safety-2"
+        },
+        {
+          "affected_claim_ids": [
+            "claim-004"
+          ],
+          "category": "safety_language",
+          "evidence_refs": [
+            "evidence-03367b1cb7eb531784f5f72abe1c59ff344c74e2d46044af1a1722a6388e6694",
+            "evidence-8cd95af5506722a772714d309773fd02256a4fe2788c60ac756dfe7b6f5d879d"
+          ],
+          "proposed_correction": "建议学习AI辅助测试工具的使用方法，但需明确其与现有任务的关联性，避免将AI能力等同于职业替代。",
+          "severity": "recommended",
+          "suggestion_id": "safety-3"
+        }
+      ],
+      "report_id": "d0151e1e-92bf-4bcf-9154-d39ff3343fc8"
+    }
+  ]
+}
